@@ -21,5 +21,12 @@ namespace MassarAdminDesktop
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog f = new OpenFileDialog();
+            f.ShowDialog();
+            Controller.checkFile(f.SafeFileName);
+        }
     }
 }
