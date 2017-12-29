@@ -11,7 +11,7 @@ using System.IO;
 using NPOI.XSSF.UserModel;
 using NPOI.SS.UserModel;
 
-namespace WindowsFormsApplication3
+namespace MassarAdminDesktop
 {
     class Excel
     {

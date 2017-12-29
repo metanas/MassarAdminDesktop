@@ -33,16 +33,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NPOI">
-      <HintPath>..\..\..\Desktop\NPOI.dll</HintPath>
+      <HintPath>..\References\NPOI.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OOXML">
-      <HintPath>..\..\..\Desktop\NPOI.OOXML.dll</HintPath>
+      <HintPath>..\References\NPOI.OOXML.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OpenXml4Net">
-      <HintPath>..\..\..\Desktop\NPOI.OpenXml4Net.dll</HintPath>
+      <HintPath>..\References\NPOI.OpenXml4Net.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OpenXmlFormats">
-      <HintPath>..\..\..\Desktop\NPOI.OpenXmlFormats.dll</HintPath>
+      <HintPath>..\References\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
