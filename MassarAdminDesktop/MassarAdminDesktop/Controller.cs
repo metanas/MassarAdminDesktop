@@ -8,12 +8,10 @@ namespace MassarAdminDesktop
 {
     static class Controller
     {
-        public static bool checkFile(string path)
+        public static string[] checkFile(string path)
         {
             string[] d = path.Split('_');
-            foreach(string w in d)
-            Console.WriteLine(w);
-            return true;
+            return d;
         }
     }
 }
