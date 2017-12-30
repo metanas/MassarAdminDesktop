@@ -31,13 +31,15 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilisateurs = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.utilisateurs});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(467, 24);
@@ -58,6 +60,13 @@
             this.importerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.importerToolStripMenuItem.Text = "Importer";
             this.importerToolStripMenuItem.Click += new System.EventHandler(this.importerToolStripMenuItem_Click);
+            // 
+            // utilisateurs
+            // 
+            this.utilisateurs.Name = "utilisateurs";
+            this.utilisateurs.Size = new System.Drawing.Size(77, 20);
+            this.utilisateurs.Text = "Utilisateurs";
+            this.utilisateurs.Click += new System.EventHandler(this.utilisateursToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -80,5 +89,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem utilisateurs;
     }
 }
