@@ -15,6 +15,8 @@ namespace MassarAdminDesktop
         public Home()
         {
             InitializeComponent();
+            if (!Login.admin.isSuper)
+                utilisateurs.Visible = false;
         }
 
         private void importerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -24,6 +26,12 @@ namespace MassarAdminDesktop
             previw.Parent = this;
             previw.Show();
             previw.browse();
+        }
+
+        private void utilisateursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gerer_Admin gerer = new Gerer_Admin();
+            gerer.Show();
         }
     }
 }
