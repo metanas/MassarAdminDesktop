@@ -39,6 +39,7 @@ namespace MassarAdminDesktop
             Previw previw = new Previw();
             previw.TopLevel = false;
             previw.Parent = this;
+            previw.Location = new Point(Class_Sel.Width, menuStrip1.Height);
             previw.Show();
         }
 
