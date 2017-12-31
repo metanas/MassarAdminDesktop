@@ -21,8 +21,8 @@ namespace MassarAdminDesktop
         public Home()
         {
             InitializeComponent();
-            
-                utilisateurs.Visible = Login.admin.isSuper;
+
+            utilisateurs.Visible = Login.admin.isSuper;
             annees.Font = new Font("Arial", 14);
             Login.read = DBConnect.Gets("select annee_scolaire from annee order by annee_scolaire desc ; ");
             while (Login.read.Read())
@@ -40,7 +40,6 @@ namespace MassarAdminDesktop
             previw.TopLevel = false;
             previw.Parent = this;
             previw.Show();
-            previw.browse();
         }
 
         private void utilisateursToolStripMenuItem_Click(object sender, EventArgs e)
