@@ -82,27 +82,36 @@ namespace MassarAdminDesktop
 
         public static bool Post(string query)
         {
-            if (!checkConnection())
-                return false;
+            
             MySqlCommand cmd = new MySqlCommand(query, connection);
             try
             {
                 cmd.ExecuteNonQuery();
             }
-            catch {
-                return false;
+            catch (MySqlException ex) 
+            {
+                CloseConnection();
+                OpenConnection();
+                cmd.ExecuteNonQuery();
+                return true;
             }
             return true;
         }
         public static MySqlDataReader Gets(string query)
         {
-            if (!checkConnection())
-                return null;
+            
             //create command and assign the query and connection from the constructor
             MySqlCommand cmd = new MySqlCommand(query, connection);
-
-            return cmd.ExecuteReader();
-        }
+            try
+            {
+                return cmd.ExecuteReader();
+            }
+            catch (MySqlException ex )
+            {
+                CloseConnection();
+                OpenConnection();
+                return cmd.ExecuteReader();
+            }        }
 
         public static string Get(string query)
         {
