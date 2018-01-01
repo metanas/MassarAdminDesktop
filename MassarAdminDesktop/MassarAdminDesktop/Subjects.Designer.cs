@@ -42,6 +42,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.moyenne = new System.Windows.Forms.Label();
             this.min = new System.Windows.Forms.Label();
             this.max = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.moyenne = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,8 +97,9 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(138, 74);
             this.button6.TabIndex = 23;
-            this.button6.Text = "3ie Exam";
+            this.button6.Text = "cc3";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Visible = false;
             // 
             // button5
             // 
@@ -108,8 +109,9 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(138, 74);
             this.button5.TabIndex = 22;
-            this.button5.Text = "2ie Exam";
+            this.button5.Text = "cc2";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Visible = false;
             // 
             // button4
             // 
@@ -119,8 +121,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(138, 74);
             this.button4.TabIndex = 21;
-            this.button4.Text = "1ie Exam";
+            this.button4.Text = "cc1";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
             // 
             // button3
             // 
@@ -130,8 +133,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(138, 74);
             this.button3.TabIndex = 20;
-            this.button3.Text = "3ie Exam";
+            this.button3.Text = "cc3";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Visible = false;
             // 
             // button2
             // 
@@ -141,8 +145,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 74);
             this.button2.TabIndex = 19;
-            this.button2.Text = "2ie Exam";
+            this.button2.Text = "cc2";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
             // 
             // button1
             // 
@@ -152,8 +157,10 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 74);
             this.button1.TabIndex = 18;
-            this.button1.Text = "1ie Exam";
+            this.button1.Text = "cc1";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            
             // 
             // groupBox2
             // 
@@ -183,6 +190,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(502, 151);
             this.panel1.TabIndex = 0;
+            // 
+            // moyenne
+            // 
+            this.moyenne.AutoSize = true;
+            this.moyenne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moyenne.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.moyenne.Location = new System.Drawing.Point(320, 74);
+            this.moyenne.Name = "moyenne";
+            this.moyenne.Size = new System.Drawing.Size(0, 20);
+            this.moyenne.TabIndex = 20;
             // 
             // min
             // 
@@ -290,16 +307,6 @@
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
-            // moyenne
-            // 
-            this.moyenne.AutoSize = true;
-            this.moyenne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moyenne.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.moyenne.Location = new System.Drawing.Point(320, 74);
-            this.moyenne.Name = "moyenne";
-            this.moyenne.Size = new System.Drawing.Size(0, 20);
-            this.moyenne.TabIndex = 20;
-            // 
             // Subjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,7 +317,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Subjects";
             this.Text = "Subjects";
-            this.Load += new System.EventHandler(this.Subjects_Load);
+       
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

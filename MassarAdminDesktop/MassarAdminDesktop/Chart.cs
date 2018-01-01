@@ -25,17 +25,17 @@ namespace MassarAdminDesktop
         }
 
         public void addChartBy(string nom="", SeriesChartType typechart= SeriesChartType.Column, string id_matiere ="", string unite="",string semestre="",string titre="") {
-            string query= "SELECT id_etudiant,prenom ,nom, avg(note) as n from examiner , etudiant where etudiant.id=id_etudiant and  id_groupe='" + this.id_class+"' ";
-            string query2="";
+            string query2= "SELECT id_etudiant,prenom ,nom, avg(note) as n from examiner , etudiant where etudiant.id=id_etudiant and  id_groupe=" + this.id_class+" and";
+            
             
             if (id_matiere != "") 
-                query2+="  id_matiere='"+id_matiere+"' and";
+                query2+=" id_matiere="+id_matiere+" and";
             if (unite != "")
-                query2 += "  id_matiere='" + unite + "' and";
+                query2 += " unite='" + unite + "' and";
             if (semestre != "")
-                query2 += "  id_matiere='" + semestre + "' and";
+                query2 += " semestre='" + semestre + "' and";
             if (titre != "")
-                query2 += "  id_matiere='" + titre + "' and";
+                query2 += " titre='" + titre + "' and";
             if (query2.EndsWith("and"))
                 query2 = query2.Substring(0,query2.Length-3);
             query2 += " group by id_etudiant ";
@@ -48,11 +48,10 @@ namespace MassarAdminDesktop
             };
 
             
-            Login.read = DBConnect.Gets(query+query2);
+            Login.read = DBConnect.Gets(query2);
             while (Login.read.Read())
                 s.Points.AddXY(Login.read["nom"].ToString(), Double.Parse(Login.read["n"].ToString()));
-            for (int i = 0; i < 30; i++)
-                s.Points.AddXY("nom" + i, 18);
+            
                 s.Name = nom;
             this.c.Series.Add(s);
             //this.c.Series.Add(s);
