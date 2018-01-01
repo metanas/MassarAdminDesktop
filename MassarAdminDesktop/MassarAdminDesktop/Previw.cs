@@ -80,8 +80,19 @@ namespace MassarAdminDesktop
                     else
                     {
                         dataGridView1.Rows.Add();
+                        if (excel.getContent(i + 1, y) == "")
+                        {
+                            return;
+                        }
                         for(int j = y;j< excel.sheet.GetRow(i+1).LastCellNum; j++)
                         {
+                            try
+                            {
+                                if ((float.Parse(excel.getContent(i + 1, j)) > 20 || float.Parse(excel.getContent(i + 1, j)) < 0) && j != y){
+                                    dataGridView1.Rows[i - x - 1].Cells[j - y].Style.BackColor = Color.DarkRed;
+                                }
+                            }
+                            catch { }
                             dataGridView1.Rows[i-x-1].Cells[j - y].Value = excel.getContent(i + 1, j);   
                         }
                     }
