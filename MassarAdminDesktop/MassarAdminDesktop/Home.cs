@@ -17,11 +17,13 @@ namespace MassarAdminDesktop
     {
         List<ToolStripButton> cl_buttons = new List<ToolStripButton>();
         List<string> id_classes = new List<string>();
-        
+        public static string id;
+        public static string nomgr;
+
+
         public Home()
         {
             InitializeComponent();
-
             utilisateurs.Visible = Login.admin.isSuper;
             annees.Font = new Font("Arial", 14);
             Login.read = DBConnect.Gets("select annee_scolaire from annee order by annee_scolaire desc ; ");
@@ -30,11 +32,11 @@ namespace MassarAdminDesktop
             Login.read.Close();
             if (annees.Items.Count > 0)
                 annees.SelectedIndex = 0;
-                
+               
             
         }
 
-        private void importerToolStripMenuItem_Click(object sender, EventArgs e)
+        public void importerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Previw previw = new Previw();
             previw.TopLevel = false;
@@ -43,12 +45,12 @@ namespace MassarAdminDesktop
             previw.Show();
         }
 
-        private void utilisateursToolStripMenuItem_Click(object sender, EventArgs e)
+        public void utilisateursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Gerer_Admin gerer = new Gerer_Admin();
             gerer.Show();
         }
-        private void loadgroupes(string annee) {
+        public void loadgroupes(string annee) {
             int i = 0;
             foreach (ToolStripButton b in cl_buttons)
                 Class_Sel.Items.Remove(b);
@@ -68,19 +70,30 @@ namespace MassarAdminDesktop
             Login.read.Close();
         }
         
-        private void groupe(object sender, EventArgs e) {
+        public void groupe(object sender, EventArgs e) {
            int index =  cl_buttons.IndexOf((ToolStripButton)sender);
-            string id = id_classes[index];
-            MessageBox.Show("replace messageBox by opening classes details \n id de groupe : " + id+" , le nom de groupe : "+ ((ToolStripButton)sender).Text);
+            id = id_classes[index];
+            nomgr = ((ToolStripButton)sender).Text;
+            MessageBox.Show("replace messageBox by opening classes details \n id de groupe : " + id+" , le nom de groupe : "+ nomgr);
+            Matiers.Visible = true;
+
             
             //replace messageBox by opening classes details
 
         }
 
-        private void annees_SelectedIndexChanged(object sender, EventArgs e)
+        public void annees_SelectedIndexChanged(object sender, EventArgs e)
         {
             
             loadgroupes(annees.SelectedItem.ToString());
+        }
+
+        private void Matiers_Click(object sender, EventArgs e)
+        {
+            Subjects s = new Subjects();
+            s.TopLevel = true;
+            
+            s.Show();
         }
     }
 }

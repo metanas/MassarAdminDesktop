@@ -24,6 +24,7 @@ namespace MassarAdminDesktop
             }
         }
 
+
         private void Previw_Load(object sender, EventArgs e)
         {
             Excel excel = new Excel(path, "r");
