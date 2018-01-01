@@ -36,6 +36,7 @@
             this.Class_Sel = new System.Windows.Forms.ToolStrip();
             this.annees = new System.Windows.Forms.ToolStripComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.Class_Sel.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             // importerToolStripMenuItem
             // 
             this.importerToolStripMenuItem.Name = "importerToolStripMenuItem";
-            this.importerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.importerToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.importerToolStripMenuItem.Text = "Importer";
             this.importerToolStripMenuItem.Click += new System.EventHandler(this.importerToolStripMenuItem_Click);
             // 
@@ -85,19 +86,29 @@
             // 
             this.Class_Sel.Dock = System.Windows.Forms.DockStyle.Left;
             this.Class_Sel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
             this.annees});
             this.Class_Sel.Location = new System.Drawing.Point(0, 24);
             this.Class_Sel.Name = "Class_Sel";
-            this.Class_Sel.Size = new System.Drawing.Size(124, 516);
+            this.Class_Sel.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.Class_Sel.Size = new System.Drawing.Size(120, 516);
             this.Class_Sel.TabIndex = 2;
             this.Class_Sel.Text = "toolStrip1";
             // 
             // annees
             // 
             this.annees.Name = "annees";
-            this.annees.Size = new System.Drawing.Size(119, 23);
+            this.annees.Size = new System.Drawing.Size(115, 23);
             this.annees.SelectedIndexChanged += new System.EventHandler(this.annees_SelectedIndexChanged);
-            
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::MassarAdminDesktop.Properties.Resources.Refresh_16x;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(117, 20);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // Home
             // 
@@ -129,5 +140,6 @@
         private System.Windows.Forms.ToolStrip Class_Sel;
         private System.Windows.Forms.ToolStripComboBox annees;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
