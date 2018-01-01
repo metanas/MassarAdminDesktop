@@ -36,6 +36,7 @@
             this.Class_Sel = new System.Windows.Forms.ToolStrip();
             this.annees = new System.Windows.Forms.ToolStripComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.Matiers = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.Class_Sel.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             // importerToolStripMenuItem
             // 
             this.importerToolStripMenuItem.Name = "importerToolStripMenuItem";
-            this.importerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.importerToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.importerToolStripMenuItem.Text = "Importer";
             this.importerToolStripMenuItem.Click += new System.EventHandler(this.importerToolStripMenuItem_Click);
             // 
@@ -88,22 +89,33 @@
             this.annees});
             this.Class_Sel.Location = new System.Drawing.Point(0, 24);
             this.Class_Sel.Name = "Class_Sel";
-            this.Class_Sel.Size = new System.Drawing.Size(124, 516);
+            this.Class_Sel.Size = new System.Drawing.Size(116, 516);
             this.Class_Sel.TabIndex = 2;
             this.Class_Sel.Text = "toolStrip1";
             // 
             // annees
             // 
             this.annees.Name = "annees";
-            this.annees.Size = new System.Drawing.Size(119, 23);
+            this.annees.Size = new System.Drawing.Size(111, 23);
             this.annees.SelectedIndexChanged += new System.EventHandler(this.annees_SelectedIndexChanged);
-            
+            // 
+            // Matiers
+            // 
+            this.Matiers.Location = new System.Drawing.Point(624, 123);
+            this.Matiers.Name = "Matiers";
+            this.Matiers.Size = new System.Drawing.Size(227, 103);
+            this.Matiers.TabIndex = 3;
+            this.Matiers.Text = "Arabe";
+            this.Matiers.UseVisualStyleBackColor = true;
+            this.Matiers.Visible = false;
+            this.Matiers.Click += new System.EventHandler(this.Matiers_Click);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 562);
+            this.Controls.Add(this.Matiers);
             this.Controls.Add(this.Class_Sel);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -129,5 +141,6 @@
         private System.Windows.Forms.ToolStrip Class_Sel;
         private System.Windows.Forms.ToolStripComboBox annees;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button Matiers;
     }
 }

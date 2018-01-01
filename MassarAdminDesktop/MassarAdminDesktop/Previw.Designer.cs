@@ -45,11 +45,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 342);
+            this.ClientSize = new System.Drawing.Size(847, 375);
             this.Controls.Add(this.label1);
+            this.Location = new System.Drawing.Point(130, 30);
             this.Name = "Previw";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Previw";
-            this.Load += new System.EventHandler(this.Previw_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

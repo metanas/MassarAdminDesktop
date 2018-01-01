@@ -18,10 +18,7 @@ namespace MassarAdminDesktop
             InitializeComponent();
         }
 
-        private void Previw_Load(object sender, EventArgs e)
-        {
-
-        }
+       
         public void browse()
         {
             
