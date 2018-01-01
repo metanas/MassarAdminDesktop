@@ -16,7 +16,7 @@ namespace MassarAdminDesktop
     class Excel
     {
         XSSFWorkbook workbook;
-        ISheet sheet;
+        public ISheet sheet;
         FileStream file;
 
         public Excel(string Path, string mode = "w")
@@ -97,20 +97,22 @@ namespace MassarAdminDesktop
                 if (sheet.GetRow(i) != null)
                 {
                     int col = sheet.GetRow(i).LastCellNum;
-                    Console.WriteLine(col);
                     for (int j = 0; j <= col; j++)
                     {
-                        MessageBox.Show(getContent(i, j));
                         if (getContent(i, j) == key)
                         {
                             return new int[] { i, j };
                         }
                     }
                 }
-                else { Console.WriteLine(i); }
             }
 
             return new int[2] { -1, -1 };
         }
+        public int GetLastRow()
+        {
+            return sheet.LastRowNum;
+        }
+        
     }
 }

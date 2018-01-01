@@ -92,6 +92,8 @@
             this.Class_Sel.Name = "Class_Sel";
             this.Class_Sel.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.Class_Sel.Size = new System.Drawing.Size(120, 516);
+
+        
             this.Class_Sel.TabIndex = 2;
             this.Class_Sel.Text = "toolStrip1";
             // 
@@ -115,6 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 562);
+            this.Controls.Add(this.Matiers);
             this.Controls.Add(this.Class_Sel);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -141,5 +144,6 @@
         private System.Windows.Forms.ToolStripComboBox annees;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        
     }
 }

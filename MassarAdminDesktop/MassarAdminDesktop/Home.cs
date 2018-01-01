@@ -18,12 +18,12 @@ namespace MassarAdminDesktop
         List<ToolStripButton> cl_buttons = new List<ToolStripButton>();
         List<string> id_classes = new List<string>();
         Groupe Groupe_Form;
-        
+        public static string id;
+        public static string nomgr;
         public Home()
         {
             InitializeComponent();
-            
-                utilisateurs.Visible = Login.admin.isSuper;
+            utilisateurs.Visible = Login.admin.isSuper;
             annees.Font = new Font("Arial", 14);
             Login.read = DBConnect.Gets("select annee_scolaire from annee order by annee_scolaire desc ; ");
             while (Login.read.Read())
@@ -31,25 +31,24 @@ namespace MassarAdminDesktop
             Login.read.Close();
             if (annees.Items.Count > 0)
                 annees.SelectedIndex = 0;
-                
             
         }
 
-        private void importerToolStripMenuItem_Click(object sender, EventArgs e)
+        public void importerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Previw previw = new Previw();
             previw.TopLevel = false;
             previw.Parent = this;
+            previw.Location = new Point(Class_Sel.Width, menuStrip1.Height);
             previw.Show();
-            previw.browse();
         }
 
-        private void utilisateursToolStripMenuItem_Click(object sender, EventArgs e)
+        public void utilisateursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Gerer_Admin gerer = new Gerer_Admin();
             gerer.Show();
         }
-        private void loadgroupes(string annee) {
+        public void loadgroupes(string annee) {
             int i = 0;
             foreach (ToolStripButton b in cl_buttons)
                 Class_Sel.Items.Remove(b);
@@ -68,11 +67,13 @@ namespace MassarAdminDesktop
             }
             Login.read.Close();
         }
-        
+       
         private void groupe(object sender, EventArgs e) {
             int index =  cl_buttons.IndexOf((ToolStripButton)sender);
-            string id = id_classes[index];
+            id = id_classes[index];
+            nomgr = ((ToolStripButton)sender).Text;
             string groupe = ((ToolStripButton)sender).Text;
+            Matiers.Visible = true;
             //MessageBox.Show("replace messageBox by opening classes details \n id de groupe : " + id+" , le nom de groupe : "+ ((ToolStripButton)sender).Text);
             if (Groupe_Form != null) Groupe_Form.Close();
             Groupe_Form = new Groupe(groupe);
@@ -80,14 +81,23 @@ namespace MassarAdminDesktop
             Groupe_Form.Parent = this;
             Groupe_Form.FormBorderStyle = FormBorderStyle.None;
             Groupe_Form.Show();
+
             //replace messageBox by opening classes details
 
         }
 
-        private void annees_SelectedIndexChanged(object sender, EventArgs e)
+        public void annees_SelectedIndexChanged(object sender, EventArgs e)
         {
             
             loadgroupes(annees.SelectedItem.ToString());
+        }
+
+        private void Matiers_Click(object sender, EventArgs e)
+        {
+            Subjects s = new Subjects();
+            s.TopLevel = true;
+            
+            s.Show();
         }
     }
 }
