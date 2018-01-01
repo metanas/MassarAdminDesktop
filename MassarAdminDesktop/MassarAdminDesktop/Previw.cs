@@ -63,16 +63,28 @@ namespace MassarAdminDesktop
                     }
                     catch { }
                 }
-                for(int i = excel.find("ID")[0]; i< excel.GetLastRow(); i++)
+                int x = excel.find("ID")[0];
+                int y = excel.find("ID")[1];
+                for (int i = x; i< excel.GetLastRow(); i++)
                 {
-                    if(i == excel.find("ID")[0])
+                    if(i == x)
                     {
                         int f = 0;
-                        dataGridView1.ColumnCount = excel.sheet.GetRow(i).LastCellNum;
-                        for (int j = excel.find("ID")[1]; j < excel.sheet.GetRow(i).LastCellNum; j++) {
-                            dataGridView1.Columns[f++].HeaderText = excel.getContent(i,j);
+                        dataGridView1.ColumnCount = excel.sheet.GetRow(i).LastCellNum-1;
+                        for (int j = y; j < excel.sheet.GetRow(i).LastCellNum; j++) {
+                            dataGridView1.Columns[f++].HeaderText = excel.getContent(i,j) +" " + excel.getContent(i+1,j);
+                        }
+
+                    }
+                    else
+                    {
+                        dataGridView1.Rows.Add();
+                        for(int j = y;j< excel.sheet.GetRow(i+1).LastCellNum; j++)
+                        {
+                            dataGridView1.Rows[i-x-1].Cells[j - y].Value = excel.getContent(i + 1, j);   
                         }
                     }
+
 
                 }
             }
