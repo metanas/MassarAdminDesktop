@@ -31,8 +31,7 @@ namespace MassarAdminDesktop
             if (annees.Items.Count > 0)
                 annees.SelectedIndex = 0;
 
-            chart ch = new chart(chart1, "1");
-            ch.addChartBy(nom:"moyenne class");
+            
         }
 
         private void importerToolStripMenuItem_Click(object sender, EventArgs e)
