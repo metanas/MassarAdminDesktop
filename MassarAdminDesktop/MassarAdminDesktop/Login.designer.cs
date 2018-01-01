@@ -37,7 +37,7 @@
             // 
             this.nom.Depth = 0;
             this.nom.Hint = "Username";
-            this.nom.Location = new System.Drawing.Point(16, 154);
+            this.nom.Location = new System.Drawing.Point(12, 153);
             this.nom.MouseState = MaterialSkin.MouseState.HOVER;
             this.nom.Name = "nom";
             this.nom.PasswordChar = '\0';
@@ -52,7 +52,7 @@
             // 
             this.password.Depth = 0;
             this.password.Hint = "Password";
-            this.password.Location = new System.Drawing.Point(16, 194);
+            this.password.Location = new System.Drawing.Point(12, 191);
             this.password.MouseState = MaterialSkin.MouseState.HOVER;
             this.password.Name = "password";
             this.password.PasswordChar = '\0';
@@ -66,7 +66,7 @@
             // log_in
             // 
             this.log_in.Depth = 0;
-            this.log_in.Location = new System.Drawing.Point(180, 249);
+            this.log_in.Location = new System.Drawing.Point(176, 240);
             this.log_in.MouseState = MaterialSkin.MouseState.HOVER;
             this.log_in.Name = "log_in";
             this.log_in.Primary = true;

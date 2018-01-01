@@ -73,7 +73,6 @@ namespace MassarAdminDesktop
             id = id_classes[index];
             nomgr = ((ToolStripButton)sender).Text;
             string groupe = ((ToolStripButton)sender).Text;
-            Matiers.Visible = true;
             //MessageBox.Show("replace messageBox by opening classes details \n id de groupe : " + id+" , le nom de groupe : "+ ((ToolStripButton)sender).Text);
             if (Groupe_Form != null) Groupe_Form.Close();
             Groupe_Form = new Groupe(groupe);

@@ -34,12 +34,10 @@
             this.Super_Admin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.modifierr = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.newN = new System.Windows.Forms.TextBox();
-            this.NewP = new System.Windows.Forms.TextBox();
-            this.Super = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ajouter = new System.Windows.Forms.Button();
+            this.newN = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.NewP = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.Super = new MaterialSkin.Controls.MaterialCheckBox();
+            this.ajouter = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.Admins)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +51,7 @@
             this.Super_Admin,
             this.Supprimer,
             this.modifierr});
-            this.Admins.Location = new System.Drawing.Point(211, 152);
+            this.Admins.Location = new System.Drawing.Point(13, 143);
             this.Admins.Name = "Admins";
             this.Admins.Size = new System.Drawing.Size(594, 198);
             this.Admins.TabIndex = 0;
@@ -90,52 +88,59 @@
             // 
             // newN
             // 
-            this.newN.Location = new System.Drawing.Point(211, 71);
+            this.newN.Depth = 0;
+            this.newN.Hint = "Username";
+            this.newN.Location = new System.Drawing.Point(51, 93);
+            this.newN.MouseState = MaterialSkin.MouseState.HOVER;
             this.newN.Name = "newN";
-            this.newN.Size = new System.Drawing.Size(100, 20);
-            this.newN.TabIndex = 1;
+            this.newN.PasswordChar = '\0';
+            this.newN.SelectedText = "";
+            this.newN.SelectionLength = 0;
+            this.newN.SelectionStart = 0;
+            this.newN.Size = new System.Drawing.Size(125, 23);
+            this.newN.TabIndex = 7;
+            this.newN.UseSystemPasswordChar = false;
             // 
             // NewP
             // 
-            this.NewP.Location = new System.Drawing.Point(421, 71);
+            this.NewP.Depth = 0;
+            this.NewP.Hint = "Password";
+            this.NewP.Location = new System.Drawing.Point(182, 93);
+            this.NewP.MouseState = MaterialSkin.MouseState.HOVER;
             this.NewP.Name = "NewP";
-            this.NewP.Size = new System.Drawing.Size(100, 20);
-            this.NewP.TabIndex = 2;
+            this.NewP.PasswordChar = '\0';
+            this.NewP.SelectedText = "";
+            this.NewP.SelectionLength = 0;
+            this.NewP.SelectionStart = 0;
+            this.NewP.Size = new System.Drawing.Size(125, 23);
+            this.NewP.TabIndex = 8;
+            this.NewP.UseSystemPasswordChar = true;
             // 
             // Super
             // 
             this.Super.AutoSize = true;
-            this.Super.Location = new System.Drawing.Point(554, 74);
+            this.Super.Depth = 0;
+            this.Super.Font = new System.Drawing.Font("Roboto", 10F);
+            this.Super.Location = new System.Drawing.Point(320, 89);
+            this.Super.Margin = new System.Windows.Forms.Padding(0);
+            this.Super.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.Super.MouseState = MaterialSkin.MouseState.HOVER;
             this.Super.Name = "Super";
-            this.Super.Size = new System.Drawing.Size(86, 17);
-            this.Super.TabIndex = 3;
+            this.Super.Ripple = true;
+            this.Super.Size = new System.Drawing.Size(109, 30);
+            this.Super.TabIndex = 9;
             this.Super.Text = "Super Admin";
             this.Super.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(157, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Nom";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(344, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Mot de passe";
-            // 
             // ajouter
             // 
-            this.ajouter.Location = new System.Drawing.Point(664, 72);
+            this.ajouter.Depth = 0;
+            this.ajouter.Location = new System.Drawing.Point(449, 92);
+            this.ajouter.MouseState = MaterialSkin.MouseState.HOVER;
             this.ajouter.Name = "ajouter";
-            this.ajouter.Size = new System.Drawing.Size(125, 23);
-            this.ajouter.TabIndex = 6;
+            this.ajouter.Primary = true;
+            this.ajouter.Size = new System.Drawing.Size(75, 23);
+            this.ajouter.TabIndex = 10;
             this.ajouter.Text = "Ajouter";
             this.ajouter.UseVisualStyleBackColor = true;
             this.ajouter.Click += new System.EventHandler(this.ajouter_Click);
@@ -144,10 +149,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 400);
+            this.ClientSize = new System.Drawing.Size(631, 353);
             this.Controls.Add(this.ajouter);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.Super);
             this.Controls.Add(this.NewP);
             this.Controls.Add(this.newN);
@@ -163,16 +166,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView Admins;
-        private System.Windows.Forms.TextBox newN;
-        private System.Windows.Forms.TextBox NewP;
-        private System.Windows.Forms.CheckBox Super;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button ajouter;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Super_Admin;
         private System.Windows.Forms.DataGridViewButtonColumn Supprimer;
         private System.Windows.Forms.DataGridViewButtonColumn modifierr;
+        private MaterialSkin.Controls.MaterialSingleLineTextField newN;
+        private MaterialSkin.Controls.MaterialSingleLineTextField NewP;
+        private MaterialSkin.Controls.MaterialCheckBox Super;
+        private MaterialSkin.Controls.MaterialRaisedButton ajouter;
     }
 }
