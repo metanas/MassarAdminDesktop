@@ -17,11 +17,6 @@ namespace MassarAdminDesktop
         public Subjects()
         {
             InitializeComponent();
-        }
-
-        private void Subjects_Load(object sender, EventArgs e)
-        {
-
             string id = Home.id;
             string nomgr = Home.nomgr;
             MessageBox.Show(id + nomgr);
@@ -31,6 +26,33 @@ namespace MassarAdminDesktop
                 progressBar1.ForeColor = Color.Yellow;
 
             }
+
+            max.Text = DBConnect.Get("select max(note) from examiner where id_matiere=1 and id_groupe=" + id + ";");
+            min.Text = DBConnect.Get("select min(note) from examiner where id_matiere=1 and id_groupe=" + id + ";");
+
+            string moy = DBConnect.Get("select avg(note) from examiner where id_matiere=1 and id_groupe=" + id + ";");
+            progressBar1.Value = (int)Math.Ceiling(float.Parse( moy));
+
+            Login.read = DBConnect.Gets("select nom , prenom from groupe_matiere_enseignant , enseignant where id_enseignant=id and id_groupe="+id+" and id_matiere=1;");
+            while (Login.read.Read())
+                professeur.Text = Login.read["nom"].ToString() + " " + Login.read["prenom"].ToString();
+            Login.read.Close();
+            
+            moyenne.Text = moy.Substring(0, 5);
+            if (progressBar1.Value < 10)
+                moyenne.ForeColor = Color.Red;
+
+
+
+
+
+        }
+
+        private void Subjects_Load(object sender, EventArgs e)
+        {
+
+           
+
         }
 
     }
