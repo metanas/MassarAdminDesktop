@@ -32,7 +32,6 @@ namespace MassarAdminDesktop
             Login.read.Close();
             if (annees.Items.Count > 0)
                 annees.SelectedIndex = 0;
-               
             
         }
 

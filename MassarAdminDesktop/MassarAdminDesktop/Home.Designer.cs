@@ -96,7 +96,7 @@
             // annees
             // 
             this.annees.Name = "annees";
-            this.annees.Size = new System.Drawing.Size(111, 23);
+            this.annees.Size = new System.Drawing.Size(107, 23);
             this.annees.SelectedIndexChanged += new System.EventHandler(this.annees_SelectedIndexChanged);
             // 
             // Matiers
