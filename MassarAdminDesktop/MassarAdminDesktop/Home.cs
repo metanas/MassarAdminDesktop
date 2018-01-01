@@ -17,10 +17,9 @@ namespace MassarAdminDesktop
     {
         List<ToolStripButton> cl_buttons = new List<ToolStripButton>();
         List<string> id_classes = new List<string>();
+        Groupe Groupe_Form;
         public static string id;
         public static string nomgr;
-
-
         public Home()
         {
             InitializeComponent();
@@ -68,15 +67,21 @@ namespace MassarAdminDesktop
             }
             Login.read.Close();
         }
-        
-        public void groupe(object sender, EventArgs e) {
-           int index =  cl_buttons.IndexOf((ToolStripButton)sender);
+       
+        private void groupe(object sender, EventArgs e) {
+            int index =  cl_buttons.IndexOf((ToolStripButton)sender);
             id = id_classes[index];
             nomgr = ((ToolStripButton)sender).Text;
-            MessageBox.Show("replace messageBox by opening classes details \n id de groupe : " + id+" , le nom de groupe : "+ nomgr);
+            string groupe = ((ToolStripButton)sender).Text;
             Matiers.Visible = true;
+            //MessageBox.Show("replace messageBox by opening classes details \n id de groupe : " + id+" , le nom de groupe : "+ ((ToolStripButton)sender).Text);
+            if (Groupe_Form != null) Groupe_Form.Close();
+            Groupe_Form = new Groupe(groupe);
+            Groupe_Form.TopLevel = false;
+            Groupe_Form.Parent = this;
+            Groupe_Form.FormBorderStyle = FormBorderStyle.None;
+            Groupe_Form.Show();
 
-            
             //replace messageBox by opening classes details
 
         }
