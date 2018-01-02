@@ -14,8 +14,10 @@ namespace MassarAdminDesktop
     {
         List<Button> cc = new List<Button>(); 
         string[] semestre= new string[6];
+        string idm;
+        string nomm;
 
-        public Subjects()
+        public Subjects(string idm, string nomm)
         {
             InitializeComponent();
             semestre[0] = "1"; semestre[1] = "1"; semestre[2] = "1"; semestre[3] = "2"; semestre[4] = "2"; semestre[5] = "2";
@@ -24,6 +26,8 @@ namespace MassarAdminDesktop
                 b.Click += new System.EventHandler(this.clickcc);
             string id = Home.id;
             string nomgr = Home.nomgr;
+            this.idm = idm;
+            this.nomm = nomm;
             MessageBox.Show(id + nomgr);
             MessageBox.Show(progressBar1.Value.ToString());
             if (progressBar1.Value >= 10)
@@ -33,13 +37,13 @@ namespace MassarAdminDesktop
             }
             chart ch = new chart(chart1, Home.id);
             ch.addChartBy(nom: nomgr);
-            max.Text = DBConnect.Get("select max(note) from examiner where id_matiere=1 and id_groupe=" + id + ";");
-            min.Text = DBConnect.Get("select min(note) from examiner where id_matiere=1 and id_groupe=" + id + ";");
+            max.Text = DBConnect.Get("select max(note) from examiner where id_matiere="+this.idm+" and id_groupe=" + id + ";");
+            min.Text = DBConnect.Get("select min(note) from examiner where id_matiere=" + this.idm + " and id_groupe=" + id + ";");
 
-            string moy = DBConnect.Get("select avg(note) from examiner where id_matiere=1 and id_groupe=" + id + ";");
-            progressBar1.Value = (int)Math.Ceiling(float.Parse( moy));
+            string moy = DBConnect.Get("select avg(note) from examiner where id_matiere=" + this.idm + " and id_groupe=" + id + ";");
+            progressBar1.Value = (int)Math.Ceiling(float.Parse(moy));
 
-            Login.read = DBConnect.Gets("select nom , prenom from groupe_matiere_enseignant , enseignant where id_enseignant=id and id_groupe="+id+" and id_matiere=1;");
+            Login.read = DBConnect.Gets("select nom , prenom from groupe_matiere_enseignant , enseignant where id_enseignant=id and id_groupe="+id+" and id_matiere=" + this.idm);
             while (Login.read.Read())
                 professeur.Text = Login.read["nom"].ToString() + " " + Login.read["prenom"].ToString();
             Login.read.Close();
@@ -48,7 +52,7 @@ namespace MassarAdminDesktop
             if (progressBar1.Value < 10)
                 moyenne.ForeColor = Color.Red;
 
-            Login.read = DBConnect.Gets("select distinct titre from examiner where id_groupe = "+id+" and id_matiere=1 order by semestre,titre");
+            Login.read = DBConnect.Gets("select distinct titre from examiner where id_groupe = "+id+ " and id_matiere=" + this.idm + " order by semestre,titre");
             int i = 0;
             while (Login.read.Read())
                 cc[i++].Visible = true;

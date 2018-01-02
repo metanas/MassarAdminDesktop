@@ -31,6 +31,7 @@ namespace MassarAdminDesktop
             Login.read.Close();
             if (annees.Items.Count > 0)
                 annees.SelectedIndex = 0;
+            loadgroupes(annees.SelectedText);
             
         }
 
@@ -75,7 +76,7 @@ namespace MassarAdminDesktop
             string groupe = ((ToolStripButton)sender).Text;
             //MessageBox.Show("replace messageBox by opening classes details \n id de groupe : " + id+" , le nom de groupe : "+ ((ToolStripButton)sender).Text);
             if (Groupe_Form != null) Groupe_Form.Close();
-            Groupe_Form = new Groupe(groupe);
+            Groupe_Form = new Groupe(id, groupe);
             Groupe_Form.TopLevel = false;
             Groupe_Form.Parent = this;
             Groupe_Form.FormBorderStyle = FormBorderStyle.None;
@@ -93,10 +94,7 @@ namespace MassarAdminDesktop
 
         private void Matiers_Click(object sender, EventArgs e)
         {
-            Subjects s = new Subjects();
-            s.TopLevel = true;
             
-            s.Show();
         }
     }
 }

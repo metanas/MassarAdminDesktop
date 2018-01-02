@@ -35,13 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupe_l = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -111,66 +105,21 @@
             this.groupe_l.Size = new System.Drawing.Size(0, 26);
             this.groupe_l.TabIndex = 4;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(76)))), ((int)(((byte)(57)))));
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(38, 253);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 100);
-            this.panel4.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(52, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 26);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Français";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(62, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 26);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Arabe";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(275, 253);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 100);
-            this.panel5.TabIndex = 7;
-            // 
             // Groupe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 534);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.groupe_l);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Location = new System.Drawing.Point(100, 0);
             this.Name = "Groupe";
             this.Text = "Groupe";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,9 +133,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label groupe_l;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel5;
     }
 }
