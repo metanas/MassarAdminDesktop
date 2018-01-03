@@ -117,7 +117,6 @@ namespace MassarAdminDesktop
             Groupe_Form.TopLevel = false;
             Groupe_Form.Parent = this;
             Groupe_Form.Location = new Point(panel1.Width, bunifuSeparator1.Location.Y);
-            Groupe_Form.FormBorderStyle = FormBorderStyle.None;
             Groupe_Form.Show();
             if (ActifForm != null)
             {
@@ -125,6 +124,7 @@ namespace MassarAdminDesktop
                 Home.ActifForm.Hide();
             }
             Home.ActifForm = Groupe_Form;
+            Home_ResizeBegin(sender, e);
             Back.Visible = true;
             HomeButton.Visible = true;
             //replace messageBox by opening classes details
@@ -145,6 +145,7 @@ namespace MassarAdminDesktop
                 Home.ActifForm.Hide();
             }
             Home.ActifForm = previw;
+            Home_ResizeBegin(sender,e);
         }
 
         private void SuperUser_Click(object sender, EventArgs e)
@@ -157,6 +158,7 @@ namespace MassarAdminDesktop
                 Home.ActifForm.Hide();
             }
             Home.ActifForm = gerer;
+
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -178,6 +180,11 @@ namespace MassarAdminDesktop
             SuperUser.Location = new Point(bunifuImageButton2.Location.X - SuperUser.Width - 5, SuperUser.Location.Y);
             analyse.Width = this.Width - panel1.Width;
             analyse.Height = this.Height - bunifuSeparator1.Location.Y;
+            if(ActifForm != null)
+            {
+                ActifForm.Width = this.Width - panel1.Width;
+                ActifForm.Height = this.Height - bunifuSeparator1.Location.Y;
+            }
         }
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)

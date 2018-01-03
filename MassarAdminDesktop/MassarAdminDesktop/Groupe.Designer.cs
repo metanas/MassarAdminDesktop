@@ -29,24 +29,79 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.groupe_l = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupe_l = new System.Windows.Forms.Label();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.progressBar1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(36, 68);
+            this.panel1.Controls.Add(this.bunifuSeparator1);
+            this.panel1.Controls.Add(this.groupe_l);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(502, 129);
+            this.panel1.Size = new System.Drawing.Size(759, 460);
             this.panel1.TabIndex = 0;
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(14, 187);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(745, 35);
+            this.bunifuSeparator1.TabIndex = 10;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // groupe_l
+            // 
+            this.groupe_l.AutoSize = true;
+            this.groupe_l.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupe_l.Location = new System.Drawing.Point(106, 2);
+            this.groupe_l.Name = "groupe_l";
+            this.groupe_l.Size = new System.Drawing.Size(0, 26);
+            this.groupe_l.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 26);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Classe :";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(131)))), ((int)(((byte)(201)))));
+            this.panel3.BackgroundImage = global::MassarAdminDesktop.Properties.Resources.people;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Location = new System.Drawing.Point(12, 52);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(149, 129);
+            this.panel3.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.progressBar1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(12, 52);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(502, 129);
+            this.panel2.TabIndex = 6;
             // 
             // progressBar1
             // 
@@ -68,76 +123,34 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Élèves";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 26);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Classe :";
-            // 
-            // groupe_l
-            // 
-            this.groupe_l.AutoSize = true;
-            this.groupe_l.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupe_l.Location = new System.Drawing.Point(130, 18);
-            this.groupe_l.Name = "groupe_l";
-            this.groupe_l.Size = new System.Drawing.Size(0, 26);
-            this.groupe_l.TabIndex = 4;
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(38, 203);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(1057, 35);
-            this.bunifuSeparator1.TabIndex = 5;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(131)))), ((int)(((byte)(201)))));
-            this.panel3.BackgroundImage = global::MassarAdminDesktop.Properties.Resources.people;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(36, 68);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(149, 129);
-            this.panel3.TabIndex = 2;
-            this.panel3.Click += new System.EventHandler(this.panel3_Click);
-            // 
             // Groupe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 534);
-            this.Controls.Add(this.bunifuSeparator1);
-            this.Controls.Add(this.groupe_l);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(771, 476);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(100, 0);
             this.Name = "Groupe";
             this.Text = "Groupe";
+            this.Resize += new System.EventHandler(this.Groupe_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel3;
+
         private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        private System.Windows.Forms.Label groupe_l;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label groupe_l;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
     }
 }
