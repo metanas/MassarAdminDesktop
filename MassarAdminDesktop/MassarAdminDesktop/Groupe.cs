@@ -66,7 +66,30 @@ namespace MassarAdminDesktop
         }
 
 
+        void click_eleves()
+        {
+            Eleves S = new Eleves(this.id);
+            S.TopLevel = false;
+            S.Parent = Home.ActifForm.Parent;
+            S.Location = new Point(this.Location.X, this.Location.Y);
+            S.Show();
+            if (Home.ActifForm != null)
+            {
+                Home.ActifForm.Hide();
+                Home.PreviewFrom.Add(Home.ActifForm);
 
+            }
+            Home.ActifForm = S;
+        }
 
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            click_eleves();
+        }
     }
 }

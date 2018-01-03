@@ -22,6 +22,8 @@ namespace MassarAdminDesktop
             this.id_class = id_class;
             this.c.Series.Clear();
             this.c.ChartAreas[0].AxisX.Interval = 1;
+            this.c.ChartAreas[0].AxisY.Maximum = 20;
+            
         }
 
         public void addChartBy(string nom="", SeriesChartType typechart= SeriesChartType.Column, string id_matiere ="", string unite="",string semestre="",string titre="") {
