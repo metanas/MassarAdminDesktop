@@ -51,7 +51,7 @@
             this.Super_Admin,
             this.Supprimer,
             this.modifierr});
-            this.Admins.Location = new System.Drawing.Point(13, 143);
+            this.Admins.Location = new System.Drawing.Point(13, 136);
             this.Admins.Name = "Admins";
             this.Admins.Size = new System.Drawing.Size(594, 198);
             this.Admins.TabIndex = 0;
@@ -149,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 353);
+            this.ClientSize = new System.Drawing.Size(621, 343);
             this.Controls.Add(this.ajouter);
             this.Controls.Add(this.Super);
             this.Controls.Add(this.NewP);
