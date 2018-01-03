@@ -47,13 +47,13 @@ namespace MassarAdminDesktop
 
         void click_matiere(object sender, EventArgs e)
         {
-            Button b = (Button)sender;
-            string nom = b.Text.Split('_')[0];
-            string id = b.Text.Split('_')[1];
+            Bunifu.Framework.UI.BunifuTileButton b = (Bunifu.Framework.UI.BunifuTileButton)sender;
+            string nom = b.LabelText.Split('_')[0];
+            string id = b.LabelText.Split('_')[1];
             Subjects S = new Subjects(id, nom);
             S.TopLevel = false;
             S.Parent = this.Parent;
-            
+            S.Location = new Point(this.Location.X, this.Location.Y);
             this.Hide();
             S.Show();
         }
