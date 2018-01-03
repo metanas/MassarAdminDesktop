@@ -82,11 +82,6 @@ namespace MassarAdminDesktop
             Home.ActifForm = S;
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
         private void panel3_Click(object sender, EventArgs e)
         {
             click_eleves();
