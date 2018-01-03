@@ -19,7 +19,11 @@ namespace MassarAdminDesktop
         private void Analyse_Load(object sender, EventArgs e)
         {
             string countetu = DBConnect.Get("select count(*) from etudiant");
+            string countprof = DBConnect.Get("select count(*) from enseignant");
+            string countclasse = DBConnect.Get("select count(*) from groupe");
             Betudiant.LabelText = countetu;
+            Bprofesseur.LabelText=countprof;
+            Bclasse.LabelText = countclasse;
             
         }
     }
