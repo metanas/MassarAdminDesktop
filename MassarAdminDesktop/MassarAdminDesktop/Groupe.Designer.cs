@@ -109,7 +109,6 @@
             this.panel3.Size = new System.Drawing.Size(149, 129);
             this.panel3.TabIndex = 2;
             this.panel3.Click += new System.EventHandler(this.panel3_Click);
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // Groupe
             // 

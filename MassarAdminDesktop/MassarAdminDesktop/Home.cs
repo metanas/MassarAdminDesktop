@@ -38,6 +38,7 @@ namespace MassarAdminDesktop
             skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Grey400, MaterialSkin.Primary.Grey700, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
             SuperUser.Visible = Login.admin.isSuper;
             annees.Font = new Font("Arial", 14);
+            annees.Items.Clear();
             Login.read = DBConnect.Gets("select annee_scolaire from annee order by annee_scolaire desc ; ");
             while (Login.read.Read())
                 annees.Items.Add(Login.read["annee_scolaire"].ToString());
@@ -45,6 +46,10 @@ namespace MassarAdminDesktop
             if (annees.Items.Count > 0)
                 annees.SelectedIndex = 0;
             loadgroupes(annees.SelectedItem.ToString());
+            loadHome();
+        }
+        public void loadHome()
+        {
             analyse = new Analyse();
             analyse.TopLevel = false;
             analyse.Parent = this;
@@ -52,7 +57,6 @@ namespace MassarAdminDesktop
             analyse.Show();
             PreviewFrom.Add(analyse);
         }
-
         public void loadgroupes(string annee)
         {
             int i = 0;
@@ -92,7 +96,6 @@ namespace MassarAdminDesktop
 
         private void groupe(object sender, EventArgs e)
         {
-            int index = -1;
             for (int i = 0; i < cl_buttons.Count; i++)
             {
                 if (cl_buttons[i] == ((Bunifu.Framework.UI.BunifuFlatButton)sender))
@@ -106,8 +109,8 @@ namespace MassarAdminDesktop
             if (lastClick != null) lastClick.selected = false;
             lastClick = (Bunifu.Framework.UI.BunifuFlatButton)sender;
             lastClick.selected = true;
+            analyse.Hide();
             //MessageBox.Show("replace messageBox by opening classes details \n id de groupe : " + id+" , le nom de groupe : "+ ((ToolStripButton)sender).Text);
-
             Groupe Groupe_Form = new Groupe(id, Home.nomgr);
             Groupe_Form.TopLevel = false;
             Groupe_Form.Parent = this;
@@ -120,7 +123,6 @@ namespace MassarAdminDesktop
                 Home.ActifForm.Hide();
             }
             Home.ActifForm = Groupe_Form;
-            analyse.Hide();
             Back.Visible = true;
             HomeButton.Visible = true;
             //replace messageBox by opening classes details
@@ -129,7 +131,7 @@ namespace MassarAdminDesktop
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
-
+            analyse.Hide();
             Previw previw = new Previw();
             previw.TopLevel = false;
             previw.Parent = this;
@@ -145,7 +147,6 @@ namespace MassarAdminDesktop
 
         private void SuperUser_Click(object sender, EventArgs e)
         {
-
             Gerer_Admin gerer = new Gerer_Admin();
             gerer.Show();
             if (ActifForm != null)
@@ -189,7 +190,7 @@ namespace MassarAdminDesktop
                 Home.ActifForm = PreviewFrom[PreviewFrom.Count - 1];
                 Home.PreviewFrom.Remove(ActifForm);
             }
-            if (Home.PreviewFrom.Count == 0)
+            if (Home.PreviewFrom.Count == 1)
             {
                 Home_Click(sender, e);
             }
@@ -206,7 +207,7 @@ namespace MassarAdminDesktop
                 from.Close();
             }
             PreviewFrom.Clear();
-            Home_Load(sender, e);
+            loadHome();
 
         }
     }
