@@ -175,6 +175,7 @@
             this.HomeButton.TabStop = false;
             this.HomeButton.Visible = false;
             this.HomeButton.Zoom = 10;
+            this.HomeButton.Click += new System.EventHandler(this.Home_Click);
             // 
             // Home
             // 

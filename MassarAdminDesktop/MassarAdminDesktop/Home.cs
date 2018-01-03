@@ -17,6 +17,7 @@ namespace MassarAdminDesktop
     {
         List<Bunifu.Framework.UI.BunifuFlatButton> cl_buttons = new List<Bunifu.Framework.UI.BunifuFlatButton>();
         List<string> id_classes = new List<string>();
+        Analyse analyse;
         public static string id;
         public static string nomgr;
         public static string idann;
@@ -44,12 +45,18 @@ namespace MassarAdminDesktop
             if (annees.Items.Count > 0)
                 annees.SelectedIndex = 0;
             loadgroupes(annees.SelectedItem.ToString());
+            analyse = new Analyse();
+            analyse.TopLevel = false;
+            analyse.Parent = this;
+            analyse.Location = new Point(panel1.Width, bunifuSeparator1.Location.Y);
+            analyse.Show();
+            PreviewFrom.Add(analyse);
         }
 
         public void loadgroupes(string annee)
         {
             int i = 0;
-            foreach (var b in panel1.Controls)
+            foreach (var b in cl_buttons)
             {
                 if (b.GetType() == typeof(Bunifu.Framework.UI.BunifuFlatButton))
                 {
@@ -88,13 +95,12 @@ namespace MassarAdminDesktop
             int index = -1;
             for (int i = 0; i < cl_buttons.Count; i++)
             {
-                if (cl_buttons[i].Name == ((Bunifu.Framework.UI.BunifuFlatButton)sender).Name)
+                if (cl_buttons[i] == ((Bunifu.Framework.UI.BunifuFlatButton)sender))
                 {
-                    index = i;
+                    id = id_classes[i];
                     break;
                 }
             }
-            id = id_classes[index];
 
             nomgr = ((Bunifu.Framework.UI.BunifuFlatButton)sender).Text;
             if (lastClick != null) lastClick.selected = false;
@@ -114,7 +120,9 @@ namespace MassarAdminDesktop
                 Home.ActifForm.Hide();
             }
             Home.ActifForm = Groupe_Form;
+            analyse.Hide();
             Back.Visible = true;
+            HomeButton.Visible = true;
             //replace messageBox by opening classes details
 
         }
@@ -174,7 +182,7 @@ namespace MassarAdminDesktop
 
         private void Back_Click(object sender, EventArgs e)
         {
-            if (Home.PreviewFrom.Count != 0)
+            if (Home.PreviewFrom.Count >= 1)
             {
                 Home.PreviewFrom[PreviewFrom.Count - 1].Show();
                 Home.ActifForm.Close();
@@ -183,14 +191,14 @@ namespace MassarAdminDesktop
             }
             if (Home.PreviewFrom.Count == 0)
             {
-                Back.Visible = false;
-                HomeButton.Visible = false;
+                Home_Click(sender, e);
             }
         }
 
         private void Home_Click(object sender, EventArgs e)
         {
-            
+            if(Home.ActifForm != null)
+                Home.ActifForm.Close();
             Back.Visible = false;
             HomeButton.Visible = false;
             foreach (Form from in PreviewFrom)
@@ -198,6 +206,8 @@ namespace MassarAdminDesktop
                 from.Close();
             }
             PreviewFrom.Clear();
+            Home_Load(sender, e);
+
         }
     }
 }

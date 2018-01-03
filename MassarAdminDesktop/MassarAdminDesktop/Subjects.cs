@@ -56,10 +56,6 @@ namespace MassarAdminDesktop
                 cc[i++].Visible = true;
             Login.read.Close();
 
-
-            
-
-
         }
         private void clickcc(object sender,EventArgs e)
         {
