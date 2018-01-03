@@ -39,6 +39,7 @@
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.SuperUser = new Bunifu.Framework.UI.BunifuImageButton();
+            this.search = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
@@ -50,7 +51,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.panel1.Controls.Add(this.search);
             this.panel1.Controls.Add(this.bunifuImageButton3);
             this.panel1.Controls.Add(this.annees);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -177,6 +179,20 @@
             this.SuperUser.Zoom = 10;
             this.SuperUser.Click += new System.EventHandler(this.SuperUser_Click);
             // 
+            // search
+            // 
+            this.search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
+            this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.search.ForeColor = System.Drawing.Color.White;
+            this.search.Icon = ((System.Drawing.Image)(resources.GetObject("search.Icon")));
+            this.search.Location = new System.Drawing.Point(2, 108);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(164, 42);
+            this.search.TabIndex = 11;
+            this.search.text = "";
+            this.search.OnTextChange += new System.EventHandler(this.search_OnTextChange);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,5 +235,6 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuImageButton HomeButton;
+        private Bunifu.Framework.UI.BunifuTextbox search;
     }
 }
