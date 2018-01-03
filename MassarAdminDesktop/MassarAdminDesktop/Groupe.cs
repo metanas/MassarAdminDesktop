@@ -16,7 +16,7 @@ namespace MassarAdminDesktop
         string id;
         string groupe;
         List<Bunifu.Framework.UI.BunifuTileButton> Matieres = new List<Bunifu.Framework.UI.BunifuTileButton>();
-
+        public Form PreviewForm;
 
         public Groupe(string id, string groupe)
         {
@@ -26,12 +26,12 @@ namespace MassarAdminDesktop
             this.groupe_l.Text = groupe;
 
             Login.read = DBConnect.Gets("SELECT ma.id, ma.nom FROM groupe_matiere_enseignant, matiere as ma WHERE ma.id = id_matiere and id_groupe = " + id);
-            int w = panel2.Location.X;
+            int w = bunifuSeparator1.Location.X;
             while (Login.read.Read())
             {
 
                 Bunifu.Framework.UI.BunifuTileButton b = new Bunifu.Framework.UI.BunifuTileButton();
-                b.Location = new Point(w, panel2.Location.Y + panel2.Height + 20);
+                b.Location = new Point(w, bunifuSeparator1.Location.Y + bunifuSeparator1.Height + 20);
                 b.LabelText = Login.read[1] + "_" + Login.read[0];
                 b.Click += new EventHandler(this.click_matiere);
                 Matieres.Add(b);
@@ -47,15 +47,22 @@ namespace MassarAdminDesktop
 
         void click_matiere(object sender, EventArgs e)
         {
+           
             Bunifu.Framework.UI.BunifuTileButton b = (Bunifu.Framework.UI.BunifuTileButton)sender;
             string nom = b.LabelText.Split('_')[0];
             string id = b.LabelText.Split('_')[1];
             Subjects S = new Subjects(id, nom);
             S.TopLevel = false;
-            S.Parent = this.Parent;
+            S.Parent = Home.ActifForm.Parent;
             S.Location = new Point(this.Location.X, this.Location.Y);
-            this.Hide();
             S.Show();
+            if (Home.ActifForm != null)
+            {
+                Home.ActifForm.Hide();
+                Home.PreviewFrom.Add(Home.ActifForm);
+
+            }
+            Home.ActifForm = S;
         }
 
 

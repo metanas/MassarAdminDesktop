@@ -301,6 +301,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(130, 30);
             this.Name = "Previw";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

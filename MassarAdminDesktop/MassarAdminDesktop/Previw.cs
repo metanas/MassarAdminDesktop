@@ -13,6 +13,7 @@ namespace MassarAdminDesktop
     public partial class Previw : Form
     {
         string path,fileName;
+        public Form PreviewForm; 
         public Previw()
         {
             InitializeComponent();
