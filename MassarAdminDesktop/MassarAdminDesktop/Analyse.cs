@@ -21,9 +21,9 @@ namespace MassarAdminDesktop
             string countetu = DBConnect.Get("select count(*) from etudiant");
             string countprof = DBConnect.Get("select count(*) from enseignant");
             string countclasse = DBConnect.Get("select count(*) from groupe");
-            Betudiant.LabelText = countetu;
-            Bprofesseur.LabelText=countprof;
-            Bclasse.LabelText = countclasse;
+            label1.Text = countetu;
+            label2.Text = countprof;
+            label3.Text = countclasse;
             
         }
     }
