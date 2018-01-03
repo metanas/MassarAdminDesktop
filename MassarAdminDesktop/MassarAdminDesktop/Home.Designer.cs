@@ -28,121 +28,175 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.utilisateurs = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.Class_Sel = new System.Windows.Forms.ToolStrip();
-            this.annees = new System.Windows.Forms.ToolStripComboBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.menuStrip1.SuspendLayout();
-            this.Class_Sel.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.annees = new System.Windows.Forms.ComboBox();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.Back = new Bunifu.Framework.UI.BunifuImageButton();
+            this.SuperUser = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Back)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // panel1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.utilisateurs});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1154, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel1.Controls.Add(this.bunifuImageButton3);
+            this.panel1.Controls.Add(this.annees);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(208, 532);
+            this.panel1.TabIndex = 0;
             // 
-            // fileToolStripMenuItem
+            // bunifuImageButton3
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importerToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.fileToolStripMenuItem.Text = "Fichier";
-            // 
-            // importerToolStripMenuItem
-            // 
-            this.importerToolStripMenuItem.Name = "importerToolStripMenuItem";
-            this.importerToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.importerToolStripMenuItem.Text = "Importer";
-            this.importerToolStripMenuItem.Click += new System.EventHandler(this.importerToolStripMenuItem_Click);
-            // 
-            // utilisateurs
-            // 
-            this.utilisateurs.Name = "utilisateurs";
-            this.utilisateurs.Size = new System.Drawing.Size(77, 20);
-            this.utilisateurs.Text = "Utilisateurs";
-            this.utilisateurs.Click += new System.EventHandler(this.utilisateursToolStripMenuItem_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 540);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1154, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // Class_Sel
-            // 
-            this.Class_Sel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Class_Sel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.annees});
-            this.Class_Sel.Location = new System.Drawing.Point(0, 24);
-            this.Class_Sel.Name = "Class_Sel";
-            this.Class_Sel.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.Class_Sel.Size = new System.Drawing.Size(120, 516);
-
-        
-            this.Class_Sel.TabIndex = 2;
-            this.Class_Sel.Text = "toolStrip1";
+            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
+            this.bunifuImageButton3.ImageActive = null;
+            this.bunifuImageButton3.Location = new System.Drawing.Point(3, 4);
+            this.bunifuImageButton3.Name = "bunifuImageButton3";
+            this.bunifuImageButton3.Size = new System.Drawing.Size(199, 68);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bunifuImageButton3.TabIndex = 4;
+            this.bunifuImageButton3.TabStop = false;
+            this.bunifuImageButton3.Zoom = 10;
             // 
             // annees
             // 
+            this.annees.FormattingEnabled = true;
+            this.annees.Location = new System.Drawing.Point(0, 78);
             this.annees.Name = "annees";
-            this.annees.Size = new System.Drawing.Size(115, 23);
-            this.annees.SelectedIndexChanged += new System.EventHandler(this.annees_SelectedIndexChanged);
+            this.annees.Size = new System.Drawing.Size(208, 21);
+            this.annees.TabIndex = 0;
+            this.annees.SelectedIndexChanged += new System.EventHandler(this.annees_SelectedIndexChanged_1);
             // 
-            // toolStripButton1
+            // bunifuImageButton1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::MassarAdminDesktop.Properties.Resources.Refresh_16x;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(117, 20);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(1002, 29);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(33, 30);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bunifuImageButton1.TabIndex = 1;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.Color.Transparent;
+            this.Back.Image = ((System.Drawing.Image)(resources.GetObject("Back.Image")));
+            this.Back.ImageActive = null;
+            this.Back.Location = new System.Drawing.Point(217, 29);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(33, 30);
+            this.Back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Back.TabIndex = 5;
+            this.Back.TabStop = false;
+            this.Back.Visible = false;
+            this.Back.Zoom = 10;
+            // 
+            // SuperUser
+            // 
+            this.SuperUser.BackColor = System.Drawing.Color.Transparent;
+            this.SuperUser.Image = ((System.Drawing.Image)(resources.GetObject("SuperUser.Image")));
+            this.SuperUser.ImageActive = null;
+            this.SuperUser.Location = new System.Drawing.Point(928, 29);
+            this.SuperUser.Name = "SuperUser";
+            this.SuperUser.Size = new System.Drawing.Size(33, 30);
+            this.SuperUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SuperUser.TabIndex = 3;
+            this.SuperUser.TabStop = false;
+            this.SuperUser.Zoom = 10;
+            this.SuperUser.Click += new System.EventHandler(this.SuperUser_Click);
+            // 
+            // bunifuImageButton2
+            // 
+            this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
+            this.bunifuImageButton2.ImageActive = null;
+            this.bunifuImageButton2.Location = new System.Drawing.Point(966, 29);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(33, 30);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bunifuImageButton2.TabIndex = 2;
+            this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Zoom = 10;
+            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.DimGray;
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(210, 64);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(10, 10);
+            this.bunifuSeparator1.TabIndex = 6;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            this.bunifuSeparator1.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(256, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 28);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Home";
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 562);
-            this.Controls.Add(this.Class_Sel);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.ClientSize = new System.Drawing.Size(1039, 532);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.bunifuSeparator1);
+            this.Controls.Add(this.Back);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bunifuImageButton1);
+            this.Controls.Add(this.bunifuImageButton2);
+            this.Controls.Add(this.SuperUser);
             this.Name = "Home";
             this.Text = "Home";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.Class_Sel.ResumeLayout(false);
-            this.Class_Sel.PerformLayout();
+            this.Load += new System.EventHandler(this.Home_Load);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Back)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem utilisateurs;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStrip Class_Sel;
-        private System.Windows.Forms.ToolStripComboBox annees;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.ComboBox annees;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
+        private Bunifu.Framework.UI.BunifuImageButton SuperUser;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
+        private Bunifu.Framework.UI.BunifuImageButton Back;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        private System.Windows.Forms.Label label1;
     }
 }

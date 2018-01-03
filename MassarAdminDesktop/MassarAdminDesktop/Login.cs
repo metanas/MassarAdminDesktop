@@ -23,7 +23,7 @@ namespace MassarAdminDesktop
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
-            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue300, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue900, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
 
             bd = new DBConnect();
 
@@ -47,10 +47,9 @@ namespace MassarAdminDesktop
             }
             nom.Text = "";
             password.Text = "";
-           // MessageBox.Show("login succseful Admin : "+admin.nom);
-          // change the messageBox by opening   the Main IHM
-            Home home = new Home();
+            Home home = new Home(this);
             home.Show();
+            this.Hide();
         }
 
     }

@@ -13,88 +13,125 @@ namespace MassarAdminDesktop
 {
 
    
-    public partial class Home : Form
+    public partial class Home : MaterialSkin.Controls.MaterialForm
     {
-        List<ToolStripButton> cl_buttons = new List<ToolStripButton>();
+        List<Bunifu.Framework.UI.BunifuFlatButton> cl_buttons = new List<Bunifu.Framework.UI.BunifuFlatButton>();
         List<string> id_classes = new List<string>();
         Groupe Groupe_Form;
         public static string id;
         public static string nomgr;
-        public Home()
+        Login login;
+        Bunifu.Framework.UI.BunifuFlatButton lastClick;
+        public Home(Login login)
         {
             InitializeComponent();
-            utilisateurs.Visible = Login.admin.isSuper;
+            this.login = login;
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
+            skinManager.AddFormToManage(this);
+            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Grey400, MaterialSkin.Primary.Grey700, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+            SuperUser.Visible = Login.admin.isSuper;
             annees.Font = new Font("Arial", 14);
             Login.read = DBConnect.Gets("select annee_scolaire from annee order by annee_scolaire desc ; ");
             while (Login.read.Read())
-             annees.Items.Add(Login.read["annee_scolaire"]);
+                annees.Items.Add(Login.read["annee_scolaire"].ToString());
             Login.read.Close();
             if (annees.Items.Count > 0)
                 annees.SelectedIndex = 0;
-            loadgroupes(annees.SelectedText);
-            
+            loadgroupes(annees.SelectedItem.ToString());
         }
 
-        public void importerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Previw previw = new Previw();
-            previw.TopLevel = false;
-            previw.Parent = this;
-            previw.Location = new Point(Class_Sel.Width, menuStrip1.Height);
-            previw.Show();
-        }
-
-        public void utilisateursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Gerer_Admin gerer = new Gerer_Admin();
-            gerer.Show();
-        }
         public void loadgroupes(string annee) {
             int i = 0;
-            foreach (ToolStripButton b in cl_buttons)
-                Class_Sel.Items.Remove(b);
+            foreach (var b in panel1.Controls)
+            {
+                if (b.GetType() == typeof(Bunifu.Framework.UI.BunifuFlatButton))
+                {
+                    panel1.Controls.Remove((Bunifu.Framework.UI.BunifuFlatButton)b);
+                }
+            }
             cl_buttons.Clear();
             id_classes.Clear();
             Login.read = DBConnect.Gets("select groupe.nom , groupe.id from groupe , annee where annee.annee_scolaire='"+annee+"' and  annee.id=groupe.id_annee ; ");
             while (Login.read.Read())
             {
-                cl_buttons.Add(new ToolStripButton());
+
+                cl_buttons.Add(new Bunifu.Framework.UI.BunifuFlatButton());
+                cl_buttons[i].Size = new Size(panel1.Width, 48);
+                cl_buttons[i].BackColor = Color.FromArgb(100, 100, 100);
+                cl_buttons[i].Activecolor = Color.FromArgb(50, 50, 50);
+                cl_buttons[i].Normalcolor = Color.FromArgb(100, 100, 100);
+                cl_buttons[i].OnHovercolor = Color.FromArgb(80, 80, 80);
                 cl_buttons[i].Click += new System.EventHandler(this.groupe);
                 cl_buttons[i].Text = Login.read["nom"].ToString();
-                cl_buttons[i].Font = new Font("Arial",14);
+                if (i == 0)
+                {
+                    cl_buttons[i].Location = new Point(panel1.Location.X, annees.Location.Y + annees.Height + 10);
+                }
+                else { cl_buttons[i].Location = new Point(panel1.Location.X, cl_buttons[i - 1].Location.Y + cl_buttons[i - 1].Height); }
                 id_classes.Add(Login.read["id"].ToString());
-                Class_Sel.Items.Add(cl_buttons[i++]);
-                
+                panel1.Controls.Add(cl_buttons[i++]);
+
             }
+           
             Login.read.Close();
         }
        
         private void groupe(object sender, EventArgs e) {
-            int index =  cl_buttons.IndexOf((ToolStripButton)sender);
+            int index = -1;
+            for(int i=0; i< cl_buttons.Count;i++)
+            {
+                if( cl_buttons[i].Name == ((Bunifu.Framework.UI.BunifuFlatButton)sender).Name)
+                {
+                    index = i;
+                    break;
+                }
+            }
             id = id_classes[index];
-            nomgr = ((ToolStripButton)sender).Text;
-            string groupe = ((ToolStripButton)sender).Text;
+            nomgr = ((Bunifu.Framework.UI.BunifuFlatButton)sender).Text;
+            if(lastClick != null) lastClick.selected = false;
+            lastClick = (Bunifu.Framework.UI.BunifuFlatButton) sender;
+            lastClick.selected = true ;
             //MessageBox.Show("replace messageBox by opening classes details \n id de groupe : " + id+" , le nom de groupe : "+ ((ToolStripButton)sender).Text);
             if (Groupe_Form != null) Groupe_Form.Close();
-            Groupe_Form = new Groupe(id, groupe);
+            Groupe_Form = new Groupe(id, Home.nomgr);
             Groupe_Form.TopLevel = false;
             Groupe_Form.Parent = this;
+            Groupe_Form.Location = new Point(panel1.Width, bunifuSeparator1.Location.Y);
             Groupe_Form.FormBorderStyle = FormBorderStyle.None;
             Groupe_Form.Show();
-
+            Back.Visible = true;
             //replace messageBox by opening classes details
 
         }
 
-        public void annees_SelectedIndexChanged(object sender, EventArgs e)
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
-            
-            loadgroupes(annees.SelectedItem.ToString());
+            Previw previw = new Previw();
+            previw.TopLevel = false;
+            previw.Parent = this;
+            previw.Location = new Point(panel1.Width, bunifuSeparator1.Location.Y);
+            previw.Show();
         }
 
-        private void Matiers_Click(object sender, EventArgs e)
+        private void SuperUser_Click(object sender, EventArgs e)
         {
-            
+            Gerer_Admin gerer = new Gerer_Admin();
+            gerer.Show();
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            login.Show();
+        }
+
+        private void annees_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            loadgroupes(annees.SelectedItem.ToString());
         }
     }
 }

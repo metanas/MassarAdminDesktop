@@ -15,7 +15,7 @@ namespace MassarAdminDesktop
     {
         string id;
         string groupe;
-        List<Button> Matieres = new List<Button>();
+        List<Bunifu.Framework.UI.BunifuTileButton> Matieres = new List<Bunifu.Framework.UI.BunifuTileButton>();
 
 
         public Groupe(string id, string groupe)
@@ -26,19 +26,18 @@ namespace MassarAdminDesktop
             this.groupe_l.Text = groupe;
 
             Login.read = DBConnect.Gets("SELECT ma.id, ma.nom FROM groupe_matiere_enseignant, matiere as ma WHERE ma.id = id_matiere and id_groupe = " + id);
-            int w = 100;
+            int w = panel2.Location.X;
             while (Login.read.Read())
             {
 
-                Button b = new Button();
-                MessageBox.Show(Login.read[1].ToString() + "_" + Login.read[0].ToString());
-                b.Location = new System.Drawing.Point(w, 400);
-                b.Text = Login.read[1].ToString()+"_"+Login.read[0].ToString();
-                b.Click += new System.EventHandler(this.click_matiere);
+                Bunifu.Framework.UI.BunifuTileButton b = new Bunifu.Framework.UI.BunifuTileButton();
+                b.Location = new Point(w, panel2.Location.Y + panel2.Height + 20);
+                b.LabelText = Login.read[1] + "_" + Login.read[0];
+                b.Click += new EventHandler(this.click_matiere);
                 Matieres.Add(b);
-                b.Size = new System.Drawing.Size(100, 129);
+                b.Size = new Size(100, 100);
                 this.Controls.Add(b);
-                w += 100;
+                w += b.Width + 10; 
                 b.Show();
             }
             Login.read.Close();
