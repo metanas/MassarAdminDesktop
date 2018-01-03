@@ -182,8 +182,6 @@
             this.Name = "Analyse";
             this.Text = "Analyse";
             this.Load += new System.EventHandler(this.Analyse_Load);
-            this.ResizeBegin += new System.EventHandler(this.Analyse_ResizeBegin);
-            this.ResizeEnd += new System.EventHandler(this.Analyse_ResizeBegin);
             this.Resize += new System.EventHandler(this.Analyse_ResizeBegin);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
