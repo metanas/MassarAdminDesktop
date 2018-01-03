@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.nom = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.password = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.log_in = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             this.SuspendLayout();
             // 
             // nom
@@ -76,12 +79,26 @@
             this.log_in.UseVisualStyleBackColor = true;
             this.log_in.Click += new System.EventHandler(this.log_in_Click);
             // 
+            // bunifuImageButton3
+            // 
+            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
+            this.bunifuImageButton3.ImageActive = null;
+            this.bunifuImageButton3.Location = new System.Drawing.Point(32, 73);
+            this.bunifuImageButton3.Name = "bunifuImageButton3";
+            this.bunifuImageButton3.Size = new System.Drawing.Size(199, 68);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bunifuImageButton3.TabIndex = 8;
+            this.bunifuImageButton3.TabStop = false;
+            this.bunifuImageButton3.Zoom = 10;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(266, 284);
+            this.Controls.Add(this.bunifuImageButton3);
             this.Controls.Add(this.log_in);
             this.Controls.Add(this.password);
             this.Controls.Add(this.nom);
@@ -89,6 +106,7 @@
             this.MinimumSize = new System.Drawing.Size(266, 284);
             this.Name = "Login";
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -98,5 +116,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField nom;
         private MaterialSkin.Controls.MaterialSingleLineTextField password;
         private MaterialSkin.Controls.MaterialRaisedButton log_in;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
     }
 }
