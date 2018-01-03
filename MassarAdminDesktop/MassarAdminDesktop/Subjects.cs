@@ -28,8 +28,6 @@ namespace MassarAdminDesktop
             string nomgr = Home.nomgr;
             this.idm = idm;
             this.nomm = nomm;
-            MessageBox.Show(id + nomgr);
-            MessageBox.Show(progressBar1.Value.ToString());
             if (progressBar1.Value >= 10)
             {
                 progressBar1.ForeColor = Color.Yellow;
@@ -70,11 +68,5 @@ namespace MassarAdminDesktop
             ch.addChartBy(nom: semestre[cc.IndexOf(the_cc)] + " " + the_cc.Text, semestre: semestre[cc.IndexOf(the_cc)], titre: the_cc.Text);
 
         }
-
-     
-
-      
-
-
     }
 }

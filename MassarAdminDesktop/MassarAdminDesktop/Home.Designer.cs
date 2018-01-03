@@ -29,27 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.annees = new System.Windows.Forms.ComboBox();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.Back = new Bunifu.Framework.UI.BunifuImageButton();
-            this.SuperUser = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label1 = new System.Windows.Forms.Label();
+            this.Back = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.SuperUser = new Bunifu.Framework.UI.BunifuImageButton();
+            this.HomeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Back)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.bunifuImageButton3);
             this.panel1.Controls.Add(this.annees);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -80,6 +81,45 @@
             this.annees.TabIndex = 0;
             this.annees.SelectedIndexChanged += new System.EventHandler(this.annees_SelectedIndexChanged_1);
             // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(210, 64);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(10, 10);
+            this.bunifuSeparator1.TabIndex = 6;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            this.bunifuSeparator1.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(296, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 28);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Home";
+            // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.Color.Transparent;
+            this.Back.Image = global::MassarAdminDesktop.Properties.Resources.Back;
+            this.Back.ImageActive = null;
+            this.Back.Location = new System.Drawing.Point(217, 28);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(33, 30);
+            this.Back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Back.TabIndex = 5;
+            this.Back.TabStop = false;
+            this.Back.Visible = false;
+            this.Back.Zoom = 10;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
@@ -93,34 +133,6 @@
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
-            // 
-            // Back
-            // 
-            this.Back.BackColor = System.Drawing.Color.Transparent;
-            this.Back.Image = ((System.Drawing.Image)(resources.GetObject("Back.Image")));
-            this.Back.ImageActive = null;
-            this.Back.Location = new System.Drawing.Point(217, 29);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(33, 30);
-            this.Back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Back.TabIndex = 5;
-            this.Back.TabStop = false;
-            this.Back.Visible = false;
-            this.Back.Zoom = 10;
-            // 
-            // SuperUser
-            // 
-            this.SuperUser.BackColor = System.Drawing.Color.Transparent;
-            this.SuperUser.Image = ((System.Drawing.Image)(resources.GetObject("SuperUser.Image")));
-            this.SuperUser.ImageActive = null;
-            this.SuperUser.Location = new System.Drawing.Point(928, 29);
-            this.SuperUser.Name = "SuperUser";
-            this.SuperUser.Size = new System.Drawing.Size(33, 30);
-            this.SuperUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.SuperUser.TabIndex = 3;
-            this.SuperUser.TabStop = false;
-            this.SuperUser.Zoom = 10;
-            this.SuperUser.Click += new System.EventHandler(this.SuperUser_Click);
             // 
             // bunifuImageButton2
             // 
@@ -136,36 +148,41 @@
             this.bunifuImageButton2.Zoom = 10;
             this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
-            // bunifuSeparator1
+            // SuperUser
             // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.DimGray;
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(210, 64);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(10, 10);
-            this.bunifuSeparator1.TabIndex = 6;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            this.bunifuSeparator1.Visible = false;
+            this.SuperUser.BackColor = System.Drawing.Color.Transparent;
+            this.SuperUser.Image = ((System.Drawing.Image)(resources.GetObject("SuperUser.Image")));
+            this.SuperUser.ImageActive = null;
+            this.SuperUser.Location = new System.Drawing.Point(928, 29);
+            this.SuperUser.Name = "SuperUser";
+            this.SuperUser.Size = new System.Drawing.Size(33, 30);
+            this.SuperUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SuperUser.TabIndex = 3;
+            this.SuperUser.TabStop = false;
+            this.SuperUser.Zoom = 10;
+            this.SuperUser.Click += new System.EventHandler(this.SuperUser_Click);
             // 
-            // label1
+            // HomeButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(256, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 28);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Home";
+            this.HomeButton.BackColor = System.Drawing.Color.Transparent;
+            this.HomeButton.Image = global::MassarAdminDesktop.Properties.Resources.Home;
+            this.HomeButton.ImageActive = null;
+            this.HomeButton.Location = new System.Drawing.Point(257, 28);
+            this.HomeButton.Name = "HomeButton";
+            this.HomeButton.Size = new System.Drawing.Size(33, 30);
+            this.HomeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HomeButton.TabIndex = 8;
+            this.HomeButton.TabStop = false;
+            this.HomeButton.Visible = false;
+            this.HomeButton.Zoom = 10;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1039, 532);
+            this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.Back);
@@ -175,20 +192,22 @@
             this.Controls.Add(this.SuperUser);
             this.Name = "Home";
             this.Text = "Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.Load += new System.EventHandler(this.Home_Load);
+            this.Resize += new System.EventHandler(this.Home_ResizeBegin);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Back)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.ComboBox annees;
@@ -198,5 +217,6 @@
         private Bunifu.Framework.UI.BunifuImageButton Back;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuImageButton HomeButton;
     }
 }
