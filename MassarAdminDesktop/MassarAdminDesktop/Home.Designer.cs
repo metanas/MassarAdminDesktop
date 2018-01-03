@@ -30,22 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.annees = new System.Windows.Forms.ComboBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label1 = new System.Windows.Forms.Label();
+            this.HomeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.Back = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.SuperUser = new Bunifu.Framework.UI.BunifuImageButton();
-            this.HomeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Back)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,19 +58,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(208, 532);
             this.panel1.TabIndex = 0;
-            // 
-            // bunifuImageButton3
-            // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(3, 4);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(199, 68);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bunifuImageButton3.TabIndex = 4;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
             // 
             // annees
             // 
@@ -105,6 +92,21 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Home";
             // 
+            // HomeButton
+            // 
+            this.HomeButton.BackColor = System.Drawing.Color.Transparent;
+            this.HomeButton.Image = global::MassarAdminDesktop.Properties.Resources.Home;
+            this.HomeButton.ImageActive = null;
+            this.HomeButton.Location = new System.Drawing.Point(257, 28);
+            this.HomeButton.Name = "HomeButton";
+            this.HomeButton.Size = new System.Drawing.Size(33, 30);
+            this.HomeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HomeButton.TabIndex = 8;
+            this.HomeButton.TabStop = false;
+            this.HomeButton.Visible = false;
+            this.HomeButton.Zoom = 10;
+            this.HomeButton.Click += new System.EventHandler(this.Home_Click);
+            // 
             // Back
             // 
             this.Back.BackColor = System.Drawing.Color.Transparent;
@@ -119,6 +121,19 @@
             this.Back.Visible = false;
             this.Back.Zoom = 10;
             this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
+            // bunifuImageButton3
+            // 
+            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
+            this.bunifuImageButton3.ImageActive = null;
+            this.bunifuImageButton3.Location = new System.Drawing.Point(3, 4);
+            this.bunifuImageButton3.Name = "bunifuImageButton3";
+            this.bunifuImageButton3.Size = new System.Drawing.Size(199, 68);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bunifuImageButton3.TabIndex = 4;
+            this.bunifuImageButton3.TabStop = false;
+            this.bunifuImageButton3.Zoom = 10;
             // 
             // bunifuImageButton1
             // 
@@ -162,21 +177,6 @@
             this.SuperUser.Zoom = 10;
             this.SuperUser.Click += new System.EventHandler(this.SuperUser_Click);
             // 
-            // HomeButton
-            // 
-            this.HomeButton.BackColor = System.Drawing.Color.Transparent;
-            this.HomeButton.Image = global::MassarAdminDesktop.Properties.Resources.Home;
-            this.HomeButton.ImageActive = null;
-            this.HomeButton.Location = new System.Drawing.Point(257, 28);
-            this.HomeButton.Name = "HomeButton";
-            this.HomeButton.Size = new System.Drawing.Size(33, 30);
-            this.HomeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.HomeButton.TabIndex = 8;
-            this.HomeButton.TabStop = false;
-            this.HomeButton.Visible = false;
-            this.HomeButton.Zoom = 10;
-            this.HomeButton.Click += new System.EventHandler(this.Home_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,12 +197,12 @@
             this.Load += new System.EventHandler(this.Home_Load);
             this.Resize += new System.EventHandler(this.Home_ResizeBegin);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Back)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
