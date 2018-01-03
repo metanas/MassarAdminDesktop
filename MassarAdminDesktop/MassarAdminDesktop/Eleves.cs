@@ -37,8 +37,13 @@ namespace MassarAdminDesktop
         void render_eleves()
         {
             foreach (Eleve e in el)
-                dgv_eleves.Rows.Add(e.nom, e.prenom);
+                dgv_eleves.Rows.Add(e.nom, e.prenom, e.moyenne(id));
         }
 
+        private void dgv_eleves_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            chart c = new chart(chart_e, this.id);
+            c.addChartByEtudiant(el[e.RowIndex].id);
+        }
     }
 }

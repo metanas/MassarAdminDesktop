@@ -164,7 +164,7 @@ namespace MassarAdminDesktop
 
         public void annees_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            idann = annees.SelectedItem.ToString();
+             idann = annees.SelectedItem.ToString();
             loadgroupes(idann);
         }
 
