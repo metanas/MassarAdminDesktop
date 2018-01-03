@@ -19,6 +19,7 @@ namespace MassarAdminDesktop
         List<string> id_classes = new List<string>();
         public static string id;
         public static string nomgr;
+        public static string idann;
         Login login;
         Bunifu.Framework.UI.BunifuFlatButton lastClick;
         public static Form ActifForm;
@@ -153,9 +154,10 @@ namespace MassarAdminDesktop
             login.Show();
         }
 
-        private void annees_SelectedIndexChanged_1(object sender, EventArgs e)
+        public void annees_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            loadgroupes(annees.SelectedItem.ToString());
+            idann = annees.SelectedItem.ToString();
+            loadgroupes(idann);
         }
 
         private void Home_ResizeBegin(object sender, EventArgs e)
