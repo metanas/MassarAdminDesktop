@@ -29,6 +29,7 @@ namespace MassarAdminDesktop
         {
             InitializeComponent();
             this.login = login;
+            loadHome();
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -46,7 +47,6 @@ namespace MassarAdminDesktop
             if (annees.Items.Count > 0)
                 annees.SelectedIndex = 0;
             loadgroupes(annees.SelectedItem.ToString());
-            loadHome();
         }
         public void loadHome()
         {
@@ -54,6 +54,8 @@ namespace MassarAdminDesktop
             analyse.TopLevel = false;
             analyse.Parent = this;
             analyse.Location = new Point(panel1.Width, bunifuSeparator1.Location.Y);
+            analyse.Width = this.Width - panel1.Width;
+            analyse.Height = this.Height - bunifuSeparator1.Location.Y;
             analyse.Show();
             PreviewFrom.Add(analyse);
         }
@@ -174,6 +176,8 @@ namespace MassarAdminDesktop
             bunifuImageButton1.Location = new Point(this.Width - bunifuImageButton1.Width - 5, bunifuImageButton1.Location.Y);
             bunifuImageButton2.Location = new Point(bunifuImageButton1.Location.X - bunifuImageButton2.Width - 5, bunifuImageButton2.Location.Y);
             SuperUser.Location = new Point(bunifuImageButton2.Location.X - SuperUser.Width - 5, SuperUser.Location.Y);
+            analyse.Width = this.Width - panel1.Width;
+            analyse.Height = this.Height - bunifuSeparator1.Location.Y;
         }
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)

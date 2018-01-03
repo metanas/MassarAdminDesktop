@@ -26,5 +26,10 @@ namespace MassarAdminDesktop
             label3.Text = countclasse;
             
         }
+
+        private void Analyse_ResizeBegin(object sender, EventArgs e)
+        {
+            panel1.Location = new Point((this.Width - panel1.Width)/2, (this.Height - panel1.Height)/2);
+        }
     }
 }
