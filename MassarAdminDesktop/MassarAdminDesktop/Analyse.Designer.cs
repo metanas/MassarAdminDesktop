@@ -51,10 +51,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.Betudiant);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(771, 487);
+            this.panel1.Size = new System.Drawing.Size(759, 475);
             this.panel1.TabIndex = 0;
             // 
             // label4
@@ -183,6 +182,9 @@
             this.Name = "Analyse";
             this.Text = "Analyse";
             this.Load += new System.EventHandler(this.Analyse_Load);
+            this.ResizeBegin += new System.EventHandler(this.Analyse_ResizeBegin);
+            this.ResizeEnd += new System.EventHandler(this.Analyse_ResizeBegin);
+            this.Resize += new System.EventHandler(this.Analyse_ResizeBegin);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
