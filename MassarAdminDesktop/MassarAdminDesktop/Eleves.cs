@@ -64,5 +64,9 @@ namespace MassarAdminDesktop
             
         }
 
+        private void chart_e_DoubleClick(object sender, EventArgs e)
+        {
+                chart.doubleCliick(sender, e);
+        }
     }
 }
