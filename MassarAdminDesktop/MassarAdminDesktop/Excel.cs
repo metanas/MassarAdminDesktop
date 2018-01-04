@@ -109,10 +109,14 @@ namespace MassarAdminDesktop
 
             return new int[2] { -1, -1 };
         }
+
         public int GetLastRow()
         {
             return sheet.LastRowNum;
         }
-        
+
+        public void Close() {
+            workbook.Close();
+        }
     }
 }

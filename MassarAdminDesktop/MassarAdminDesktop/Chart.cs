@@ -17,13 +17,21 @@ namespace MassarAdminDesktop
         string id_class;
         
         Chart c;
+        
+     
         public  chart (Chart mychart,string id_class) {
             this.c = mychart;
             this.id_class = id_class;
             this.c.Series.Clear();
             this.c.ChartAreas[0].AxisX.Interval = 1;
             this.c.ChartAreas[0].AxisY.Maximum = 20;
-            
+            mychart.DoubleClick += new System.EventHandler(doubleCliick);
+        }
+
+         public void doubleCliick(object sender, EventArgs e)
+        {
+            if(this.c.Dock == DockStyle.Fill)this.c.Dock = DockStyle.None;
+            else this.c.Dock = DockStyle.Fill;
         }
 
         public void addChartByEtudiant(string id_et)
@@ -46,6 +54,15 @@ namespace MassarAdminDesktop
             }
             this.c.Series.Add(s);
             Login.read.Close();
+        }
+
+        public void addChartHistorique(string id_et)
+        {
+            Series s = new Series
+            {
+                ChartType = SeriesChartType.StackedBar
+
+            };
         }
 
         public void addChartBy(string nom="", SeriesChartType typechart= SeriesChartType.Column, string id_matiere ="", string unite="",string semestre="",string titre="") {

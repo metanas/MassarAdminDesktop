@@ -38,6 +38,7 @@
             this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Moyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chart_e = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_eleves)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart_e)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +76,6 @@
             this.dgv_eleves.Size = new System.Drawing.Size(302, 464);
             this.dgv_eleves.TabIndex = 0;
             this.dgv_eleves.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_eleves_CellClick);
-            this.dgv_eleves.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_eleves_CellContentClick);
             // 
             // Nom
             // 
@@ -114,11 +114,46 @@
             this.chart_e.TabIndex = 1;
             this.chart_e.Text = "chart1";
             // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "   Historique";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = global::MassarAdminDesktop.Properties.Resources.hist;
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 60D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(344, 379);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(160, 37);
+            this.bunifuFlatButton1.TabIndex = 2;
+            this.bunifuFlatButton1.Text = "   Historique";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // Eleves
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 520);
+            this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.chart_e);
             this.Controls.Add(this.dgv_eleves);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -137,5 +172,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Prenom;
         private System.Windows.Forms.DataGridViewTextBoxColumn Moyenne;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_e;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
     }
 }

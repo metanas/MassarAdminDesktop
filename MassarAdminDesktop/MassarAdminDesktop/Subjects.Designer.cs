@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Subjects));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Subjects));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.diagrambox = new System.Windows.Forms.GroupBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Infobox = new System.Windows.Forms.GroupBox();
             this.Profpanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+
+            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.moyenne = new System.Windows.Forms.Label();
             this.min = new System.Windows.Forms.Label();
             this.max = new System.Windows.Forms.Label();
@@ -60,20 +61,22 @@
             this.Button5 = new Bunifu.Framework.UI.BunifuTileButton();
             this.Button9 = new Bunifu.Framework.UI.BunifuTileButton();
             this.Button10 = new Bunifu.Framework.UI.BunifuTileButton();
+
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
-            this.diagrambox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.Infobox.SuspendLayout();
             this.Profpanel.SuspendLayout();
             this.exambox.SuspendLayout();
             this.exampanel.SuspendLayout();
             this.S2box.SuspendLayout();
             this.S1box.SuspendLayout();
+
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.diagrambox);
+            this.panel1.Controls.Add(this.chart1);
             this.panel1.Controls.Add(this.Infobox);
             this.panel1.Controls.Add(this.exambox);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -108,6 +111,7 @@
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
+
             // Infobox
             // 
             this.Infobox.Controls.Add(this.Profpanel);
@@ -148,6 +152,26 @@
             this.label2.Size = new System.Drawing.Size(79, 16);
             this.label2.TabIndex = 24;
             this.label2.Text = "Aziz jaamati";
+            // 
+            // bunifuTileButton1
+            // 
+            this.bunifuTileButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
+            this.bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
+            this.bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
+            this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton1.Image = global::MassarAdminDesktop.Properties.Resources.professeur;
+            this.bunifuTileButton1.ImagePosition = 21;
+            this.bunifuTileButton1.ImageZoom = 50;
+            this.bunifuTileButton1.LabelPosition = 43;
+            this.bunifuTileButton1.LabelText = "Professeur";
+            this.bunifuTileButton1.Location = new System.Drawing.Point(17, 18);
+            this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton1.Name = "bunifuTileButton1";
+            this.bunifuTileButton1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.bunifuTileButton1.Size = new System.Drawing.Size(141, 147);
+            this.bunifuTileButton1.TabIndex = 23;
             // 
             // label1
             // 
@@ -351,7 +375,7 @@
             this.Button6.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button6.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button6.ForeColor = System.Drawing.Color.White;
             this.Button6.Image = global::MassarAdminDesktop.Properties.Resources.exam;
             this.Button6.ImagePosition = 21;
@@ -371,7 +395,7 @@
             this.Button3.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button3.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button3.ForeColor = System.Drawing.Color.White;
             this.Button3.Image = global::MassarAdminDesktop.Properties.Resources.exam;
             this.Button3.ImagePosition = 21;
@@ -391,7 +415,7 @@
             this.Button2.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button2.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button2.ForeColor = System.Drawing.Color.White;
             this.Button2.Image = global::MassarAdminDesktop.Properties.Resources.exam;
             this.Button2.ImagePosition = 21;
@@ -411,7 +435,7 @@
             this.Button1.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button1.ForeColor = System.Drawing.Color.White;
             this.Button1.Image = global::MassarAdminDesktop.Properties.Resources.exam;
             this.Button1.ImagePosition = 21;
@@ -504,6 +528,21 @@
             this.Button10.Size = new System.Drawing.Size(84, 108);
             this.Button10.TabIndex = 7;
             this.Button10.Visible = false;
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(515, 37);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(530, 522);
+            this.chart1.TabIndex = 11;
+            this.chart1.Text = "chart1";
             // 
             // Subjects
             // 
@@ -516,8 +555,6 @@
             this.Name = "Subjects";
             this.Text = "Subjects";
             this.panel1.ResumeLayout(false);
-            this.diagrambox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.Infobox.ResumeLayout(false);
             this.Profpanel.ResumeLayout(false);
             this.Profpanel.PerformLayout();
@@ -525,6 +562,8 @@
             this.exampanel.ResumeLayout(false);
             this.S2box.ResumeLayout(false);
             this.S1box.ResumeLayout(false);
+
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -532,8 +571,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox diagrambox;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.GroupBox Infobox;
         private System.Windows.Forms.Panel Profpanel;
         public System.Windows.Forms.Label label2;
@@ -561,5 +598,6 @@
         private Bunifu.Framework.UI.BunifuTileButton Button9;
         private Bunifu.Framework.UI.BunifuTileButton Button5;
         private Bunifu.Framework.UI.BunifuTileButton Button4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
