@@ -17,6 +17,7 @@ namespace MassarAdminDesktop
         string id;
         string groupe;
         List<Bunifu.Framework.UI.BunifuTileButton> Matieres = new List<Bunifu.Framework.UI.BunifuTileButton>();
+        public List<Matiere> matieres = new List<Matiere>();
         public Form PreviewForm;
         public List<Eleve> el = new List<Eleve>();
 
@@ -31,7 +32,7 @@ namespace MassarAdminDesktop
             int w = bunifuSeparator1.Location.X;
             while (Login.read.Read())
             {
-
+                this.matieres.Add(new Matiere(Login.read[0].ToString(), Login.read[1].ToString()));
                 Bunifu.Framework.UI.BunifuTileButton b = new Bunifu.Framework.UI.BunifuTileButton();
                 b.Location = new Point(w, bunifuSeparator1.Location.Y + bunifuSeparator1.Height + 20);
                 b.LabelText = Login.read[1] + "_" + Login.read[0];
@@ -84,7 +85,7 @@ namespace MassarAdminDesktop
 
         void click_eleves()
         {
-            Eleves S = new Eleves(this.id);
+            Eleves S = new Eleves(this.id, this);
             S.el = this.el;
             S.render_eleves();
             S.TopLevel = false;

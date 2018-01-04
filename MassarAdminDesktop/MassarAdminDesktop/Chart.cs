@@ -15,7 +15,8 @@ namespace MassarAdminDesktop
     class chart
     {
         string id_class;
-        
+        List<Color> col = new List<Color> { Color.AliceBlue, Color.Aqua, Color.Aquamarine, Color.Brown, Color.Cornsilk, Color.DarkGreen };
+
         Chart c;
         
      
@@ -25,6 +26,10 @@ namespace MassarAdminDesktop
             this.c.Series.Clear();
             this.c.ChartAreas[0].AxisX.Interval = 1;
             this.c.ChartAreas[0].AxisY.Maximum = 20;
+            this.c.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
+            this.c.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
+
+
             mychart.DoubleClick += new System.EventHandler(doubleCliick);
         }
 
@@ -37,7 +42,7 @@ namespace MassarAdminDesktop
         public void addChartByEtudiant(string id_et)
         {
             int i = 0;
-            List<Color> col = new List<Color> {Color.AliceBlue, Color.Aqua, Color.Aquamarine,Color.Brown, Color.Cornsilk, Color.DarkGreen };
+            
             Series s = new Series
             {
                 ChartType = SeriesChartType.StackedBar
@@ -50,20 +55,38 @@ namespace MassarAdminDesktop
             while (Login.read.Read())
             {
                 s.Points.AddXY(Login.read["nom"].ToString(), Double.Parse(Login.read[0].ToString()));
-                s.Points[i].Color = col[i++];
+                s.Points[i].Color = this.col[i++];
             }
             this.c.Series.Add(s);
             Login.read.Close();
         }
 
-        public void addChartHistorique(string id_et)
+        public void addChartEvolutionSeries(Eleve eleve, Matiere matiere)
         {
             Series s = new Series
             {
-                ChartType = SeriesChartType.StackedBar
-
+                ChartType = SeriesChartType.Line
+                
+                
             };
+            s.BorderWidth = 3;
+            int i = 0;
+            s.IsValueShownAsLabel = true;
+            s.Name = matiere.intitule;
+            Login.read = DBConnect.Gets(string.Format("SELECT avg(note), titre FROM examiner where id_etudiant = {0} and id_groupe = {1} and id_matiere = {2} group by titre order by titre", eleve.id, this.id_class, matiere.id));
+            while (Login.read.Read())
+            {
+                s.Points.AddXY(Login.read[1].ToString(), float.Parse(Login.read[0].ToString()));
+                s.Points[i].MarkerSize = 9;
+                s.Points[i++].MarkerStyle = MarkerStyle.Circle;
+                
+            }
+            Login.read.Close();
+            this.c.Series.Add(s);
+
         }
+
+
 
         public void addChartBy(string nom="", SeriesChartType typechart= SeriesChartType.Column, string id_matiere ="", string unite="",string semestre="",string titre="") {
             string query2= "SELECT id_etudiant,prenom ,nom, avg(note) as n from examiner , etudiant where etudiant.id=id_etudiant and  id_groupe=" + this.id_class+" and";

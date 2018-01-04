@@ -14,9 +14,11 @@ namespace MassarAdminDesktop
     {
         string id;
         public List<Eleve> el = new List<Eleve>();
-        public Eleves(string id)
+        public Groupe gp;
+        public Eleves(string id, Groupe gp)
         {
             this.id = id;
+            this.gp = gp;
             InitializeComponent();
             el.Clear();
 
@@ -32,6 +34,7 @@ namespace MassarAdminDesktop
 
             Login.read.Close();*/
             render_eleves();
+
         }
 
         
@@ -46,5 +49,20 @@ namespace MassarAdminDesktop
             chart c = new chart(chart_e, this.id);
             c.addChartByEtudiant(el[e.RowIndex].id);
         }
+
+        private void bunifuFlatButton7_Click(object sender, EventArgs e)
+        {
+            if (dgv_eleves.SelectedRows.Count == 1)
+            {
+                chart C = new chart(chart_e, this.id);
+                Eleve eleve = el[dgv_eleves.SelectedRows[0].Index];
+                foreach (Matiere m in this.gp.matieres)
+                {
+                    C.addChartEvolutionSeries(eleve, m);
+                }
+            }
+            
+        }
+
     }
 }
