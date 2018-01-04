@@ -30,6 +30,18 @@ namespace MassarAdminDesktop
             InitializeComponent();
             this.login = login;
             loadHome();
+            toolTipBegin();
+        }
+
+        private void toolTipBegin()
+        {
+
+            toolTip1.SetToolTip(bunifuImageButton1, "Deconnection");
+            toolTip1.SetToolTip(bunifuImageButton2, "Importer un Fichier");
+            toolTip1.SetToolTip(Back, "Retour");
+            toolTip1.SetToolTip(HomeButton, "principal");
+            toolTip1.SetToolTip(SuperUser, "ajouter un Administrateur");
+           
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -249,6 +261,11 @@ namespace MassarAdminDesktop
             {
                 //loadgroupes(annees.SelectedItem.ToString());
             }
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }
