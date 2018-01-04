@@ -48,7 +48,7 @@ namespace MassarAdminDesktop
         {
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
-            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange800, MaterialSkin.Primary.Blue700, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue800, MaterialSkin.Primary.Orange900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
             SuperUser.Visible = Login.admin.isSuper;
             annees.Font = new Font("Arial", 14);
             annees.Items.Clear();
@@ -88,10 +88,10 @@ namespace MassarAdminDesktop
             {
                 cl_buttons.Add(new Bunifu.Framework.UI.BunifuFlatButton());
                 cl_buttons[i].Size = new Size(panel1.Width, 48);
-                cl_buttons[i].BackColor = Color.FromArgb(239, 108, 0);
-                cl_buttons[i].Activecolor = Color.FromArgb(219, 100, 0);
-                cl_buttons[i].Normalcolor = Color.FromArgb(239, 108, 0);
-                cl_buttons[i].OnHovercolor = Color.FromArgb(230, 100, 0);
+                cl_buttons[i].BackColor = Color.FromArgb(25, 118, 210);
+                cl_buttons[i].Activecolor = Color.FromArgb(20, 100, 200);
+                cl_buttons[i].Normalcolor = Color.FromArgb(25, 118, 210);
+                cl_buttons[i].OnHovercolor = Color.FromArgb(25, 100, 200);
                 cl_buttons[i].Click += new System.EventHandler(this.groupe);
                 cl_buttons[i].Text = Login.read["nom"].ToString();
                 cl_buttons[i].IsTab = true;
@@ -124,7 +124,6 @@ namespace MassarAdminDesktop
             lastClick = (Bunifu.Framework.UI.BunifuFlatButton)sender;
             lastClick.selected = true;
             analyse.Hide();
-            //MessageBox.Show("replace messageBox by opening classes details \n id de groupe : " + id+" , le nom de groupe : "+ ((ToolStripButton)sender).Text);
             Groupe Groupe_Form = new Groupe(id, Home.nomgr);
             Groupe_Form.TopLevel = false;
             Groupe_Form.Parent = this;

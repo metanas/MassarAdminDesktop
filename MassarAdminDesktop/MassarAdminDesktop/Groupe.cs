@@ -29,14 +29,16 @@ namespace MassarAdminDesktop
             this.groupe_l.Text = groupe;
 
             Login.read = DBConnect.Gets("SELECT ma.id, ma.nom FROM groupe_matiere_enseignant, matiere as ma WHERE ma.id = id_matiere and id_groupe = " + id);
-            int w = bunifuSeparator1.Location.X;
+            int w = panel2.Location.X;
             while (Login.read.Read())
             {
                 this.matieres.Add(new Matiere(Login.read[0].ToString(), Login.read[1].ToString()));
                 Bunifu.Framework.UI.BunifuTileButton b = new Bunifu.Framework.UI.BunifuTileButton();
-                b.Location = new Point(w, bunifuSeparator1.Location.Y + bunifuSeparator1.Height + 20);
-                b.LabelText = Login.read[1] + "_" + Login.read[0];
-                b.BackColor = Color.FromArgb(0, 163, 77);
+                b.Location = new Point(w, panel2.Location.Y + panel2.Height + 20);
+                b.LabelText = Login.read[1].ToString().Substring(0,1).ToUpper() + Login.read[1].ToString().Substring(1, Login.read[1].ToString().Length-1) + "_" + Login.read[0];
+                b.BackColor = Color.FromArgb(230, 81, 0);
+                b.colorActive = Color.FromArgb(230, 81, 0);
+                b.color = Color.FromArgb(230, 81, 0); 
                 b.Click += new EventHandler(this.click_matiere);
                 Matieres.Add(b);
                 b.Size = new Size(100, 100);

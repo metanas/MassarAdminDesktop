@@ -88,7 +88,7 @@ namespace MassarAdminDesktop
             {
                 cmd.ExecuteNonQuery();
             }
-            catch (MySqlException ex) 
+            catch  
             {
                 CloseConnection();
                 OpenConnection();
@@ -106,12 +106,13 @@ namespace MassarAdminDesktop
             {
                 return cmd.ExecuteReader();
             }
-            catch (MySqlException ex )
+            catch 
             {
                 CloseConnection();
                 OpenConnection();
                 return cmd.ExecuteReader();
-            }        }
+            }
+        }
 
         public static string Get(string query)
         {
