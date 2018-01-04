@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Subjects));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -48,6 +47,11 @@
             this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Subjects));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.moyenne = new System.Windows.Forms.Label();
             this.min = new System.Windows.Forms.Label();
             this.max = new System.Windows.Forms.Label();
@@ -60,9 +64,26 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.professeur = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -233,19 +254,21 @@
             this.Button1.Size = new System.Drawing.Size(128, 129);
             this.Button1.TabIndex = 3;
             this.Button1.Visible = false;
+
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.panel1);
+            this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(13, 13);
+            this.groupBox2.Location = new System.Drawing.Point(2, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(508, 233);
-            this.groupBox2.TabIndex = 7;
+
+            this.groupBox2.Size = new System.Drawing.Size(508, 185);
+            this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information Sur Matiere";
             // 
-            // panel1
+            // panel2
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label2);
@@ -262,6 +285,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(502, 199);
             this.panel1.TabIndex = 0;
+
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.moyenne);
+            this.panel2.Controls.Add(this.min);
+            this.panel2.Controls.Add(this.max);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.progressBar1);
+            this.panel2.Controls.Add(this.professeur);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 31);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(502, 151);
+            this.panel2.TabIndex = 0;
             // 
             // label2
             // 
@@ -388,8 +427,23 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Diagrame Du Moyenne";
+
             // 
-            // chart1
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.ForeColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(3, 31);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(499, 178);
+            this.panel3.TabIndex = 0;
             // 
             chartArea2.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea2);
@@ -404,6 +458,7 @@
             this.chart1.Size = new System.Drawing.Size(530, 522);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+
             // 
             // Subjects
             // 
@@ -413,6 +468,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(100, 0);
             this.Name = "Subjects";
@@ -426,6 +482,12 @@
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -434,7 +496,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox2;
+
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label moyenne;
         private System.Windows.Forms.Label min;
         private System.Windows.Forms.Label max;
         private System.Windows.Forms.Label label4;
@@ -454,5 +521,6 @@
         private Bunifu.Framework.UI.BunifuTileButton Button3;
         private Bunifu.Framework.UI.BunifuTileButton Button2;
         private Bunifu.Framework.UI.BunifuTileButton Button1;
+
     }
 }

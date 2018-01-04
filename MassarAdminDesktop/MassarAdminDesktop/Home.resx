@@ -118,6 +118,50 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="search.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAwAAAAB/CAYAAABYHaUHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAS8SURBVHhe7dhBbhtZEAVB3f/SM5CdgGG42GyCktgsRCyl
+        +m0t8/njK/wHAAB8u/L7NfobAACAFyjLv1//HgAAcAFl+tfr+wAAwAWV7V+jbwIAABdWvj+nbwEAAG+g
+        jH9c7wEAgDdU1p/Xu6f0KQAA4AHl9FP61Dm9eUhPAQCAb1B2P6Snx7o9rWcAAMAPKMNP69msm9N6BgAA
+        /LCS/JSe/Kvf39U5AADwQuX5XZ3/rd/d1TkAAHABZfpdnf/Rzw91CgAAXEi5fqjT3/rZXZ0DAAAXU7If
+        6tT//gMAwLsr2w91ev+4MwAA4MLK95tOHX36dQgAAFxa+X7I//4DAMAiZfxNBgAAACxSxt9kAAAAwCJl
+        /E0GAAAALFLG32QAAADAImX8TYcHfQMAAHgj5fzIAAAAgGXK+ZEBAAAAy5TzIwMAAACWKedHBgAAACxT
+        zo8MAAAAWKacHxkAAACwTDk/MgAAAGCZcn5kAAAAwDLl/MgAAACAZcr5kQEAAADLlPMjAwAAAJYp50cG
+        AAAALFPOjwwAAABYppwfGQAAALBMOT8yAAAAYJlyfmQAAADAMuX8yAAAAIBlyvmRAQAAAMuU8yMDAAAA
+        linnRwYAAAAsU86PDAAAAFimnB8ZAAAAsEw5PzIAAABgmXJ+ZAAAAMAy5fzIAAAAgGXK+ZEBAAAAy5Tz
+        IwMAAACWKedHBgAAACxTzo8MAAAAWKacHxkAAACwTDk/MgAAAGCZcn5kAAAAwDLl/MgAAACAZcr5kQEA
+        AADLlPMjAwAAAJYp50cGAAAALFPOjwwAAABYppwfGQAAALBMOT8yAAAAYJlyfmQAAADAMuX8yAAAAIBl
+        yvmRAQAAAMuU8yMDAAAAlinnRwYAAAAsU86PDAAAAFimnB8ZAAAAsEw5PzIAAABgmXJ+ZAAAAMAy5fzI
+        AAAAgGXK+ZEBAAAAy5TzIwMAAACWKedHBgAAACxTzo8MAAAAWKacHxkAAACwTDk/MgAAAGCZcn5kAAAA
+        wDLl/MgAAACAZcr5kQEAAADLlPMjAwAAAJYp50cGAAAALFPOjwwAAABYppwfGQAAALBMOT8yAAAAYJly
+        fmQAAADAMuX8yAAAAIBlyvmRAQAAAMuU8yMDAAAAlinnRwYAAAAsU86PDAAAAFimnB8ZAAAAsEw5PzIA
+        AABgmXJ+ZAAAAMAy5fzIAAAAgGXK+ZEBAAAAy5TzIwMAAACWKedHBgAAACxTzo8MAAAAWKacHxkAAACw
+        TDk/MgAAAGCZcn5kAAAAwDLl/Ojwl5/6BgAA8AbK+JsMAAAAWKSMv8kAAACARcr4mwwAAABYpIy/yQAA
+        AIBFyvib7h586lsAAMCFle+HTh3+OgIAAC6tfL+psweWAgAAcEll+6FODQAAAHh3ZfuhTn/rZ4c6BQAA
+        LqRcP9TpH/38rs4BAIALKNPv6vxv/e6uzgEAgBcqz+/q/F/9/pSeAAAAL1CWn9KTWTen9QwAAPgBZfhp
+        PTvW7UN6CgAAfIOy+yE9Pac3T+lTAADAA8rpp/Sp83oHAAC8obL+cb0HAADeQBn/nL4FAABcWPn+Nfom
+        AABwQWX71+v7AADABZTp369/DwAAeIGy/DX6GwAAgG9Ufj/h4+N/2OMcU7pzxTUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="search.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKySURBVHhe7dBBkhpBDARA/v9pO4JIHxyrnhHQDBKrPEKp
+        p6TbGGOMMcYYY4zxsD8v8sx4hNtt5/mx4k5v53PjH3e5nM//Xu7wcer8LnYvQ63vZ9+y1PxOdnyKJ9KM
+        PcUT38VuDzH6Ms89xOh3sFOase08n2asN7ukGHk7n0sx0pc9TolfxmdPifdkh1Pil/P5U+K96H5K/GPU
+        OCXeh96HRD9OnUOiPeh8SLQMtQ6J1qfvklg56i2J1abrklhZai6J1aXnklhZai6J1aTjklh56i6J1aPf
+        klh56i6J1aNfSKQNtUMitei2JNaG2ktidegVEmlF9SWxOvQKibSjfkikDr1CIu2oHxKpQ6+QSDvqh0Tq
+        0Csk0o76IZE69AqJtKN+SKQOvUIi7agfEqlDr5BIO+qHROrQKyTSjvohkTr0Com0o35IpA69QiLtqB8S
+        qUOvkEg76odE6tArJNKO+iGROvRaEmtD7SWxOvRaEmtD7SWxWnQLibShdkikHv2WxMpTd0msHv2WxMpT
+        d0msJh2XxMpSc0msLj2XxMpSc0msNl2XxMpRb0msPn0PiZah1iHRHnQ+JPpx6hwS7UPvQ6Ifp84h0V50
+        PyV+OZ8/Jd6THU6JX8ZnT4n3ZIc0Y2/ncylG+tH/KZ7YzvNpxvrR/2Wee5nnHmK0H/2383yasad4oh/9
+        L+OzW7/ryX70T3k0f4X7El3ZIcXInZ8+Tp2e7JBi5Ad/X87n+7JHipFDom/nc73ZJcVImrHtPN+ffVKM
+        PM0zT/PM97BXipGxi7umGBm7uGuKkbGLu6YYGbu4a4qRsYu7phgZu7hripGxi7umGBm7uGuKkbGLu6YY
+        Gbu4a4qRsYu7phgZu7hripGxm/seEh3v4s4hkfFu7v0ff42ruPudn8bV5vhjjDHGGGOMMRq63f4CUm8C
+        QhaovkAAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="bunifuImageButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAlkAAAEuCAYAAAC9NwejAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -2985,7 +3029,10 @@
         CcIv/EpAPUifxCPo95/+0/8Pv1gmrF6uh1sAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>68</value>
   </metadata>
 </root>
