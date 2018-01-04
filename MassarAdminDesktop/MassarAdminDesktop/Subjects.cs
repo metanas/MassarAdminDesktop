@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace MassarAdminDesktop
 {
@@ -14,14 +15,15 @@ namespace MassarAdminDesktop
     {
       
         List<Bunifu.Framework.UI.BunifuTileButton> cl_buttons = new List<Bunifu.Framework.UI.BunifuTileButton>();
-        string[] semestre= new string[10];
+        string[] semestre; 
         string idm;
         string nomm;
+        string moy;
 
         public Subjects(string idm, string nomm)
         {
             InitializeComponent();
-            semestre[0] = "1"; semestre[1] = "1"; semestre[2] = "1"; semestre[3] = "1"; semestre[4] = "1"; semestre[5] = "2"; semestre[6] = "2"; semestre[7] = "2"; semestre[8] = "2"; semestre[9] = "2";
+            semestre = new string[10]{ "1", "1", "1", "1", "1", "2", "2", "2", "2", "2"}; 
             cl_buttons.Add(Button1); cl_buttons.Add(Button2); cl_buttons.Add(Button3); cl_buttons.Add(Button6); cl_buttons.Add(Button7); cl_buttons.Add(Button8); cl_buttons.Add(Button4); cl_buttons.Add(Button5); cl_buttons.Add(Button9); cl_buttons.Add(Button10);
             foreach (Bunifu.Framework.UI.BunifuTileButton b in cl_buttons)
                 b.Click += new System.EventHandler(this.clickcc);
@@ -31,10 +33,13 @@ namespace MassarAdminDesktop
             this.nomm = nomm;
             chart ch = new chart(chart1, Home.id);
             ch.addChartBy(nom: nomgr);
-            max.Text = DBConnect.Get("select max(note) from examiner where id_matiere="+this.idm+" and id_groupe=" + id + ";");
-            min.Text = DBConnect.Get("select min(note) from examiner where id_matiere=" + this.idm + " and id_groupe=" + id + ";");
-
-            string moy = DBConnect.Get("select avg(note) from examiner where id_matiere=" + this.idm + " and id_groupe=" + id + ";");
+            Login.read = DBConnect.Gets("select max(note),min(note),avg(note) from examiner where id_matiere=" + this.idm + " and id_groupe=" + id + ";");
+            if (Login.read.Read())
+            {
+                max.Text = Login.read[0].ToString();
+                min.Text = Login.read[1].ToString();
+                moy = Login.read[2].ToString();
+            }
             bunifuCircleProgressbar1.Value = (int)Math.Ceiling(float.Parse(moy));
 
             Login.read = DBConnect.Gets("select nom , prenom from groupe_matiere_enseignant , enseignant where id_enseignant=id and id_groupe="+id+" and id_matiere=" + this.idm);
@@ -66,6 +71,11 @@ namespace MassarAdminDesktop
         private void Subjects_Resize(object sender, EventArgs e)
         {
             panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
+        }
+
+        private void chart1_DoubleClick(object sender, EventArgs e)
+        {
+            chart.doubleCliick(sender,e);
         }
     }
 }

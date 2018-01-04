@@ -44,5 +44,16 @@ namespace MassarAdminDesktop
             Home.PreviewFrom[0].Hide();
             Home.ActifForm = view;
         }
+
+        private void bunifuTileButton1_Click(object sender, EventArgs e)
+        {
+            viewprofesseur viewp = new viewprofesseur();
+            viewp.TopLevel = false;
+            viewp.Parent = this.Parent;
+            viewp.Location = new Point(this.Location.X, this.Location.Y);
+            viewp.Show();
+            Home.PreviewFrom[0].Hide();
+            Home.ActifForm = viewp;
+        }
     }
 }

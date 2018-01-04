@@ -204,8 +204,10 @@ namespace MassarAdminDesktop
                         catch { }
 
                     }
+
                     int x = excel.find("رقم التلميذ")[0] - 1;
                     int y = excel.find("رقم التلميذ")[1] - 1;
+
                     for (int i = x; i < excel.GetLastRow(); i++)
                     {
                         if (i == x)

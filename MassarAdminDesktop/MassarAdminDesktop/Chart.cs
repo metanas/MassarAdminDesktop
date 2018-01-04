@@ -18,7 +18,8 @@ namespace MassarAdminDesktop
         List<Color> col = new List<Color> { Color.AliceBlue, Color.Aqua, Color.Aquamarine, Color.Brown, Color.Cornsilk, Color.DarkGreen };
 
         Chart c;
-        
+        ToolTip tp;
+        static public int a = 0;
      
         public  chart (Chart mychart,string id_class) {
             this.c = mychart;
@@ -28,15 +29,13 @@ namespace MassarAdminDesktop
             this.c.ChartAreas[0].AxisY.Maximum = 20;
             this.c.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
             this.c.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
-
-
-            mychart.DoubleClick += new System.EventHandler(doubleCliick);
+            tp = new ToolTip();
         }
 
-         public void doubleCliick(object sender, EventArgs e)
+        public static void doubleCliick(object sender, EventArgs e)
         {
-            if(this.c.Dock == DockStyle.Fill)this.c.Dock = DockStyle.None;
-            else this.c.Dock = DockStyle.Fill;
+            if(((Chart)sender).Dock == DockStyle.Fill) ((Chart)sender).Dock = DockStyle.None;
+            else  ((Chart)sender).Dock = DockStyle.Fill;
         }
 
         public void addChartByEtudiant(string id_et)
@@ -55,7 +54,9 @@ namespace MassarAdminDesktop
             while (Login.read.Read())
             {
                 s.Points.AddXY(Login.read["nom"].ToString(), Double.Parse(Login.read[0].ToString()));
+                s.Points[i].ToolTip = Login.read[0].ToString();
                 s.Points[i].Color = this.col[i++];
+
             }
             this.c.Series.Add(s);
             Login.read.Close();
@@ -109,10 +110,14 @@ namespace MassarAdminDesktop
 
             
             Login.read = DBConnect.Gets(query2);
+            int q = 0;
             while (Login.read.Read())
+            {
+                MessageBox.Show(Login.read["n"].ToString());
                 s.Points.AddXY(Login.read["nom"].ToString(), Double.Parse(Login.read["n"].ToString()));
-            
-                s.Name = nom;
+                s.Points[q++].ToolTip = Login.read["n"].ToString();
+            }
+            s.Name = nom;
             this.c.Series.Add(s);
             //this.c.Series.Add(s);
             Login.read.Close();
