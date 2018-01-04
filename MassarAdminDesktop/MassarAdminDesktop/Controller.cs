@@ -11,10 +11,10 @@ namespace MassarAdminDesktop
         public static string checkFile(string path)
         {
             Excel e = new Excel(path, "r");
+            e.setCheet(e.getSheets());
             int[] isNotes = e.find("نقط المراقبة المستمرة");
             int[] isInfo = e.find("معلومات التلاميذ");
-
-            //string[] d = path.Split('_');
+            e.Close();
             if (isNotes[0] != -1) return "notes";
             else if (isInfo[0] != -1) return "info";
             return "";
