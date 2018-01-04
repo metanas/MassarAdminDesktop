@@ -31,5 +31,18 @@ namespace MassarAdminDesktop
         {
             panel1.Location = new Point((this.Width - panel1.Width)/2, (this.Height - panel1.Height)/2);
         }
+
+        private void Betudiant_Click(object sender, EventArgs e)
+        {
+           
+            viewetudiant view = new viewetudiant();
+            view.TopLevel = false;
+            view.Parent = this.Parent;
+            
+            view.Location = new Point(this.Location.X, this.Location.Y);
+            view.Show();
+            Home.PreviewFrom[0].Hide();
+            Home.ActifForm = view;
+        }
     }
 }
