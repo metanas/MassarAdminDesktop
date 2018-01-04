@@ -76,7 +76,6 @@
             this.dgv_eleves.Size = new System.Drawing.Size(302, 464);
             this.dgv_eleves.TabIndex = 0;
             this.dgv_eleves.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_eleves_CellClick);
-            this.dgv_eleves.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_eleves_CellContentClick);
             // 
             // Nom
             // 
@@ -148,7 +147,6 @@
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // Eleves
             // 
