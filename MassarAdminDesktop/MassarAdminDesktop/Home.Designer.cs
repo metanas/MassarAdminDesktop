@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
+
             this.search = new Bunifu.Framework.UI.BunifuTextbox();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.annees = new System.Windows.Forms.ComboBox();
@@ -82,6 +83,7 @@
             this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
             this.bunifuImageButton3.ImageActive = null;
+
             this.bunifuImageButton3.Location = new System.Drawing.Point(3, 5);
             this.bunifuImageButton3.Name = "bunifuImageButton3";
             this.bunifuImageButton3.Size = new System.Drawing.Size(161, 68);
