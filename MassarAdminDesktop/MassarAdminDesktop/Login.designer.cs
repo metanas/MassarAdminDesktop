@@ -40,7 +40,7 @@
             // 
             this.nom.Depth = 0;
             this.nom.Hint = "Username";
-            this.nom.Location = new System.Drawing.Point(12, 153);
+            this.nom.Location = new System.Drawing.Point(153, 196);
             this.nom.MouseState = MaterialSkin.MouseState.HOVER;
             this.nom.Name = "nom";
             this.nom.PasswordChar = '\0';
@@ -55,7 +55,7 @@
             // 
             this.password.Depth = 0;
             this.password.Hint = "Password";
-            this.password.Location = new System.Drawing.Point(12, 191);
+            this.password.Location = new System.Drawing.Point(153, 235);
             this.password.MouseState = MaterialSkin.MouseState.HOVER;
             this.password.Name = "password";
             this.password.PasswordChar = '\0';
@@ -69,7 +69,7 @@
             // log_in
             // 
             this.log_in.Depth = 0;
-            this.log_in.Location = new System.Drawing.Point(176, 240);
+            this.log_in.Location = new System.Drawing.Point(228, 278);
             this.log_in.MouseState = MaterialSkin.MouseState.HOVER;
             this.log_in.Name = "log_in";
             this.log_in.Primary = true;
@@ -84,7 +84,7 @@
             this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
             this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(32, 73);
+            this.bunifuImageButton3.Location = new System.Drawing.Point(176, 86);
             this.bunifuImageButton3.Name = "bunifuImageButton3";
             this.bunifuImageButton3.Size = new System.Drawing.Size(199, 68);
             this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -97,13 +97,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(266, 284);
+            this.ClientSize = new System.Drawing.Size(559, 332);
             this.Controls.Add(this.bunifuImageButton3);
             this.Controls.Add(this.log_in);
             this.Controls.Add(this.password);
             this.Controls.Add(this.nom);
-            this.MaximumSize = new System.Drawing.Size(266, 284);
-            this.MinimumSize = new System.Drawing.Size(266, 284);
+            this.MaximumSize = new System.Drawing.Size(559, 332);
+            this.MinimumSize = new System.Drawing.Size(559, 332);
             this.Name = "Login";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();

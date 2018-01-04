@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace MassarAdminDesktop
 {
@@ -34,6 +35,11 @@ namespace MassarAdminDesktop
             this.ville_naissance = ville_naissance;
             this.ville_naissance_ar = ville_naissance_ar;
             this.adresse = adresse;
+        }
+
+        public float moyenne(string id_groupe)
+        {
+            return float.Parse(DBConnect.Get("SELECT avg(note) from examiner where id_groupe=" + id_groupe + " and id_etudiant=" + this.id));
         }
     }
 

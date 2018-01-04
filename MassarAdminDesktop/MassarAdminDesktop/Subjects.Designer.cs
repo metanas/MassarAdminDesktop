@@ -32,6 +32,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Subjects));
+
             this.panel1 = new System.Windows.Forms.Panel();
             this.diagrambox = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -41,6 +42,11 @@
             this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Subjects));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.moyenne = new System.Windows.Forms.Label();
             this.min = new System.Windows.Forms.Label();
             this.max = new System.Windows.Forms.Label();
@@ -56,6 +62,7 @@
             this.Button3 = new Bunifu.Framework.UI.BunifuTileButton();
             this.Button2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.Button1 = new Bunifu.Framework.UI.BunifuTileButton();
+
             this.panel1.SuspendLayout();
             this.diagrambox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -65,6 +72,7 @@
             this.exampanel.SuspendLayout();
             this.S2box.SuspendLayout();
             this.S1box.SuspendLayout();
+
             this.SuspendLayout();
             // 
             // panel1
@@ -78,6 +86,7 @@
             this.panel1.TabIndex = 0;
             // 
             // diagrambox
+
             // 
             this.diagrambox.Controls.Add(this.chart1);
             this.diagrambox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,6 +141,7 @@
             this.Profpanel.Name = "Profpanel";
             this.Profpanel.Size = new System.Drawing.Size(502, 199);
             this.Profpanel.TabIndex = 0;
+
             // 
             // label2
             // 
@@ -423,6 +433,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 696);
             this.Controls.Add(this.panel1);
+
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(100, 0);
             this.Name = "Subjects";
@@ -437,6 +448,7 @@
             this.exampanel.ResumeLayout(false);
             this.S2box.ResumeLayout(false);
             this.S1box.ResumeLayout(false);
+
             this.ResumeLayout(false);
 
         }
@@ -452,6 +464,7 @@
         private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
+
         private System.Windows.Forms.Label moyenne;
         private System.Windows.Forms.Label min;
         private System.Windows.Forms.Label max;
@@ -460,6 +473,7 @@
         private System.Windows.Forms.GroupBox exambox;
         private System.Windows.Forms.Panel exampanel;
         private System.Windows.Forms.GroupBox S2box;
+
         private Bunifu.Framework.UI.BunifuTileButton Button6;
         private Bunifu.Framework.UI.BunifuTileButton Button5;
         private Bunifu.Framework.UI.BunifuTileButton Button4;
@@ -467,5 +481,6 @@
         private Bunifu.Framework.UI.BunifuTileButton Button3;
         private Bunifu.Framework.UI.BunifuTileButton Button2;
         private Bunifu.Framework.UI.BunifuTileButton Button1;
+
     }
 }
