@@ -35,7 +35,7 @@
 
             this.panel1 = new System.Windows.Forms.Panel();
             this.diagrambox = new System.Windows.Forms.GroupBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            
             this.Infobox = new System.Windows.Forms.GroupBox();
             this.Profpanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,9 +43,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
 
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Subjects));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+           
+            
+            
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.moyenne = new System.Windows.Forms.Label();
             this.min = new System.Windows.Forms.Label();
