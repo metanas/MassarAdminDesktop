@@ -53,7 +53,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(108)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.search);
             this.panel1.Controls.Add(this.bunifuImageButton3);
             this.panel1.Controls.Add(this.annees);
@@ -65,7 +65,7 @@
             // 
             // search
             // 
-            this.search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(108)))), ((int)(((byte)(0)))));
             this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
             this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.search.ForeColor = System.Drawing.Color.White;
