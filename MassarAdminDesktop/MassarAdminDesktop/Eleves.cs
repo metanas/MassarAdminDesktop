@@ -19,7 +19,8 @@ namespace MassarAdminDesktop
             this.id = id;
             InitializeComponent();
             el.Clear();
-            Login.read = DBConnect.
+
+            /*Login.read = DBConnect.
                 Gets("SELECT id, id_massar, nom, prenom, nom_ar, prenom_ar, sexe, ville_naissance, ville_naissance_ar, adresse, date_naissance FROM etudiant, etudiant_groupe where id_groupe = " + id+" and id_etudiant = id");
             while (Login.read.Read())
             {
@@ -29,14 +30,14 @@ namespace MassarAdminDesktop
                 el.Add(e);
             }
 
-            Login.read.Close();
+            Login.read.Close();*/
             render_eleves();
         }
 
         
-        void render_eleves()
+        public void render_eleves()
         {
-            foreach (Eleve e in el)
+            foreach (Eleve e in this.el)
                 dgv_eleves.Rows.Add(e.nom, e.prenom, e.moyenne(id));
         }
 

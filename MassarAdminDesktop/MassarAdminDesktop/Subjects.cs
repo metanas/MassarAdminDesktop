@@ -14,15 +14,15 @@ namespace MassarAdminDesktop
     {
       
         List<Bunifu.Framework.UI.BunifuTileButton> cl_buttons = new List<Bunifu.Framework.UI.BunifuTileButton>();
-        string[] semestre= new string[6];
+        string[] semestre= new string[10];
         string idm;
         string nomm;
 
         public Subjects(string idm, string nomm)
         {
             InitializeComponent();
-            semestre[0] = "1"; semestre[1] = "1"; semestre[2] = "1"; semestre[3] = "2"; semestre[4] = "2"; semestre[5] = "2";
-            cl_buttons.Add(Button1); cl_buttons.Add(Button2); cl_buttons.Add(Button3); cl_buttons.Add(Button4); cl_buttons.Add(Button5); cl_buttons.Add(Button6);
+            semestre[0] = "1"; semestre[1] = "1"; semestre[2] = "1"; semestre[3] = "1"; semestre[4] = "1"; semestre[5] = "2"; semestre[6] = "2"; semestre[7] = "2"; semestre[8] = "2"; semestre[9] = "2";
+            cl_buttons.Add(Button1); cl_buttons.Add(Button2); cl_buttons.Add(Button3); cl_buttons.Add(Button6); cl_buttons.Add(Button7); cl_buttons.Add(Button8); cl_buttons.Add(Button4); cl_buttons.Add(Button5); cl_buttons.Add(Button9); cl_buttons.Add(Button10);
             foreach (Bunifu.Framework.UI.BunifuTileButton b in cl_buttons)
                 b.Click += new System.EventHandler(this.clickcc);
             string id = Home.id;
