@@ -31,10 +31,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Betudiant = new Bunifu.Framework.UI.BunifuTileButton();
             this.panel1.SuspendLayout();
@@ -78,6 +78,30 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "30";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(372, 438);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 20);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "30";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(182, 438);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 20);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "30";
+            // 
             // bunifuTileButton2
             // 
             this.bunifuTileButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
@@ -98,18 +122,6 @@
             this.bunifuTileButton2.Size = new System.Drawing.Size(141, 147);
             this.bunifuTileButton2.TabIndex = 20;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(372, 438);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 20);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "30";
-            // 
             // bunifuTileButton1
             // 
             this.bunifuTileButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
@@ -129,18 +141,6 @@
             this.bunifuTileButton1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.bunifuTileButton1.Size = new System.Drawing.Size(141, 147);
             this.bunifuTileButton1.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(182, 438);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 20);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "30";
             // 
             // pictureBox1
             // 
@@ -171,6 +171,7 @@
             this.Betudiant.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.Betudiant.Size = new System.Drawing.Size(141, 147);
             this.Betudiant.TabIndex = 15;
+            this.Betudiant.Click += new System.EventHandler(this.Betudiant_Click);
             // 
             // Analyse
             // 
@@ -194,12 +195,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton2;
-        private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuTileButton Betudiant;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label1;
     }
 }

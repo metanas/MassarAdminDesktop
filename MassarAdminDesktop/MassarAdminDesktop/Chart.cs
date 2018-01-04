@@ -18,6 +18,8 @@ namespace MassarAdminDesktop
         List<Color> col = new List<Color> { Color.AliceBlue, Color.Aqua, Color.Aquamarine, Color.Brown, Color.Cornsilk, Color.DarkGreen };
 
         Chart c;
+        
+     
         public  chart (Chart mychart,string id_class) {
             this.c = mychart;
             this.id_class = id_class;
@@ -27,6 +29,14 @@ namespace MassarAdminDesktop
             this.c.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
             this.c.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
 
+
+            mychart.DoubleClick += new System.EventHandler(doubleCliick);
+        }
+
+         public void doubleCliick(object sender, EventArgs e)
+        {
+            if(this.c.Dock == DockStyle.Fill)this.c.Dock = DockStyle.None;
+            else this.c.Dock = DockStyle.Fill;
         }
 
         public void addChartByEtudiant(string id_et)
