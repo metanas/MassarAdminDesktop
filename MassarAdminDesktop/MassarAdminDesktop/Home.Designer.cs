@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
-
             this.search = new Bunifu.Framework.UI.BunifuTextbox();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.annees = new System.Windows.Forms.ComboBox();
@@ -54,7 +53,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(108)))), ((int)(((byte)(0)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.panel1.Controls.Add(this.search);
             this.panel1.Controls.Add(this.bunifuImageButton3);
             this.panel1.Controls.Add(this.annees);
@@ -66,7 +65,7 @@
             // 
             // search
             // 
-            this.search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(108)))), ((int)(((byte)(0)))));
+            this.search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
             this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.search.ForeColor = System.Drawing.Color.White;
@@ -83,7 +82,6 @@
             this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
             this.bunifuImageButton3.ImageActive = null;
-
             this.bunifuImageButton3.Location = new System.Drawing.Point(3, 5);
             this.bunifuImageButton3.Name = "bunifuImageButton3";
             this.bunifuImageButton3.Size = new System.Drawing.Size(161, 68);
@@ -145,7 +143,7 @@
             this.Back.BackColor = System.Drawing.Color.Transparent;
             this.Back.Image = global::MassarAdminDesktop.Properties.Resources.Back;
             this.Back.ImageActive = null;
-            this.Back.Location = new System.Drawing.Point(173, 27);
+            this.Back.Location = new System.Drawing.Point(173, 28);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(33, 30);
             this.Back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

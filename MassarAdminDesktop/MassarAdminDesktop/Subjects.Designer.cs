@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -59,6 +60,7 @@
             this.Button3 = new Bunifu.Framework.UI.BunifuTileButton();
             this.Button2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.Button1 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.Infobox.SuspendLayout();
@@ -547,5 +549,6 @@
         private Bunifu.Framework.UI.BunifuTileButton Button5;
         private Bunifu.Framework.UI.BunifuTileButton Button4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
