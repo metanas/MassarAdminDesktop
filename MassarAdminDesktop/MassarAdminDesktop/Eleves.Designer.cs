@@ -76,6 +76,7 @@
             this.dgv_eleves.Size = new System.Drawing.Size(302, 464);
             this.dgv_eleves.TabIndex = 0;
             this.dgv_eleves.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_eleves_CellClick);
+            this.dgv_eleves.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_eleves_CellContentClick);
             // 
             // Nom
             // 

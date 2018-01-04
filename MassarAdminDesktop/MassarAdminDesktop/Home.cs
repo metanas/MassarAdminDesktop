@@ -30,13 +30,25 @@ namespace MassarAdminDesktop
             InitializeComponent();
             this.login = login;
             loadHome();
+            toolTipBegin();
+        }
+
+        private void toolTipBegin()
+        {
+
+            toolTip1.SetToolTip(bunifuImageButton1, "Deconnection");
+            toolTip1.SetToolTip(bunifuImageButton2, "Importer un Fichier");
+            toolTip1.SetToolTip(Back, "Retour");
+            toolTip1.SetToolTip(HomeButton, "principal");
+            toolTip1.SetToolTip(SuperUser, "ajouter un Administrateur");
+           
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
-            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue800, MaterialSkin.Primary.Blue700, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange800, MaterialSkin.Primary.Blue700, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
             SuperUser.Visible = Login.admin.isSuper;
             annees.Font = new Font("Arial", 14);
             annees.Items.Clear();
@@ -76,10 +88,10 @@ namespace MassarAdminDesktop
             {
                 cl_buttons.Add(new Bunifu.Framework.UI.BunifuFlatButton());
                 cl_buttons[i].Size = new Size(panel1.Width, 48);
-                cl_buttons[i].BackColor = Color.FromArgb(65, 105, 225);
-                cl_buttons[i].Activecolor = Color.FromArgb(45, 85, 205);
-                cl_buttons[i].Normalcolor = Color.FromArgb(65, 105, 225);
-                cl_buttons[i].OnHovercolor = Color.FromArgb(60, 100, 220);
+                cl_buttons[i].BackColor = Color.FromArgb(239, 108, 0);
+                cl_buttons[i].Activecolor = Color.FromArgb(219, 100, 0);
+                cl_buttons[i].Normalcolor = Color.FromArgb(239, 108, 0);
+                cl_buttons[i].OnHovercolor = Color.FromArgb(230, 100, 0);
                 cl_buttons[i].Click += new System.EventHandler(this.groupe);
                 cl_buttons[i].Text = Login.read["nom"].ToString();
                 cl_buttons[i].IsTab = true;
@@ -171,6 +183,7 @@ namespace MassarAdminDesktop
         {
              idann = annees.SelectedItem.ToString();
             loadgroupes(idann);
+
         }
 
         private void Home_ResizeBegin(object sender, EventArgs e)
@@ -249,6 +262,11 @@ namespace MassarAdminDesktop
             {
                 //loadgroupes(annees.SelectedItem.ToString());
             }
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

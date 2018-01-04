@@ -12,7 +12,8 @@ namespace MassarAdminDesktop
 {
     public partial class Subjects : Form
     {
-        List<Button> cc = new List<Button>(); 
+      
+        List<Bunifu.Framework.UI.BunifuTileButton> cl_buttons = new List<Bunifu.Framework.UI.BunifuTileButton>();
         string[] semestre= new string[6];
         string idm;
         string nomm;
@@ -21,49 +22,46 @@ namespace MassarAdminDesktop
         {
             InitializeComponent();
             semestre[0] = "1"; semestre[1] = "1"; semestre[2] = "1"; semestre[3] = "2"; semestre[4] = "2"; semestre[5] = "2";
-            cc.Add(button1); cc.Add(button2); cc.Add(button3); cc.Add(button4); cc.Add(button5); cc.Add(button6);
-            foreach (Button b in cc)
+            cl_buttons.Add(Button1); cl_buttons.Add(Button2); cl_buttons.Add(Button3); cl_buttons.Add(Button4); cl_buttons.Add(Button5); cl_buttons.Add(Button6);
+            foreach (Bunifu.Framework.UI.BunifuTileButton b in cl_buttons)
                 b.Click += new System.EventHandler(this.clickcc);
             string id = Home.id;
             string nomgr = Home.nomgr;
             this.idm = idm;
             this.nomm = nomm;
-            if (progressBar1.Value >= 10)
-            {
-                progressBar1.ForeColor = Color.Yellow;
-
-            }
             chart ch = new chart(chart1, Home.id);
             ch.addChartBy(nom: nomgr);
             max.Text = DBConnect.Get("select max(note) from examiner where id_matiere="+this.idm+" and id_groupe=" + id + ";");
             min.Text = DBConnect.Get("select min(note) from examiner where id_matiere=" + this.idm + " and id_groupe=" + id + ";");
 
             string moy = DBConnect.Get("select avg(note) from examiner where id_matiere=" + this.idm + " and id_groupe=" + id + ";");
-            progressBar1.Value = (int)Math.Ceiling(float.Parse(moy));
+            bunifuCircleProgressbar1.Value = (int)Math.Ceiling(float.Parse(moy));
 
             Login.read = DBConnect.Gets("select nom , prenom from groupe_matiere_enseignant , enseignant where id_enseignant=id and id_groupe="+id+" and id_matiere=" + this.idm);
             while (Login.read.Read())
-                professeur.Text = Login.read["nom"].ToString() + " " + Login.read["prenom"].ToString();
+                label2.Text = Login.read["nom"].ToString() + " " + Login.read["prenom"].ToString();
             Login.read.Close();
             
             moyenne.Text = moy.Substring(0, 5);
-            if (progressBar1.Value < 10)
-                moyenne.ForeColor = Color.Red;
-
+            if (bunifuCircleProgressbar1.Value < 10)
+                bunifuCircleProgressbar1.ProgressColor = Color.Red;
+            else
+                bunifuCircleProgressbar1.ProgressColor = Color.Green;
             Login.read = DBConnect.Gets("select distinct titre from examiner where id_groupe = "+id+ " and id_matiere=" + this.idm + " order by semestre,titre");
             int i = 0;
             while (Login.read.Read())
-                cc[i++].Visible = true;
+                cl_buttons[i++].Visible = true;
             Login.read.Close();
 
         }
         private void clickcc(object sender,EventArgs e)
         {
             chart ch = new chart(chart1,Home.id);
-            Button the_cc = ((Button)sender);
-            ch.addChartBy(nom: semestre[cc.IndexOf(the_cc)] + " " + the_cc.Text, semestre: semestre[cc.IndexOf(the_cc)], titre: the_cc.Text);
+            Bunifu.Framework.UI.BunifuTileButton the_cc = ((Bunifu.Framework.UI.BunifuTileButton)sender);
+            ch.addChartBy(nom: semestre[cl_buttons.IndexOf(the_cc)] + " " + the_cc.LabelText, semestre: semestre[cl_buttons.IndexOf(the_cc)], titre: the_cc.LabelText);
 
         }
+
 
         private void Subjects_Resize(object sender, EventArgs e)
         {

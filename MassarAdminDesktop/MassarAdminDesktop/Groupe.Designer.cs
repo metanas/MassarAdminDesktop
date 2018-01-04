@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.groupe_l = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.bunifuSeparator1);
             this.panel1.Controls.Add(this.groupe_l);
             this.panel1.Controls.Add(this.label2);
@@ -49,8 +50,18 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(759, 460);
+            this.panel1.Size = new System.Drawing.Size(769, 464);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(180, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 37);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Élèves";
             // 
             // bunifuSeparator1
             // 
@@ -92,6 +103,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 129);
             this.panel3.TabIndex = 7;
+            this.panel3.Click += new System.EventHandler(this.panel3_Click);
             // 
             // panel2
             // 
@@ -115,16 +127,6 @@
             this.progressBar1.TabIndex = 3;
             this.progressBar1.Value = 20;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(180, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 37);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Élèves";
-            // 
             // Groupe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +149,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label groupe_l;
         private System.Windows.Forms.Label label2;
