@@ -169,6 +169,7 @@ namespace MassarAdminDesktop
         {
             idann = annees.SelectedItem.ToString();
             loadgroupes(idann);
+
         }
 
         private void Home_ResizeBegin(object sender, EventArgs e)
