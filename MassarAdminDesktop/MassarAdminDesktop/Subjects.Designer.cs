@@ -94,6 +94,7 @@
             this.chart1.Size = new System.Drawing.Size(529, 591);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+            this.chart1.DoubleClick += new System.EventHandler(this.chart1_DoubleClick);
             // 
             // Infobox
             // 

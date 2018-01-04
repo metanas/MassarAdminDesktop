@@ -67,5 +67,10 @@ namespace MassarAdminDesktop
         {
             panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
         }
+
+        private void chart1_DoubleClick(object sender, EventArgs e)
+        {
+            chart.doubleCliick(sender,e);
+        }
     }
 }
