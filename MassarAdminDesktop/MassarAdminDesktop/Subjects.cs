@@ -62,6 +62,10 @@ namespace MassarAdminDesktop
 
         }
 
-        
+
+        private void Subjects_Resize(object sender, EventArgs e)
+        {
+            panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
+        }
     }
 }

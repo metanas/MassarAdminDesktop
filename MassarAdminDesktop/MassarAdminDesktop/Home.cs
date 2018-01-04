@@ -30,13 +30,25 @@ namespace MassarAdminDesktop
             InitializeComponent();
             this.login = login;
             loadHome();
+            toolTipBegin();
+        }
+
+        private void toolTipBegin()
+        {
+
+            toolTip1.SetToolTip(bunifuImageButton1, "Deconnection");
+            toolTip1.SetToolTip(bunifuImageButton2, "Importer un Fichier");
+            toolTip1.SetToolTip(Back, "Retour");
+            toolTip1.SetToolTip(HomeButton, "principal");
+            toolTip1.SetToolTip(SuperUser, "ajouter un Administrateur");
+           
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
-            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Grey400, MaterialSkin.Primary.Grey700, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
+            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue800, MaterialSkin.Primary.Blue700, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
             SuperUser.Visible = Login.admin.isSuper;
             annees.Font = new Font("Arial", 14);
             annees.Items.Clear();
@@ -74,18 +86,18 @@ namespace MassarAdminDesktop
             Login.read = DBConnect.Gets("select groupe.nom , groupe.id from groupe , annee where annee.annee_scolaire='" + annee + "' and  annee.id=groupe.id_annee ; ");
             while (Login.read.Read())
             {
-
                 cl_buttons.Add(new Bunifu.Framework.UI.BunifuFlatButton());
                 cl_buttons[i].Size = new Size(panel1.Width, 48);
-                cl_buttons[i].BackColor = Color.FromArgb(100, 100, 100);
-                cl_buttons[i].Activecolor = Color.FromArgb(50, 50, 50);
-                cl_buttons[i].Normalcolor = Color.FromArgb(100, 100, 100);
-                cl_buttons[i].OnHovercolor = Color.FromArgb(80, 80, 80);
+                cl_buttons[i].BackColor = Color.FromArgb(65, 105, 225);
+                cl_buttons[i].Activecolor = Color.FromArgb(45, 85, 205);
+                cl_buttons[i].Normalcolor = Color.FromArgb(65, 105, 225);
+                cl_buttons[i].OnHovercolor = Color.FromArgb(60, 100, 220);
                 cl_buttons[i].Click += new System.EventHandler(this.groupe);
                 cl_buttons[i].Text = Login.read["nom"].ToString();
+                cl_buttons[i].IsTab = true;
                 if (i == 0)
                 {
-                    cl_buttons[i].Location = new Point(panel1.Location.X, annees.Location.Y + annees.Height + 10);
+                    cl_buttons[i].Location = new Point(panel1.Location.X, search.Location.Y + search.Height);
                 }
                 else { cl_buttons[i].Location = new Point(panel1.Location.X, cl_buttons[i - 1].Location.Y + cl_buttons[i - 1].Height); }
                 id_classes.Add(Login.read["id"].ToString());
@@ -117,7 +129,6 @@ namespace MassarAdminDesktop
             Groupe_Form.TopLevel = false;
             Groupe_Form.Parent = this;
             Groupe_Form.Location = new Point(panel1.Width, bunifuSeparator1.Location.Y);
-            Groupe_Form.FormBorderStyle = FormBorderStyle.None;
             Groupe_Form.Show();
             if (ActifForm != null)
             {
@@ -125,6 +136,7 @@ namespace MassarAdminDesktop
                 Home.ActifForm.Hide();
             }
             Home.ActifForm = Groupe_Form;
+            Home_ResizeBegin(sender, e);
             Back.Visible = true;
             HomeButton.Visible = true;
             //replace messageBox by opening classes details
@@ -145,6 +157,7 @@ namespace MassarAdminDesktop
                 Home.ActifForm.Hide();
             }
             Home.ActifForm = previw;
+            Home_ResizeBegin(sender,e);
         }
 
         private void SuperUser_Click(object sender, EventArgs e)
@@ -157,6 +170,7 @@ namespace MassarAdminDesktop
                 Home.ActifForm.Hide();
             }
             Home.ActifForm = gerer;
+
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -167,7 +181,7 @@ namespace MassarAdminDesktop
 
         public void annees_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            idann = annees.SelectedItem.ToString();
+             idann = annees.SelectedItem.ToString();
             loadgroupes(idann);
 
         }
@@ -179,6 +193,11 @@ namespace MassarAdminDesktop
             SuperUser.Location = new Point(bunifuImageButton2.Location.X - SuperUser.Width - 5, SuperUser.Location.Y);
             analyse.Width = this.Width - panel1.Width;
             analyse.Height = this.Height - bunifuSeparator1.Location.Y;
+            if(ActifForm != null)
+            {
+                ActifForm.Width = this.Width - panel1.Width;
+                ActifForm.Height = this.Height - bunifuSeparator1.Location.Y;
+            }
         }
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
@@ -213,6 +232,40 @@ namespace MassarAdminDesktop
             }
             PreviewFrom.Clear();
             loadHome();
+
+        }
+
+        private void search_OnTextChange(object sender, EventArgs e)
+        {
+            int c = 0;
+            for(int i=0; i< cl_buttons.Count;i++)
+            {
+                if (cl_buttons[i].Text.ToUpper().Contains(search.text.ToUpper()))
+                {
+                    if (c == 0)
+                    {
+                        cl_buttons[i].Location = new Point(panel1.Location.X, search.Location.Y + search.Height);
+                        c++;
+                    }
+                    else
+                    {
+                        cl_buttons[i].Location = new Point(panel1.Location.X, cl_buttons[i-1].Height + cl_buttons[i-1].Location.Y);
+                    }
+                    panel1.Controls.Add(cl_buttons[i]);
+
+                }
+                else {
+                    panel1.Controls.Remove(cl_buttons[i]);
+                }
+            }
+            if(search.text == "")
+            {
+                //loadgroupes(annees.SelectedItem.ToString());
+            }
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
 
         }
     }

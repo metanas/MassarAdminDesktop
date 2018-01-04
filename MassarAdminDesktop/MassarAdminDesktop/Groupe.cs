@@ -33,10 +33,11 @@ namespace MassarAdminDesktop
                 Bunifu.Framework.UI.BunifuTileButton b = new Bunifu.Framework.UI.BunifuTileButton();
                 b.Location = new Point(w, bunifuSeparator1.Location.Y + bunifuSeparator1.Height + 20);
                 b.LabelText = Login.read[1] + "_" + Login.read[0];
+                b.BackColor = Color.FromArgb(0, 163, 77);
                 b.Click += new EventHandler(this.click_matiere);
                 Matieres.Add(b);
                 b.Size = new Size(100, 100);
-                this.Controls.Add(b);
+                panel1.Controls.Add(b);
                 w += b.Width + 10; 
                 b.Show();
             }
@@ -54,6 +55,8 @@ namespace MassarAdminDesktop
             Subjects S = new Subjects(id, nom);
             S.TopLevel = false;
             S.Parent = Home.ActifForm.Parent;
+            S.Width = this.Width;
+            S.Height = this.Height;
             S.Location = new Point(this.Location.X, this.Location.Y);
             S.Show();
             if (Home.ActifForm != null)
@@ -87,6 +90,10 @@ namespace MassarAdminDesktop
             click_eleves();
         }
 
-       
+
+        private void Groupe_Resize(object sender, EventArgs e)
+        {
+            panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
+        }
     }
 }
