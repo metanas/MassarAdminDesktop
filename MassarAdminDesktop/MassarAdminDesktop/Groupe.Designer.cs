@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupe_l = new System.Windows.Forms.Label();
+
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.groupe_l = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,15 +45,30 @@
             // 
             // panel1
             // 
+
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(36, 68);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(402, 129);
+            this.panel1.TabIndex = 0;
             this.panel1.Controls.Add(this.bunifuSeparator1);
             this.panel1.Controls.Add(this.groupe_l);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(759, 460);
-            this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(216, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 37);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Élèves";
+            
             // 
             // bunifuSeparator1
             // 
@@ -133,7 +151,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(100, 0);
             this.Name = "Groupe";
-            this.Text = "Groupe";
+            this.Text = "Groupe";       
             this.Resize += new System.EventHandler(this.Groupe_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -146,6 +164,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label groupe_l;
         private System.Windows.Forms.Label label2;
