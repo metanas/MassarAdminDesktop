@@ -135,6 +135,7 @@
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Matiere.cs" />
     <Compile Include="Previw.cs">
       <SubType>Form</SubType>
     </Compile>
