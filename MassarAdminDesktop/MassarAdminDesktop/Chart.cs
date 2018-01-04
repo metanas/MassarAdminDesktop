@@ -48,6 +48,15 @@ namespace MassarAdminDesktop
             Login.read.Close();
         }
 
+        public void addChartHistorique(string id_et)
+        {
+            Series s = new Series
+            {
+                ChartType = SeriesChartType.StackedBar
+
+            };
+        }
+
         public void addChartBy(string nom="", SeriesChartType typechart= SeriesChartType.Column, string id_matiere ="", string unite="",string semestre="",string titre="") {
             string query2= "SELECT id_etudiant,prenom ,nom, avg(note) as n from examiner , etudiant where etudiant.id=id_etudiant and  id_groupe=" + this.id_class+" and";
 

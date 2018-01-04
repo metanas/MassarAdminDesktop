@@ -48,7 +48,7 @@
             this.nom.SelectionLength = 0;
             this.nom.SelectionStart = 0;
             this.nom.Size = new System.Drawing.Size(239, 23);
-            this.nom.TabIndex = 5;
+            this.nom.TabIndex = 0;
             this.nom.UseSystemPasswordChar = false;
             // 
             // password
@@ -63,7 +63,7 @@
             this.password.SelectionLength = 0;
             this.password.SelectionStart = 0;
             this.password.Size = new System.Drawing.Size(239, 23);
-            this.password.TabIndex = 6;
+            this.password.TabIndex = 1;
             this.password.UseSystemPasswordChar = true;
             // 
             // log_in
@@ -74,7 +74,7 @@
             this.log_in.Name = "log_in";
             this.log_in.Primary = true;
             this.log_in.Size = new System.Drawing.Size(75, 23);
-            this.log_in.TabIndex = 7;
+            this.log_in.TabIndex = 2;
             this.log_in.Text = "LOGIN";
             this.log_in.UseVisualStyleBackColor = true;
             this.log_in.Click += new System.EventHandler(this.log_in_Click);

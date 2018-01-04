@@ -45,5 +45,11 @@ namespace MassarAdminDesktop
             chart c = new chart(chart_e, this.id);
             c.addChartByEtudiant(el[e.RowIndex].id);
         }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            chart c = new chart(chart_e, this.id);
+            //c.addChartHistorique(el[dgv_eleves.SelectedRows[0].Index].id);
+        }
     }
 }

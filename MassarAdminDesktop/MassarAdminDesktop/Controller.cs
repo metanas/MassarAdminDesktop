@@ -8,10 +8,16 @@ namespace MassarAdminDesktop
 {
     static class Controller
     {
-        public static string[] checkFile(string path)
+        public static string checkFile(string path)
         {
-            string[] d = path.Split('_');
-            return d;
+            Excel e = new Excel(path, "r");
+            int[] isNotes = e.find("نقط المراقبة المستمرة");
+            int[] isInfo = e.find("معلومات التلاميذ");
+
+            //string[] d = path.Split('_');
+            if (isNotes[0] != -1) return "notes";
+            else if (isInfo[0] != -1) return "info";
+            return "";
         }
     }
 }
