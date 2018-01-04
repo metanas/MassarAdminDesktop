@@ -19,10 +19,15 @@ namespace MassarAdminDesktop
 
         private void viewetudiant_Load(object sender, EventArgs e)
         {
-            Login.read = DBConnect.Gets("select nom,prenom from etudiant");
+            Login.read = DBConnect.Gets("select nom,prenom,sexe from etudiant");
             while (Login.read.Read())
-                bunifuCustomDataGrid1.Rows.Add(Login.read["nom"].ToString(),Login.read["prenom"].ToString());
+                bunifuCustomDataGrid1.Rows.Add(Login.read["nom"].ToString(),Login.read["prenom"].ToString(), Login.read["sexe"].ToString());
             Login.read.Close();
+        }
+
+        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

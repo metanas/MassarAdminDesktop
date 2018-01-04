@@ -141,6 +141,7 @@
             this.bunifuTileButton1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.bunifuTileButton1.Size = new System.Drawing.Size(141, 147);
             this.bunifuTileButton1.TabIndex = 18;
+            this.bunifuTileButton1.Click += new System.EventHandler(this.bunifuTileButton1_Click);
             // 
             // pictureBox1
             // 
