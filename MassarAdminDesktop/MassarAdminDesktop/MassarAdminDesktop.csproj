@@ -158,6 +158,12 @@
     <Compile Include="viewetudiant.Designer.cs">
       <DependentUpon>viewetudiant.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewprofesseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewprofesseur.Designer.cs">
+      <DependentUpon>viewprofesseur.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Analyse.resx">
       <DependentUpon>Analyse.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewetudiant.resx">
       <DependentUpon>viewetudiant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewprofesseur.resx">
+      <DependentUpon>viewprofesseur.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -250,7 +259,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\superUser.png" />
-
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
