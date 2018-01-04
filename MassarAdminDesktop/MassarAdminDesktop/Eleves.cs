@@ -45,10 +45,5 @@ namespace MassarAdminDesktop
             chart c = new chart(chart_e, this.id);
             c.addChartByEtudiant(el[e.RowIndex].id);
         }
-
-        private void dgv_eleves_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

@@ -30,15 +30,20 @@ namespace MassarAdminDesktop
             panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
         }
 
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void Previw_Load(object sender, EventArgs e)
         {
             Excel excel = new Excel(path, "r");
             excel.setCheet(excel.getSheets());
             int w = 0;
             Label[] label = new Label[] { label10, label11, label12, label13, label14,label15, label16, label17, label18, label19 };
-            string q = Controller.checkFile(fileName)[1].ToUpper();
+            string q = Controller.checkFile(path);
             string[] s = new string[] { "أكاديمية :", "الإقليمية", "مؤسسة", "المستوى  :", "القسم  :", "الاستاذ", "الدورة  :", "نقط :", "المادة", "السنة الدراسية :" };
-            if (q == "NOTESCC")
+            if (q == "notes")
             {
                 for (int i = 0; i < excel.find("ID")[0]; i++)
                 {
@@ -95,6 +100,7 @@ namespace MassarAdminDesktop
                             {
                                 if ((float.Parse(excel.getContent(i + 1, j)) > 20 || float.Parse(excel.getContent(i + 1, j)) < 0) && j != y){
                                     dataGridView1.Rows[i - x - 1].Cells[j - y].Style.BackColor = Color.DarkRed;
+                                    bunifuFlatButton1.Enabled = false;
                                 }
                             }
                             catch { }
@@ -104,6 +110,13 @@ namespace MassarAdminDesktop
 
 
                 }
+            }
+
+
+
+            else if (q == "info")
+            {
+                //traitement de fichier info eleves
             }
         }
 
