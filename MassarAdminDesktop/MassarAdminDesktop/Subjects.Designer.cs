@@ -28,25 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Subjects));
-
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.diagrambox = new System.Windows.Forms.GroupBox();
-            
             this.Infobox = new System.Windows.Forms.GroupBox();
             this.Profpanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-
-           
-            
-            
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.moyenne = new System.Windows.Forms.Label();
             this.min = new System.Windows.Forms.Label();
             this.max = new System.Windows.Forms.Label();
@@ -62,56 +54,26 @@
             this.Button3 = new Bunifu.Framework.UI.BunifuTileButton();
             this.Button2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.Button1 = new Bunifu.Framework.UI.BunifuTileButton();
-
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
-            this.diagrambox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.Infobox.SuspendLayout();
             this.Profpanel.SuspendLayout();
             this.exambox.SuspendLayout();
             this.exampanel.SuspendLayout();
             this.S2box.SuspendLayout();
             this.S1box.SuspendLayout();
-
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.diagrambox);
+            this.panel1.Controls.Add(this.chart1);
             this.panel1.Controls.Add(this.Infobox);
             this.panel1.Controls.Add(this.exambox);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1058, 672);
             this.panel1.TabIndex = 0;
-            // 
-            // diagrambox
-
-            // 
-            this.diagrambox.Controls.Add(this.chart1);
-            this.diagrambox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diagrambox.Location = new System.Drawing.Point(516, 6);
-            this.diagrambox.Name = "diagrambox";
-            this.diagrambox.Size = new System.Drawing.Size(542, 618);
-            this.diagrambox.TabIndex = 11;
-            this.diagrambox.TabStop = false;
-            this.diagrambox.Text = "Diagrame Des Notes";
-            // 
-            // chart1
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(6, 49);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(530, 522);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
             // 
             // Infobox
             // 
@@ -141,7 +103,6 @@
             this.Profpanel.Name = "Profpanel";
             this.Profpanel.Size = new System.Drawing.Size(502, 199);
             this.Profpanel.TabIndex = 0;
-
             // 
             // label2
             // 
@@ -161,7 +122,7 @@
             this.bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuTileButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
             this.bunifuTileButton1.Image = global::MassarAdminDesktop.Properties.Resources.professeur;
             this.bunifuTileButton1.ImagePosition = 21;
@@ -300,7 +261,7 @@
             this.Button6.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button6.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button6.ForeColor = System.Drawing.Color.White;
             this.Button6.Image = ((System.Drawing.Image)(resources.GetObject("Button6.Image")));
             this.Button6.ImagePosition = 21;
@@ -320,7 +281,7 @@
             this.Button5.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button5.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button5.ForeColor = System.Drawing.Color.White;
             this.Button5.Image = ((System.Drawing.Image)(resources.GetObject("Button5.Image")));
             this.Button5.ImagePosition = 21;
@@ -340,7 +301,7 @@
             this.Button4.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button4.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button4.ForeColor = System.Drawing.Color.White;
             this.Button4.Image = ((System.Drawing.Image)(resources.GetObject("Button4.Image")));
             this.Button4.ImagePosition = 21;
@@ -373,7 +334,7 @@
             this.Button3.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button3.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button3.ForeColor = System.Drawing.Color.White;
             this.Button3.Image = ((System.Drawing.Image)(resources.GetObject("Button3.Image")));
             this.Button3.ImagePosition = 21;
@@ -393,7 +354,7 @@
             this.Button2.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button2.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button2.ForeColor = System.Drawing.Color.White;
             this.Button2.Image = ((System.Drawing.Image)(resources.GetObject("Button2.Image")));
             this.Button2.ImagePosition = 21;
@@ -413,7 +374,7 @@
             this.Button1.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button1.ForeColor = System.Drawing.Color.White;
             this.Button1.Image = ((System.Drawing.Image)(resources.GetObject("Button1.Image")));
             this.Button1.ImagePosition = 21;
@@ -427,20 +388,33 @@
             this.Button1.TabIndex = 3;
             this.Button1.Visible = false;
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(515, 37);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(530, 522);
+            this.chart1.TabIndex = 11;
+            this.chart1.Text = "chart1";
+            // 
             // Subjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 696);
             this.Controls.Add(this.panel1);
-
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(100, 0);
             this.Name = "Subjects";
             this.Text = "Subjects";
             this.panel1.ResumeLayout(false);
-            this.diagrambox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.Infobox.ResumeLayout(false);
             this.Profpanel.ResumeLayout(false);
             this.Profpanel.PerformLayout();
@@ -448,7 +422,7 @@
             this.exampanel.ResumeLayout(false);
             this.S2box.ResumeLayout(false);
             this.S1box.ResumeLayout(false);
-
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -456,8 +430,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox diagrambox;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.GroupBox Infobox;
         private System.Windows.Forms.Panel Profpanel;
         public System.Windows.Forms.Label label2;
@@ -481,6 +453,6 @@
         private Bunifu.Framework.UI.BunifuTileButton Button3;
         private Bunifu.Framework.UI.BunifuTileButton Button2;
         private Bunifu.Framework.UI.BunifuTileButton Button1;
-
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
