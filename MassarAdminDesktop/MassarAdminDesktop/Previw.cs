@@ -13,7 +13,10 @@ namespace MassarAdminDesktop
     public partial class Previw : Form
     {
         string path,fileName;
-        public Form PreviewForm; 
+        public Form PreviewForm;
+        string q;
+        string id_groupe;
+        string id_annee;
         public Previw()
         {
             InitializeComponent();
@@ -30,11 +33,54 @@ namespace MassarAdminDesktop
             panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
         }
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
+        private void Importer_b_Click(object sender, EventArgs e)
+        {
+            string query = "";
+            if (this.q == "notes values")
+            {
+                query += "examiner ";
+            }
+            else if(this.q == "info")
+            {
+                MessageBox.Show("_" + label31.Text + "_");
+                this.id_annee = DBConnect.Get("select id from annee where annee_scolaire='" + label31.Text + "'");
+                
+                DBConnect.Post(string.Format("insert ignore into groupe values(null,'{0}',{1},{2})", label33.Text, label33.Text.Substring(0, 1), this.id_annee));
+                
+                this.id_groupe = DBConnect.Get(string.Format("select id from groupe where nom = '{0}' and id_annee = {1}", label33.Text, this.id_annee));
+                string query3 = "insert into etudiant_groupe values ";
+               
+                query += "INSERT ignore INTO  etudiant  values ";
+                foreach(DataGridViewRow r in dataGridView1.Rows)
+                {
+                    if (r.Index == dataGridView1.Rows.Count - 1)
+                        continue;
+                    query += " ( ";
+                    
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        if (c.ColumnIndex == 0)
+                        {
+                            query += c.Value.ToString() + ",";
+                            query3 +="("+id_groupe+","+ c.Value.ToString() + "),";
+                        }
+                        
+                        else query +="'"+ c.Value.ToString() + "',";
+
+                    }
+                    query = query.Substring(0, query.Length - 1);
+                    query += ") ,";
+                }
+                query = query.Substring(0, query.Length - 1);
+                query3 = query3.Substring(0, query3.Length - 1);
+                DBConnect.Post(query);
+                DBConnect.Post("delete from etudiant_groupe where id_groupe="+this.id_groupe);
+                DBConnect.Post(query3);
+
+            }
+        }
 
         private void Previw_Load(object sender, EventArgs e)
         {
@@ -43,8 +89,8 @@ namespace MassarAdminDesktop
                 Excel excel = new Excel(path, "r");
                 excel.setCheet(excel.getSheets());
                 int w = 0;
-                string q = Controller.checkFile(path);
-                if (q == "notes")
+                q = Controller.checkFile(path);
+                if (q == "notes") //fichier = notes
                 {
                     panel2.Visible = true;
                     panel3.Visible = false;
@@ -107,7 +153,7 @@ namespace MassarAdminDesktop
                                     if ((float.Parse(excel.getContent(i + 1, j)) > 20 || float.Parse(excel.getContent(i + 1, j)) < 0) && j != y)
                                     {
                                         dataGridView1.Rows[i - x - 1].Cells[j - y].Style.BackColor = Color.DarkRed;
-                                        bunifuFlatButton1.Enabled = false;
+                                        Importer_b.Enabled = false;
                                     }
                                 }
                                 catch { }
@@ -123,6 +169,7 @@ namespace MassarAdminDesktop
 
                 else if (q == "info")
                 {
+                    
                     panel2.Visible = true;
                     panel3.Visible = true;
                     Label[] label = new Label[] { label28, label29, label30, label31, label32, label33 };
@@ -155,9 +202,10 @@ namespace MassarAdminDesktop
                             }
                         }
                         catch { }
+
                     }
                     int x = excel.find("رقم التلميذ")[0] - 1;
-                    int y = excel.find("رقم التلميذ")[1];
+                    int y = excel.find("رقم التلميذ")[1] - 1;
                     for (int i = x; i < excel.GetLastRow(); i++)
                     {
                         if (i == x)
@@ -183,6 +231,8 @@ namespace MassarAdminDesktop
                             }
                         }
                     }
+                    
+                    
                 }
             }
         }
