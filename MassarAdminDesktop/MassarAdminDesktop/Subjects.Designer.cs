@@ -65,25 +65,17 @@
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.label2 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.professeur = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+           
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+           
             this.groupBox1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            
             this.SuspendLayout();
             // 
             // groupBox1
@@ -293,9 +285,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.progressBar1);
-            this.panel2.Controls.Add(this.professeur);
-            this.panel2.Controls.Add(this.pictureBox1);
+         
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 31);
             this.panel2.Name = "panel2";
@@ -431,19 +421,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(3, 31);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(499, 178);
-            this.panel3.TabIndex = 0;
+
             // 
             chartArea2.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea2);
@@ -485,9 +463,9 @@
             this.groupBox2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            
             this.groupBox1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+         
             this.ResumeLayout(false);
 
         }
@@ -500,15 +478,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Panel panel2;
+        
         private System.Windows.Forms.Label moyenne;
         private System.Windows.Forms.Label min;
         private System.Windows.Forms.Label max;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Label moyenne;
         private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
