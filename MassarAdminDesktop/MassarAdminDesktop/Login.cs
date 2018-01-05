@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
@@ -16,6 +17,8 @@ namespace MassarAdminDesktop
         public static DBConnect bd;
         public static Admin admin;
         public static MySqlDataReader read;
+        private readonly SynchronizationContext synchronizationContext;
+        bool x;
         public Login()
         {
 
@@ -24,31 +27,31 @@ namespace MassarAdminDesktop
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue900, MaterialSkin.Primary.Blue900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
-
             bd = new DBConnect();
-
-            //  read = bd.Gets("select * from etudiant ");
-
-            // MessageBox.Show(bd.Get("select * from etudiant "));
-            // MessageBox.Show(admin.cript("ramzi"));
             admin = new Admin();
-            //   Admin.isSuper = true;
-            //  Admin.newAdmin("ramzinedjari","ramzi150",true);
-
-
         }
 
-        private void log_in_Click(object sender, EventArgs e)
+        private async void ButtonClickHandlerAsync(object sender, EventArgs e)
         {
-            if (!admin.login(nom.Text, password.Text))
+            log_in.Text = "";
+            bunifuCircleProgressbar1.Visible = true;
+            await Task.Run(() =>
+            {
+                x = admin.login(nom.Text, password.Text);
+            });
+            if (!x)
             {
                 MessageBox.Show("les informations incorrects");
+                bunifuCircleProgressbar1.Visible = false;
+                log_in.Text = "se Connecte";
                 return;
             }
             nom.Text = "";
             password.Text = "";
             Home home = new Home(this);
             home.Show();
+            log_in.Text = "se Connecte";
+            bunifuCircleProgressbar1.Visible = false;
             this.Hide();
         }
 

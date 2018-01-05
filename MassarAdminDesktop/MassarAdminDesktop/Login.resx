@@ -1448,4 +1448,17 @@
         gg==
 </value>
   </data>
+  <data name="bunifuCircleProgressbar1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGsSURBVFhHYxgFo2AUjIIhDW7cuKFx+/Zth5s3bxpAhWgP
+        7t+/z3Hnzp12oMXfgfR/ZAwUWw6Ul4AqpT4A+RRo0XUkC58D6f1AfB9J7D0QB0C1UA9AfQ6z6PqtW7cs
+        oFJgAPI5UHw71BHfgXwFqBR1wN27d6dDLT8PcgxUGAMA1c2HqtsOFaIcgCwE+QpkMKEEBwoJaNT8p1oo
+        QOMe5Kv7UCG8AKhuPVR9AlSIMgCM7wyQgUCfLYcK4QUlq7rX+80q+N+yedY+qBBlAGixA9RH56FCeEHW
+        itZzet3h/7OXt62HClEGgHEpAA0BUOoWgArjBP6zC76BHBCzoKocKkQ5ADoAlN//X7l5fRFUCCuoXT95
+        Ichym4lJf+Tr43HmFpIBqNi9cv3a95C5Jf8TF9Wdql8/HyMkilZ2LzTpi/4PckDqkqZeqDD1wOQdizth
+        FrhNzfyVt7LjdNay1h2Zy1sPe83I/Q4SB+H4xbUXoVqoD5o3TYt1mZoOjmN0bNwb9S9xYc1kqFLaAf1+
+        f4HsZS0FSYvrd2Qua7kROrfkDDAkaqga56NgFIyCEQIYGACaWEGjufcCJwAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>
