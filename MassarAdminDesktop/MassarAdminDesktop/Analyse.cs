@@ -18,9 +18,9 @@ namespace MassarAdminDesktop
 
         private void Analyse_Load(object sender, EventArgs e)
         {
-            string countetu = DBConnect.Get("select count(*) from etudiant");
+            string countetu = DBConnect.Get("SELECT COUNT(id_Etudiant) from etudiant_groupe WHERE id_groupe in (SELECT id from groupe WHERE id_annee =(SELECT id from annee WHERE annee_scolaire='"+ Home.idann +"'))");
             string countprof = DBConnect.Get("select count(*) from enseignant");
-            string countclasse = DBConnect.Get("select count(*) from groupe");
+            string countclasse = Home.nbrClasse.ToString();
             label1.Text = countetu;
             label2.Text = countprof;
             label3.Text = countclasse;

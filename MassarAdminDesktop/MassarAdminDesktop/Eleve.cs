@@ -39,7 +39,9 @@ namespace MassarAdminDesktop
 
         public float moyenne(string id_groupe)
         {
-            return float.Parse(DBConnect.Get("SELECT avg(note) from examiner where id_groupe=" + id_groupe + " and id_etudiant=" + this.id));
+            string Avg = DBConnect.Get("SELECT avg(note) from examiner where id_groupe=" + id_groupe + " and id_etudiant=" + this.id);
+            if (Avg == "") Avg = "0";
+            return float.Parse(Avg);
         }
     }
 
