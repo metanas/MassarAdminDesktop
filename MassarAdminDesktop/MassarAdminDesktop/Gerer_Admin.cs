@@ -17,10 +17,6 @@ namespace MassarAdminDesktop
         public Gerer_Admin()
         {
             InitializeComponent();
-            MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
-            skinManager.AddFormToManage(this);
-            skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
-            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue300, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
             refresh();
             
         }
@@ -34,16 +30,14 @@ namespace MassarAdminDesktop
                 Admins.Rows.Add(Login.read["nom"], "", Login.read["isSuper"], "Supprimer", "Modifier");
                 lesAdmins.Add(new string[] { Login.read["nom"].ToString(), "", Login.read["isSuper"].ToString() });
                 if (Login.admin.nom == Login.read["nom"].ToString()) 
-                    Admins.Rows[i].Cells[2].ReadOnly = true;
-                
-
+                    Admins.Rows[i].Cells[2].ReadOnly = true;               
             }
             Login.read.Close();
         }
+
         private void ajouter_Click(object sender, EventArgs e)
         {
             string adm = Login.admin.newAdmin(newN.Text, NewP.Text, Super.Checked);
-            
             if (adm.StartsWith("n")) {
                 refresh();
                 newN.Text = "";
