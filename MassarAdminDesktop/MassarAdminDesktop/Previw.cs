@@ -132,10 +132,10 @@ namespace MassarAdminDesktop
                         if (i == x)
                         {
                             int f = 0;
-                            dataGridView1.ColumnCount = excel.sheet.GetRow(i).LastCellNum - 1;
+                            dataGridView1.ColumnCount = excel.sheet.GetRow(i).LastCellNum - y;
                             for (int j = y; j < excel.sheet.GetRow(i).LastCellNum; j++)
                             {
-                                dataGridView1.Columns[f++].HeaderText = excel.getContent(i, j) + " " + excel.getContent(i + 1, j);
+                                    dataGridView1.Columns[f++].HeaderText = excel.getContent(i, j) + " " + excel.getContent(i + 1, j);
                             }
 
                         }

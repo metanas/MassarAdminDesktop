@@ -24,6 +24,7 @@ namespace MassarAdminDesktop
         Login login;
         Bunifu.Framework.UI.BunifuFlatButton lastClick;
         public static Form ActifForm;
+        public static int nbrClasse;
         public static List<Form> PreviewFrom = new List<Form>();
         public Home(Login login)
         {
@@ -104,7 +105,7 @@ namespace MassarAdminDesktop
                 panel1.Controls.Add(cl_buttons[i++]);
 
             }
-
+            Home.nbrClasse = cl_buttons.Count;
             Login.read.Close();
         }
 
@@ -182,7 +183,8 @@ namespace MassarAdminDesktop
         {
              idann = annees.SelectedItem.ToString();
             loadgroupes(idann);
-
+            analyse.Close();
+            loadHome();
         }
 
         private void Home_ResizeBegin(object sender, EventArgs e)
