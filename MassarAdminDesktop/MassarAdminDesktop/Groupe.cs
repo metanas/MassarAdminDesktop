@@ -115,7 +115,7 @@ namespace MassarAdminDesktop
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             int fille = countetu - nbrgarc();
-            Progressbar1.MaxValue = countetu;
+            Progressbar1.MaxValue = 10;
             Progressbar1.Value =nbrgarc();
             countetudiant.Text =countetu.ToString();
             label4.Text = nbrgarc().ToString();

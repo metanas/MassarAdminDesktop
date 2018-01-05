@@ -15,9 +15,9 @@ namespace MassarAdminDesktop
     class chart
     {
         string id_class;
-        List<Color> col = new List<Color> { Color.AliceBlue, Color.Aqua, Color.Aquamarine, Color.Brown, Color.Cornsilk, Color.DarkGreen };
+        List<Color> col = new List<Color> { Color.FromArgb(150,239,147,1), Color.FromArgb(150, 0, 115, 182), Color.FromArgb(150, 0, 166, 90), Color.FromArgb(150, 221, 76, 57), Color.FromArgb(150, 0, 131, 201), Color.FromArgb(150, 239, 147, 1) };
 
-        Chart c;
+        public Chart c;
         ToolTip tp;
         static public int a = 0;
      
@@ -113,7 +113,7 @@ namespace MassarAdminDesktop
             int q = 0;
             while (Login.read.Read())
             {
-                MessageBox.Show(Login.read["n"].ToString());
+                //MessageBox.Show(Login.read["n"].ToString());
                 s.Points.AddXY(Login.read["nom"].ToString(), Double.Parse(Login.read["n"].ToString()));
                 s.Points[q++].ToolTip = Login.read["n"].ToString();
             }

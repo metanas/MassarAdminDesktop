@@ -152,6 +152,7 @@
     <Compile Include="Subjects.Designer.cs">
       <DependentUpon>Subjects.cs</DependentUpon>
     </Compile>
+    <Compile Include="Theme.cs" />
     <Compile Include="viewetudiant.cs">
       <SubType>Form</SubType>
     </Compile>
