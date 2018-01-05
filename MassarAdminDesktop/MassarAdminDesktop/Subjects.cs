@@ -19,6 +19,7 @@ namespace MassarAdminDesktop
         string idm;
         string nomm;
         string moy;
+        chart ch;
 
         public Subjects(string idm, string nomm)
         {
@@ -57,15 +58,50 @@ namespace MassarAdminDesktop
             while (Login.read.Read())
                 cl_buttons[i++].Visible = true;
             Login.read.Close();
+            Infobox.Text = this.nomm;
 
         }
+
+        private void render_details()
+        {
+            double moy=0;
+            int nonv=0;
+            int ecart_type;
+            double taux;
+            foreach (var p in this.ch.c.Series[0].Points)
+            {
+                moy += p.YValues[0];
+                if(p.YValues[0]<5) nonv++;
+            }
+            moy /= this.ch.c.Series[0].Points.Count();
+            taux = 100*( (this.ch.c.Series[0].Points.Count()-nonv) /this.ch.c.Series[0].Points.Count());
+
+            moy_i.Text = moy.ToString();
+            moy_i.Visible = true;
+            nonv_i.Text = nonv.ToString();
+            nonv_i.Visible = true;
+            taux_i.Text = taux.ToString() + " %";
+            taux_i.Visible = true;
+            ecart_i.Text = "à calculer";
+            ecart_i.Visible = true;
+            exam_i.Text = this.ch.c.Series[0].Name;
+            //a changer de place
+            label5.Visible = true;
+            label6.Visible = true;
+            label7.Visible = true;
+            label8.Visible = true;
+
+        }
+
         private void clickcc(object sender,EventArgs e)
         {
-            chart ch = new chart(chart1,Home.id);
+            ch = new chart(chart1,Home.id);
             Bunifu.Framework.UI.BunifuTileButton the_cc = ((Bunifu.Framework.UI.BunifuTileButton)sender);
             ch.addChartBy(nom: semestre[cl_buttons.IndexOf(the_cc)] + " " + the_cc.LabelText, semestre: semestre[cl_buttons.IndexOf(the_cc)], titre: the_cc.LabelText);
-
+            render_details();
         }
+
+        
 
 
         private void Subjects_Resize(object sender, EventArgs e)
