@@ -17,7 +17,6 @@ namespace MassarAdminDesktop
         public static DBConnect bd;
         public static Admin admin;
         public static MySqlDataReader read;
-        private readonly SynchronizationContext synchronizationContext;
         bool x;
         public Login()
         {
@@ -39,19 +38,18 @@ namespace MassarAdminDesktop
             {
                 x = admin.login(nom.Text, password.Text);
             });
+            log_in.Text = "se Connecte";
+            bunifuCircleProgressbar1.Visible = false;
             if (!x)
             {
                 MessageBox.Show("les informations incorrects");
-                bunifuCircleProgressbar1.Visible = false;
-                log_in.Text = "se Connecte";
                 return;
             }
             nom.Text = "";
             password.Text = "";
             Home home = new Home(this);
             home.Show();
-            log_in.Text = "se Connecte";
-            bunifuCircleProgressbar1.Visible = false;
+            
             this.Hide();
         }
 

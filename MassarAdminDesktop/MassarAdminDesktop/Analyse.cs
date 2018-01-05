@@ -38,10 +38,9 @@ namespace MassarAdminDesktop
             viewetudiant view = new viewetudiant();
             view.TopLevel = false;
             view.Parent = this.Parent;
-            
             view.Location = new Point(this.Location.X, this.Location.Y);
             view.Show();
-            Home.PreviewFrom[0].Hide();
+            Home.PreviewFrom[0].Close();
             Home.ActifForm = view;
         }
 

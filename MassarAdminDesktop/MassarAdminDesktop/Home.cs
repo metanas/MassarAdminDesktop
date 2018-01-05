@@ -63,6 +63,8 @@ namespace MassarAdminDesktop
         }
         public void loadHome()
         {
+            if(lastClick!= null) lastClick.selected = false;
+            Home.PreviewFrom.Clear();
             analyse = new Analyse();
             analyse.TopLevel = false;
             analyse.Parent = this;
@@ -130,33 +132,23 @@ namespace MassarAdminDesktop
             Groupe_Form.Parent = this;
             Groupe_Form.Location = new Point(panel1.Width, bunifuSeparator1.Location.Y);
             Groupe_Form.Show();
-            if (ActifForm != null)
-            {
-                Home.PreviewFrom.Add(ActifForm);
-                Home.ActifForm.Hide();
-            }
-            Home.ActifForm = Groupe_Form;
+            AddForm(Groupe_Form);
             Home_ResizeBegin(sender, e);
             Back.Visible = true;
             HomeButton.Visible = true;
-            //replace messageBox by opening classes details
-
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
-            analyse.Hide();
+            analyse.Close();
             Previw previw = new Previw();
             previw.TopLevel = false;
             previw.Parent = this;
             previw.Location = new Point(panel1.Width, bunifuSeparator1.Location.Y);
             previw.Show();
-            if (ActifForm != null)
-            {
-                Home.PreviewFrom.Add(ActifForm);
-                Home.ActifForm.Hide();
-            }
-            Home.ActifForm = previw;
+            AddForm(previw);
+            Back.Visible = true;
+            HomeButton.Visible = true;
             Home_ResizeBegin(sender,e);
         }
 
@@ -164,13 +156,17 @@ namespace MassarAdminDesktop
         {
             Gerer_Admin gerer = new Gerer_Admin();
             gerer.Show();
+            AddForm(gerer);
+        }
+
+        public static void AddForm(Form form)
+        {
             if (ActifForm != null)
             {
                 Home.PreviewFrom.Add(ActifForm);
                 Home.ActifForm.Hide();
             }
-            Home.ActifForm = gerer;
-
+            Home.ActifForm = form;
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -181,7 +177,7 @@ namespace MassarAdminDesktop
 
         public void annees_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-             idann = annees.SelectedItem.ToString();
+            idann = annees.SelectedItem.ToString();
             loadgroupes(idann);
             analyse.Close();
             loadHome();
@@ -208,32 +204,38 @@ namespace MassarAdminDesktop
 
         private void Back_Click(object sender, EventArgs e)
         {
-            if (Home.PreviewFrom.Count >= 1)
+            foreach (Form w in Home.PreviewFrom)
+            {
+                Console.WriteLine(w.Name);
+            }
+            if (Home.PreviewFrom.Count > 0)
             {
                 Home.PreviewFrom[PreviewFrom.Count - 1].Show();
                 Home.ActifForm.Close();
                 Home.ActifForm = PreviewFrom[PreviewFrom.Count - 1];
                 Home.PreviewFrom.Remove(ActifForm);
             }
-            if (Home.PreviewFrom.Count == 1)
+            if (Home.PreviewFrom.Count == 0)
             {
-                Home_Click(sender, e);
+                Home.PreviewFrom.Add(analyse);
+                lastClick.selected = false;
+                Home.ActifForm = null;
+                Back.Visible = false;
+                HomeButton.Visible = false;
             }
         }
 
         private void Home_Click(object sender, EventArgs e)
         {
-            if(Home.ActifForm != null)
-                Home.ActifForm.Close();
             Back.Visible = false;
             HomeButton.Visible = false;
-            foreach (Form from in PreviewFrom)
+            if (Home.ActifForm != null)
+                Home.ActifForm.Close();
+            foreach (Form from in Home.PreviewFrom)
             {
                 from.Close();
             }
-            PreviewFrom.Clear();
             loadHome();
-
         }
 
         private void search_OnTextChange(object sender, EventArgs e)
@@ -259,15 +261,6 @@ namespace MassarAdminDesktop
                     panel1.Controls.Remove(cl_buttons[i]);
                 }
             }
-            if(search.text == "")
-            {
-                //loadgroupes(annees.SelectedItem.ToString());
-            }
-        }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
         }
     }
 }

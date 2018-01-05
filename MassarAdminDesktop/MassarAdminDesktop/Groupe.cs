@@ -75,13 +75,7 @@ namespace MassarAdminDesktop
             S.Height = this.Height;
             S.Location = new Point(this.Location.X, this.Location.Y);
             S.Show();
-            if (Home.ActifForm != null)
-            {
-                Home.ActifForm.Hide();
-                Home.PreviewFrom.Add(Home.ActifForm);
-
-            }
-            Home.ActifForm = S;
+            Home.AddForm(S);
         }
 
 
@@ -94,17 +88,10 @@ namespace MassarAdminDesktop
             S.Parent = Home.ActifForm.Parent;
             S.Location = new Point(this.Location.X, this.Location.Y);
             S.Show();
-            if (Home.ActifForm != null)
-            {
-                Home.ActifForm.Hide();
-                Home.PreviewFrom.Add(Home.ActifForm);
-
-            }
-            Home.ActifForm = S;
-            
+            Home.AddForm(S);
         }
 
-        
+
 
 
         private void Groupe_Resize(object sender, EventArgs e)
