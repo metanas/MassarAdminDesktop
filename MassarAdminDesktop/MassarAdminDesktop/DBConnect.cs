@@ -31,9 +31,10 @@ namespace MassarAdminDesktop
             password = "ramzi150";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + "; CharSet=utf16_bin";
 
             connection = new MySqlConnection(connectionString);
+            
             OpenConnection();
         }
 
@@ -84,6 +85,7 @@ namespace MassarAdminDesktop
         {
             
             MySqlCommand cmd = new MySqlCommand(query, connection);
+            
             try
             {
                 cmd.ExecuteNonQuery();

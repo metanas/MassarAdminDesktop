@@ -64,6 +64,7 @@ namespace MassarAdminDesktop
                         if (c.ColumnIndex == 0)
                         {
                             query += c.Value.ToString() + ",";
+                            
                             query3 +="("+id_groupe+","+ c.Value.ToString() + "),";
                         }
                         

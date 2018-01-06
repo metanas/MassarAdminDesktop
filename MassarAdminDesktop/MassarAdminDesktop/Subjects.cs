@@ -49,7 +49,7 @@ namespace MassarAdminDesktop
             Login.read.Close();
             
             moyenne.Text = moy.Substring(0, 5);
-            if (bunifuCircleProgressbar1.Value < 10)
+            if (bunifuCircleProgressbar1.Value < 5)
                 bunifuCircleProgressbar1.ProgressColor = Color.Red;
             else
                 bunifuCircleProgressbar1.ProgressColor = Color.Green;
