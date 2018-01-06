@@ -108,6 +108,8 @@
             // chart_e
             // 
             chartArea1.AxisX.LineColor = System.Drawing.Color.Silver;
+            chartArea1.CursorX.IsUserEnabled = true;
+            chartArea1.CursorX.IsUserSelectionEnabled = true;
             chartArea1.Name = "ChartArea1";
             this.chart_e.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -119,6 +121,7 @@
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series1.IsValueShownAsLabel = true;
             series1.IsVisibleInLegend = false;
+            series1.IsXValueIndexed = true;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart_e.Series.Add(series1);
@@ -370,7 +373,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 520);
+            this.ClientSize = new System.Drawing.Size(975, 520);
             this.Controls.Add(this.chart_e);
             this.Controls.Add(this.dgv_eleves);
             this.Controls.Add(this.bunifuFlatButton7);
