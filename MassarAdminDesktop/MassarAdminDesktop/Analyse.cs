@@ -11,9 +11,11 @@ namespace MassarAdminDesktop
 {
     public partial class Analyse : Form
     {
-        public Analyse()
+        Form form;
+        public Analyse(Form form)
         {
             InitializeComponent();
+            this.form = form;
         }
 
         private void Analyse_Load(object sender, EventArgs e)
@@ -23,8 +25,7 @@ namespace MassarAdminDesktop
             string countclasse = Home.nbrClasse.ToString();
             label1.Text = countetu;
             label2.Text = countprof;
-            label3.Text = countclasse;
-            
+            label3.Text = countclasse;           
         }
 
         private void Analyse_ResizeBegin(object sender, EventArgs e)
@@ -34,25 +35,33 @@ namespace MassarAdminDesktop
 
         private void Betudiant_Click(object sender, EventArgs e)
         {
-           
+            ((Bunifu.Framework.UI.BunifuImageButton)form.Controls.Find("HomeButton", true)[0]).Visible = true;
+            ((Bunifu.Framework.UI.BunifuImageButton)form.Controls.Find("Back", true)[0]).Visible = true;
             viewetudiant view = new viewetudiant();
             view.TopLevel = false;
-            view.Parent = this.Parent;
+            view.Parent = form;
             view.Location = new Point(this.Location.X, this.Location.Y);
+            view.Width = this.Width;
+            view.Height = this.Height;
             view.Show();
-            Home.PreviewFrom[0].Close();
-            Home.ActifForm = view;
+            Home.PreviewFrom[0].Hide();
+            Home.AddForm(view);
         }
 
         private void bunifuTileButton1_Click(object sender, EventArgs e)
         {
+            ((Bunifu.Framework.UI.BunifuImageButton)form.Controls.Find("HomeButton", true)[0]).Visible = true;
+            ((Bunifu.Framework.UI.BunifuImageButton)form.Controls.Find("Back", true)[0]).Visible = true;
             viewprofesseur viewp = new viewprofesseur();
             viewp.TopLevel = false;
-            viewp.Parent = this.Parent;
+            viewp.Parent = form;
             viewp.Location = new Point(this.Location.X, this.Location.Y);
+            viewp.Width = this.Width;
+            viewp.Height = this.Height;
             viewp.Show();
             Home.PreviewFrom[0].Hide();
-            Home.ActifForm = viewp;
+            Home.AddForm(viewp);
+
         }
     }
 }

@@ -54,7 +54,7 @@ namespace MassarAdminDesktop
             while (Login.read.Read())
             {
                 s.Points.AddXY(Login.read["nom"].ToString(), Double.Parse(Login.read[0].ToString()));
-                s.Points[i].ToolTip = Login.read[0].ToString();
+                s.Points[i].ToolTip = Math.Round(Double.Parse(Login.read[0].ToString()), 2, MidpointRounding.AwayFromZero).ToString();
                 s.Points[i].Color = this.col[i++];
 
             }
@@ -113,9 +113,8 @@ namespace MassarAdminDesktop
             int q = 0;
             while (Login.read.Read())
             {
-                //MessageBox.Show(Login.read["n"].ToString());
                 s.Points.AddXY(Login.read["nom"].ToString(), Double.Parse(Login.read["n"].ToString()));
-                s.Points[q++].ToolTip = Login.read["n"].ToString();
+                s.Points[q++].ToolTip = Math.Round(Double.Parse(Login.read["n"].ToString()), 2, MidpointRounding.AwayFromZero).ToString();
             }
             s.Name = nom;
             this.c.Series.Add(s);
