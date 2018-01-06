@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
+using Bunifu.Framework.Lib;
+using Bunifu.Framework.UI;
+
 namespace MassarAdminDesktop
 {
     class chart
@@ -20,13 +23,16 @@ namespace MassarAdminDesktop
         public Chart c;
         ToolTip tp;
         static public int a = 0;
+        
+        
+        public List<CheckBox> series_bs = new List<CheckBox>();
      
         public  chart (Chart mychart,string id_class) {
             this.c = mychart;
             this.id_class = id_class;
             this.c.Series.Clear();
             this.c.ChartAreas[0].AxisX.Interval = 1;
-            this.c.ChartAreas[0].AxisY.Maximum = 20;
+            this.c.ChartAreas[0].AxisY.Maximum = 10;
             this.c.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
             this.c.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
             tp = new ToolTip();
@@ -37,6 +43,7 @@ namespace MassarAdminDesktop
             if(((Chart)sender).Dock == DockStyle.Fill) ((Chart)sender).Dock = DockStyle.None;
             else  ((Chart)sender).Dock = DockStyle.Fill;
         }
+
 
         public void addChartByEtudiant(string id_et)
         {
@@ -84,10 +91,20 @@ namespace MassarAdminDesktop
             }
             Login.read.Close();
             this.c.Series.Add(s);
+            CheckBox b = new CheckBox();
+            b.Text = s.Name;
+            b.Checked = true;
+            this.series_bs.Add(b);
+            b.CheckedChanged += B_Click;
+            
 
         }
 
-
+        private void B_Click(object sender, EventArgs e)
+        {
+            CheckBox series_b = (CheckBox)sender;
+            this.c.Series[series_b.Text].Enabled = series_b.Checked;
+        }
 
         public void addChartBy(string nom="", SeriesChartType typechart= SeriesChartType.Column, string id_matiere ="", string unite="",string semestre="",string titre="") {
             string query2= "SELECT id_etudiant,prenom ,nom, avg(note) as n from examiner , etudiant where etudiant.id=id_etudiant and  id_groupe=" + this.id_class+" and";
