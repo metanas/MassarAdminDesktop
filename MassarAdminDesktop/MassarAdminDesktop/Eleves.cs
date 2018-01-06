@@ -15,6 +15,7 @@ namespace MassarAdminDesktop
         string id;
         public List<Eleve> el = new List<Eleve>();
         public Groupe gp;
+        public List<CheckBox> Matieres_bs = new List<CheckBox>(); 
         public Eleves(string id, Groupe gp)
         {
             this.id = id;
@@ -46,6 +47,10 @@ namespace MassarAdminDesktop
 
         private void dgv_eleves_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            foreach (CheckBox b in Matieres_bs)
+            {
+                this.Controls.Remove(b);
+            }
             chart c = new chart(chart_e, this.id);
             c.addChartByEtudiant(el[e.RowIndex].id);
         }
@@ -55,12 +60,26 @@ namespace MassarAdminDesktop
             if (dgv_eleves.SelectedRows.Count == 1)
             {
                 chart C = new chart(chart_e, this.id);
+                //chart_e.DataManipulator.Statistics.Median.
                 Eleve eleve = el[dgv_eleves.SelectedRows[0].Index];
+                
                 foreach (Matiere m in this.gp.matieres)
                 {
                     C.addChartEvolutionSeries(eleve, m);
+                    
+                    
+                }
+                Matieres_bs = C.series_bs;
+                int y = 0;
+                foreach (CheckBox b in Matieres_bs)
+                {
+                    b.Location = new System.Drawing.Point(883, 44 + y);
+                    b.Parent = this;
+                    y += 38;
+                    b.Show();
                 }
             }
+            
             
         }
 

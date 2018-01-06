@@ -68,13 +68,18 @@ namespace MassarAdminDesktop
             int nonv=0;
             int ecart_type;
             double taux;
+
             foreach (var p in this.ch.c.Series[0].Points)
             {
                 moy += p.YValues[0];
                 if(p.YValues[0]<5) nonv++;
             }
             moy /= this.ch.c.Series[0].Points.Count();
-            taux = 100*( (this.ch.c.Series[0].Points.Count()-nonv) /this.ch.c.Series[0].Points.Count());
+            taux = (100* (this.ch.c.Series[0].Points.Count()-nonv))/this.ch.c.Series[0].Points.Count();
+
+            moy = Math.Round(moy, 2);
+            taux = Math.Round(taux, 2);
+
 
             moy_i.Text = moy.ToString();
             moy_i.Visible = true;
