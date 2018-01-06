@@ -20,7 +20,7 @@ namespace MassarAdminDesktop
 
         private void viewetudiant_Load(object sender, EventArgs e)
         {
-            Login.read = DBConnect.Gets("select nom,prenom,sexe from etudiant");
+            Login.read = DBConnect.Gets("select e.nom,e.prenom,e.sexe from etudiant  as e, etudiant_groupe as eg , groupe as g, annee as a where  eg.id_etudiant=e.id and eg.id_groupe=g.id and g.id_annee=a.id and a.annee_scolaire='" + Home.idann + "'");
             etudiants = new List<List<string>>();
             int i = 0;
             while (Login.read.Read()) {
