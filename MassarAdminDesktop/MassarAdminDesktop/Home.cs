@@ -26,6 +26,7 @@ namespace MassarAdminDesktop
         public static Form ActifForm;
         public static int nbrClasse;
         public static List<Form> PreviewFrom = new List<Form>();
+
         public Home(Login login)
         {
             InitializeComponent();
@@ -65,14 +66,14 @@ namespace MassarAdminDesktop
         {
             if(lastClick!= null) lastClick.selected = false;
             Home.PreviewFrom.Clear();
-            analyse = new Analyse();
+            analyse = new Analyse(this);
             analyse.TopLevel = false;
             analyse.Parent = this;
             analyse.Location = new Point(panel1.Width, bunifuSeparator1.Location.Y);
             analyse.Width = this.Width - panel1.Width;
             analyse.Height = this.Height - bunifuSeparator1.Location.Y;
             analyse.Show();
-            PreviewFrom.Add(analyse);
+            Home.PreviewFrom.Add(analyse);
         }
         public void loadgroupes(string annee)
         {
@@ -218,7 +219,7 @@ namespace MassarAdminDesktop
             if (Home.PreviewFrom.Count == 0)
             {
                 Home.PreviewFrom.Add(analyse);
-                lastClick.selected = false;
+                if(lastClick != null) lastClick.selected = false;
                 Home.ActifForm = null;
                 Back.Visible = false;
                 HomeButton.Visible = false;

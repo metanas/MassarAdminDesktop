@@ -34,7 +34,6 @@
             this.search = new Bunifu.Framework.UI.BunifuTextbox();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.annees = new System.Windows.Forms.ComboBox();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label1 = new System.Windows.Forms.Label();
             this.HomeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.Back = new Bunifu.Framework.UI.BunifuImageButton();
@@ -42,6 +41,7 @@
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.SuperUser = new Bunifu.Framework.UI.BunifuImageButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
@@ -98,19 +98,6 @@
             this.annees.Size = new System.Drawing.Size(166, 21);
             this.annees.TabIndex = 0;
             this.annees.SelectedIndexChanged += new System.EventHandler(this.annees_SelectedIndexChanged_1);
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(168, 64);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(10, 10);
-            this.bunifuSeparator1.TabIndex = 6;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            this.bunifuSeparator1.Visible = false;
             // 
             // label1
             // 
@@ -195,15 +182,27 @@
             this.SuperUser.Zoom = 10;
             this.SuperUser.Click += new System.EventHandler(this.SuperUser_Click);
             // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.DimGray;
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(168, 64);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(4, 4);
+            this.bunifuSeparator1.TabIndex = 9;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1138, 581);
+            this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuImageButton1);
@@ -233,11 +232,11 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private Bunifu.Framework.UI.BunifuImageButton SuperUser;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
-        private Bunifu.Framework.UI.BunifuImageButton Back;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuImageButton HomeButton;
         private Bunifu.Framework.UI.BunifuTextbox search;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        public Bunifu.Framework.UI.BunifuImageButton Back;
+        public Bunifu.Framework.UI.BunifuImageButton HomeButton;
     }
 }

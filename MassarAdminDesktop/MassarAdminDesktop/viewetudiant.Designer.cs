@@ -131,6 +131,7 @@
             this.Name = "viewetudiant";
             this.Text = "viewetudiant";
             this.Load += new System.EventHandler(this.viewetudiant_Load);
+            this.Resize += new System.EventHandler(this.Groupe_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
