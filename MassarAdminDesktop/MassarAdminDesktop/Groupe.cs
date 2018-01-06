@@ -112,7 +112,7 @@ namespace MassarAdminDesktop
         {
             int nb = 0;
             foreach (Eleve e in el)
-                if (e.sexe == "m") nb++;
+                if (e.sexe == "ذكر") nb++;
             return nb;
         }
 
