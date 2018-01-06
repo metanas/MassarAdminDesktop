@@ -49,7 +49,7 @@ namespace MassarAdminDesktop
             Login.read.Close();
             
             moyenne.Text = moy.Substring(0, 5);
-            if (bunifuCircleProgressbar1.Value < 10)
+            if (bunifuCircleProgressbar1.Value < 5)
                 bunifuCircleProgressbar1.ProgressColor = Color.Red;
             else
                 bunifuCircleProgressbar1.ProgressColor = Color.Green;
@@ -68,15 +68,21 @@ namespace MassarAdminDesktop
             int nonv=0;
             int ecart_type;
             double taux;
+
             foreach (var p in this.ch.c.Series[0].Points)
             {
                 moy += p.YValues[0];
                 if(p.YValues[0]<5) nonv++;
             }
             moy /= this.ch.c.Series[0].Points.Count();
-            taux = 100*( (this.ch.c.Series[0].Points.Count()-nonv) /this.ch.c.Series[0].Points.Count());
+            taux = Math.Round(100 * ((double)(this.ch.c.Series[0].Points.Count() - nonv) / (double)this.ch.c.Series[0].Points.Count()), 2, MidpointRounding.AwayFromZero);
 
-            moy_i.Text = moy.ToString();
+            moy = Math.Round(moy, 2);
+            taux = Math.Round(taux, 2);
+
+
+
+            moy_i.Text = Math.Round(moy, 2, MidpointRounding.AwayFromZero).ToString();
             moy_i.Visible = true;
             nonv_i.Text = nonv.ToString();
             nonv_i.Visible = true;
