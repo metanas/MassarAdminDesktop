@@ -34,7 +34,7 @@ namespace MassarAdminDesktop
             this.nomm = nomm;
             chart ch = new chart(chart1, Home.id);
             ch.addChartBy(nom: nomgr);
-            Login.read = DBConnect.Gets("select max(note),min(note),avg(note) from examiner where id_matiere=" + this.idm + " and id_groupe=" + id + ";");
+            Login.read = DBConnect.Gets("select max(calcule.n), min(calcule.n) , avg(calcule.n) from (select avg(note) as n from examiner where id_matiere="+this.idm+" group by id_etudiant) as calcule");
             if (Login.read.Read())
             {
                 max.Text = Login.read[0].ToString();
