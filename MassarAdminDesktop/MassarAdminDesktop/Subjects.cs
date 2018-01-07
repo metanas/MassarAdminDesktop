@@ -61,8 +61,6 @@ namespace MassarAdminDesktop
             Login.read.Close();
             Infobox.Text = this.nomm;
             
-            min.Text = chart1.ChartAreas[0].AxisX.Minimum.ToString();
-
         }
 
         private void render_details()
