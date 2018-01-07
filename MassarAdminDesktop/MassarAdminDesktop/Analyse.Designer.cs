@@ -66,7 +66,7 @@
             this.bunifuTileButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
             this.bunifuTileButton3.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton3.Image = global::MassarAdminDesktop.Properties.Resources.etudiant;
+            this.bunifuTileButton3.Image = global::MassarAdminDesktop.Properties.Resources.benefit_chart;
             this.bunifuTileButton3.ImagePosition = 21;
             this.bunifuTileButton3.ImageZoom = 50;
             this.bunifuTileButton3.LabelPosition = 43;
