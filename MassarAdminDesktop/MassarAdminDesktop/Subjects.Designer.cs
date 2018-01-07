@@ -205,6 +205,7 @@
             this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(91, 91);
             this.bunifuCircleProgressbar1.TabIndex = 21;
             this.bunifuCircleProgressbar1.Value = 0;
+            this.bunifuCircleProgressbar1.Click += new System.EventHandler(this.bunifuCircleProgressbar1_Click);
             // 
             // moyenne
             // 

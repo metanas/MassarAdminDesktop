@@ -34,6 +34,7 @@ namespace MassarAdminDesktop
             this.nomm = nomm;
             chart ch = new chart(chart1, Home.id);
             ch.addChartBy(nom: nomgr);
+
             Login.read = DBConnect.Gets("select max(calcule.n), min(calcule.n) , avg(calcule.n) from (select avg(note) as n from examiner where id_matiere="+this.idm+" group by id_etudiant) as calcule");
             if (Login.read.Read())
             {
@@ -59,6 +60,8 @@ namespace MassarAdminDesktop
                 cl_buttons[i++].Visible = true;
             Login.read.Close();
             Infobox.Text = this.nomm;
+            
+            min.Text = chart1.ChartAreas[0].AxisX.Minimum.ToString();
 
         }
 
@@ -118,6 +121,12 @@ namespace MassarAdminDesktop
         private void chart1_DoubleClick(object sender, EventArgs e)
         {
             chart.doubleCliick(sender,e);
+        }
+
+        private void bunifuCircleProgressbar1_Click(object sender, EventArgs e)
+        {
+            chart ch = new chart(chart1, Home.id);
+            ch.addChartBy(nom: Home.nomgr);
         }
     }
 }

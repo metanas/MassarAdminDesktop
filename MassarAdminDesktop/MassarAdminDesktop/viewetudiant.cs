@@ -20,14 +20,15 @@ namespace MassarAdminDesktop
 
         private void viewetudiant_Load(object sender, EventArgs e)
         {
-            Login.read = DBConnect.Gets("select e.nom,e.prenom,e.sexe from etudiant  as e, etudiant_groupe as eg , groupe as g, annee as a where  eg.id_etudiant=e.id and eg.id_groupe=g.id and g.id_annee=a.id and a.annee_scolaire='" + Home.idann + "'");
+            Login.read = DBConnect.Gets("select e.nom,e.prenom,e.sexe , g.nom from etudiant  as e, etudiant_groupe as eg , groupe as g, annee as a where  eg.id_etudiant=e.id and eg.id_groupe=g.id and g.id_annee=a.id and a.annee_scolaire='" + Home.idann + "'");
             etudiants = new List<List<string>>();
             int i = 0;
             while (Login.read.Read()) {
                 etudiants.Add(new List<string>());
-                etudiants[i].Add(Login.read["nom"].ToString());
-                etudiants[i].Add(Login.read["prenom"].ToString());
-                etudiants[i++].Add(Login.read["sexe"].ToString()); 
+                etudiants[i].Add(Login.read[0].ToString());
+                etudiants[i].Add(Login.read[1].ToString());
+                etudiants[i].Add(Login.read[2].ToString());
+                etudiants[i++].Add(Login.read[3].ToString());
             }
             Login.read.Close();
             setDataGridView(etudiants);
@@ -38,7 +39,7 @@ namespace MassarAdminDesktop
             bunifuCustomDataGrid1.Rows.Clear();
             for(int i = 0; i < etu.Count; i++)
             {
-                bunifuCustomDataGrid1.Rows.Add(etu[i][0], etu[i][1], etu[i][2]);
+                bunifuCustomDataGrid1.Rows.Add(etu[i][0], etu[i][1], etu[i][2], etu[i][3]);
             }
         }
 
@@ -64,7 +65,8 @@ namespace MassarAdminDesktop
                         list.Add(new List<string>());
                         list[w].Add(etudiants[i][0]);
                         list[w].Add(etudiants[i][1]);
-                        list[w++].Add(etudiants[i][2]);
+                        list[w].Add(etudiants[i][2]);
+                        list[w++].Add(etudiants[i][3]);
                     }
                 }
                 setDataGridView(list);
