@@ -112,7 +112,7 @@ namespace MassarAdminDesktop
                 query += "INSERT ignore INTO  etudiant  values ";
                 foreach(DataGridViewRow r in dataGridView1.Rows)
                 {
-                    if (r.Index == dataGridView1.Rows.Count - 1)
+                    if (r.Cells[0]==null || r.Cells[0].Value.ToString().Trim().Length==0)
                         continue;
                     query += " ( ";
                     
