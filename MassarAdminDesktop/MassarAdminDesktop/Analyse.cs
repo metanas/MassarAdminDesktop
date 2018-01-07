@@ -63,5 +63,20 @@ namespace MassarAdminDesktop
             Home.AddForm(viewp);
 
         }
+
+        private void bunifuTileButton3_Click(object sender, EventArgs e)
+        {
+            ((Bunifu.Framework.UI.BunifuImageButton)form.Controls.Find("HomeButton", true)[0]).Visible = true;
+            ((Bunifu.Framework.UI.BunifuImageButton)form.Controls.Find("Back", true)[0]).Visible = true;
+            Evolutionperyear view = new Evolutionperyear();
+            view.TopLevel = false;
+            view.Parent = form;
+            view.Location = new Point(this.Location.X, this.Location.Y);
+            view.Width = this.Width;
+            view.Height = this.Height;
+            view.Show();
+            Home.PreviewFrom[0].Hide();
+            Home.AddForm(view);
+        }
     }
 }
