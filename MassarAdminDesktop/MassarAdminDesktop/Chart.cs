@@ -100,7 +100,30 @@ namespace MassarAdminDesktop
 
         }
 
-        private void B_Click(object sender, EventArgs e)
+        public void evoann()
+        {
+            int i = 0;
+            Series s = new Series
+            {
+                ChartType = SeriesChartType.Line
+            };
+            this.c.ChartAreas[0].AxisY.Maximum = 100;
+            s.Name = "Evolution par annee";
+            Login.read = DBConnect.Gets("select avg(note),annee_scolaire from examiner,annee where id_annee=id group by id_annee");
+            while (Login.read.Read())
+            {
+                s.Points.AddXY(Login.read[1].ToString(), Double.Parse(Login.read[0].ToString())*10);
+                s.Points[i].MarkerSize = 9;
+                s.Points[i++].MarkerStyle = MarkerStyle.Circle;
+
+            }
+            this.c.Series.Add(s);
+            //this.c.Series.Add(s);
+            Login.read.Close();
+        } 
+
+
+        public void B_Click(object sender, EventArgs e)
         {
             CheckBox series_b = (CheckBox)sender;
             this.c.Series[series_b.Text].Enabled = series_b.Checked;
