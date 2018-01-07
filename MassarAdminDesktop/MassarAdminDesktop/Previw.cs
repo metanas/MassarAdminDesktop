@@ -12,6 +12,8 @@ namespace MassarAdminDesktop
 {
     public partial class Previw : Form
     {
+        List<int> notescols = new List<int>();
+        List<int> notesrows = new List<int>();
         string path,fileName;
         public Form PreviewForm;
         string q;
@@ -33,14 +35,69 @@ namespace MassarAdminDesktop
             panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
         }
 
-        
 
+        private void ColumnsOfNotes() {
+            for (int i = 0; i < dataGridView1.ColumnCount; i++) {
+                if (dataGridView1.Columns[i].HeaderText.Contains("النقطة"))
+                    this.notescols.Add(i);
+            }
+ }
+        private void rowsOfNotes()
+        {
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[0].Value!=null && dataGridView1.Rows[i].Cells[0].Value.ToString().Trim().Length > 0)
+                    this.notesrows.Add(i);
+
+            }
+        }
         private void Importer_b_Click(object sender, EventArgs e)
         {
             string query = "";
-            if (this.q == "notes values")
+            if (this.q == "notes")
             {
-                query += "examiner ";
+                rowsOfNotes();
+                ColumnsOfNotes();
+                string semestre = label16.Text;
+                if (semestre.Contains("الأولى")) semestre = "1";
+                else semestre ="2";
+                string titre =label17.Text;
+                if (titre.Contains("الأول"))
+                    titre = "cc1";
+                else if (titre.Contains("الثاني"))
+                    titre = "cc2";
+                else if (titre.Contains("الثالث"))
+                    titre = "cc3";
+                else if (titre.Contains("الرابع"))
+                    titre = "cc4";
+                else 
+                    titre = "cc5";
+                string matiere = "arab";//due label of matiere is empty
+                string idMatiere = DBConnect.Get("select id from matiere where nom='"+matiere+"'");
+                MessageBox.Show(idMatiere);
+                this.id_annee = DBConnect.Get("select id from annee where annee_scolaire='" + label19.Text + "'");
+                MessageBox.Show(this.id_annee);
+                this.id_groupe = DBConnect.Get(string.Format("select id from groupe where nom = '{0}' and id_annee = {1}", label14.Text, this.id_annee));
+                query += "insert ignore into examiner values ";
+                MessageBox.Show(this.id_groupe);
+                foreach (int row in this.notesrows)
+                {
+                    
+                    foreach (int col in this.notescols)
+                    {
+                        query += string.Format(" ({0},{1},{2},{3},'{4}','{5}',N'{6}',{7}) ,",this.id_annee,this.id_groupe,dataGridView1.Rows[row].Cells[0].Value.ToString(),idMatiere,titre,semestre, dataGridView1.Columns[col].HeaderText,dataGridView1.Rows[row].Cells[col].Value.ToString());
+
+
+                    }
+                }
+                query = query.Substring(0,query.Length-1);
+                try
+                {
+                    DBConnect.Post(query);
+                }
+                catch (Exception exx) {
+                    MessageBox.Show(exx.Message);
+                }
             }
             else if(this.q == "info")
             {
