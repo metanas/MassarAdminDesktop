@@ -11,8 +11,8 @@ namespace MassarAdminDesktop
     {
         public string id;
         public string mass_id;
-        public string nom;
-        public string prenom;
+        public string nom { get; set; }
+        public string prenom { get; set; }
         public string nom_ar;
         public string nom_fr;
         public string sexe;
@@ -26,7 +26,7 @@ namespace MassarAdminDesktop
         {
             this.id = id;
             this.mass_id = mass_id;
-            this.nom = nom;
+            this.nom = nom; 
             this.prenom = prenom;
             this.nom_ar = nom_ar;
             this.nom_fr = nom_fr;

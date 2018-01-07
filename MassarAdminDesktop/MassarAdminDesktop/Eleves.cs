@@ -14,12 +14,12 @@ namespace MassarAdminDesktop
     {
         string id;
         public List<Eleve> el = new List<Eleve>();
-        public Groupe gp;
+        public List<Matiere> matieres;
         public List<CheckBox> Matieres_bs = new List<CheckBox>(); 
-        public Eleves(string id, Groupe gp)
+        public Eleves(string id, List<Matiere> matieres)
         {
             this.id = id;
-            this.gp = gp;
+            this.matieres = matieres;
             InitializeComponent();
             el.Clear();
 
@@ -41,8 +41,11 @@ namespace MassarAdminDesktop
         
         public void render_eleves()
         {
-            foreach (Eleve e in this.el)
-                dgv_eleves.Rows.Add(e.nom, e.prenom, e.moyenne(id));
+
+            /*foreach (Eleve e in this.el)
+                dgv_eleves.Rows.Add(e.nom, e.prenom, e.moyenne(id));*/
+            var source = new BindingList<Eleve>(this.el);
+            dgv_eleves.DataSource = source;
         }
 
         private void dgv_eleves_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -66,7 +69,7 @@ namespace MassarAdminDesktop
                 //chart_e.DataManipulator.Statistics.Median.
                 Eleve eleve = el[dgv_eleves.SelectedRows[0].Index];
                 
-                foreach (Matiere m in this.gp.matieres)
+                foreach (Matiere m in this.matieres)
                 {
                     C.addChartEvolutionSeries(eleve, m);
                     
