@@ -28,6 +28,7 @@ namespace MassarAdminDesktop
             skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue900, MaterialSkin.Primary.Blue900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
             bd = new DBConnect();
             admin = new Admin();
+        
         }
 
         private async void ButtonClickHandlerAsync(object sender, EventArgs e)
