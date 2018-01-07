@@ -47,12 +47,15 @@ namespace MassarAdminDesktop
 
         private void dgv_eleves_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (CheckBox b in Matieres_bs)
+            if (e.RowIndex != -1)
             {
-                this.Controls.Remove(b);
+                foreach (CheckBox b in Matieres_bs)
+                {
+                    this.Controls.Remove(b);
+                }
+                chart c = new chart(chart_e, this.id);
+                c.addChartByEtudiant(el[e.RowIndex].id);
             }
-            chart c = new chart(chart_e, this.id);
-            c.addChartByEtudiant(el[e.RowIndex].id);
         }
 
         private void bunifuFlatButton7_Click(object sender, EventArgs e)
