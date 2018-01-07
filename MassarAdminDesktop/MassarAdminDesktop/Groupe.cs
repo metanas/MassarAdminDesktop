@@ -101,11 +101,12 @@ namespace MassarAdminDesktop
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            int fille = countetu - nbrgarc();
-            Progressbar1.MaxValue = 10;
-            Progressbar1.Value =nbrgarc();
+            int s = nbrgarc();
+            int fille = countetu - s;
+            Progressbar1.MaxValue = countetu;
+            Progressbar1.Value = s;
             countetudiant.Text =countetu.ToString();
-            label4.Text = nbrgarc().ToString();
+            label4.Text = s.ToString();
             label6.Text = fille.ToString();
         }
         public int nbrgarc()

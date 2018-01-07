@@ -31,7 +31,7 @@ namespace MassarAdminDesktop
             password = "ramzi150";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + "; CharSet=utf8_bin";
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + "; Character Set=utf8";
 
             connection = new MySqlConnection(connectionString);
             
