@@ -38,8 +38,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Progressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.countetudiant = new System.Windows.Forms.Label();
+            this.Progressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -62,9 +62,9 @@
             this.groupe_l.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupe_l.Location = new System.Drawing.Point(113, 15);
             this.groupe_l.Name = "groupe_l";
-            this.groupe_l.Size = new System.Drawing.Size(36, 26);
+            this.groupe_l.Size = new System.Drawing.Size(56, 26);
             this.groupe_l.TabIndex = 9;
-            this.groupe_l.Text = "ss";
+            this.groupe_l.Text = "vide";
             // 
             // label2
             // 
@@ -99,7 +99,7 @@
             this.bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuTileButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
             this.bunifuTileButton1.Image = global::MassarAdminDesktop.Properties.Resources.etudiant;
             this.bunifuTileButton1.ImagePosition = 21;
@@ -131,9 +131,9 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(525, 77);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 31);
+            this.label6.Size = new System.Drawing.Size(30, 31);
             this.label6.TabIndex = 28;
-            this.label6.Text = "10,38";
+            this.label6.Text = "0";
             // 
             // label1
             // 
@@ -153,9 +153,24 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(525, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 31);
+            this.label4.Size = new System.Drawing.Size(30, 31);
             this.label4.TabIndex = 26;
-            this.label4.Text = "10,38";
+            this.label4.Text = "0";
+            // 
+            // countetudiant
+            // 
+            this.countetudiant.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.countetudiant.BackColor = System.Drawing.Color.Transparent;
+            this.countetudiant.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countetudiant.ForeColor = System.Drawing.Color.Black;
+            this.countetudiant.Location = new System.Drawing.Point(197, 53);
+            this.countetudiant.Name = "countetudiant";
+            this.countetudiant.Size = new System.Drawing.Size(54, 33);
+            this.countetudiant.TabIndex = 23;
+            this.countetudiant.Text = "0";
+            this.countetudiant.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Progressbar1
             // 
@@ -179,21 +194,6 @@
             this.Progressbar1.Size = new System.Drawing.Size(111, 111);
             this.Progressbar1.TabIndex = 24;
             this.Progressbar1.Value = 0;
-            // 
-            // countetudiant
-            // 
-            this.countetudiant.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.countetudiant.BackColor = System.Drawing.Color.Transparent;
-            this.countetudiant.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countetudiant.ForeColor = System.Drawing.Color.Black;
-            this.countetudiant.Location = new System.Drawing.Point(197, 53);
-            this.countetudiant.Name = "countetudiant";
-            this.countetudiant.Size = new System.Drawing.Size(54, 33);
-            this.countetudiant.TabIndex = 23;
-            this.countetudiant.Text = "30";
-            this.countetudiant.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Groupe
             // 
