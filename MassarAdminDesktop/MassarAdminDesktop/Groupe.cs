@@ -47,8 +47,7 @@ namespace MassarAdminDesktop
                 b.Show();
             }
             Login.read.Close();
-            Login.read = DBConnect.
-               Gets("SELECT id, id_massar, nom, prenom, nom_ar, prenom_ar, sexe, ville_naissance, ville_naissance_ar, adresse, date_naissance FROM etudiant, etudiant_groupe where id_groupe = " + id + " and id_etudiant = id");
+            Login.read = DBConnect.Gets("SELECT id, id_massar, nom, prenom, nom_ar, prenom_ar, sexe, ville_naissance, ville_naissance_ar, adresse, date_naissance FROM etudiant, etudiant_groupe where id_groupe = " + id + " and id_etudiant = id");
             while (Login.read.Read())
             {
                 //Login.read[7].ToString()
@@ -101,13 +100,18 @@ namespace MassarAdminDesktop
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            int s = nbrgarc();
-            int fille = countetu - s;
-            Progressbar1.MaxValue = countetu;
-            Progressbar1.Value = s;
-            countetudiant.Text =countetu.ToString();
-            label4.Text = s.ToString();
-            label6.Text = fille.ToString();
+            if (countetu == 0)
+                return;
+            
+                int s = nbrgarc();
+                int fille = countetu - s;
+                Progressbar1.MaxValue = countetu;
+                Progressbar1.Value = s;
+                countetudiant.Text = countetu.ToString();
+                label4.Text = s.ToString();
+                label6.Text = fille.ToString();
+            
+           
         }
         public int nbrgarc()
         {
