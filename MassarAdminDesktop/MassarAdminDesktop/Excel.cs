@@ -18,28 +18,37 @@ namespace MassarAdminDesktop
         XSSFWorkbook workbook;
         public ISheet sheet;
         FileStream file;
+        bool fileOpen = true;
 
         public Excel(string Path, string mode = "w")
         {
-            switch (mode)
+            try
             {
-                case "r":
-                    {
-                        file = new FileStream(string.Format(@"{0}", Path), FileMode.Open, FileAccess.Read);
-                        workbook = new XSSFWorkbook(file);
-                        break;
-                    }
-                case "a":
-                    {
-                        file = new FileStream(string.Format(@"{0}", Path), FileMode.Open, FileAccess.ReadWrite);
-                        break;
-                    }
-                case "w":
-                    {
-                        file = new FileStream(string.Format(@"{0}", Path), FileMode.Create, FileAccess.Write);
-                        workbook = new XSSFWorkbook();
-                        break;
-                    }
+                switch (mode)
+                {
+                    case "r":
+                        {
+                            file = new FileStream(string.Format(@"{0}", Path), FileMode.Open, FileAccess.Read);
+                            workbook = new XSSFWorkbook(file);
+                            break;
+                        }
+                    case "a":
+                        {
+                            file = new FileStream(string.Format(@"{0}", Path), FileMode.Open, FileAccess.ReadWrite);
+                            break;
+                        }
+                    case "w":
+                        {
+                            file = new FileStream(string.Format(@"{0}", Path), FileMode.Create, FileAccess.Write);
+                            workbook = new XSSFWorkbook();
+                            break;
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                fileOpen = false;
             }
         }
 
@@ -117,6 +126,11 @@ namespace MassarAdminDesktop
 
         public void Close() {
             workbook.Close();
+        }
+
+        internal bool isOpen()
+        {
+            return fileOpen;
         }
     }
 }
