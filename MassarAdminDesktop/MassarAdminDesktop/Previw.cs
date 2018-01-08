@@ -72,20 +72,24 @@ namespace MassarAdminDesktop
                     titre = "cc4";
                 else 
                     titre = "cc5";
-                string matiere = "arab";//due label of matiere is empty
+
+                string matiere = label18.Text;//due label of matiere is empty
+                DBConnect.Post("insert ignore into matiere values (null,'"+ matiere + "')");
                 string idMatiere = DBConnect.Get("select id from matiere where nom='"+matiere+"'");
-                MessageBox.Show(idMatiere);
                 this.id_annee = DBConnect.Get("select id from annee where annee_scolaire='" + label19.Text + "'");
                 MessageBox.Show(this.id_annee);
                 this.id_groupe = DBConnect.Get(string.Format("select id from groupe where nom = '{0}' and id_annee = {1}", label14.Text, this.id_annee));
                 query += "insert ignore into examiner values ";
+
+                DBConnect.Post("insert ignore into enseignant (nom, prenom) values ('"+ label15.Text.Split(' ')[0] + "','" + label15.Text.Split(' ')[1] + "')");
+                DBConnect.Post("insert ignore into groupe_matiere_enseignant values (" + idMatiere + "," + id_groupe + ", (select id from enseignant where nom='"+label15.Text.Split(' ')[0] +"' and prenom='" + label15.Text.Split(' ')[1] + "'))");
                 MessageBox.Show(this.id_groupe);
                 foreach (int row in this.notesrows)
                 {
                     
                     foreach (int col in this.notescols)
                     {
-                        query += string.Format(" ({0},{1},{2},{3},'{4}','{5}',N'{6}',{7}) ,",this.id_annee,this.id_groupe,dataGridView1.Rows[row].Cells[0].Value.ToString(),idMatiere,titre,semestre, dataGridView1.Columns[col].HeaderText,dataGridView1.Rows[row].Cells[col].Value.ToString());
+                        query += string.Format(" ({0},{1},{2},{3},'{4}','{5}','{6}',{7}) ,",this.id_annee,this.id_groupe,dataGridView1.Rows[row].Cells[0].Value.ToString(),idMatiere,titre,semestre, dataGridView1.Columns[col].HeaderText,dataGridView1.Rows[row].Cells[col].Value.ToString());
 
 
                     }

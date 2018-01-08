@@ -49,8 +49,8 @@ namespace MassarAdminDesktop
                 label2.Text = Login.read["nom"].ToString() + " " + Login.read["prenom"].ToString();
             Login.read.Close();
             
-            moyenne.Text = moy.Substring(0, 5);
-            if (bunifuCircleProgressbar1.Value < 5)
+            moyenne.Text = Math.Round(double.Parse(moy),2).ToString();
+            if (double.Parse(moyenne.Text) < 5)
                 bunifuCircleProgressbar1.ProgressColor = Color.Red;
             else
                 bunifuCircleProgressbar1.ProgressColor = Color.Green;
