@@ -82,8 +82,6 @@ namespace MassarAdminDesktop
                     b.Show();
                 }
             }
-            
-            
         }
 
         private void chart_e_DoubleClick(object sender, EventArgs e)

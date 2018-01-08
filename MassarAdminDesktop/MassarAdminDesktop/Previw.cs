@@ -23,6 +23,7 @@ namespace MassarAdminDesktop
         {
             InitializeComponent();
             OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Excel Files (.xlsx)|*.xlsx|Excel Files 2007 (.xlx)|*.xlx";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 path = open.FileName;
@@ -149,6 +150,7 @@ namespace MassarAdminDesktop
             if (path != null)
             {
                 Excel excel = new Excel(path, "r");
+                if (!excel.isOpen()) return;
                 excel.setCheet(excel.getSheets());
                 int w = 0;
                 List<Label> label = new List<Label>();
@@ -304,7 +306,9 @@ namespace MassarAdminDesktop
                     if (dataGridView1.Rows.Count == 0) materialLabel1.Text += "aucun eleves n'est trouve";
                     if (materialLabel1.Text != "") { groupBox1.Visible = true; materialLabel1.ForeColor = Color.Red; }
                 }
+                if (panel2.Visible || panel3.Visible || !groupBox1.Visible) Importer_b.Enabled = true;
             }
+          
         }
     }
 }
