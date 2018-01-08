@@ -118,9 +118,10 @@ namespace MassarAdminDesktop
 
         public static string Get(string query)
         {
+            string rt="";
             MySqlDataReader r = Gets(query);
-            r.Read();
-            string rt = r[0].ToString();
+            if(r.Read())
+                 rt = r[0].ToString();
             r.Close();
             return rt;
         }
