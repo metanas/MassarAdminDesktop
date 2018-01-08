@@ -35,9 +35,6 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Eleves));
             this.dgv_eleves = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Moyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chart_e = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -68,10 +65,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_eleves.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_eleves.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_eleves.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nom,
-            this.Prenom,
-            this.Moyenne});
             this.dgv_eleves.DoubleBuffered = true;
             this.dgv_eleves.EnableHeadersVisualStyles = false;
             this.dgv_eleves.HeaderBgColor = System.Drawing.Color.SeaGreen;
@@ -86,24 +79,6 @@
             this.dgv_eleves.Size = new System.Drawing.Size(302, 464);
             this.dgv_eleves.TabIndex = 0;
             this.dgv_eleves.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_eleves_CellClick);
-            // 
-            // Nom
-            // 
-            this.Nom.HeaderText = "Nom";
-            this.Nom.Name = "Nom";
-            this.Nom.ReadOnly = true;
-            // 
-            // Prenom
-            // 
-            this.Prenom.HeaderText = "Prenom";
-            this.Prenom.Name = "Prenom";
-            this.Prenom.ReadOnly = true;
-            // 
-            // Moyenne
-            // 
-            this.Moyenne.HeaderText = "Moyenne";
-            this.Moyenne.Name = "Moyenne";
-            this.Moyenne.ReadOnly = true;
             // 
             // chart_e
             // 
@@ -389,9 +364,6 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_eleves;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Prenom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Moyenne;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_e;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;

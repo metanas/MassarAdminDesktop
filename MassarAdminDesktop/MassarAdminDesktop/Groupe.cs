@@ -81,7 +81,7 @@ namespace MassarAdminDesktop
 
         void click_eleves()
         {
-            Eleves S = new Eleves(this.id, this);
+            Eleves S = new Eleves(this.id, matieres);
             S.el = this.el;
             S.render_eleves();
             S.TopLevel = false;
