@@ -15,7 +15,7 @@ namespace MassarAdminDesktop
         string id;
         public List<Eleve> el = new List<Eleve>();
         public List<Matiere> matieres;
-        public List<CheckBox> Matieres_bs = new List<CheckBox>(); 
+        public List<MaterialSkin.Controls.MaterialCheckBox> Matieres_bs = new List<MaterialSkin.Controls.MaterialCheckBox>(); 
         public Eleves(string id, List<Matiere> matieres)
         {
             this.id = id;
@@ -41,7 +41,6 @@ namespace MassarAdminDesktop
         
         public void render_eleves()
         {
-
             /*foreach (Eleve e in this.el)
                 dgv_eleves.Rows.Add(e.nom, e.prenom, e.moyenne(id));*/
             var source = new BindingList<Eleve>(this.el);
@@ -52,9 +51,9 @@ namespace MassarAdminDesktop
         {
             if (e.RowIndex != -1)
             {
-                foreach (CheckBox b in Matieres_bs)
+                foreach (MaterialSkin.Controls.MaterialCheckBox b in Matieres_bs)
                 {
-                    this.Controls.Remove(b);
+                    this.panel1.Controls.Remove(b);
                 }
                 chart c = new chart(chart_e, this.id);
                 c.addChartByEtudiant(el[e.RowIndex].id);
@@ -71,16 +70,14 @@ namespace MassarAdminDesktop
                 
                 foreach (Matiere m in this.matieres)
                 {
-                    C.addChartEvolutionSeries(eleve, m);
-                    
-                    
+                    C.addChartEvolutionSeries(eleve, m);                  
                 }
                 Matieres_bs = C.series_bs;
                 int y = 0;
-                foreach (CheckBox b in Matieres_bs)
+                foreach (MaterialSkin.Controls.MaterialCheckBox b in Matieres_bs)
                 {
-                    b.Location = new System.Drawing.Point(883, 44 + y);
-                    b.Parent = this;
+                    b.Location = new Point(chart_e.Location.X + chart_e.Width + 20, 44 + y);
+                    b.Parent = panel1;
                     y += 38;
                     b.Show();
                 }
@@ -92,6 +89,11 @@ namespace MassarAdminDesktop
         private void chart_e_DoubleClick(object sender, EventArgs e)
         {
                 chart.doubleCliick(sender, e);
+        }
+
+        private void Groupe_Resize(object sender, EventArgs e)
+        {
+            panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
         }
     }
 }

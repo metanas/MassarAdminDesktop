@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Previw));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Importer_b = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -66,15 +67,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.Importer_b = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.Importer_b);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
@@ -82,8 +86,34 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(927, 516);
+            this.panel1.Size = new System.Drawing.Size(1029, 525);
             this.panel1.TabIndex = 0;
+            // 
+            // Importer_b
+            // 
+            this.Importer_b.ActiveBorderThickness = 1;
+            this.Importer_b.ActiveCornerRadius = 20;
+            this.Importer_b.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.Importer_b.ActiveForecolor = System.Drawing.Color.White;
+            this.Importer_b.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.Importer_b.BackColor = System.Drawing.SystemColors.Control;
+            this.Importer_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Importer_b.BackgroundImage")));
+            this.Importer_b.ButtonText = "Importer";
+            this.Importer_b.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Importer_b.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Importer_b.ForeColor = System.Drawing.Color.SeaGreen;
+            this.Importer_b.IdleBorderThickness = 1;
+            this.Importer_b.IdleCornerRadius = 20;
+            this.Importer_b.IdleFillColor = System.Drawing.Color.White;
+            this.Importer_b.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.Importer_b.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.Importer_b.Location = new System.Drawing.Point(354, 476);
+            this.Importer_b.Margin = new System.Windows.Forms.Padding(5);
+            this.Importer_b.Name = "Importer_b";
+            this.Importer_b.Size = new System.Drawing.Size(181, 35);
+            this.Importer_b.TabIndex = 65;
+            this.Importer_b.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Importer_b.Click += new System.EventHandler(this.Importer_b_Click);
             // 
             // panel3
             // 
@@ -101,7 +131,7 @@
             this.panel3.Controls.Add(this.label22);
             this.panel3.Location = new System.Drawing.Point(6, 49);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(879, 150);
+            this.panel3.Size = new System.Drawing.Size(860, 150);
             this.panel3.TabIndex = 64;
             // 
             // label33
@@ -248,7 +278,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(6, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(879, 150);
+            this.panel2.Size = new System.Drawing.Size(860, 150);
             this.panel2.TabIndex = 24;
             this.panel2.Visible = false;
             // 
@@ -460,7 +490,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 205);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(879, 263);
+            this.dataGridView1.Size = new System.Drawing.Size(860, 263);
             this.dataGridView1.TabIndex = 23;
             // 
             // label1
@@ -473,37 +503,34 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Aperçu";
             // 
-            // Importer_b
+            // groupBox1
             // 
-            this.Importer_b.ActiveBorderThickness = 1;
-            this.Importer_b.ActiveCornerRadius = 20;
-            this.Importer_b.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.Importer_b.ActiveForecolor = System.Drawing.Color.White;
-            this.Importer_b.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.Importer_b.BackColor = System.Drawing.SystemColors.Control;
-            this.Importer_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Importer_b.BackgroundImage")));
-            this.Importer_b.ButtonText = "Importer";
-            this.Importer_b.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Importer_b.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Importer_b.ForeColor = System.Drawing.Color.SeaGreen;
-            this.Importer_b.IdleBorderThickness = 1;
-            this.Importer_b.IdleCornerRadius = 20;
-            this.Importer_b.IdleFillColor = System.Drawing.Color.White;
-            this.Importer_b.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.Importer_b.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.Importer_b.Location = new System.Drawing.Point(354, 476);
-            this.Importer_b.Margin = new System.Windows.Forms.Padding(5);
-            this.Importer_b.Name = "Importer_b";
-            this.Importer_b.Size = new System.Drawing.Size(181, 35);
-            this.Importer_b.TabIndex = 65;
-            this.Importer_b.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Importer_b.Click += new System.EventHandler(this.Importer_b_Click);
+            this.groupBox1.Controls.Add(this.materialLabel1);
+            this.groupBox1.Location = new System.Drawing.Point(872, 199);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(154, 269);
+            this.groupBox1.TabIndex = 66;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "list Error";
+            this.groupBox1.Visible = false;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.Red;
+            this.materialLabel1.Location = new System.Drawing.Point(6, 16);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(0, 19);
+            this.materialLabel1.TabIndex = 0;
             // 
             // Previw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 518);
+            this.ClientSize = new System.Drawing.Size(1038, 537);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(130, 30);
@@ -519,6 +546,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -563,5 +592,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private Bunifu.Framework.UI.BunifuThinButton2 Importer_b;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

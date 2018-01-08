@@ -28,82 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Eleves));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Eleves));
-            this.dgv_eleves = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.chart_e = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chart_e = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dgv_eleves = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuFlatButton7 = new Bunifu.Framework.UI.BunifuFlatButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_eleves)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_e)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_eleves)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgv_eleves
-            // 
-            this.dgv_eleves.AllowUserToAddRows = false;
-            this.dgv_eleves.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgv_eleves.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_eleves.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgv_eleves.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_eleves.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_eleves.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_eleves.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_eleves.DoubleBuffered = true;
-            this.dgv_eleves.EnableHeadersVisualStyles = false;
-            this.dgv_eleves.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dgv_eleves.HeaderForeColor = System.Drawing.Color.SeaShell;
-            this.dgv_eleves.Location = new System.Drawing.Point(12, 44);
-            this.dgv_eleves.MultiSelect = false;
-            this.dgv_eleves.Name = "dgv_eleves";
-            this.dgv_eleves.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_eleves.RowHeadersVisible = false;
-            this.dgv_eleves.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_eleves.ShowEditingIcon = false;
-            this.dgv_eleves.Size = new System.Drawing.Size(302, 464);
-            this.dgv_eleves.TabIndex = 0;
-            this.dgv_eleves.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_eleves_CellClick);
-            // 
-            // chart_e
-            // 
-            chartArea1.AxisX.LineColor = System.Drawing.Color.Silver;
-            chartArea1.CursorX.IsUserEnabled = true;
-            chartArea1.CursorX.IsUserSelectionEnabled = true;
-            chartArea1.Name = "ChartArea1";
-            this.chart_e.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart_e.Legends.Add(legend1);
-            this.chart_e.Location = new System.Drawing.Point(344, 44);
-            this.chart_e.Name = "chart_e";
-            this.chart_e.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series1.IsValueShownAsLabel = true;
-            series1.IsVisibleInLegend = false;
-            series1.IsXValueIndexed = true;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart_e.Series.Add(series1);
-            this.chart_e.Size = new System.Drawing.Size(533, 300);
-            this.chart_e.TabIndex = 1;
-            this.chart_e.Text = "chart1";
-            this.chart_e.DoubleClick += new System.EventHandler(this.chart_e_DoubleClick);
             // 
             // bunifuFlatButton1
             // 
@@ -309,6 +253,76 @@
             this.bunifuFlatButton6.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton6.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chart_e);
+            this.panel1.Controls.Add(this.dgv_eleves);
+            this.panel1.Controls.Add(this.bunifuFlatButton7);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(963, 519);
+            this.panel1.TabIndex = 0;
+            // 
+            // chart_e
+            // 
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Silver;
+            chartArea1.CursorX.IsUserEnabled = true;
+            chartArea1.CursorX.IsUserSelectionEnabled = true;
+            chartArea1.Name = "ChartArea1";
+            this.chart_e.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart_e.Legends.Add(legend1);
+            this.chart_e.Location = new System.Drawing.Point(334, 35);
+            this.chart_e.Name = "chart_e";
+            this.chart_e.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.IsValueShownAsLabel = true;
+            series1.IsVisibleInLegend = false;
+            series1.IsXValueIndexed = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart_e.Series.Add(series1);
+            this.chart_e.Size = new System.Drawing.Size(533, 300);
+            this.chart_e.TabIndex = 4;
+            this.chart_e.Text = "chart1";
+            this.chart_e.Resize += new System.EventHandler(this.Groupe_Resize);
+            // 
+            // dgv_eleves
+            // 
+            this.dgv_eleves.AllowUserToAddRows = false;
+            this.dgv_eleves.AllowUserToDeleteRows = false;
+            this.dgv_eleves.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_eleves.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_eleves.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_eleves.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_eleves.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_eleves.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_eleves.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_eleves.DoubleBuffered = true;
+            this.dgv_eleves.EnableHeadersVisualStyles = false;
+            this.dgv_eleves.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.dgv_eleves.HeaderForeColor = System.Drawing.Color.SeaShell;
+            this.dgv_eleves.Location = new System.Drawing.Point(12, 12);
+            this.dgv_eleves.MultiSelect = false;
+            this.dgv_eleves.Name = "dgv_eleves";
+            this.dgv_eleves.ReadOnly = true;
+            this.dgv_eleves.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_eleves.RowHeadersVisible = false;
+            this.dgv_eleves.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_eleves.ShowEditingIcon = false;
+            this.dgv_eleves.Size = new System.Drawing.Size(252, 464);
+            this.dgv_eleves.TabIndex = 3;
+            this.dgv_eleves.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_eleves_CellClick);
+            // 
             // bunifuFlatButton7
             // 
             this.bunifuFlatButton7.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
@@ -330,14 +344,14 @@
             this.bunifuFlatButton7.IconVisible = true;
             this.bunifuFlatButton7.IconZoom = 90D;
             this.bunifuFlatButton7.IsTab = false;
-            this.bunifuFlatButton7.Location = new System.Drawing.Point(344, 371);
+            this.bunifuFlatButton7.Location = new System.Drawing.Point(362, 362);
             this.bunifuFlatButton7.Name = "bunifuFlatButton7";
             this.bunifuFlatButton7.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton7.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuFlatButton7.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton7.selected = false;
             this.bunifuFlatButton7.Size = new System.Drawing.Size(149, 35);
-            this.bunifuFlatButton7.TabIndex = 2;
+            this.bunifuFlatButton7.TabIndex = 5;
             this.bunifuFlatButton7.Text = "Evolution";
             this.bunifuFlatButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton7.Textcolor = System.Drawing.Color.White;
@@ -348,29 +362,30 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(975, 520);
-            this.Controls.Add(this.chart_e);
-            this.Controls.Add(this.dgv_eleves);
-            this.Controls.Add(this.bunifuFlatButton7);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Eleves";
             this.Text = "Eleves";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_eleves)).EndInit();
+            this.Resize += new System.EventHandler(this.Groupe_Resize);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart_e)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_eleves)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_eleves;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart_e;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_e;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_eleves;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton7;
     }
 }

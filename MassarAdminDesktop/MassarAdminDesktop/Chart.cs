@@ -25,7 +25,7 @@ namespace MassarAdminDesktop
         static public int a = 0;
         
         
-        public List<CheckBox> series_bs = new List<CheckBox>();
+        public List<MaterialSkin.Controls.MaterialCheckBox> series_bs = new List<MaterialSkin.Controls.MaterialCheckBox>();
      
         public  chart (Chart mychart,string id_class) {
             this.c = mychart;
@@ -91,7 +91,7 @@ namespace MassarAdminDesktop
             }
             Login.read.Close();
             this.c.Series.Add(s);
-            CheckBox b = new CheckBox();
+            MaterialSkin.Controls.MaterialCheckBox b = new MaterialSkin.Controls.MaterialCheckBox();
             b.Text = s.Name;
             b.Checked = true;
             this.series_bs.Add(b);

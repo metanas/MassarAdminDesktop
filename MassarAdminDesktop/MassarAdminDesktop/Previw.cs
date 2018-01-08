@@ -151,13 +151,15 @@ namespace MassarAdminDesktop
                 Excel excel = new Excel(path, "r");
                 excel.setCheet(excel.getSheets());
                 int w = 0;
+                List<Label> label = new List<Label>();
+                List<string> s = new List<string>();
                 q = Controller.checkFile(path);
                 if (q == "notes") //fichier = notes
                 {
                     panel2.Visible = true;
                     panel3.Visible = false;
-                    Label[] label = new Label[] { label10, label11, label12, label13, label14, label15, label16, label17, label18, label19 };
-                    string[] s = new string[] { "أكاديمية :", "الإقليمية", "مؤسسة", "المستوى  :", "القسم  :", "الاستاذ", "الدورة  :", "نقط :", "المادة", "السنة الدراسية :" };
+                    label = new List<Label>(){ label10, label11, label12, label13, label14, label15, label16, label17, label18, label19 };
+                    s = new List<string>() { "أكاديمية :", "الإقليمية", "مؤسسة", "المستوى  :", "القسم  :", "الاستاذ", "الدورة  :", "نقط :", "المادة", "السنة الدراسية :" };
                     for (int i = 0; i < excel.find("ID")[0]; i++)
                     {
                         try
@@ -197,7 +199,7 @@ namespace MassarAdminDesktop
                             dataGridView1.ColumnCount = excel.sheet.GetRow(i).LastCellNum - y;
                             for (int j = y; j < excel.sheet.GetRow(i).LastCellNum; j++)
                             {
-                                    dataGridView1.Columns[f++].HeaderText = excel.getContent(i, j) + " " + excel.getContent(i + 1, j);
+                                dataGridView1.Columns[f++].HeaderText = excel.getContent(i, j) + " " + excel.getContent(i + 1, j);
                             }
 
                         }
@@ -206,7 +208,7 @@ namespace MassarAdminDesktop
                             dataGridView1.Rows.Add();
                             if (excel.getContent(i + 1, y) == "")
                             {
-                                return;
+                                break;
                             }
                             for (int j = y; j < excel.sheet.GetRow(i + 1).LastCellNum; j++)
                             {
@@ -222,20 +224,14 @@ namespace MassarAdminDesktop
                                 dataGridView1.Rows[i - x - 1].Cells[j - y].Value = excel.getContent(i + 1, j);
                             }
                         }
-
-
                     }
                 }
-
-
-
                 else if (q == "info")
                 {
-                    
                     panel2.Visible = true;
                     panel3.Visible = true;
-                    Label[] label = new Label[] { label28, label29, label30, label31, label32, label33 };
-                    string[] s = new string[] { "أكاديمية :", "المذيرية الإقليمية :", "مؤسسة  :", "السنة الدراسية", "المستوى :", "القسم" };
+                    label = new List<Label>() { label28, label29, label30, label31, label32, label33 };
+                    s = new List<string>() { "أكاديمية :", "المذيرية الإقليمية :", "مؤسسة  :", "السنة الدراسية", "المستوى :", "القسم" };
                     for (int i = 0; i < excel.find("رقم التلميذ")[0] - 1; i++)
                     {
                         try
@@ -295,8 +291,18 @@ namespace MassarAdminDesktop
                             }
                         }
                     }
-                    
-                    
+                }
+                if (s != null)
+                {
+                    for (int i = 0; i < s.Count; i++)
+                    {
+                        if (label[i].Text == "")
+                        {
+                            materialLabel1.Text += "il faut saisir " + s[i] + "\n";
+                        }
+                    }
+                    if (dataGridView1.Rows.Count == 0) materialLabel1.Text += "aucun eleves n'est trouve";
+                    if (materialLabel1.Text != "") { groupBox1.Visible = true; materialLabel1.ForeColor = Color.Red; }
                 }
             }
         }
