@@ -120,6 +120,7 @@
             this.bunifuTileButton2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.bunifuTileButton2.Size = new System.Drawing.Size(141, 147);
             this.bunifuTileButton2.TabIndex = 20;
+            this.bunifuTileButton2.Click += new System.EventHandler(this.bunifuTileButton2_Click);
             // 
             // label2
             // 
