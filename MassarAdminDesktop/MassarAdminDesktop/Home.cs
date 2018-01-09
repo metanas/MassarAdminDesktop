@@ -15,8 +15,8 @@ namespace MassarAdminDesktop
 
     public partial class Home : MaterialSkin.Controls.MaterialForm
     {
-        List<Bunifu.Framework.UI.BunifuFlatButton> cl_buttons = new List<Bunifu.Framework.UI.BunifuFlatButton>();
-        List<string> id_classes = new List<string>();
+        public static List<Bunifu.Framework.UI.BunifuFlatButton> cl_buttons = new List<Bunifu.Framework.UI.BunifuFlatButton>();
+        public static List<string> id_classes = new List<string>();
         Analyse analyse;
         public static string id;
         public static string nomgr;
@@ -112,7 +112,7 @@ namespace MassarAdminDesktop
             Login.read.Close();
         }
 
-        private void groupe(object sender, EventArgs e)
+        public void groupe(object sender, EventArgs e)
         {
             for (int i = 0; i < cl_buttons.Count; i++)
             {

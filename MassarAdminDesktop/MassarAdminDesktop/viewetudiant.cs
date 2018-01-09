@@ -12,6 +12,7 @@ namespace MassarAdminDesktop
 {
     public partial class viewetudiant : Form
     {
+        
         List<List<string>> etudiants; 
         public viewetudiant()
         {
@@ -45,8 +46,26 @@ namespace MassarAdminDesktop
 
         private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+            Groupe Groupe_Form;
+            if (e.ColumnIndex == 3)
+            {
+                for (int i = 0; i < Home.cl_buttons.Count; i++)
+                    if (bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[3].Value.ToString() == Home.cl_buttons[i].Text)
+                        Home.id = Home.id_classes[i];
+                Groupe_Form = new Groupe(Home.id, bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[3].Value.ToString());
 
-        }
+                Groupe_Form.TopLevel = false;
+                Groupe_Form.Parent = Home.ActifForm.Parent;
+                Groupe_Form.Location = new Point(this.Location.X, this.Location.Y);
+                Groupe_Form.Show();
+                Home.AddForm(Groupe_Form);
+
+
+            }
+
+
+    }
 
         private void Groupe_Resize(object sender, EventArgs e)
         {
