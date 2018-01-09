@@ -30,13 +30,15 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewprofesseur));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.search = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -44,12 +46,13 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.search);
             this.panel1.Controls.Add(this.bunifuCustomDataGrid1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(35, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(579, 385);
+            this.panel1.Size = new System.Drawing.Size(600, 407);
             this.panel1.TabIndex = 0;
             // 
             // bunifuCustomDataGrid1
@@ -78,13 +81,32 @@
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(123, 104);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(116, 133);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.RowHeadersVisible = false;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(382, 267);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(354, 267);
             this.bunifuCustomDataGrid1.TabIndex = 8;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nom";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Prenom";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Taux de Reussit";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 150;
             // 
             // pictureBox1
             // 
@@ -107,31 +129,25 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Professeurs Enregistrer";
             // 
-            // Column1
+            // search
             // 
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Prenom";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Taux de Reussit";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
+            this.search.BackColor = System.Drawing.Color.White;
+            this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
+            this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.search.ForeColor = System.Drawing.Color.Black;
+            this.search.Icon = ((System.Drawing.Image)(resources.GetObject("search.Icon")));
+            this.search.Location = new System.Drawing.Point(198, 85);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(164, 42);
+            this.search.TabIndex = 13;
+            this.search.text = "";
             // 
             // viewprofesseur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(648, 428);
+            this.ClientSize = new System.Drawing.Size(621, 432);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "viewprofesseur";
@@ -155,5 +171,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private Bunifu.Framework.UI.BunifuTextbox search;
     }
 }

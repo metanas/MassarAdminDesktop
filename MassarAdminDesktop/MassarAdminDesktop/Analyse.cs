@@ -81,6 +81,8 @@ namespace MassarAdminDesktop
 
         private void bunifuTileButton2_Click(object sender, EventArgs e)
         {
+            ((Bunifu.Framework.UI.BunifuImageButton)form.Controls.Find("HomeButton", true)[0]).Visible = true;
+            ((Bunifu.Framework.UI.BunifuImageButton)form.Controls.Find("Back", true)[0]).Visible = true;
             classview classe = new classview();
             classe.TopLevel = false;
             classe.Parent = form;

@@ -51,7 +51,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bunifuCustomDataGrid1);
-            this.panel1.Location = new System.Drawing.Point(50, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(614, 459);
             this.panel1.TabIndex = 0;
@@ -63,7 +63,7 @@
             this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.search.ForeColor = System.Drawing.Color.Black;
             this.search.Icon = ((System.Drawing.Image)(resources.GetObject("search.Icon")));
-            this.search.Location = new System.Drawing.Point(237, 99);
+            this.search.Location = new System.Drawing.Point(211, 113);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(164, 42);
             this.search.TabIndex = 12;
@@ -74,7 +74,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.pictureBox1.Image = global::MassarAdminDesktop.Properties.Resources.etudiant;
-            this.pictureBox1.Location = new System.Drawing.Point(49, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(49, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(99, 90);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -85,7 +85,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 30.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(154, 15);
+            this.label1.Location = new System.Drawing.Point(154, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(412, 47);
             this.label1.TabIndex = 4;
@@ -156,7 +156,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(721, 483);
+            this.ClientSize = new System.Drawing.Size(636, 483);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "viewetudiant";

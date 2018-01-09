@@ -71,7 +71,7 @@
             this.bunifuTileButton3.ImageZoom = 50;
             this.bunifuTileButton3.LabelPosition = 43;
             this.bunifuTileButton3.LabelText = "Evolution";
-            this.bunifuTileButton3.Location = new System.Drawing.Point(588, 322);
+            this.bunifuTileButton3.Location = new System.Drawing.Point(579, 322);
             this.bunifuTileButton3.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton3.Name = "bunifuTileButton3";
             this.bunifuTileButton3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);

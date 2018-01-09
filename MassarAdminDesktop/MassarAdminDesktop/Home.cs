@@ -205,9 +205,9 @@ namespace MassarAdminDesktop
 
         private void Back_Click(object sender, EventArgs e)
         {
-            foreach (Form w in Home.PreviewFrom)
+            foreach (Form from in Home.PreviewFrom)
             {
-                Console.WriteLine(w.Name);
+                Console.WriteLine(from.Name);
             }
             if (Home.PreviewFrom.Count > 0)
             {
@@ -231,7 +231,10 @@ namespace MassarAdminDesktop
             Back.Visible = false;
             HomeButton.Visible = false;
             if (Home.ActifForm != null)
+            {
                 Home.ActifForm.Close();
+                Home.ActifForm = null;
+            }
             foreach (Form from in Home.PreviewFrom)
             {
                 from.Close();

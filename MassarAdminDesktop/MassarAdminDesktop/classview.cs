@@ -19,11 +19,39 @@ namespace MassarAdminDesktop
 
         private void classview_Load(object sender, EventArgs e)
         {
+            bunifuCustomDataGrid1.Rows.Clear();
             Login.read = DBConnect.Gets("select groupe.nom , groupe.id from groupe , annee where annee.annee_scolaire='" + Home.idann + "' and  annee.id=groupe.id_annee ; ");
             while (Login.read.Read()) {
-                bunifuCustomDataGrid1.Rows.Add(Login.read["nom"].ToString());
+                bunifuCustomDataGrid1.Rows.Add(Login.read["id"].ToString(), Login.read["nom"].ToString(),"supprimer");
             }
             Login.read.Close();
+        }
+
+        private async void BunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex != -1)
+            {
+                if (e.ColumnIndex == 2) {
+                    string idGroupe = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    if (MessageBox.Show("etes vous sur de vouloir supprimer cette Classe", "Suppression de Classe",  MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        await Task.Run(() =>
+                        {
+                            DBConnect.Post("DELETE FROM examiner where id_annee=(select id from annee where annee_scolaire='" + Home.idann + "') and id_groupe='" + idGroupe + "'");
+                            DBConnect.Post("Delete FROM etudiant where id in (select id_etudiant From etudiant_groupe where id_groupe='" + idGroupe + "')");
+                            DBConnect.Post("Delete FRom etudiant_groupe where id_groupe=" + idGroupe);
+                            DBConnect.Post("Delete From groupe where id=" + idGroupe);
+                            DBConnect.Post("Delete From groupe_matiere_enseignant where id_groupe=" + idGroupe);
+                        });
+                        classview_Load(sender, e);
+                    }
+                }
+            }
+        }
+
+        private void Groupe_Resize(object sender, EventArgs e)
+        {
+            panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
         }
     }
 }
