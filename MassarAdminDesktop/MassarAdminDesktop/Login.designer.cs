@@ -40,7 +40,7 @@
             // nom
             // 
             this.nom.Depth = 0;
-            this.nom.Hint = "Username";
+            this.nom.Hint = "Utilisateur";
             this.nom.Location = new System.Drawing.Point(153, 176);
             this.nom.MouseState = MaterialSkin.MouseState.HOVER;
             this.nom.Name = "nom";
@@ -55,7 +55,7 @@
             // password
             // 
             this.password.Depth = 0;
-            this.password.Hint = "Password";
+            this.password.Hint = "Mot de passe";
             this.password.Location = new System.Drawing.Point(153, 212);
             this.password.MouseState = MaterialSkin.MouseState.HOVER;
             this.password.Name = "password";
@@ -78,7 +78,7 @@
             this.log_in.Primary = true;
             this.log_in.Size = new System.Drawing.Size(101, 34);
             this.log_in.TabIndex = 2;
-            this.log_in.Text = "se Connecte";
+            this.log_in.Text = "Connexion";
             this.log_in.UseVisualStyleBackColor = false;
             this.log_in.Click += new System.EventHandler(this.ButtonClickHandlerAsync);
             // 

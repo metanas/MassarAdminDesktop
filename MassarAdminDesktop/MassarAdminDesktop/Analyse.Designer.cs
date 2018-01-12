@@ -146,7 +146,7 @@
             this.bunifuTileButton1.ImagePosition = 21;
             this.bunifuTileButton1.ImageZoom = 50;
             this.bunifuTileButton1.LabelPosition = 43;
-            this.bunifuTileButton1.LabelText = "Professeurs";
+            this.bunifuTileButton1.LabelText = "Enseignants";
             this.bunifuTileButton1.Location = new System.Drawing.Point(215, 322);
             this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton1.Name = "bunifuTileButton1";

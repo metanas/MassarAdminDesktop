@@ -87,9 +87,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 30.25F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(154, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(412, 47);
+            this.label1.Size = new System.Drawing.Size(422, 47);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Etudiants Enregistrer";
+            this.label1.Text = "Etudiants enregistrés";
             // 
             // bunifuCustomDataGrid1
             // 
