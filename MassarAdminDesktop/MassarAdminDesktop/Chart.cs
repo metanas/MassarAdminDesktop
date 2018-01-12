@@ -33,9 +33,12 @@ namespace MassarAdminDesktop
             this.c.Series.Clear();
             this.c.ChartAreas[0].AxisX.Interval = 1;
             this.c.ChartAreas[0].AxisY.Maximum = 10;
+            
+            
             this.c.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray;
             this.c.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
             tp = new ToolTip();
+            
         }
 
         public static void doubleCliick(object sender, EventArgs e)
@@ -64,6 +67,7 @@ namespace MassarAdminDesktop
                 s.Points[i].ToolTip = Math.Round(Double.Parse(Login.read[0].ToString()), 2, MidpointRounding.AwayFromZero).ToString();
                 s.Points[i].Color = this.col[i++];
 
+
             }
             this.c.Series.Add(s);
             Login.read.Close();
@@ -84,7 +88,7 @@ namespace MassarAdminDesktop
             Login.read = DBConnect.Gets(string.Format("SELECT avg(note), titre FROM examiner where id_etudiant = {0} and id_groupe = {1} and id_matiere = {2} group by titre order by titre", eleve.id, this.id_class, matiere.id));
             while (Login.read.Read())
             {
-                s.Points.AddXY(Login.read[1].ToString(), float.Parse(Login.read[0].ToString()));
+                s.Points.AddXY(Login.read[1].ToString(), Math.Round( float.Parse(Login.read[0].ToString()), 2));
                 s.Points[i].MarkerSize = 9;
                 s.Points[i++].MarkerStyle = MarkerStyle.Circle;
                 
@@ -96,8 +100,32 @@ namespace MassarAdminDesktop
             b.Checked = true;
             this.series_bs.Add(b);
             b.CheckedChanged += B_Click;
-            
+        }
 
+        public void addChartEvolutionAnneeEleve(Eleve eleve)
+        {
+            Series s = new Series
+            {
+                ChartType = SeriesChartType.Line
+
+
+            };
+            s.BorderWidth = 3;
+            int i = 0;
+            s.IsValueShownAsLabel = true;
+            s.IsVisibleInLegend = false;
+
+            Login.read = DBConnect.Gets(string.Format("SELECT avg(note), titre FROM examiner where id_etudiant = {0} and id_groupe = {1} group by titre order by titre", eleve.id, this.id_class));
+            while (Login.read.Read())
+            {
+                s.Points.AddXY(Login.read[1].ToString(), Math.Round(float.Parse(Login.read[0].ToString()), 2));
+                s.Points[i].MarkerSize = 9;
+                s.Points[i++].MarkerStyle = MarkerStyle.Circle;
+
+            }
+            Login.read.Close();
+            this.c.Series.Add(s);
+            
         }
 
         public void evoann()

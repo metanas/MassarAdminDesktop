@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewprofesseur));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewprofesseur));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.search = new Bunifu.Framework.UI.BunifuTextbox();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.search = new Bunifu.Framework.UI.BunifuTextbox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,6 +54,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 407);
             this.panel1.TabIndex = 0;
+            // 
+            // search
+            // 
+            this.search.BackColor = System.Drawing.Color.White;
+            this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
+            this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.search.ForeColor = System.Drawing.Color.Black;
+            this.search.Icon = ((System.Drawing.Image)(resources.GetObject("search.Icon")));
+            this.search.Location = new System.Drawing.Point(198, 85);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(164, 42);
+            this.search.TabIndex = 13;
+            this.search.text = "";
             // 
             // bunifuCustomDataGrid1
             // 
@@ -89,25 +102,6 @@
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(354, 267);
             this.bunifuCustomDataGrid1.TabIndex = 8;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Prenom";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Taux de Reussit";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
@@ -125,22 +119,28 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(115, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(478, 47);
+            this.label1.Size = new System.Drawing.Size(488, 47);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Professeurs Enregistrer";
+            this.label1.Text = "Enseignants enregistrés";
             // 
-            // search
+            // Column1
             // 
-            this.search.BackColor = System.Drawing.Color.White;
-            this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
-            this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.search.ForeColor = System.Drawing.Color.Black;
-            this.search.Icon = ((System.Drawing.Image)(resources.GetObject("search.Icon")));
-            this.search.Location = new System.Drawing.Point(198, 85);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(164, 42);
-            this.search.TabIndex = 13;
-            this.search.text = "";
+            this.Column1.HeaderText = "Nom";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Prénom";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Taux de réussite";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 150;
             // 
             // viewprofesseur
             // 
@@ -168,9 +168,9 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuTextbox search;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private Bunifu.Framework.UI.BunifuTextbox search;
     }
 }

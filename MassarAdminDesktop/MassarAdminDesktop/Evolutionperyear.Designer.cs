@@ -83,9 +83,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(127, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(415, 47);
+            this.label1.Size = new System.Drawing.Size(407, 47);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Evolution Par Annee";
+            this.label1.Text = "Evolution par année";
             // 
             // Evolutionperyear
             // 

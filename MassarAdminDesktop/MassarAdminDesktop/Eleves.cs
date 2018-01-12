@@ -35,9 +35,10 @@ namespace MassarAdminDesktop
 
             Login.read.Close();*/
             render_eleves();
+            
 
         }
-
+        
         
         public void render_eleves()
         {
@@ -45,6 +46,27 @@ namespace MassarAdminDesktop
                 dgv_eleves.Rows.Add(e.nom, e.prenom, e.moyenne(id));*/
             var source = new BindingList<Eleve>(this.el);
             dgv_eleves.DataSource = source;
+        }
+
+        public void homechart()
+        {
+            if (dgv_eleves.SelectedCells[0].RowIndex != -1)
+            {
+                foreach (MaterialSkin.Controls.MaterialCheckBox b in Matieres_bs)
+                {
+                    this.panel1.Controls.Remove(b);
+                }
+                chart c = new chart(chart_e, this.id);
+                c.addChartByEtudiant(el[dgv_eleves.SelectedRows[0].Index].id);
+                double moy = 0;
+                foreach (var p in c.c.Series[0].Points)
+                {
+                    moy += p.YValues[0];
+                }
+                moy /= c.c.Series[0].Points.Count();
+                moy = Math.Round(moy, 2);
+                moy_g.Text = moy.ToString();
+            }
         }
 
         private void dgv_eleves_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -57,6 +79,14 @@ namespace MassarAdminDesktop
                 }
                 chart c = new chart(chart_e, this.id);
                 c.addChartByEtudiant(el[e.RowIndex].id);
+                double moy = 0;
+                foreach (var p in c.c.Series[0].Points)
+                {
+                    moy += p.YValues[0];
+                }
+                moy /= c.c.Series[0].Points.Count();
+                moy = Math.Round(moy, 2);
+                moy_g.Text = moy.ToString();
             }
         }
 
@@ -66,6 +96,7 @@ namespace MassarAdminDesktop
             {
                 chart C = new chart(chart_e, this.id);
                 //chart_e.DataManipulator.Statistics.Median.
+                
                 Eleve eleve = el[dgv_eleves.SelectedRows[0].Index];
                 
                 foreach (Matiere m in this.matieres)
@@ -81,6 +112,7 @@ namespace MassarAdminDesktop
                     y += 38;
                     b.Show();
                 }
+                
             }
         }
 
@@ -92,6 +124,34 @@ namespace MassarAdminDesktop
         private void Groupe_Resize(object sender, EventArgs e)
         {
             panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
+        }
+
+        private void bunifuFlatButton8_Click(object sender, EventArgs e)
+        {
+            foreach (MaterialSkin.Controls.MaterialCheckBox b in Matieres_bs)
+            {
+                this.panel1.Controls.Remove(b);
+            }
+            if (dgv_eleves.SelectedRows.Count == 1)
+            {
+                chart C = new chart(chart_e, this.id);
+                //chart_e.DataManipulator.Statistics.Median.
+
+                Eleve eleve = el[dgv_eleves.SelectedRows[0].Index];
+                
+                C.addChartEvolutionAnneeEleve(eleve);
+            }
+        }
+
+        private void bunifuFlatButton9_Click(object sender, EventArgs e)
+        {
+            homechart();
+        }
+
+        private void dgv_eleves_SelectionChanged(object sender, EventArgs e)
+        {
+            try { homechart(); }
+            catch { }
         }
     }
 }
