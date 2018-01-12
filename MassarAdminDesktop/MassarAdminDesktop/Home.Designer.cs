@@ -106,9 +106,9 @@
             this.label1.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(251, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 28);
+            this.label1.Size = new System.Drawing.Size(101, 28);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Home";
+            this.label1.Text = "Acceuil";
             // 
             // HomeButton
             // 

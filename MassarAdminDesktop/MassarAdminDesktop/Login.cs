@@ -38,7 +38,7 @@ namespace MassarAdminDesktop
             {
                 x = admin.login(nom.Text, password.Text);
             });
-            log_in.Text = "se Connecte";
+            log_in.Text = "Connexion";
             bunifuCircleProgressbar1.Visible = false;
             if (!x)
             {
