@@ -197,37 +197,46 @@ namespace MassarAdminDesktop
                     }
                     int x = excel.find("ID")[0];
                     int y = excel.find("ID")[1];
+                    int we = excel.sheet.GetRow(x).LastCellNum;
+                    for (int j = y; j < excel.sheet.GetRow(x).LastCellNum; j++)
+                    {
+                        if (excel.getContent(x, j).Length == 0 && excel.getContent(x, j + 1).Length == 0 && excel.getContent(x, j + 2).Length == 0)
+                        {
+                            we = j;
+                            break;
+                        }
+                    }
                     for (int i = x; i < excel.GetLastRow(); i++)
                     {
                         if (i == x)
                         {
                             int f = 0;
-                            dataGridView1.ColumnCount = excel.sheet.GetRow(i).LastCellNum - y;
-                            for (int j = y; j < excel.sheet.GetRow(i).LastCellNum; j++)
+                            dataGridView1.ColumnCount = we - y;
+                            for (int j = y; j < we; j++)
                             {
-                                dataGridView1.Columns[f++].HeaderText = excel.getContent(i, j) + " " + excel.getContent(i + 1, j);
+                                dataGridView1.Columns[f++].HeaderText = excel.getContent(i, j) + " " + excel.getContent(i + 1, j);  
                             }
 
                         }
                         else
                         {
-                            dataGridView1.Rows.Add();
-                            if (excel.getContent(i + 1, y) == "")
+                            if (excel.getContent(i+1, y) == "")
                             {
                                 break;
                             }
-                            for (int j = y; j < excel.sheet.GetRow(i + 1).LastCellNum; j++)
+                            dataGridView1.Rows.Add();
+                            for (int j = y; j < we; j++)
                             {
                                 try
                                 {
                                     if ((float.Parse(excel.getContent(i + 1, j)) > 20 || float.Parse(excel.getContent(i + 1, j)) < 0) && j != y)
                                     {
                                         dataGridView1.Rows[i - x - 1].Cells[j - y].Style.BackColor = Color.DarkRed;
-                                        Importer_b.Enabled = false;
+                                        Importer_b.Visible = false;
                                     }
                                 }
                                 catch { }
-                                dataGridView1.Rows[i - x - 1].Cells[j - y].Value = excel.getContent(i + 1, j);
+                                dataGridView1.Rows[i - x - 1].Cells[j - y].Value = excel.getContent(i+1, j);
                             }
                         }
                     }
@@ -280,7 +289,7 @@ namespace MassarAdminDesktop
                             dataGridView1.ColumnCount = excel.sheet.GetRow(i).LastCellNum - 1;
                             for (int j = y; j < excel.sheet.GetRow(i).LastCellNum; j++)
                             {
-                                dataGridView1.Columns[f++].HeaderText = excel.getContent(i, j) + " " + excel.getContent(i + 1, j);
+                                    dataGridView1.Columns[f++].HeaderText = excel.getContent(i, j) + " " + excel.getContent(i + 1, j);
                             }
 
                         }
@@ -310,7 +319,7 @@ namespace MassarAdminDesktop
                     if (dataGridView1.Rows.Count == 0) materialLabel1.Text += "aucun eleves n'est trouve";
                     if (materialLabel1.Text != "") { groupBox1.Visible = true; materialLabel1.ForeColor = Color.Red; }
                 }
-                if (panel2.Visible || panel3.Visible || !groupBox1.Visible) Importer_b.Enabled = true;
+                if (panel2.Visible || panel3.Visible || !groupBox1.Visible) { Importer_b.Visible = false; }
             }
           
         }
