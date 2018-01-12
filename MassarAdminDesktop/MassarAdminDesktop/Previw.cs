@@ -71,8 +71,12 @@ namespace MassarAdminDesktop
                     titre = "cc3";
                 else if (titre.Contains("الرابع"))
                     titre = "cc4";
-                else 
+                else if (titre.Contains("الخامس"))
                     titre = "cc5";
+                else {
+                    MessageBox.Show("veuillez respecter le format ");
+                    return;
+                }
 
                 string matiere = label18.Text;//due label of matiere is empty
                 DBConnect.Post("insert ignore into matiere values (null,'"+ matiere + "')");
