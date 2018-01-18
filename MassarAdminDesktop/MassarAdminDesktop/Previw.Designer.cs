@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Importer_b = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -47,6 +45,9 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -67,11 +68,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.Importer_b = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +87,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1029, 525);
             this.panel1.TabIndex = 0;
+            // 
+            // Importer_b
+            // 
+            this.Importer_b.Depth = 0;
+            this.Importer_b.Enabled = false;
+            this.Importer_b.Location = new System.Drawing.Point(326, 474);
+            this.Importer_b.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Importer_b.Name = "Importer_b";
+            this.Importer_b.Primary = true;
+            this.Importer_b.Size = new System.Drawing.Size(184, 35);
+            this.Importer_b.TabIndex = 67;
+            this.Importer_b.Text = "Impoter";
+            this.Importer_b.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -110,54 +123,6 @@
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(0, 19);
             this.materialLabel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label21);
-            this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(6, 49);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(860, 150);
-            this.panel2.TabIndex = 24;
-            this.panel2.Visible = false;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(229, 102);
-            this.label21.Name = "label21";
-            this.label21.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label21.Size = new System.Drawing.Size(77, 13);
-            this.label21.TabIndex = 63;
-            this.label21.Text = "السنة الدراسية :";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(528, 102);
-            this.label20.Name = "label20";
-            this.label20.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label20.Size = new System.Drawing.Size(36, 13);
-            this.label20.TabIndex = 62;
-            this.label20.Text = "المادة:";
             // 
             // panel3
             // 
@@ -298,6 +263,54 @@
             this.label22.Size = new System.Drawing.Size(52, 13);
             this.label22.TabIndex = 0;
             this.label22.Text = "أكاديمية :";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.label20);
+            this.panel2.Controls.Add(this.label19);
+            this.panel2.Controls.Add(this.label18);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(6, 49);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(860, 150);
+            this.panel2.TabIndex = 24;
+            this.panel2.Visible = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(229, 102);
+            this.label21.Name = "label21";
+            this.label21.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label21.Size = new System.Drawing.Size(77, 13);
+            this.label21.TabIndex = 63;
+            this.label21.Text = "السنة الدراسية :";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(528, 102);
+            this.label20.Name = "label20";
+            this.label20.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label20.Size = new System.Drawing.Size(36, 13);
+            this.label20.TabIndex = 62;
+            this.label20.Text = "المادة:";
             // 
             // label19
             // 
@@ -500,23 +513,11 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Aperçu";
             // 
-            // Importer_b
-            // 
-            this.Importer_b.Depth = 0;
-            this.Importer_b.Enabled = false;
-            this.Importer_b.Location = new System.Drawing.Point(326, 474);
-            this.Importer_b.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Importer_b.Name = "Importer_b";
-            this.Importer_b.Primary = true;
-            this.Importer_b.Size = new System.Drawing.Size(184, 35);
-            this.Importer_b.TabIndex = 67;
-            this.Importer_b.Text = "Impoter";
-            this.Importer_b.UseVisualStyleBackColor = true;
-            // 
             // Previw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1038, 537);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -530,10 +531,10 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

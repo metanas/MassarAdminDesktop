@@ -18,7 +18,6 @@ namespace MassarAdminDesktop
         string groupe;
         List<Bunifu.Framework.UI.BunifuTileButton> Matieres = new List<Bunifu.Framework.UI.BunifuTileButton>();
         public List<Matiere> matieres = new List<Matiere>();
-        public Form PreviewForm;
         public List<Eleve> el = new List<Eleve>();
 
         public Groupe(string id, string groupe)
@@ -52,7 +51,6 @@ namespace MassarAdminDesktop
             {
                 //Login.read[7].ToString()
                 Eleve e = new Eleve(Login.read[0].ToString(), Login.read[1].ToString(), Login.read[2].ToString(), Login.read[3].ToString(), Login.read[4].ToString(), Login.read[5].ToString(), Login.read[6].ToString(), Login.read[7].ToString(), Login.read[8].ToString(), Login.read[9].ToString());
-
                 el.Add(e);
                 countetu++;
             }
@@ -67,31 +65,19 @@ namespace MassarAdminDesktop
             Bunifu.Framework.UI.BunifuTileButton b = (Bunifu.Framework.UI.BunifuTileButton)sender;
             string nom = b.LabelText.Split('_')[0];
             string id = b.LabelText.Split('_')[1];
-            Subjects S = new Subjects(id, nom);
-            S.TopLevel = false;
-            S.Parent = Home.ActifForm.Parent;
-            S.Width = this.Width;
-            S.Height = this.Height;
-            S.Location = new Point(this.Location.X, this.Location.Y);
-            S.Show();
-            Home.AddForm(S);
+            Subjects view = new Subjects(id, nom);
+            HomePreview.resizeLocationForm(view);
         }
 
 
         void click_eleves()
         {
-            Eleves S = new Eleves(this.id, matieres);
-            S.el = this.el;
-            S.render_eleves();
-            S.TopLevel = false;
-            S.Parent = Home.ActifForm.Parent;
-            S.Location = new Point(this.Location.X, this.Location.Y);
-            S.Show();
-            Home.AddForm(S);
+            Eleves view = new Eleves(this.id, matieres);
+            view.el = this.el;
+            view.render_eleves();
+            HomePreview.resizeLocationForm(view);
+
         }
-
-
-
 
         private void Groupe_Resize(object sender, EventArgs e)
         {
@@ -102,17 +88,15 @@ namespace MassarAdminDesktop
         {
             if (countetu == 0)
                 return;
-            
                 int s = nbrgarc();
                 int fille = countetu - s;
                 Progressbar1.MaxValue = countetu;
                 Progressbar1.Value = s;
                 countetudiant.Text = countetu.ToString();
                 label4.Text = s.ToString();
-                label6.Text = fille.ToString();
-            
-           
+                label6.Text = fille.ToString();           
         }
+
         public int nbrgarc()
         {
             int nb = 0;
@@ -122,7 +106,6 @@ namespace MassarAdminDesktop
         }
 
         private void bunifuTileButton1_Click(object sender, EventArgs e)
-
         {
             click_eleves();
         }
