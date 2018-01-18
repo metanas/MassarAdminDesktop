@@ -28,35 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.nom = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.password = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.log_in = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
+            this.nom = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // nom
+            // panel1
             // 
-            this.nom.Depth = 0;
-            this.nom.Hint = "Utilisateur";
-            this.nom.Location = new System.Drawing.Point(153, 176);
-            this.nom.MouseState = MaterialSkin.MouseState.HOVER;
-            this.nom.Name = "nom";
-            this.nom.PasswordChar = '\0';
-            this.nom.SelectedText = "";
-            this.nom.SelectionLength = 0;
-            this.nom.SelectionStart = 0;
-            this.nom.Size = new System.Drawing.Size(239, 23);
-            this.nom.TabIndex = 0;
-            this.nom.UseSystemPasswordChar = false;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.bunifuImageButton1);
+            this.panel1.Controls.Add(this.password);
+            this.panel1.Controls.Add(this.nom);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(81, 29);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(528, 449);
+            this.panel1.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MassarAdminDesktop.Properties.Resources.large_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(98, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(330, 181);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = global::MassarAdminDesktop.Properties.Resources.btn_connection;
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(364, 390);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(142, 37);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 19;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.ButtonClickHandlerAsync);
             // 
             // password
             // 
             this.password.Depth = 0;
             this.password.Hint = "Mot de passe";
-            this.password.Location = new System.Drawing.Point(153, 212);
+            this.password.Location = new System.Drawing.Point(57, 325);
             this.password.MouseState = MaterialSkin.MouseState.HOVER;
             this.password.Name = "password";
             this.password.PasswordChar = '\0';
@@ -64,86 +87,65 @@
             this.password.SelectionLength = 0;
             this.password.SelectionStart = 0;
             this.password.Size = new System.Drawing.Size(239, 23);
-            this.password.TabIndex = 1;
+            this.password.TabIndex = 16;
             this.password.UseSystemPasswordChar = true;
             this.password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_KeyDown);
             // 
-            // log_in
+            // nom
             // 
-            this.log_in.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
-            this.log_in.Depth = 0;
-            this.log_in.Location = new System.Drawing.Point(215, 267);
-            this.log_in.MouseState = MaterialSkin.MouseState.HOVER;
-            this.log_in.Name = "log_in";
-            this.log_in.Primary = true;
-            this.log_in.Size = new System.Drawing.Size(101, 34);
-            this.log_in.TabIndex = 2;
-            this.log_in.Text = "Connexion";
-            this.log_in.UseVisualStyleBackColor = false;
-            this.log_in.Click += new System.EventHandler(this.ButtonClickHandlerAsync);
+            this.nom.Depth = 0;
+            this.nom.Hint = "Utilisateur";
+            this.nom.Location = new System.Drawing.Point(57, 296);
+            this.nom.MouseState = MaterialSkin.MouseState.HOVER;
+            this.nom.Name = "nom";
+            this.nom.PasswordChar = '\0';
+            this.nom.SelectedText = "";
+            this.nom.SelectionLength = 0;
+            this.nom.SelectionStart = 0;
+            this.nom.Size = new System.Drawing.Size(239, 23);
+            this.nom.TabIndex = 15;
+            this.nom.UseSystemPasswordChar = false;
             // 
-            // bunifuImageButton3
+            // pictureBox2
             // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(176, 86);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(199, 68);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bunifuImageButton3.TabIndex = 8;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
-            // 
-            // bunifuCircleProgressbar1
-            // 
-            this.bunifuCircleProgressbar1.animated = true;
-            this.bunifuCircleProgressbar1.animationIterval = 5;
-            this.bunifuCircleProgressbar1.animationSpeed = 5;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.LabelVisible = false;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 2;
-            this.bunifuCircleProgressbar1.LineThickness = 2;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(249, 268);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(32, 32);
-            this.bunifuCircleProgressbar1.TabIndex = 9;
-            this.bunifuCircleProgressbar1.Value = 40;
-            this.bunifuCircleProgressbar1.Visible = false;
+            this.pictureBox2.Image = global::MassarAdminDesktop.Properties.Resources.pop_up_login;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 217);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(519, 229);
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(559, 332);
-            this.Controls.Add(this.bunifuCircleProgressbar1);
-            this.Controls.Add(this.bunifuImageButton3);
-            this.Controls.Add(this.log_in);
-            this.Controls.Add(this.password);
-            this.Controls.Add(this.nom);
-            this.MaximumSize = new System.Drawing.Size(559, 332);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackColor = System.Drawing.Color.White;
+            this.CausesValidation = false;
+            this.ClientSize = new System.Drawing.Size(692, 490);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(559, 332);
             this.Name = "Login";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
+            this.Resize += new System.EventHandler(this.Groupe_Resize);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialSingleLineTextField nom;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private MaterialSkin.Controls.MaterialSingleLineTextField password;
-        private MaterialSkin.Controls.MaterialRaisedButton log_in;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField nom;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

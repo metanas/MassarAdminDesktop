@@ -12,7 +12,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 namespace MassarAdminDesktop
 {
-    public partial class Login : MaterialSkin.Controls.MaterialForm
+    public partial class Login : Form
     {
         public static DBConnect bd;
         public static Admin admin;
@@ -22,24 +22,17 @@ namespace MassarAdminDesktop
         {
 
             InitializeComponent();
-            MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
-            skinManager.AddFormToManage(this);
-            skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
-            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Blue900, MaterialSkin.Primary.Blue900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.Orange700, MaterialSkin.TextShade.WHITE);
             bd = new DBConnect();
             admin = new Admin();
         }
 
         private async void ButtonClickHandlerAsync(object sender, EventArgs e)
         {
-            log_in.Text = "";
-            bunifuCircleProgressbar1.Visible = true;
+           
             await Task.Run(() =>
             {
                 x = admin.login(nom.Text, password.Text);
             });
-            log_in.Text = "Connexion";
-            bunifuCircleProgressbar1.Visible = false;
             if (!x)
             {
                 MessageBox.Show("les informations incorrects");
@@ -47,10 +40,8 @@ namespace MassarAdminDesktop
             }
             nom.Text = "";
             password.Text = "";
-            Home home = new Home(this);
-            home.Show();
-            
-            this.Hide();
+            HomePreview.HomeForm.Text = "hello";
+            this.Close();
         }
 
         private void password_KeyDown(object sender, KeyEventArgs e)
@@ -59,6 +50,11 @@ namespace MassarAdminDesktop
             {
                 ButtonClickHandlerAsync(sender, e);
             }
+        }
+
+        private void Groupe_Resize(object sender, EventArgs e)
+        {
+            panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
         }
     }
 }

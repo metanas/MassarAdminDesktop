@@ -28,11 +28,11 @@ namespace MassarAdminDesktop
             cl_buttons.Add(Button1); cl_buttons.Add(Button2); cl_buttons.Add(Button3); cl_buttons.Add(Button6); cl_buttons.Add(Button7); cl_buttons.Add(Button8); cl_buttons.Add(Button4); cl_buttons.Add(Button5); cl_buttons.Add(Button9); cl_buttons.Add(Button10);
             foreach (Bunifu.Framework.UI.BunifuTileButton b in cl_buttons)
                 b.Click += new System.EventHandler(this.clickcc);
-            string id = Home.id;
-            string nomgr = Home.nomgr;
+            string id = HomePreview.id;
+            string nomgr = HomePreview.nomgr;
             this.idm = idm;
             this.nomm = nomm;
-            chart ch = new chart(chart1, Home.id);
+            chart ch = new chart(chart1, HomePreview.id);
             ch.addChartBy(nom: nomgr);
 
             Login.read = DBConnect.Gets("select max(calcule.n), min(calcule.n) , avg(calcule.n) from (select avg(note) as n from examiner where id_matiere="+this.idm+" group by id_etudiant) as calcule");
@@ -102,7 +102,7 @@ namespace MassarAdminDesktop
 
         private void clickcc(object sender,EventArgs e)
         {
-            ch = new chart(chart1,Home.id);
+            ch = new chart(chart1, HomePreview.id);
             Bunifu.Framework.UI.BunifuTileButton the_cc = ((Bunifu.Framework.UI.BunifuTileButton)sender);
             ch.addChartBy(nom: semestre[cl_buttons.IndexOf(the_cc)] + " " + the_cc.LabelText, semestre: semestre[cl_buttons.IndexOf(the_cc)], titre: the_cc.LabelText);
             render_details();
@@ -123,8 +123,8 @@ namespace MassarAdminDesktop
 
         private void bunifuCircleProgressbar1_Click(object sender, EventArgs e)
         {
-            chart ch = new chart(chart1, Home.id);
-            ch.addChartBy(nom: Home.nomgr);
+            chart ch = new chart(chart1, HomePreview.id);
+            ch.addChartBy(nom: HomePreview.nomgr);
         }
     }
 }

@@ -54,6 +54,7 @@ namespace MassarAdminDesktop
             SuperUser.Visible = Login.admin.isSuper;
             annees.Font = new Font("Arial", 14);
             annees.Items.Clear();
+
             Login.read = DBConnect.Gets("select annee_scolaire from annee order by annee_scolaire desc ; ");
             while (Login.read.Read())
                 annees.Items.Add(Login.read["annee_scolaire"].ToString());
@@ -61,12 +62,13 @@ namespace MassarAdminDesktop
             if (annees.Items.Count > 0)
                 annees.SelectedIndex = 0;
             loadgroupes(annees.SelectedItem.ToString());
+            
         }
         public void loadHome()
         {
             if(lastClick!= null) lastClick.selected = false;
             Home.PreviewFrom.Clear();
-            analyse = new Analyse(this);
+            analyse = new Analyse();
             analyse.TopLevel = false;
             analyse.Parent = this;
             analyse.Location = new Point(panel1.Width, bunifuSeparator1.Location.Y);
@@ -205,10 +207,7 @@ namespace MassarAdminDesktop
 
         private void Back_Click(object sender, EventArgs e)
         {
-            foreach (Form from in Home.PreviewFrom)
-            {
-                Console.WriteLine(from.Name);
-            }
+            
             if (Home.PreviewFrom.Count > 0)
             {
                 Home.PreviewFrom[PreviewFrom.Count - 1].Show();
