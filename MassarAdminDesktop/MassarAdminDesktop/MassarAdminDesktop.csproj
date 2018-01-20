@@ -346,5 +346,11 @@
   <ItemGroup>
     <None Include="Resources\pop-up-login.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Backward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ForwardB.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,7 +20,7 @@ namespace MassarAdminDesktop
         private void classview_Load(object sender, EventArgs e)
         {
             bunifuCustomDataGrid1.Rows.Clear();
-            Login.read = DBConnect.Gets("select groupe.nom , groupe.id from groupe , annee where annee.annee_scolaire='" + Home.idann + "' and  annee.id=groupe.id_annee ; ");
+            Login.read = DBConnect.Gets("select groupe.nom , groupe.id from groupe , annee where annee.annee_scolaire='" + HomePreview.idann + "' and  annee.id=groupe.id_annee ; ");
             while (Login.read.Read()) {
                 bunifuCustomDataGrid1.Rows.Add(Login.read["id"].ToString(), Login.read["nom"].ToString(),"supprimer");
             }
@@ -37,7 +37,7 @@ namespace MassarAdminDesktop
                     {
                         await Task.Run(() =>
                         {
-                            DBConnect.Post("DELETE FROM examiner where id_annee=(select id from annee where annee_scolaire='" + Home.idann + "') and id_groupe='" + idGroupe + "'");
+                            DBConnect.Post("DELETE FROM examiner where id_annee=(select id from annee where annee_scolaire='" + HomePreview.idann + "') and id_groupe='" + idGroupe + "'");
                             DBConnect.Post("Delete FROM etudiant where id in (select id_etudiant From etudiant_groupe where id_groupe='" + idGroupe + "')");
                             DBConnect.Post("Delete FRom etudiant_groupe where id_groupe=" + idGroupe);
                             DBConnect.Post("Delete From groupe where id=" + idGroupe);
