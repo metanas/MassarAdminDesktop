@@ -16,9 +16,9 @@ namespace MassarAdminDesktop
 {
     public partial class HomePreview : Form
     {
-        PrivateFontCollection latoReg;
-        PrivateFontCollection latoBold;
-        PrivateFontCollection latoBlack;
+        public static PrivateFontCollection latoReg;
+        public static PrivateFontCollection latoBold;
+        public static PrivateFontCollection latoBlack;
         public static Form HomeForm;
         public static int XP;
         public static int YP;
@@ -34,8 +34,8 @@ namespace MassarAdminDesktop
         int tog, mvalX, mvalY;
         List<string> listYear = new List<string>();
         int yearSelected = 0;
-        RoundedButton forward;
-        RoundedButton backward;
+        BunifuImageButton forward;
+        BunifuImageButton backward;
 
         public HomePreview()
         {
@@ -165,34 +165,20 @@ namespace MassarAdminDesktop
 
         public void LeftRight()
         {
-            forward = new RoundedButton();
-            forward.Text = "";
-            forward.Reduis = 20;
-            forward.Normalcolor = Color.FromArgb(239, 150, 32);
-            forward.OnHovercolor = Color.FromArgb(229, 130, 22);
-            forward.BackColor = Color.FromArgb(239, 150, 32);
-            forward.Activecolor = Color.FromArgb(239, 150, 32);
-            forward.Location = new Point(170, 135);
+            forward = new BunifuImageButton();
+            forward.Image = Resources.ForwardB;
             forward.Size = new Size(40, 29);
-            forward.IconZoom = 80;
+            forward.BackColor = Color.Transparent;
             forward.Enabled = false;
-            forward.Iconimage = Resources.forward;
+            forward.Location = new Point(XP - forward.Width , 135);
             forward.Click += new EventHandler(right_click);
             panel4.Controls.Add(forward);
 
-            backward = new RoundedButton();
-            backward.Text = "";
-            backward.Reduis = 20;
-            backward.Normalcolor = Color.FromArgb(239, 150, 32);
-            backward.OnHovercolor = Color.FromArgb(229, 130, 22);
-            backward.BackColor = Color.FromArgb(239, 150, 32);
-            backward.Activecolor = Color.FromArgb(239, 150, 32);
-            backward.Location = new Point(-10, 135);
+            backward = new BunifuImageButton();
+            backward.Location = new Point(0, 135);
             backward.Size = new Size(40, 29);
-            backward.Iconimage = null;
-            backward.Iconimage_right = Resources.backword;
-            backward.IconZoom = 80;
-            backward.Enabled = false;
+            backward.BackColor = Color.Transparent;
+            backward.Image = Resources.Backward;
             backward.Click += new EventHandler(left_click);
             panel4.Controls.Add(backward);
         }

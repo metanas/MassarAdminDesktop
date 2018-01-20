@@ -93,6 +93,16 @@ namespace MassarAdminDesktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Backward {
+            get {
+                object obj = ResourceManager.GetObject("Backward", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backword {
             get {
                 object obj = ResourceManager.GetObject("backword", resourceCulture);
@@ -206,6 +216,16 @@ namespace MassarAdminDesktop.Properties {
         internal static System.Drawing.Bitmap forward {
             get {
                 object obj = ResourceManager.GetObject("forward", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ForwardB {
+            get {
+                object obj = ResourceManager.GetObject("ForwardB", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

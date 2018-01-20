@@ -21,7 +21,7 @@ namespace MassarAdminDesktop
 
         private void viewetudiant_Load(object sender, EventArgs e)
         {
-            Login.read = DBConnect.Gets("select e.nom,e.prenom,e.sexe , g.nom from etudiant  as e, etudiant_groupe as eg , groupe as g, annee as a where  eg.id_etudiant=e.id and eg.id_groupe=g.id and g.id_annee=a.id and a.annee_scolaire='" + Home.idann + "'");
+            Login.read = DBConnect.Gets("select e.nom,e.prenom,e.sexe , g.nom from etudiant  as e, etudiant_groupe as eg , groupe as g, annee as a where  eg.id_etudiant=e.id and eg.id_groupe=g.id and g.id_annee=a.id and a.annee_scolaire='" + HomePreview.idann + "'");
             etudiants = new List<List<string>>();
             int i = 0;
             while (Login.read.Read()) {
@@ -45,26 +45,15 @@ namespace MassarAdminDesktop
         }
 
         private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-            Groupe Groupe_Form;
+        { 
             if (e.ColumnIndex == 3)
             {
-                for (int i = 0; i < Home.cl_buttons.Count; i++)
-                    if (bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[3].Value.ToString() == Home.cl_buttons[i].Text)
-                        Home.id = Home.id_classes[i];
-                Groupe_Form = new Groupe(Home.id, bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[3].Value.ToString());
-
-                Groupe_Form.TopLevel = false;
-                Groupe_Form.Parent = Home.ActifForm.Parent;
-                Groupe_Form.Location = new Point(this.Location.X, this.Location.Y);
-                Groupe_Form.Show();
-                Home.AddForm(Groupe_Form);
-
-
+                for (int i = 0; i < HomePreview.ClassButton.Count; i++)
+                    if (bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[3].Value.ToString() == HomePreview.ClassButton[i].Text)
+                        HomePreview.id = HomePreview.id_classes[i];
+                Groupe Groupe_Form = new Groupe(HomePreview.id, bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[3].Value.ToString());
+                HomePreview.resizeLocationForm(Groupe_Form);
             }
-
-
     }
 
         private void Groupe_Resize(object sender, EventArgs e)

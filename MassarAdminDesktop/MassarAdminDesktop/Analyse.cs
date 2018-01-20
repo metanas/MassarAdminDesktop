@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace MassarAdminDesktop
 {
@@ -23,6 +17,10 @@ namespace MassarAdminDesktop
             string countetu = DBConnect.Get("SELECT COUNT(id_Etudiant) from etudiant_groupe WHERE id_groupe in (SELECT id from groupe WHERE id_annee =(SELECT id from annee WHERE annee_scolaire='" + HomePreview.idann + "'))");
             string countprof = DBConnect.Get("select count(*) from enseignant as e , groupe_matiere_enseignant as gme , groupe as g , annee as a where e.id=gme.id_enseignant and gme.id_groupe=g.id and g.id_annee=a.id and  a.annee_scolaire='" + HomePreview.idann + "'");
             string countclasse = HomePreview.nbrClasse.ToString();
+            Betudiant.Font = new Font(HomePreview.latoBold.Families[0], 14, FontStyle.Bold);
+            bunifuTileButton1.Font = new Font(HomePreview.latoBold.Families[0], 14, FontStyle.Bold);
+            bunifuTileButton2.Font = new Font(HomePreview.latoBold.Families[0], 14, FontStyle.Bold);
+            bunifuTileButton3.Font = new Font(HomePreview.latoBold.Families[0], 14, FontStyle.Bold);
             label1.Text = countetu;
             label2.Text = countprof;
             label3.Text = countclasse;           

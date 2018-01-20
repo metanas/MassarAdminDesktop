@@ -24,6 +24,7 @@ namespace MassarAdminDesktop
             InitializeComponent();
             bd = new DBConnect();
             admin = new Admin();
+            nom.Focus();
         }
 
         private async void ButtonClickHandlerAsync(object sender, EventArgs e)
