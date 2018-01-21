@@ -10,7 +10,7 @@ namespace MassarAdminDesktop
 {
     public class DBConnect
     {
-        protected static MySqlConnection connection;
+        public static MySqlConnection connection;
         private string server;
         private string database;
         private string uid;
@@ -25,15 +25,7 @@ namespace MassarAdminDesktop
 
         private void Initialize()
         {
-            server = "31.220.105.14";
-            database = "offerson_masar";
-            uid = "offerson_ramzi";
-            password = "ramzi150";
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + "; Character Set=utf8";
-
-            connection = new MySqlConnection(connectionString);
+            connection = new MySqlConnection(Option.stringConnection);
             
             OpenConnection();
         }

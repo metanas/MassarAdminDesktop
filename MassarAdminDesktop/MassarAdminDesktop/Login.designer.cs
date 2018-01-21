@@ -34,6 +34,7 @@
             this.password = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.nom = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Option = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -42,6 +43,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Option);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.bunifuImageButton1);
             this.panel1.Controls.Add(this.password);
@@ -115,6 +117,22 @@
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
             // 
+            // Option
+            // 
+            this.Option.AutoSize = true;
+            this.Option.BackColor = System.Drawing.Color.Transparent;
+            this.Option.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Option.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Option.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            this.Option.Location = new System.Drawing.Point(54, 401);
+            this.Option.Name = "Option";
+            this.Option.Size = new System.Drawing.Size(101, 20);
+            this.Option.TabIndex = 21;
+            this.Option.Text = "DB Options";
+            this.Option.Click += new System.EventHandler(this.Option_Click);
+            this.Option.MouseLeave += new System.EventHandler(this.Option_MouseLeave);
+            this.Option.MouseHover += new System.EventHandler(this.Option_MouseHover);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,6 +150,7 @@
             this.Text = "Login";
             this.Resize += new System.EventHandler(this.Groupe_Resize);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -147,5 +166,6 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField nom;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private Bunifu.Framework.UI.BunifuCustomLabel Option;
     }
 }
