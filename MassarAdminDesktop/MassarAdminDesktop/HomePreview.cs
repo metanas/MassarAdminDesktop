@@ -40,6 +40,7 @@ namespace MassarAdminDesktop
         public HomePreview()
         {
             InitializeComponent();
+            Option op = new Option();
             HomeForm = this;
             loadFont();
             XP = panel3.Width;
@@ -55,7 +56,6 @@ namespace MassarAdminDesktop
             label4.Font = new Font(latoReg.Families[0], 12, FontStyle.Bold);
             Login login = new Login();
             resizeLocationForm(login);
-            loadYears();
         }
 
         void loadFont()
@@ -242,7 +242,8 @@ namespace MassarAdminDesktop
         {
             foreach (Form f in PreviewFrom) f.Close();
 
-            foreach (BunifuFlatButton b in ClassButton) panel4.Controls.Remove(b);
+            foreach (BunifuFlatButton b in ClassButton)
+                panel3.Controls.Remove(b);
             ClassButton.Clear();
             PreviewFrom.Clear();
             Login login = new Login();
@@ -264,6 +265,7 @@ namespace MassarAdminDesktop
 
         private void HomePreview_TextChanged(object sender, EventArgs e)
         {
+            loadYears();
             LeftRight();
             label1.Visible = true;
             label2.Visible = true;
@@ -279,6 +281,7 @@ namespace MassarAdminDesktop
             loadClasse();
             Analyse analyse = new Analyse();
             resizeLocationForm(analyse);
+
         }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
