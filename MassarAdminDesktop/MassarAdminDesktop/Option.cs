@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,15 @@ namespace MassarAdminDesktop
         public Option()
         {
             InitializeComponent();
+            try
+            {
+                ReadFromFile();
+                serverdefault = server.Text;
+                databasedefault = database.Text;
+                uiddefault = username.Text;
+                passworddefault = password.Text;
+            }
+            catch { }
             stringConnection = "SERVER=" + serverdefault + ";" + "DATABASE=" +
                        databasedefault + ";" + "UID=" + uiddefault + ";" + "PASSWORD=" + passworddefault + "; Character Set=utf8";
         }
@@ -46,6 +56,7 @@ namespace MassarAdminDesktop
 
         private void button2_Click(object sender, EventArgs e)
         {
+            WriteToFile();
             stringConnection = "SERVER=" + server.Text + ";" + "DATABASE=" +
                        database.Text + ";" + "UID=" + username.Text + ";" + "PASSWORD=" + password.Text + "; Character Set=utf8";
             this.Close();
@@ -79,6 +90,31 @@ namespace MassarAdminDesktop
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void ReadFromFile()
+        {
+            using (StreamReader sr = File.OpenText(@"ConfigurationDB.txt"))
+            {
+                string tables;
+                int i = 0;
+                MaterialSkin.Controls.MaterialSingleLineTextField[] l = new MaterialSkin.Controls.MaterialSingleLineTextField[] { server, database, username, password }; 
+                while ((tables = sr.ReadLine()) != null)
+                {
+                    l[i++].Text = tables;
+                }
+            }
+        }
+
+        public void WriteToFile()
+        {
+            using (StreamWriter sw = File.CreateText(@"ConfigurationDB.txt"))
+            {
+                sw.WriteLine(server.Text);
+                sw.WriteLine(database.Text);
+                sw.WriteLine(username.Text);
+                sw.WriteLine(password.Text);
+            }
         }
     }
 }
