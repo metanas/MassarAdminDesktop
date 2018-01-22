@@ -21,7 +21,7 @@ namespace MassarAdminDesktop
 
         private void viewetudiant_Load(object sender, EventArgs e)
         {
-            Login.read = DBConnect.Gets("select e.nom,e.prenom,e.sexe , g.nom from etudiant  as e, etudiant_groupe as eg , groupe as g, annee as a where  eg.id_etudiant=e.id and eg.id_groupe=g.id and g.id_annee=a.id and a.annee_scolaire='" + HomePreview.idann + "'");
+            Login.read = DBConnect.Gets("select e.id_massar, e.nom, e.prenom, e.sexe , g.nom from etudiant  as e, etudiant_groupe as eg , groupe as g, annee as a where  eg.id_etudiant=e.id and eg.id_groupe=g.id and g.id_annee=a.id and a.annee_scolaire='" + HomePreview.idann + "'");
             etudiants = new List<List<string>>();
             int i = 0;
             while (Login.read.Read()) {
@@ -29,7 +29,8 @@ namespace MassarAdminDesktop
                 etudiants[i].Add(Login.read[0].ToString());
                 etudiants[i].Add(Login.read[1].ToString());
                 etudiants[i].Add(Login.read[2].ToString());
-                etudiants[i++].Add(Login.read[3].ToString());
+                etudiants[i].Add(Login.read[3].ToString());
+                etudiants[i++].Add(Login.read[4].ToString());
             }
             Login.read.Close();
             setDataGridView(etudiants);
@@ -40,7 +41,7 @@ namespace MassarAdminDesktop
             bunifuCustomDataGrid1.Rows.Clear();
             for(int i = 0; i < etu.Count; i++)
             {
-                bunifuCustomDataGrid1.Rows.Add(etu[i][0], etu[i][1], etu[i][2], etu[i][3]);
+                bunifuCustomDataGrid1.Rows.Add(etu[i][0], etu[i][1], etu[i][2], etu[i][3], etu[i][4]);
             }
         }
 
@@ -68,13 +69,14 @@ namespace MassarAdminDesktop
             {
                 int w=0;
                 for(int i=0; i< etudiants.Count; i++) {
-                    if(etudiants[i][0].ToUpper().Contains(search.text.ToUpper()) || etudiants[i][1].ToUpper().Contains(search.text.ToUpper()))
+                    if(etudiants[i][0].ToUpper().Contains(search.text.ToUpper()) || etudiants[i][1].ToUpper().Contains(search.text.ToUpper()) || etudiants[i][2].ToUpper().Contains(search.text.ToUpper()))
                     {
                         list.Add(new List<string>());
                         list[w].Add(etudiants[i][0]);
                         list[w].Add(etudiants[i][1]);
                         list[w].Add(etudiants[i][2]);
-                        list[w++].Add(etudiants[i][3]);
+                        list[w].Add(etudiants[i][3]);
+                        list[w++].Add(etudiants[i][4]);
                     }
                 }
                 setDataGridView(list);
