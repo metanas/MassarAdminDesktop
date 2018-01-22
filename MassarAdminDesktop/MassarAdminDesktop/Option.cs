@@ -37,13 +37,15 @@ namespace MassarAdminDesktop
                        databasedefault + ";" + "UID=" + uiddefault + ";" + "PASSWORD=" + passworddefault + "; Character Set=utf8";
         }
        
-        private void test_Click(object sender, EventArgs e)
+        private async void test_Click(object sender, EventArgs e)
         {
             string connectionString = "SERVER=" + server.Text + ";" + "DATABASE=" +
                        database.Text + ";" + "UID=" + username.Text + ";" + "PASSWORD=" + password.Text + "; Character Set=utf8";
             try {
+                await Task.Run(() => { 
                 DBConnect.connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString);
                 DBConnect.connection.Open();
+                });
                 label1.Text = "connection reussie";
                 label1.ForeColor = Color.LightGreen;
             }

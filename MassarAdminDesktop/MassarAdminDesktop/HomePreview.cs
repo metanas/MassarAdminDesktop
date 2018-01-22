@@ -69,11 +69,11 @@ namespace MassarAdminDesktop
         }
 
         void loadYears()
-        {
-            Login.read = DBConnect.Gets("select annee_scolaire from annee order by annee_scolaire desc ; ");
-            while (Login.read.Read())
-                listYear.Add(Login.read["annee_scolaire"].ToString());
-            Login.read.Close();
+        { 
+                Login.read = DBConnect.Gets("select annee_scolaire from annee order by annee_scolaire desc ; ");
+                while (Login.read.Read())
+                    listYear.Add(Login.read["annee_scolaire"].ToString());
+                Login.read.Close();           
         }
 
         void loadClasse()
@@ -88,7 +88,9 @@ namespace MassarAdminDesktop
             }
             ClassButton.Clear();
             id_classes.Clear();
+          
             Login.read = DBConnect.Gets("select groupe.nom , groupe.id from groupe , annee where annee.annee_scolaire='" + listYear[yearSelected] + "' and  annee.id=groupe.id_annee ; ");
+           
             while (Login.read.Read())
             {
                 ClassButton.Add(new BunifuFlatButton());
@@ -265,23 +267,26 @@ namespace MassarAdminDesktop
 
         private void HomePreview_TextChanged(object sender, EventArgs e)
         {
-            loadYears();
-            LeftRight();
-            label1.Visible = true;
-            label2.Visible = true;
-            panel5.Visible = true;
-            if (listYear.Count >= 2)
+            if (this.Text == "hello")
             {
-                backward.Enabled = true;
+                loadYears();
+                LeftRight();
+                label1.Visible = true;
+                label2.Visible = true;
+                panel5.Visible = true;
+                if (listYear.Count >= 2)
+                {
+                    backward.Enabled = true;
+                }
+                else if (listYear.Count == 0)
+                    return;
+                idann = listYear[yearSelected];
+                label2.Text = idann.Replace('/', '-');
+                loadClasse();
+                Analyse analyse = new Analyse();
+                resizeLocationForm(analyse);
             }
-            else if (listYear.Count == 0)
-                return;
-            idann = listYear[yearSelected];
-            label2.Text = idann.Replace('/', '-');
-            loadClasse();
-            Analyse analyse = new Analyse();
-            resizeLocationForm(analyse);
-
+            this.Text = "default";
         }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
