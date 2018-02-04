@@ -13,7 +13,8 @@ namespace MassarAdminDesktop
         public string mass_id;
         public string nom { get; set; }
         public string prenom { get; set; }
-        public string nom_ar;
+        
+    public string nom_ar;
         public string nom_fr;
         public string sexe;
         public string date_naissance;
@@ -35,6 +36,7 @@ namespace MassarAdminDesktop
             this.ville_naissance = ville_naissance;
             this.ville_naissance_ar = ville_naissance_ar;
             this.adresse = adresse;
+            
         }
 
         public float moyenne(string id_groupe)

@@ -42,10 +42,10 @@ namespace MassarAdminDesktop
         
         public void render_eleves()
         {
-            /*foreach (Eleve e in this.el)
-                dgv_eleves.Rows.Add(e.nom, e.prenom, e.moyenne(id));*/
-            var source = new BindingList<Eleve>(this.el);
-            dgv_eleves.DataSource = source;
+            foreach (Eleve e in this.el)
+                dgv_eleves.Rows.Add(e.nom, e.prenom, "Generer");
+          //  var source = new BindingList<Eleve>(this.el);
+          //  dgv_eleves.DataSource = source;
         }
 
         public void homechart()
@@ -73,6 +73,35 @@ namespace MassarAdminDesktop
         {
             if (e.RowIndex != -1)
             {
+                if (e.ColumnIndex == 2) {
+                    string s = "1";
+                    if (radioButton2.Checked)
+                        s = "2";
+                    Eleve ee = el[e.RowIndex];
+                    if (DBConnect.Get("select semestre from examiner where id_etudiant=" + ee.id + " and semestre=" + s) == "")
+                    {
+                        MessageBox.Show("semestre introuvable");
+                        return;
+                    }
+                    using (FolderBrowserDialog dlg = new FolderBrowserDialog())
+                    {
+                        
+                        dlg.Description = "Select a folder";
+                        if (dlg.ShowDialog() == DialogResult.OK)
+                        {
+                            
+                            
+                                bulletin bul = new bulletin(dlg.SelectedPath + "\\" + "bulletin S" + s + " " + ee.nom + " " + ee.prenom + ".pdf", ee.id, s, HomePreview.idann, "amana");
+
+
+
+                            MessageBox.Show("Bulletin bien generee");
+                        }
+                    }
+
+
+                    return;
+                }
                 foreach (MaterialSkin.Controls.MaterialCheckBox b in Matieres_bs)
                 {
                     this.panel1.Controls.Remove(b);
