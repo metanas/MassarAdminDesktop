@@ -22,6 +22,9 @@ namespace MassarAdminDesktop
         public Previw()
         {
             InitializeComponent();
+
+            
+
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Excel Files (.xlsx)|*.xlsx|Excel Files 2007 (.xlx)|*.xlx";
             if (open.ShowDialog() == DialogResult.OK)
@@ -84,6 +87,10 @@ namespace MassarAdminDesktop
                 this.id_annee = DBConnect.Get("select id from annee where annee_scolaire='" + label19.Text + "'");
                 MessageBox.Show(this.id_annee);
                 this.id_groupe = DBConnect.Get(string.Format("select id from groupe where nom = '{0}' and id_annee = {1}", label14.Text, this.id_annee));
+                if (this.id_groupe == "") {
+                    MessageBox.Show("groupe introuvable");
+                    return;
+                }
                 query += "insert ignore into examiner values ";
 
                 DBConnect.Post("insert ignore into enseignant (nom, prenom) values ('"+ label15.Text.Split(' ')[0] + "','" + label15.Text.Split(' ')[1] + "')");
