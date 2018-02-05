@@ -36,7 +36,7 @@
       <HintPath>..\References\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\..\OneDrive\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleApplication3\bin\Debug\itextsharp.dll</HintPath>
+      <HintPath>..\References\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
