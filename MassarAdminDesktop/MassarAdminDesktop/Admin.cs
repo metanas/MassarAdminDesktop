@@ -27,7 +27,7 @@ namespace MassarAdminDesktop
             {
                 this.id = r["id"].ToString();
                 this.nom = r["nom"].ToString();
-                this.isSuper = Convert.ToBoolean(r["isSuper"].ToString());
+                isSuper = Convert.ToBoolean(r["isSuper"].ToString());
                 this.logined = true;
             }
             r.Close();

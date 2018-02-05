@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MassarAdminDesktop
 {
-    public partial class Gerer_Admin : MaterialSkin.Controls.MaterialForm
+    public partial class Gerer_Admin : Form
     {
         private List<string[]> lesAdmins = new List<string[]>();
 
@@ -81,6 +81,11 @@ namespace MassarAdminDesktop
         private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Groupe_Resize(object sender, EventArgs e)
+        {
+            panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
         }
     }
 }

@@ -48,6 +48,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.SuperUser = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -150,6 +152,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.SuperUser);
             this.panel2.Controls.Add(this.HomeButton);
             this.panel2.Controls.Add(this.BackButton);
             this.panel2.Controls.Add(this.panel5);
@@ -330,6 +333,21 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Visible = false;
             // 
+            // SuperUser
+            // 
+            this.SuperUser.BackColor = System.Drawing.Color.Transparent;
+            this.SuperUser.Image = ((System.Drawing.Image)(resources.GetObject("SuperUser.Image")));
+            this.SuperUser.ImageActive = null;
+            this.SuperUser.Location = new System.Drawing.Point(84, 7);
+            this.SuperUser.Name = "SuperUser";
+            this.SuperUser.Size = new System.Drawing.Size(33, 30);
+            this.SuperUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SuperUser.TabIndex = 7;
+            this.SuperUser.TabStop = false;
+            this.SuperUser.Visible = false;
+            this.SuperUser.Zoom = 10;
+            this.SuperUser.Click += new System.EventHandler(this.SuperUser_Click);
+            // 
             // HomePreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,6 +386,7 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +412,6 @@
         public Bunifu.Framework.UI.BunifuImageButton HomeButton;
         public Bunifu.Framework.UI.BunifuImageButton BackButton;
         private Bunifu.Framework.UI.BunifuTextbox search;
+        private Bunifu.Framework.UI.BunifuImageButton SuperUser;
     }
 }

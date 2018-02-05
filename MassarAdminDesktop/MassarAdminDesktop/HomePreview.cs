@@ -285,6 +285,8 @@ namespace MassarAdminDesktop
                 loadClasse();
                 Analyse analyse = new Analyse();
                 resizeLocationForm(analyse);
+                SuperUser.Visible = Login.admin.isSuper;
+
             }
             this.Text = "default";
         }
@@ -319,6 +321,12 @@ namespace MassarAdminDesktop
             resizeLocationForm(analyse);
             BackButton.Visible = false;
             HomeButton.Visible = false;
+        }
+
+        private void SuperUser_Click(object sender, EventArgs e)
+        {
+            Gerer_Admin gerer = new Gerer_Admin();
+            resizeLocationForm(gerer);
         }
 
         private void Home_ResizeBegin(object sender, EventArgs e)
