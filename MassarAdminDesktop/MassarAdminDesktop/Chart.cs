@@ -136,7 +136,7 @@ namespace MassarAdminDesktop
                 ChartType = SeriesChartType.Line
             };
             this.c.ChartAreas[0].AxisY.Maximum = 100;
-            s.Name = "Evolution par annee";
+            s.Name = "Taux de reussite par annee";
             Login.read = DBConnect.Gets("select avg(note),annee_scolaire from examiner,annee where id_annee=id group by id_annee");
             while (Login.read.Read())
             {
