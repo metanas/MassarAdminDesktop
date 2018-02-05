@@ -20,9 +20,9 @@ namespace MassarAdminDesktop
         private void classview_Load(object sender, EventArgs e)
         {
             bunifuCustomDataGrid1.Rows.Clear();
-            Login.read = DBConnect.Gets("select groupe.nom , groupe.id from groupe , annee where annee.annee_scolaire='" + HomePreview.idann + "' and  annee.id=groupe.id_annee ; ");
+            Login.read = DBConnect.Gets("select groupe.nom , groupe.id ,count(etudiant_groupe.id_etudiant) from etudiant_groupe , groupe,  annee where groupe.id=etudiant_groupe.id_groupe and  annee.annee_scolaire='" + HomePreview.idann + "' and  annee.id=groupe.id_annee group by etudiant_groupe.id_groupe ; ");
             while (Login.read.Read()) {
-                bunifuCustomDataGrid1.Rows.Add(Login.read["id"].ToString(), Login.read["nom"].ToString(),"supprimer");
+                bunifuCustomDataGrid1.Rows.Add(Login.read["id"].ToString(), Login.read["nom"].ToString(),Login.read[2].ToString(),"supprimer");
             }
             Login.read.Close();
         }
@@ -31,7 +31,7 @@ namespace MassarAdminDesktop
         {
             if(e.RowIndex != -1)
             {
-                if (e.ColumnIndex == 2) {
+                if (e.ColumnIndex == 3) {
                     string idGroupe = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].Value.ToString();
                     if (MessageBox.Show("etes vous sur de vouloir supprimer cette Classe", "Suppression de Classe",  MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
