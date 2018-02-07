@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Eleves));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.GroupeName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -48,12 +49,17 @@
             this.bunifuFlatButton9 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
             this.moy_g = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.search = new Bunifu.Framework.UI.BunifuTextbox();
+
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_e)).BeginInit();
@@ -62,7 +68,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.search);
+            this.panel1.Controls.Add(this.GroupeName);
             this.panel1.Controls.Add(this.chart_e);
             this.panel1.Controls.Add(this.dgv_eleves);
             this.panel1.Controls.Add(this.bunifuFlatButton7);
@@ -70,11 +77,23 @@
             this.panel1.Controls.Add(this.bunifuFlatButton9);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.moy_g);
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(963, 508);
+            this.panel1.Size = new System.Drawing.Size(947, 508);
             this.panel1.TabIndex = 0;
             // 
+            // GroupeName
+            // 
+            this.GroupeName.AutoSize = true;
+            this.GroupeName.Font = new System.Drawing.Font("Lato Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupeName.ForeColor = System.Drawing.Color.SeaGreen;
+            this.GroupeName.Location = new System.Drawing.Point(443, 23);
+            this.GroupeName.Name = "GroupeName";
+            this.GroupeName.Size = new System.Drawing.Size(100, 29);
+            this.GroupeName.TabIndex = 13;
+            this.GroupeName.Text = "1APG_2";
+
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioButton2);
@@ -117,7 +136,8 @@
             this.chart_e.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart_e.Legends.Add(legend1);
-            this.chart_e.Location = new System.Drawing.Point(339, 41);
+            this.chart_e.Location = new System.Drawing.Point(308, 119);
+
             this.chart_e.Name = "chart_e";
             this.chart_e.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
@@ -145,7 +165,7 @@
             this.dgv_eleves.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_eleves.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaShell;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -159,9 +179,9 @@
             this.Column3});
             this.dgv_eleves.DoubleBuffered = true;
             this.dgv_eleves.EnableHeadersVisualStyles = false;
-            this.dgv_eleves.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.dgv_eleves.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.dgv_eleves.HeaderForeColor = System.Drawing.Color.SeaShell;
-            this.dgv_eleves.Location = new System.Drawing.Point(3, 41);
+            this.dgv_eleves.Location = new System.Drawing.Point(3, 80);
             this.dgv_eleves.MultiSelect = false;
             this.dgv_eleves.Name = "dgv_eleves";
             this.dgv_eleves.ReadOnly = true;
@@ -169,25 +189,29 @@
             this.dgv_eleves.RowHeadersVisible = false;
             this.dgv_eleves.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_eleves.ShowEditingIcon = false;
-            this.dgv_eleves.Size = new System.Drawing.Size(330, 464);
+            this.dgv_eleves.Size = new System.Drawing.Size(281, 415);
+
             this.dgv_eleves.TabIndex = 3;
             this.dgv_eleves.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_eleves_CellClick);
             this.dgv_eleves.SelectionChanged += new System.EventHandler(this.dgv_eleves_SelectionChanged);
             // 
             // Column1
             // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column1.HeaderText = "Nom";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column2.HeaderText = "Prenom";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column3.HeaderText = "Bulletin";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -213,7 +237,8 @@
             this.bunifuFlatButton7.IconVisible = true;
             this.bunifuFlatButton7.IconZoom = 50D;
             this.bunifuFlatButton7.IsTab = false;
-            this.bunifuFlatButton7.Location = new System.Drawing.Point(773, 368);
+            this.bunifuFlatButton7.Location = new System.Drawing.Point(706, 460);
+
             this.bunifuFlatButton7.Name = "bunifuFlatButton7";
             this.bunifuFlatButton7.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton7.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -248,7 +273,7 @@
             this.bunifuFlatButton8.IconVisible = true;
             this.bunifuFlatButton8.IconZoom = 50D;
             this.bunifuFlatButton8.IsTab = false;
-            this.bunifuFlatButton8.Location = new System.Drawing.Point(570, 368);
+            this.bunifuFlatButton8.Location = new System.Drawing.Point(503, 460);
             this.bunifuFlatButton8.Name = "bunifuFlatButton8";
             this.bunifuFlatButton8.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton8.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -283,7 +308,7 @@
             this.bunifuFlatButton9.IconVisible = true;
             this.bunifuFlatButton9.IconZoom = 50D;
             this.bunifuFlatButton9.IsTab = false;
-            this.bunifuFlatButton9.Location = new System.Drawing.Point(367, 368);
+            this.bunifuFlatButton9.Location = new System.Drawing.Point(300, 460);
             this.bunifuFlatButton9.Name = "bunifuFlatButton9";
             this.bunifuFlatButton9.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton9.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -300,20 +325,58 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(367, 441);
+            this.label1.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label1.Location = new System.Drawing.Point(729, 9);
+
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 20);
+            this.label1.Size = new System.Drawing.Size(182, 23);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Moyenne générale :";
+            this.label1.Text = "Moyenne Générale :";
             // 
             // moy_g
             // 
             this.moy_g.AutoSize = true;
-            this.moy_g.Location = new System.Drawing.Point(550, 446);
+            this.moy_g.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moy_g.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.moy_g.Location = new System.Drawing.Point(851, 29);
             this.moy_g.Name = "moy_g";
-            this.moy_g.Size = new System.Drawing.Size(0, 13);
+            this.moy_g.Size = new System.Drawing.Size(60, 29);
             this.moy_g.TabIndex = 8;
+            this.moy_g.Text = "7.25";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Location = new System.Drawing.Point(6, 42);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(240, 34);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Semestre";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(144, 15);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(38, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "S2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(26, 15);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(38, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "S1";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // bunifuFlatButton1
             // 
@@ -519,16 +582,32 @@
             this.bunifuFlatButton6.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton6.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // search
+            // 
+            this.search.BackColor = System.Drawing.Color.White;
+            this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
+            this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.search.ForeColor = System.Drawing.Color.Black;
+            this.search.Icon = ((System.Drawing.Image)(resources.GetObject("search.Icon")));
+            this.search.Location = new System.Drawing.Point(5, 7);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(215, 35);
+            this.search.TabIndex = 14;
+            this.search.text = "";
+            this.search.OnTextChange += new System.EventHandler(this.search_OnTextChange);
+            // 
+
             // Eleves
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(975, 520);
+            this.ClientSize = new System.Drawing.Size(951, 520);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Eleves";
             this.Text = "Eleves";
+            this.Load += new System.EventHandler(this.Eleves_Load);
             this.Resize += new System.EventHandler(this.Groupe_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -555,11 +634,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label moy_g;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewButtonColumn Column3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewButtonColumn Column3;
+        private Bunifu.Framework.UI.BunifuCustomLabel GroupeName;
+        private Bunifu.Framework.UI.BunifuTextbox search;
     }
 }

@@ -36,6 +36,7 @@
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.SuperUser = new Bunifu.Framework.UI.BunifuImageButton();
             this.HomeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.BackButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -48,13 +49,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.SuperUser = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).BeginInit();
             this.panel5.SuspendLayout();
@@ -62,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -163,6 +163,21 @@
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // SuperUser
+            // 
+            this.SuperUser.BackColor = System.Drawing.Color.Transparent;
+            this.SuperUser.Image = ((System.Drawing.Image)(resources.GetObject("SuperUser.Image")));
+            this.SuperUser.ImageActive = null;
+            this.SuperUser.Location = new System.Drawing.Point(84, 7);
+            this.SuperUser.Name = "SuperUser";
+            this.SuperUser.Size = new System.Drawing.Size(33, 30);
+            this.SuperUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SuperUser.TabIndex = 7;
+            this.SuperUser.TabStop = false;
+            this.SuperUser.Visible = false;
+            this.SuperUser.Zoom = 10;
+            this.SuperUser.Click += new System.EventHandler(this.SuperUser_Click);
+            // 
             // HomeButton
             // 
             this.HomeButton.BackColor = System.Drawing.Color.Transparent;
@@ -213,7 +228,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(191, 7);
+            this.label4.Location = new System.Drawing.Point(191, 11);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 13);
             this.label4.TabIndex = 8;
@@ -333,21 +348,6 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Visible = false;
             // 
-            // SuperUser
-            // 
-            this.SuperUser.BackColor = System.Drawing.Color.Transparent;
-            this.SuperUser.Image = ((System.Drawing.Image)(resources.GetObject("SuperUser.Image")));
-            this.SuperUser.ImageActive = null;
-            this.SuperUser.Location = new System.Drawing.Point(84, 7);
-            this.SuperUser.Name = "SuperUser";
-            this.SuperUser.Size = new System.Drawing.Size(33, 30);
-            this.SuperUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.SuperUser.TabIndex = 7;
-            this.SuperUser.TabStop = false;
-            this.SuperUser.Visible = false;
-            this.SuperUser.Zoom = 10;
-            this.SuperUser.Click += new System.EventHandler(this.SuperUser_Click);
-            // 
             // HomePreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +377,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -386,7 +387,6 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).EndInit();
             this.ResumeLayout(false);
 
         }
