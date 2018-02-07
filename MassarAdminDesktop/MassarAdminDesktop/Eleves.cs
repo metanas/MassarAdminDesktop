@@ -12,14 +12,15 @@ namespace MassarAdminDesktop
 {
     public partial class Eleves : Form
     {
-        string id;
+        string id,groupe;
         public List<Eleve> el = new List<Eleve>();
         public List<Matiere> matieres;
         public List<MaterialSkin.Controls.MaterialCheckBox> Matieres_bs = new List<MaterialSkin.Controls.MaterialCheckBox>(); 
-        public Eleves(string id, List<Matiere> matieres)
+        public Eleves(string id, List<Matiere> matieres, string groupe)
         {
             this.id = id;
             this.matieres = matieres;
+            this.groupe = groupe;
             InitializeComponent();
             el.Clear();
 
@@ -34,18 +35,22 @@ namespace MassarAdminDesktop
             }
 
             Login.read.Close();*/
-            render_eleves();
+            render_eleves(el);
             
 
         }
-        
-        
-        public void render_eleves()
+
+
+        public void render_eleves(List<Eleve> L)
         {
-            foreach (Eleve e in this.el)
+            dgv_eleves.Rows.Clear();
+            foreach (Eleve e in L)
+            {
                 dgv_eleves.Rows.Add(e.nom, e.prenom, "Generer");
-          //  var source = new BindingList<Eleve>(this.el);
-          //  dgv_eleves.DataSource = source;
+                
+                //  var source = new BindingList<Eleve>(this.el);
+                //  dgv_eleves.DataSource = source;
+            }
         }
 
         public void homechart()
@@ -133,12 +138,12 @@ namespace MassarAdminDesktop
                     C.addChartEvolutionSeries(eleve, m);                  
                 }
                 Matieres_bs = C.series_bs;
-                int y = 0;
+                int y = chart_e.Location.Y;
                 foreach (MaterialSkin.Controls.MaterialCheckBox b in Matieres_bs)
                 {
-                    b.Location = new Point(chart_e.Location.X + chart_e.Width + 20, 44 + y);
+                    b.Location = new Point(chart_e.Location.X + chart_e.Width + 10, y);
                     b.Parent = panel1;
-                    y += 38;
+                    y += 25;
                     b.Show();
                 }
                 
@@ -175,6 +180,29 @@ namespace MassarAdminDesktop
         private void bunifuFlatButton9_Click(object sender, EventArgs e)
         {
             homechart();
+        }
+
+        private void Eleves_Load(object sender, EventArgs e)
+        {
+            GroupeName.Text = groupe;
+        }
+
+        private void search_OnTextChange(object sender, EventArgs e)
+        {
+            List<Eleve> list = new List<Eleve>();
+            if (search.text != "")
+            {
+                for (int i = 0; i < el.Count; i++)
+                {
+                    if (el[i].nom.ToUpper().Contains(search.text.ToUpper()) || el[i].prenom.ToUpper().Contains(search.text.ToUpper()))
+                    {
+                        list.Add(el[i]);
+                    }
+                }
+                render_eleves(list);
+            }
+            else { render_eleves(el); }
+
         }
 
         private void dgv_eleves_SelectionChanged(object sender, EventArgs e)
