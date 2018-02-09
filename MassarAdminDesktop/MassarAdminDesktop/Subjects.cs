@@ -126,5 +126,10 @@ namespace MassarAdminDesktop
             chart ch = new chart(chart1, HomePreview.id);
             ch.addChartBy(nom: HomePreview.nomgr);
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

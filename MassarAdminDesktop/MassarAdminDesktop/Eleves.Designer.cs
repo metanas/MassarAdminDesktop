@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Eleves));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Eleves));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton10 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.search = new Bunifu.Framework.UI.BunifuTextbox();
             this.GroupeName = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.chart_e = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgv_eleves = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,17 +57,14 @@
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.search = new Bunifu.Framework.UI.BunifuTextbox();
-
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_e)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_eleves)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.search);
             this.panel1.Controls.Add(this.GroupeName);
             this.panel1.Controls.Add(this.chart_e);
             this.panel1.Controls.Add(this.dgv_eleves);
@@ -78,54 +74,72 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.moy_g);
             this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.bunifuFlatButton10);
+            this.panel1.Controls.Add(this.search);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(947, 508);
+            this.panel1.Size = new System.Drawing.Size(947, 547);
             this.panel1.TabIndex = 0;
+            // 
+            // bunifuFlatButton10
+            // 
+            this.bunifuFlatButton10.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton10.BorderRadius = 0;
+            this.bunifuFlatButton10.ButtonText = "Moyenne Unite";
+            this.bunifuFlatButton10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton10.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton10.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton10.Iconimage = global::MassarAdminDesktop.Properties.Resources.benefit_chart;
+            this.bunifuFlatButton10.Iconimage_right = null;
+            this.bunifuFlatButton10.Iconimage_right_Selected = null;
+            this.bunifuFlatButton10.Iconimage_Selected = null;
+            this.bunifuFlatButton10.IconMarginLeft = 0;
+            this.bunifuFlatButton10.IconMarginRight = 0;
+            this.bunifuFlatButton10.IconRightVisible = true;
+            this.bunifuFlatButton10.IconRightZoom = 0D;
+            this.bunifuFlatButton10.IconVisible = true;
+            this.bunifuFlatButton10.IconZoom = 50D;
+            this.bunifuFlatButton10.IsTab = false;
+            this.bunifuFlatButton10.Location = new System.Drawing.Point(300, 509);
+            this.bunifuFlatButton10.Name = "bunifuFlatButton10";
+            this.bunifuFlatButton10.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton10.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton10.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton10.selected = false;
+            this.bunifuFlatButton10.Size = new System.Drawing.Size(171, 35);
+            this.bunifuFlatButton10.TabIndex = 15;
+            this.bunifuFlatButton10.Text = "Moyenne Unite";
+            this.bunifuFlatButton10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton10.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton10.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton10.Click += new System.EventHandler(this.bunifuFlatButton10_Click);
+            // 
+            // search
+            // 
+            this.search.BackColor = System.Drawing.Color.White;
+            this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
+            this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.search.ForeColor = System.Drawing.Color.Black;
+            this.search.Icon = ((System.Drawing.Image)(resources.GetObject("search.Icon")));
+            this.search.Location = new System.Drawing.Point(5, 7);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(215, 35);
+            this.search.TabIndex = 14;
+            this.search.text = "";
+            this.search.OnTextChange += new System.EventHandler(this.search_OnTextChange);
             // 
             // GroupeName
             // 
             this.GroupeName.AutoSize = true;
-            this.GroupeName.Font = new System.Drawing.Font("Lato Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupeName.ForeColor = System.Drawing.Color.SeaGreen;
             this.GroupeName.Location = new System.Drawing.Point(443, 23);
             this.GroupeName.Name = "GroupeName";
-            this.GroupeName.Size = new System.Drawing.Size(100, 29);
+            this.GroupeName.Size = new System.Drawing.Size(107, 29);
             this.GroupeName.TabIndex = 13;
             this.GroupeName.Text = "1APG_2";
-
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(303, 34);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Semestre";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(144, 15);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(38, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "S2";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(26, 15);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(38, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "S1";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // chart_e
             // 
@@ -137,7 +151,6 @@
             legend1.Name = "Legend1";
             this.chart_e.Legends.Add(legend1);
             this.chart_e.Location = new System.Drawing.Point(308, 119);
-
             this.chart_e.Name = "chart_e";
             this.chart_e.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
@@ -190,7 +203,6 @@
             this.dgv_eleves.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_eleves.ShowEditingIcon = false;
             this.dgv_eleves.Size = new System.Drawing.Size(281, 415);
-
             this.dgv_eleves.TabIndex = 3;
             this.dgv_eleves.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_eleves_CellClick);
             this.dgv_eleves.SelectionChanged += new System.EventHandler(this.dgv_eleves_SelectionChanged);
@@ -238,7 +250,6 @@
             this.bunifuFlatButton7.IconZoom = 50D;
             this.bunifuFlatButton7.IsTab = false;
             this.bunifuFlatButton7.Location = new System.Drawing.Point(706, 460);
-
             this.bunifuFlatButton7.Name = "bunifuFlatButton7";
             this.bunifuFlatButton7.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton7.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -325,23 +336,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SeaGreen;
             this.label1.Location = new System.Drawing.Point(729, 9);
-
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 23);
+            this.label1.Size = new System.Drawing.Size(201, 24);
             this.label1.TabIndex = 6;
             this.label1.Text = "Moyenne Générale :";
             // 
             // moy_g
             // 
             this.moy_g.AutoSize = true;
-            this.moy_g.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moy_g.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moy_g.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.moy_g.Location = new System.Drawing.Point(851, 29);
             this.moy_g.Name = "moy_g";
-            this.moy_g.Size = new System.Drawing.Size(60, 29);
+            this.moy_g.Size = new System.Drawing.Size(58, 29);
             this.moy_g.TabIndex = 8;
             this.moy_g.Text = "7.25";
             // 
@@ -582,27 +592,12 @@
             this.bunifuFlatButton6.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton6.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // search
-            // 
-            this.search.BackColor = System.Drawing.Color.White;
-            this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
-            this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.search.ForeColor = System.Drawing.Color.Black;
-            this.search.Icon = ((System.Drawing.Image)(resources.GetObject("search.Icon")));
-            this.search.Location = new System.Drawing.Point(5, 7);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(215, 35);
-            this.search.TabIndex = 14;
-            this.search.text = "";
-            this.search.OnTextChange += new System.EventHandler(this.search_OnTextChange);
-            // 
-
             // Eleves
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(951, 520);
+            this.ClientSize = new System.Drawing.Size(951, 559);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Eleves";
@@ -611,10 +606,10 @@
             this.Resize += new System.EventHandler(this.Groupe_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_e)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_eleves)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -642,5 +637,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Column3;
         private Bunifu.Framework.UI.BunifuCustomLabel GroupeName;
         private Bunifu.Framework.UI.BunifuTextbox search;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton10;
     }
 }
