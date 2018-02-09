@@ -15,7 +15,8 @@ namespace MassarAdminDesktop
         string id,groupe;
         public List<Eleve> el = new List<Eleve>();
         public List<Matiere> matieres;
-        public List<MaterialSkin.Controls.MaterialCheckBox> Matieres_bs = new List<MaterialSkin.Controls.MaterialCheckBox>(); 
+        public List<MaterialSkin.Controls.MaterialCheckBox> Matieres_bs = new List<MaterialSkin.Controls.MaterialCheckBox>();
+        public List<MaterialSkin.Controls.MaterialRadioButton> Matieres_b = new List<MaterialSkin.Controls.MaterialRadioButton>();
         public Eleves(string id, List<Matiere> matieres, string groupe)
         {
             this.id = id;
@@ -111,6 +112,10 @@ namespace MassarAdminDesktop
                 {
                     this.panel1.Controls.Remove(b);
                 }
+                foreach (MaterialSkin.Controls.MaterialRadioButton b in Matieres_b)
+                {
+                    this.panel1.Controls.Remove(b);
+                }
                 chart c = new chart(chart_e, this.id);
                 c.addChartByEtudiant(el[e.RowIndex].id);
                 double moy = 0;
@@ -126,6 +131,10 @@ namespace MassarAdminDesktop
 
         private void bunifuFlatButton7_Click(object sender, EventArgs e)
         {
+            foreach (MaterialSkin.Controls.MaterialRadioButton b in Matieres_b)
+            {
+                this.panel1.Controls.Remove(b);
+            }
             if (dgv_eleves.SelectedRows.Count == 1)
             {
                 chart C = new chart(chart_e, this.id);
@@ -166,6 +175,10 @@ namespace MassarAdminDesktop
             {
                 this.panel1.Controls.Remove(b);
             }
+            foreach (MaterialSkin.Controls.MaterialRadioButton b in Matieres_b)
+            {
+                this.panel1.Controls.Remove(b);
+            }
             if (dgv_eleves.SelectedRows.Count == 1)
             {
                 chart C = new chart(chart_e, this.id);
@@ -202,6 +215,41 @@ namespace MassarAdminDesktop
                 render_eleves(list);
             }
             else { render_eleves(el); }
+
+        }
+
+        private void bunifuFlatButton10_Click(object sender, EventArgs e)
+        {
+            MaterialSkin.Controls.MaterialRadioButton bb = new MaterialSkin.Controls.MaterialRadioButton();
+            foreach (MaterialSkin.Controls.MaterialCheckBox b in Matieres_bs)
+            {
+                this.panel1.Controls.Remove(b);
+            }
+            if (dgv_eleves.SelectedRows.Count == 1)
+            {
+                chart C = new chart(chart_e, this.id);           
+                Eleve eleve = el[dgv_eleves.SelectedRows[0].Index];
+
+                foreach (Matiere m in this.matieres)
+                {                
+                        C.addChartEvolutionUnites(eleve, m);
+                }
+                
+                Matieres_b = C.series_bb;
+                int y = chart_e.Location.Y;
+                foreach (MaterialSkin.Controls.MaterialRadioButton l in Matieres_b)
+                {
+                    l.Location = new Point(chart_e.Location.X + chart_e.Width + 10, y);
+                    l.Parent = panel1;
+                    y += 25;
+                    l.Show();
+                    l.Checked = true;         
+                }
+                
+                
+            }
+
+            
 
         }
 
