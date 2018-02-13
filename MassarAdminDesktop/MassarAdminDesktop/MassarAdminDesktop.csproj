@@ -366,6 +366,7 @@
     <None Include="Resources\ForwardB.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\hide.png" />
     <Content Include="Resources\img.png" />
     <None Include="Resources\Loupe.png" />
   </ItemGroup>
