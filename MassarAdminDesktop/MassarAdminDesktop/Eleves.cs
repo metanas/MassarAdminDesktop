@@ -47,7 +47,7 @@ namespace MassarAdminDesktop
             dgv_eleves.Rows.Clear();
             foreach (Eleve e in L)
             {
-                dgv_eleves.Rows.Add(e.nom, e.prenom, "Generer");
+                dgv_eleves.Rows.Add(e.nom, e.prenom, "Generer", e.id);
                 
                 //  var source = new BindingList<Eleve>(this.el);
                 //  dgv_eleves.DataSource = source;
@@ -56,6 +56,7 @@ namespace MassarAdminDesktop
 
         public void homechart()
         {
+            rdn.Visible = false;
             if (dgv_eleves.SelectedCells[0].RowIndex != -1)
             {
                 foreach (MaterialSkin.Controls.MaterialCheckBox b in Matieres_bs)
@@ -75,6 +76,63 @@ namespace MassarAdminDesktop
             }
         }
 
+        public void rdnView()
+        {
+            foreach (MaterialSkin.Controls.MaterialCheckBox b in Matieres_bs)
+            {
+                this.panel1.Controls.Remove(b);
+            }
+            foreach (MaterialSkin.Controls.MaterialRadioButton b in Matieres_b)
+            {
+                this.panel1.Controls.Remove(b);
+            }
+            rdn.Rows.Clear();
+            rdn.Columns.Clear();
+            rdn.Visible = true;
+            this.rdn.Columns.Add("Matière", "Matière");
+            this.rdn.Columns.Add("Semestre1", "CC1");
+            this.rdn.Columns.Add("Semestre1", "CC2");
+            this.rdn.Columns.Add("Semestre1", "CC3");
+            this.rdn.Columns.Add("Semestre1", "CC4");
+            this.rdn.Columns.Add("Semestre1", "CC5");
+            this.rdn.Columns.Add("Semestre2", "CC1");
+            this.rdn.Columns.Add("Semestre2", "CC2");
+            this.rdn.Columns.Add("Semestre2", "CC3");
+            this.rdn.Columns.Add("Semestre2", "CC4");
+            this.rdn.Columns.Add("Semestre2", "CC5");            
+
+            for (int j = 0; j < rdn.ColumnCount; j++)
+
+            {
+                rdn.Columns[j].Width = rdn.Width/11;
+
+            }
+
+            string id_E = dgv_eleves.SelectedRows[0].Cells[3].Value.ToString();
+            Console.WriteLine(id_E);
+
+            string sql = "select nom as matiere, sum(if(semestre = 1 and titre = 'cc1', note, null)) as s1cc1, " +
+                "sum(if (semestre = 1 and titre = 'cc2', note, null)) as s1cc2, " +
+                "sum(if (semestre = 1 and titre = 'cc3', note, null)) as s1cc3, " +
+                "sum(if (semestre = 1 and titre = 'cc4', note, null)) as s1cc4, " +
+                "sum(if (semestre = 1 and titre = 'cc5', note, null)) as s1cc5, " +
+                "sum(if (semestre = 2 and titre = 'cc1', note, null)) as s2cc1, " +
+                "sum(if (semestre = 2 and titre = 'cc2', note, null)) as s2cc2, " +
+                "sum(if (semestre = 2 and titre = 'cc3', note, null)) as s2cc3, " +
+                "sum(if (semestre = 2 and titre = 'cc4', note, null)) as s2cc4, " +
+                "sum(if (semestre = 2 and titre = 'cc5', note, null)) as s2cc5 " +
+                "from(SELECT nom, semestre, titre, avg(note) as note FROM examiner " +
+                "LEFT OUTER JOIN matiere on examiner.id_matiere = matiere.id where id_etudiant = " + id_E + " group by nom, titre)" +
+                " as t2 GROUP by t2.nom, t2.semestre";
+            Login.read = DBConnect.Gets(sql);
+            while (Login.read.Read())
+            {
+                rdn.Rows.Add(Login.read[0], Login.read[1], Login.read[2], Login.read[3], Login.read[4], Login.read[5], Login.read[6], Login.read[7], Login.read[8], Login.read[9], Login.read[10]);
+            }
+
+            Login.read.Close();
+        }
+
         private void dgv_eleves_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -83,8 +141,10 @@ namespace MassarAdminDesktop
                     string s = "1";
                     if (radioButton2.Checked)
                         s = "2";
-                    Eleve ee = el[e.RowIndex];
-                    if (DBConnect.Get("select semestre from examiner where id_etudiant=" + ee.id + " and semestre=" + s) == "")
+                    string id_E = dgv_eleves.SelectedRows[0].Cells[3].ToString();
+                    string nomm = dgv_eleves.SelectedRows[0].Cells[0].ToString();
+                    string prenomm = dgv_eleves.SelectedRows[0].Cells[1].ToString();
+                    if (DBConnect.Get("select semestre from examiner where id_etudiant=" + id_E + " and semestre=" + s) == "")
                     {
                         MessageBox.Show("semestre introuvable");
                         return;
@@ -97,7 +157,7 @@ namespace MassarAdminDesktop
                         {
                             
                             
-                                bulletin bul = new bulletin(dlg.SelectedPath + "\\" + "bulletin S" + s + " " + ee.nom + " " + ee.prenom + ".pdf", ee.id, s, HomePreview.idann, "amana");
+                                bulletin bul = new bulletin(dlg.SelectedPath + "\\" + "bulletin S" + s + " " + nomm + " " + prenomm + ".pdf", id_E, s, HomePreview.idann, "amana");
 
 
 
@@ -131,6 +191,7 @@ namespace MassarAdminDesktop
 
         private void bunifuFlatButton7_Click(object sender, EventArgs e)
         {
+            rdn.Visible = false;
             foreach (MaterialSkin.Controls.MaterialRadioButton b in Matieres_b)
             {
                 this.panel1.Controls.Remove(b);
@@ -171,6 +232,7 @@ namespace MassarAdminDesktop
 
         private void bunifuFlatButton8_Click(object sender, EventArgs e)
         {
+            rdn.Visible = false;
             foreach (MaterialSkin.Controls.MaterialCheckBox b in Matieres_bs)
             {
                 this.panel1.Controls.Remove(b);
@@ -213,13 +275,15 @@ namespace MassarAdminDesktop
                     }
                 }
                 render_eleves(list);
+                
             }
-            else { render_eleves(el); }
+            else { render_eleves(el);  }
 
         }
 
         private void bunifuFlatButton10_Click(object sender, EventArgs e)
         {
+            rdn.Visible = false;
             MaterialSkin.Controls.MaterialRadioButton bb = new MaterialSkin.Controls.MaterialRadioButton();
             foreach (MaterialSkin.Controls.MaterialCheckBox b in Matieres_bs)
             {
@@ -253,9 +317,15 @@ namespace MassarAdminDesktop
 
         }
 
+        private void bunifuFlatButton11_Click(object sender, EventArgs e)
+        {
+            rdnView();
+
+        }
+
         private void dgv_eleves_SelectionChanged(object sender, EventArgs e)
         {
-            try { homechart(); }
+            try { rdnView(); }
             catch { }
         }
     }
