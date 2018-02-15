@@ -163,6 +163,7 @@
     <Compile Include="Option.Designer.cs">
       <DependentUpon>Option.cs</DependentUpon>
     </Compile>
+    <Compile Include="password.cs" />
     <Compile Include="Previw.cs">
       <SubType>Form</SubType>
     </Compile>
