@@ -83,6 +83,22 @@ namespace MassarAdminDesktop
                         {
                             string pass = generatePassword(bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].Value.ToString());
                             bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[5].Value = pass;
+                            using (FolderBrowserDialog dlg = new FolderBrowserDialog())
+                            {
+
+                                dlg.Description = "Select a folder";
+                                if (dlg.ShowDialog() == DialogResult.OK)
+                                {
+                                    string Nom = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                                    string Prenom = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+
+                                    password p = new password(Nom,Prenom , pass, dlg.SelectedPath + "\\" + "mot de pass de " + Nom + " " + Prenom + ".pdf");
+
+
+                                    MessageBox.Show("mot de pass bien generee");
+                                }
+                            }
                         }
                     
                     }

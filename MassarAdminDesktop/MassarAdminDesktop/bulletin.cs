@@ -24,6 +24,10 @@ namespace MassarAdminDesktop
         Font myfont;
         public bulletin(string pdfdirectory, string id = "11671321", string semestre = "1", string annee = "2017/2018", string ecole = "amana")
         {
+
+            
+
+
             this.semestre = semestre;
             this.id = id;
             this.annee = annee;
