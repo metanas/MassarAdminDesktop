@@ -367,6 +367,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cuadro.png" />
+
     <Content Include="Resources\img.png" />
     <None Include="Resources\Loupe.png" />
   </ItemGroup>
