@@ -365,6 +365,7 @@
             this.Name = "HomePreview";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomePreview_FormClosing);
             this.Load += new System.EventHandler(this.HomePreview_Load);
             this.ResizeBegin += new System.EventHandler(this.Home_ResizeBegin);
             this.ResizeEnd += new System.EventHandler(this.Home_ResizeBegin);

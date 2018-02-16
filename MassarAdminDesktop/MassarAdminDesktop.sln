@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassarAdminDesktop", "MassarAdminDesktop\MassarAdminDesktop.csproj", "{8A016190-8825-4872-A5C5-9B80C8738905}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{14E0B4F7-D4F5-4B1A-B0AC-39AF3A70D2DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{8A016190-8825-4872-A5C5-9B80C8738905}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A016190-8825-4872-A5C5-9B80C8738905}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A016190-8825-4872-A5C5-9B80C8738905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E0B4F7-D4F5-4B1A-B0AC-39AF3A70D2DE}.Debug|Any CPU.ActiveCfg = Debug
+		{14E0B4F7-D4F5-4B1A-B0AC-39AF3A70D2DE}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

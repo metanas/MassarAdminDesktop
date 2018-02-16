@@ -292,7 +292,6 @@ namespace MassarAdminDesktop
             table.WidthPercentage = pourcentage;
             string now = "", last = "", MATIERE = "";
             int x = 0;
-            int i = 0;
             List<float> n = new List<float>();
             List<string> u = new List<string>();
             while (r.Read())

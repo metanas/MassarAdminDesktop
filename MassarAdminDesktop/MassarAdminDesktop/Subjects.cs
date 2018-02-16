@@ -67,7 +67,6 @@ namespace MassarAdminDesktop
         {
             double moy=0;
             int nonv=0;
-            int ecart_type;
             double taux;
 
             foreach (var p in this.ch.c.Series[0].Points)

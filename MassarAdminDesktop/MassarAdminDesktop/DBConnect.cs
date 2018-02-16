@@ -11,10 +11,6 @@ namespace MassarAdminDesktop
     public class DBConnect
     {
         public static MySqlConnection connection;
-        private string server;
-        private string database;
-        private string uid;
-        private string password;
 
         //Constructor
         public DBConnect()
