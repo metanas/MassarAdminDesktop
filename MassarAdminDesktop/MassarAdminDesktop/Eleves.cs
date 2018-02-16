@@ -254,6 +254,10 @@ namespace MassarAdminDesktop
 
         private void bunifuFlatButton9_Click(object sender, EventArgs e)
         {
+            foreach (MaterialSkin.Controls.MaterialRadioButton b in Matieres_b)
+            {
+                this.panel1.Controls.Remove(b);
+            }
             homechart();
         }
 

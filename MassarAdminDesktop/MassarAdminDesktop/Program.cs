@@ -15,18 +15,20 @@ namespace MassarAdminDesktop
         [STAThread]
         static void Main()
         {
+            bool tw = false;
             try
             {
                 using (StreamReader sr = File.OpenText(@"C:\\Massar\Installer.txt"))
                 {
-                    string t = sr.ReadLine();
-                    if (t == "Installed")
+                    tw = true;
+                    if (sr.ReadLine() == "Installed")
                     {
                         Application.EnableVisualStyles();
                         Application.SetCompatibleTextRenderingDefault(false);
                         Application.Run(new HomePreview());
                     }
-                    else {
+                    else
+                    {
                         Application.EnableVisualStyles();
                         Application.SetCompatibleTextRenderingDefault(false);
                         Application.Run(new Installer());
@@ -35,9 +37,12 @@ namespace MassarAdminDesktop
             }
             catch
             {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Installer());
+                if (!tw)
+                {
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(new Installer());
+                }
             }
            
         }
