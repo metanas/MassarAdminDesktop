@@ -13,10 +13,6 @@ namespace MassarAdminDesktop
 {
     public partial class Option : Form
     {
-        string serverdefault = "31.220.105.14";
-        string databasedefault = "offerson_masar";
-        string uiddefault = "offerson_ramzi";
-        string passworddefault = "ramzi150";
         public static string stringConnection;
         int tog;
         int mvalX;
@@ -24,17 +20,18 @@ namespace MassarAdminDesktop
         public Option()
         {
             InitializeComponent();
-            try
+            string[] lw = new string[4] { " ", " ", " ", " " };
+            using (StreamReader sr = File.OpenText(@"C:\\Massar\.ConfigurationDB.txt"))
             {
-                ReadFromFile();
-                serverdefault = server.Text;
-                databasedefault = database.Text;
-                uiddefault = username.Text;
-                passworddefault = password.Text;
+                string tables;
+                int i = 0;  
+                while ((tables = sr.ReadLine()) != null)
+                {
+                    lw[i++] = tables;
+                }
             }
-            catch { }
-            stringConnection = "SERVER=" + serverdefault + ";" + "DATABASE=" +
-                       databasedefault + ";" + "UID=" + uiddefault + ";" + "PASSWORD=" + passworddefault + "; Character Set=utf8";
+            string connectionString = "SERVER=" + lw[0] + ";" + "DATABASE=" +
+                lw[1] + ";" + "UID=" + lw[2] + ";" + "PASSWORD=" + lw[3] + "; Character Set=utf8";
         }
        
         private async void test_Click(object sender, EventArgs e)
@@ -96,7 +93,7 @@ namespace MassarAdminDesktop
 
         public void ReadFromFile()
         {
-            using (StreamReader sr = File.OpenText(@"ConfigurationDB.txt"))
+            using (StreamReader sr = File.OpenText(@"C:\\Massar\.ConfigurationDB.txt"))
             {
                 string tables;
                 int i = 0;
@@ -110,7 +107,7 @@ namespace MassarAdminDesktop
 
         public void WriteToFile()
         {
-            using (StreamWriter sw = File.CreateText(@"ConfigurationDB.txt"))
+            using (StreamWriter sw = File.CreateText(@"C:\\Massar\.ConfigurationDB.txt"))
             {
                 sw.WriteLine(server.Text);
                 sw.WriteLine(database.Text);

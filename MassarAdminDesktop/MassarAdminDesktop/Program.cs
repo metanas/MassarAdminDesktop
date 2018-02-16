@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,9 +15,31 @@ namespace MassarAdminDesktop
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomePreview());
+            try
+            {
+                using (StreamReader sr = File.OpenText(@"C:\\Massar\Installer.txt"))
+                {
+                    string t = sr.ReadLine();
+                    if (t == "Installed")
+                    {
+                        Application.EnableVisualStyles();
+                        Application.SetCompatibleTextRenderingDefault(false);
+                        Application.Run(new HomePreview());
+                    }
+                    else {
+                        Application.EnableVisualStyles();
+                        Application.SetCompatibleTextRenderingDefault(false);
+                        Application.Run(new Installer());
+                    }
+                }
+            }
+            catch
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Installer());
+            }
+           
         }
     }
 }

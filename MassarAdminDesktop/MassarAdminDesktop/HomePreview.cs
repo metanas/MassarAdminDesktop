@@ -36,10 +36,11 @@ namespace MassarAdminDesktop
         int yearSelected = 0;
         BunifuImageButton forward;
         BunifuImageButton backward;
-
-        public HomePreview()
+        Form master;
+        public HomePreview(Form t=null)
         {
             InitializeComponent();
+            master = t;
             Option op = new Option();
             HomeForm = this;
             loadFont();
@@ -327,6 +328,14 @@ namespace MassarAdminDesktop
         {
             Gerer_Admin gerer = new Gerer_Admin();
             resizeLocationForm(gerer);
+        }
+
+        private void HomePreview_FormClosing(object sender, FormClosingEventArgs e)
+        {
+              if(master != null)
+            {
+                master.Close();
+            }
         }
 
         private void Home_ResizeBegin(object sender, EventArgs e)
