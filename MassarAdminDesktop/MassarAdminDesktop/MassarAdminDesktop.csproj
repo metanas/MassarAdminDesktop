@@ -169,6 +169,7 @@
     <Compile Include="Option.Designer.cs">
       <DependentUpon>Option.cs</DependentUpon>
     </Compile>
+    <Compile Include="password.cs" />
     <Compile Include="Previw.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,7 +367,8 @@
     <None Include="Resources\ForwardB.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hide.png" />
+    <None Include="Resources\cuadro.png" />
+
     <Content Include="Resources\img.png" />
     <None Include="Resources\Loupe.png" />
   </ItemGroup>
