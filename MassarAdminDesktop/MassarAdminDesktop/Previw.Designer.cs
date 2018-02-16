@@ -91,7 +91,6 @@
             // Importer_b
             // 
             this.Importer_b.Depth = 0;
-            this.Importer_b.Enabled = false;
             this.Importer_b.Location = new System.Drawing.Point(326, 474);
             this.Importer_b.MouseState = MaterialSkin.MouseState.HOVER;
             this.Importer_b.Name = "Importer_b";
@@ -100,6 +99,7 @@
             this.Importer_b.TabIndex = 67;
             this.Importer_b.Text = "Impoter";
             this.Importer_b.UseVisualStyleBackColor = true;
+            this.Importer_b.Click += new System.EventHandler(this.Importer_b_Click);
             // 
             // groupBox1
             // 

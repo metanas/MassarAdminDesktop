@@ -117,7 +117,7 @@ namespace MassarAdminDesktop
             }
             else if(this.q == "info")
             {
-                MessageBox.Show("_" + label31.Text + "_");
+                DBConnect.Post("START TRANSACTION;");
                 this.id_annee = DBConnect.Get("select id from annee where annee_scolaire='" + label31.Text + "'");
                 
                 DBConnect.Post(string.Format("insert ignore into groupe values(null,'{0}',{1},{2})", label33.Text, label33.Text.Substring(0, 1), this.id_annee));
@@ -145,14 +145,15 @@ namespace MassarAdminDesktop
 
                     }
                     query = query.Substring(0, query.Length - 1);
-                    query += ") ,";
+                    query += ",'','') ,";
                 }
                 query = query.Substring(0, query.Length - 1);
                 query3 = query3.Substring(0, query3.Length - 1);
                 DBConnect.Post(query);
                 DBConnect.Post("delete from etudiant_groupe where id_groupe="+this.id_groupe);
                 DBConnect.Post(query3);
-
+                DBConnect.Post("COMMIT;");
+                HomePreview.HomeForm.Text = "loadClasse";
             }
         }
 

@@ -30,8 +30,12 @@ namespace MassarAdminDesktop
                     lw[i++] = tables;
                 }
             }
-            string connectionString = "SERVER=" + lw[0] + ";" + "DATABASE=" +
+            stringConnection = "SERVER=" + lw[0] + ";" + "DATABASE=" +
                 lw[1] + ";" + "UID=" + lw[2] + ";" + "PASSWORD=" + lw[3] + "; Character Set=utf8";
+            server.Text = lw[0];
+            database.Text = lw[1];
+            username.Text = lw[2];
+            password.Text = lw[3];
         }
        
         private async void test_Click(object sender, EventArgs e)

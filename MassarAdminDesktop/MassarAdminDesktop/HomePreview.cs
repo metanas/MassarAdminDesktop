@@ -77,7 +77,7 @@ namespace MassarAdminDesktop
                 Login.read.Close();           
         }
 
-        void loadClasse()
+        public void loadClasse()
         {
             int i = 0;
             foreach (var b in ClassButton)
@@ -181,6 +181,7 @@ namespace MassarAdminDesktop
             backward.Location = new Point(0, 135);
             backward.Size = new Size(40, 29);
             backward.BackColor = Color.Transparent;
+            backward.Enabled = false;
             backward.Image = Resources.Backward;
             backward.Click += new EventHandler(left_click);
             panel4.Controls.Add(backward);
@@ -288,6 +289,8 @@ namespace MassarAdminDesktop
                 resizeLocationForm(analyse);
                 SuperUser.Visible = Login.admin.isSuper;
 
+            }else if (this.Text == "loadClasse"){
+                loadClasse();
             }
             this.Text = "default";
         }
