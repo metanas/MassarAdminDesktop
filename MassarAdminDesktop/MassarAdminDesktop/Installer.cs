@@ -13,6 +13,7 @@ namespace MassarAdminDesktop
 {
     public partial class Installer : Form
     {
+        int tog, mvalX, mvalY;
         public Installer()
         {
             InitializeComponent();
@@ -179,11 +180,36 @@ namespace MassarAdminDesktop
             this.Hide();
 
         }
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            tog = 1;
+            mvalX = e.Location.X;
+            mvalY = e.Location.Y;
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            tog = 0;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (tog == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - mvalX, MousePosition.Y - mvalY);
+            }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(@"C:\\Program Files (x86)\Cesim\Massar Admin\mysql-installer-web-community-5.7.21.0.msi");
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {           
+                this.Close();            
+        }
+
         bool val = false;
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
