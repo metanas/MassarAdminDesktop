@@ -55,6 +55,7 @@ namespace MassarAdminDesktop
             label2.Font = new Font(latoBold.Families[0], 22, FontStyle.Bold);
             label3.Font = new Font(latoReg.Families[0], 12, FontStyle.Bold);
             label4.Font = new Font(latoReg.Families[0], 12, FontStyle.Bold);
+            label5.Font = new Font(latoReg.Families[0], 12, FontStyle.Bold);
             Login login = new Login();
             resizeLocationForm(login);
         }
@@ -252,6 +253,7 @@ namespace MassarAdminDesktop
             PreviewFrom.Clear();
             Login login = new Login();
             SuperUser.Visible = false;
+            label5.Visible = false;
             resizeLocationForm(login);
             label1.Visible = false;
             label2.Visible = false;
@@ -289,8 +291,10 @@ namespace MassarAdminDesktop
                 Analyse analyse = new Analyse();
                 resizeLocationForm(analyse);
                 SuperUser.Visible = Login.admin.isSuper;
+                label5.Visible = Login.admin.isSuper;
 
-            }else if (this.Text == "loadClasse"){
+            }
+            else if (this.Text == "loadClasse"){
                 loadClasse();
             }
             this.Text = "default";
