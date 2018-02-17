@@ -251,6 +251,7 @@ namespace MassarAdminDesktop
             ClassButton.Clear();
             PreviewFrom.Clear();
             Login login = new Login();
+            SuperUser.Visible = false;
             resizeLocationForm(login);
             label1.Visible = false;
             label2.Visible = false;

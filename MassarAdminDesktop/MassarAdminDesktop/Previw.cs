@@ -85,7 +85,6 @@ namespace MassarAdminDesktop
                 DBConnect.Post("insert ignore into matiere values (null,'"+ matiere + "')");
                 string idMatiere = DBConnect.Get("select id from matiere where nom='"+matiere+"'");
                 this.id_annee = DBConnect.Get("select id from annee where annee_scolaire='" + label19.Text + "'");
-                MessageBox.Show(this.id_annee);
                 this.id_groupe = DBConnect.Get(string.Format("select id from groupe where nom = '{0}' and id_annee = {1}", label14.Text, this.id_annee));
                 if (this.id_groupe == "") {
                     MessageBox.Show("groupe introuvable");
@@ -95,7 +94,6 @@ namespace MassarAdminDesktop
 
                 DBConnect.Post("insert ignore into enseignant (nom, prenom) values ('"+ label15.Text.Split(' ')[0] + "','" + label15.Text.Split(' ')[1] + "')");
                 DBConnect.Post("insert ignore into groupe_matiere_enseignant values (" + idMatiere + "," + id_groupe + ", (select id from enseignant where nom='"+label15.Text.Split(' ')[0] +"' and prenom='" + label15.Text.Split(' ')[1] + "'))");
-                MessageBox.Show(this.id_groupe);
                 foreach (int row in this.notesrows)
                 {
                     
@@ -110,6 +108,7 @@ namespace MassarAdminDesktop
                 try
                 {
                     DBConnect.Post(query);
+                    MessageBox.Show("Ajout Réussi");
                 }
                 catch (Exception exx) {
                     MessageBox.Show(exx.Message);
@@ -251,7 +250,7 @@ namespace MassarAdminDesktop
                 }
                 else if (q == "info")
                 {
-                    panel2.Visible = true;
+                    panel2.Visible = false ;
                     panel3.Visible = true;
                     label = new List<Label>() { label28, label29, label30, label31, label32, label33 };
                     s = new List<string>() { "أكاديمية :", "المذيرية الإقليمية :", "مؤسسة  :", "السنة الدراسية", "المستوى :", "القسم" };
@@ -327,7 +326,7 @@ namespace MassarAdminDesktop
                     if (dataGridView1.Rows.Count == 0) materialLabel1.Text += "aucun eleves n'est trouve";
                     if (materialLabel1.Text != "") { groupBox1.Visible = true; materialLabel1.ForeColor = Color.Red; }
                 }
-                if (panel2.Visible || panel3.Visible || !groupBox1.Visible) { Importer_b.Visible = false; }
+                if (groupBox1.Visible) { Importer_b.Visible = false; }
             }
           
         }

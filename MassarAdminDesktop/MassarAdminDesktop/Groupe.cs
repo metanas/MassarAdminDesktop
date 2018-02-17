@@ -19,6 +19,7 @@ namespace MassarAdminDesktop
         List<Bunifu.Framework.UI.BunifuFlatButton> Matieres = new List<Bunifu.Framework.UI.BunifuFlatButton>();
         public List<Matiere> matieres = new List<Matiere>();
         public List<Eleve> el = new List<Eleve>();
+        Dictionary<string, string> dictionary = new Dictionary<string, string>();
 
         public Groupe(string id, string groupe)
         {
@@ -42,7 +43,8 @@ namespace MassarAdminDesktop
                 bs.Size = new Size(210, 43);
                 bs.Iconimage = Properties.Resources.diploma;
                 bs.IconZoom = 60;
-                bs.Text = Login.read[1].ToString().Substring(0, 1).ToUpper() + Login.read[1].ToString().Substring(1, Login.read[1].ToString().Length - 1) + "_" + Login.read[0];
+                bs.Text = Login.read[1].ToString().Substring(0, 1).ToUpper() + Login.read[1].ToString().Substring(1, Login.read[1].ToString().Length - 1);
+                dictionary.Add(Login.read[1].ToString().Substring(0, 1).ToUpper() + Login.read[1].ToString().Substring(1, Login.read[1].ToString().Length - 1), Login.read[0].ToString());
                 bs.BackColor = Color.FromArgb(107, 124, 140);
                 bs.Normalcolor = Color.FromArgb(107, 124, 140);
                 bs.Activecolor = Color.FromArgb(107, 124, 140);
@@ -79,8 +81,8 @@ namespace MassarAdminDesktop
         {
            
             Bunifu.Framework.UI.BunifuFlatButton b = (Bunifu.Framework.UI.BunifuFlatButton)sender;
-            string nom = b.Text.Split('_')[0];
-            string id = b.Text.Split('_')[1];
+            string nom = b.Text;
+            string id = dictionary[b.Text];
             Subjects view = new Subjects(id, nom);
             HomePreview.resizeLocationForm(view);
         }

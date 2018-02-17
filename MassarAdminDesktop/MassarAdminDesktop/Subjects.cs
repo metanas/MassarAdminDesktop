@@ -27,7 +27,7 @@ namespace MassarAdminDesktop
             semestre = new string[10]{ "1", "1", "1", "1", "1", "2", "2", "2", "2", "2"}; 
             cl_buttons.Add(Button1); cl_buttons.Add(Button2); cl_buttons.Add(Button3); cl_buttons.Add(Button6); cl_buttons.Add(Button7); cl_buttons.Add(Button8); cl_buttons.Add(Button4); cl_buttons.Add(Button5); cl_buttons.Add(Button9); cl_buttons.Add(Button10);
             foreach (Bunifu.Framework.UI.BunifuTileButton b in cl_buttons)
-                b.Click += new System.EventHandler(this.clickcc);
+                b.Click += new EventHandler(this.clickcc);
             string id = HomePreview.id;
             string nomgr = HomePreview.nomgr;
             this.idm = idm;
@@ -35,7 +35,7 @@ namespace MassarAdminDesktop
             chart ch = new chart(chart1, HomePreview.id);
             ch.addChartBy(nom: nomgr);
 
-            Login.read = DBConnect.Gets("select max(calcule.n), min(calcule.n) , avg(calcule.n) from (select avg(note) as n from examiner where id_matiere="+this.idm+" group by id_etudiant) as calcule");
+            Login.read = DBConnect.Gets("select max(calcule.n), min(calcule.n) , avg(calcule.n) from (select avg(note) as n from examiner where id_matiere=" + this.idm+" group by id_etudiant) as calcule");
             if (Login.read.Read())
             {
                 max.Text = Login.read[0].ToString();
@@ -46,7 +46,7 @@ namespace MassarAdminDesktop
 
             Login.read = DBConnect.Gets("select nom , prenom from groupe_matiere_enseignant , enseignant where id_enseignant=id and id_groupe="+id+" and id_matiere=" + this.idm);
             while (Login.read.Read())
-                label2.Text = Login.read["nom"].ToString() + " " + Login.read["prenom"].ToString();
+                bunifuTileButton1.LabelText = Login.read["nom"].ToString() + " " + Login.read["prenom"].ToString();
             Login.read.Close();
             
             moyenne.Text = Math.Round(double.Parse(moy),2).ToString();
