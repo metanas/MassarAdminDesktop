@@ -57,9 +57,6 @@ namespace MassarAdminDesktop
             }
             else {
                 dirCreate();
-                HomePreview homePreview = new HomePreview(this);
-                homePreview.Show();
-                this.Hide();
             }
         }
 
@@ -83,11 +80,11 @@ namespace MassarAdminDesktop
             progressBar1.Value += 5;
             DBConnect.Post("START TRANSACTION;");
             progressBar1.Value += 5;
-            DBConnect.Post("DROP DATABASE IF EXISTS `masar`;");
+            DBConnect.Post("DROP DATABASE IF EXISTS `Massar`;");
             progressBar1.Value += 5;
-            DBConnect.Post("CREATE DATABASE IF NOT EXISTS `masar` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;");
+            DBConnect.Post("CREATE DATABASE IF NOT EXISTS `Massar` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;");
             progressBar1.Value += 5;
-            DBConnect.Post("USE `masar`;");
+            DBConnect.Post("USE `Massar`;");
             progressBar1.Value += 5;
             DBConnect.Post("CREATE TABLE IF NOT EXISTS `admin` ( `id` int(11) NOT NULL AUTO_INCREMENT, `nom` varchar(200) NOT NULL, `password` varchar(200) NOT NULL, `isSuper` varchar(5) NOT NULL, PRIMARY KEY(`id`), UNIQUE KEY `nom` (`nom`)) ENGINE = MyISAM DEFAULT CHARSET = latin1; ");
             progressBar1.Value += 5;
@@ -99,7 +96,7 @@ namespace MassarAdminDesktop
             progressBar1.Value += 5;
             DBConnect.Post("CREATE TABLE IF NOT EXISTS `etudiant_groupe` (`id_groupe` int(11) NOT NULL, `id_etudiant` int(11) NOT NULL, PRIMARY KEY(`id_groupe`,`id_etudiant`), KEY `id_etudiant` (`id_etudiant`)) ENGINE = MyISAM DEFAULT CHARSET = latin1; ");
             progressBar1.Value += 5;
-            DBConnect.Post("CREATE TABLE IF NOT EXISTS `examiner` ( `id_annee` int(11) NOT NULL, `id_groupe` int(11) NOT NULL, `id_etudiant` int(11) NOT NULL, `id_matiere` int(11) NOT NULL, `titre` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL, `semestre` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL, `unite` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL, `note` int(11) DEFAULT NULL, PRIMARY KEY(`id_groupe`,`id_etudiant`,`id_annee`,`id_matiere`,`titre`,`semestre`,`unite`), KEY `id_matiere` (`id_matiere`), KEY `id_etudiant` (`id_etudiant`), KEY `id_annee` (`id_annee`)) ENGINE = MyISAM DEFAULT CHARSET = latin1; ");
+            DBConnect.Post("CREATE TABLE IF NOT EXISTS `examiner` ( `id_annee` int(11) NOT NULL, `id_groupe` int(11) NOT NULL, `id_etudiant` int(11) NOT NULL, `id_matiere` int(11) NOT NULL, `titre` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL, `semestre` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL, `unite` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL, `note` float(11) DEFAULT NULL, PRIMARY KEY(`id_groupe`,`id_etudiant`,`id_annee`,`id_matiere`,`titre`,`semestre`,`unite`), KEY `id_matiere` (`id_matiere`), KEY `id_etudiant` (`id_etudiant`), KEY `id_annee` (`id_annee`)) ENGINE = MyISAM DEFAULT CHARSET = latin1; ");
             progressBar1.Value += 5;
             DBConnect.Post("CREATE TABLE IF NOT EXISTS `groupe` ( `id` int(11) NOT NULL AUTO_INCREMENT, `nom` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL, `id_niveau` int(11) NOT NULL, `id_annee` int(11) NOT NULL, PRIMARY KEY(`id`), UNIQUE KEY `nom` (`nom`,`id_annee`)) ENGINE = MyISAM DEFAULT CHARSET = latin1; ");
             progressBar1.Value += 5;
@@ -177,6 +174,10 @@ namespace MassarAdminDesktop
             }
 
             progressBar1.Value = 100;
+            HomePreview homePreview = new HomePreview(this);
+            homePreview.Show();
+            this.Hide();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
