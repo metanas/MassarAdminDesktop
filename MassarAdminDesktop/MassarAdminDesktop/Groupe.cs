@@ -28,7 +28,7 @@ namespace MassarAdminDesktop
             this.groupe = groupe;
             this.groupe_l.Text = groupe; int s = 1;
             Login.read = DBConnect.Gets("SELECT ma.id, ma.nom FROM groupe_matiere_enseignant, matiere as ma WHERE ma.id = id_matiere and id_groupe = " + id);
-            int w = 10;
+            int w = 12;
             int t = 10;
             bool r = false;
             while (Login.read.Read())
@@ -57,7 +57,7 @@ namespace MassarAdminDesktop
                 if (s % 3 == 0)
                 {
                     t += bs.Height + 5;
-                    w = panel2.Location.X + 5;
+                    w = panel2.Location.X ;
                     r = true;
                 }
                 s += 1;
