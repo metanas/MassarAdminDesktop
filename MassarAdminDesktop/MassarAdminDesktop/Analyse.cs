@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 namespace MassarAdminDesktop
 {
@@ -23,7 +24,11 @@ namespace MassarAdminDesktop
             bunifuTileButton3.Font = new Font(HomePreview.latoBold.Families[0], 14, FontStyle.Bold);
             label1.Text = countetu;
             label2.Text = countprof;
-            label3.Text = countclasse;           
+            label3.Text = countclasse;
+            using (StreamReader sr = File.OpenText(@"C:\\Massar\Installer.txt"))
+            {
+                label4.Text += " " + sr.ReadToEnd().Split('\n')[1];               
+            }
         }
 
         private void Analyse_ResizeBegin(object sender, EventArgs e)

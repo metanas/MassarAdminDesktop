@@ -49,6 +49,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
@@ -152,6 +153,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.SuperUser);
             this.panel2.Controls.Add(this.HomeButton);
             this.panel2.Controls.Add(this.BackButton);
@@ -168,7 +170,7 @@
             this.SuperUser.BackColor = System.Drawing.Color.Transparent;
             this.SuperUser.Image = global::MassarAdminDesktop.Properties.Resources.superUser1;
             this.SuperUser.ImageActive = null;
-            this.SuperUser.Location = new System.Drawing.Point(84, 7);
+            this.SuperUser.Location = new System.Drawing.Point(691, 7);
             this.SuperUser.Name = "SuperUser";
             this.SuperUser.Size = new System.Drawing.Size(33, 30);
             this.SuperUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -293,8 +295,7 @@
             // search
             // 
             this.search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(160)))), ((int)(((byte)(155)))));
-            this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
-            this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.search.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.search.Dock = System.Windows.Forms.DockStyle.Top;
@@ -348,6 +349,20 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Visible = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(730, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Geree utilisateur";
+            this.label5.Visible = false;
+            this.label5.Click += new System.EventHandler(this.SuperUser_Click);
+            // 
             // HomePreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +393,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SuperUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackButton)).EndInit();
@@ -414,5 +430,6 @@
         public Bunifu.Framework.UI.BunifuImageButton BackButton;
         private Bunifu.Framework.UI.BunifuTextbox search;
         private Bunifu.Framework.UI.BunifuImageButton SuperUser;
+        private System.Windows.Forms.Label label5;
     }
 }
