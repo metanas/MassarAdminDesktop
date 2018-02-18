@@ -29,7 +29,7 @@ namespace MassarAdminDesktop
             InitializeComponent();
             semestre = new string[10]{ "1", "1", "1", "1", "1", "2", "2", "2", "2", "2" };
             semestre2 = new string[10] { "cc11", "cc21", "cc31", "cc41", "cc51", "cc12", "cc22", "cc32", "cc42", "cc52" };
-            cl_buttons.Add(Button1); cl_buttons.Add(Button2); cl_buttons.Add(Button3); cl_buttons.Add(Button6); cl_buttons.Add(Button7); cl_buttons.Add(Button8); cl_buttons.Add(Button4); cl_buttons.Add(Button5); cl_buttons.Add(Button9); cl_buttons.Add(Button10);
+            cl_buttons.Add(Button1); cl_buttons.Add(Button2); cl_buttons.Add(Button3); cl_buttons.Add(Button4); cl_buttons.Add(Button5); cl_buttons.Add(Button6); cl_buttons.Add(Button7); cl_buttons.Add(Button8); cl_buttons.Add(Button9); cl_buttons.Add(Button10);
             int x = 0;
             foreach (Bunifu.Framework.UI.BunifuTileButton b in cl_buttons)
             {
@@ -63,10 +63,13 @@ namespace MassarAdminDesktop
             else
                 bunifuCircleProgressbar1.ProgressColor = Color.Green;
             Login.read = DBConnect.Gets("select distinct titre ,semestre from examiner where id_groupe = "+id+ " and id_matiere=" + this.idm + " order by semestre,titre");
-            int i = 0;
+
             while (Login.read.Read())
-                dict[Login.read[0].ToString()+ Login.read[1].ToString()].Visible = true;
-            
+            {
+                
+                Bunifu.Framework.UI.BunifuTileButton b= dict[Login.read[0].ToString() + Login.read[1].ToString()];
+                b.Visible = true;
+            }
             Login.read.Close();
             Infobox.Text = this.nomm;
             

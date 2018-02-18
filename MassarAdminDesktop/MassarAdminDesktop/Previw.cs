@@ -82,7 +82,8 @@ namespace MassarAdminDesktop
                 }
 
                 string matiere = label18.Text;//due label of matiere is empty
-                DBConnect.Post("insert ignore into matiere values (null,'"+ matiere + "')");
+                if (DBConnect.Get("select id from matiere where nom='" + matiere + "'   ")=="")
+                    DBConnect.Post("insert ignore into matiere values (null,'"+ matiere + "')");
                 string idMatiere = DBConnect.Get("select id from matiere where nom='"+matiere+"'");
                 this.id_annee = DBConnect.Get("select id from annee where annee_scolaire='" + label19.Text + "'");
                 this.id_groupe = DBConnect.Get(string.Format("select id from groupe where nom = '{0}' and id_annee = {1}", label14.Text, this.id_annee));
@@ -118,7 +119,7 @@ namespace MassarAdminDesktop
             {
                 DBConnect.Post("START TRANSACTION;");
                 this.id_annee = DBConnect.Get("select id from annee where annee_scolaire='" + label31.Text + "'");
-                
+
                 DBConnect.Post(string.Format("insert ignore into groupe values(null,'{0}',{1},{2})", label33.Text, label33.Text.Substring(0, 1), this.id_annee));
                 
                 this.id_groupe = DBConnect.Get(string.Format("select id from groupe where nom = '{0}' and id_annee = {1}", label33.Text, this.id_annee));
