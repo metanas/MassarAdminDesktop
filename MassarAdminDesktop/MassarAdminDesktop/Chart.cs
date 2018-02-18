@@ -86,7 +86,7 @@ namespace MassarAdminDesktop
             int i = 0;
             s.IsValueShownAsLabel = true;
             s.Name = matiere.intitule;
-            Login.read = DBConnect.Gets(string.Format("SELECT avg(note), titre FROM examiner where id_etudiant = {0} and id_groupe = {1} and id_matiere = {2} group by titre order by titre", eleve.id, this.id_class, matiere.id));
+            Login.read = DBConnect.Gets(string.Format("SELECT avg(note), titre FROM examiner , annee where id_etudiant = {0} and id_groupe = {1} and id_matiere = {2}  and id_annee=annee.id and annee.annee_scolaire='" + HomePreview.idann + "' group by titre order by titre", eleve.id, this.id_class, matiere.id));
             while (Login.read.Read())
             {
                 s.Points.AddXY(Login.read[1].ToString(), Math.Round(float.Parse(Login.read[0].ToString()), 2));
@@ -206,7 +206,7 @@ namespace MassarAdminDesktop
             int i = 0;
             s.IsValueShownAsLabel = true;
             s.Name = matiere.intitule;
-            Login.read = DBConnect.Gets("Select unite , avg(note) from examiner where id_matiere=" + matiere.id + " and  id_etudiant=" + eleve.id + " group by unite");
+            Login.read = DBConnect.Gets("Select unite , avg(note) from examiner,annee where id_matiere=" + matiere.id + " and  id_etudiant=" + eleve.id + " and id_annee=annee.id and annee.annee_scolaire='"+HomePreview.idann+"' group by unite");
             Random r = new Random();
             while (Login.read.Read())
             {
