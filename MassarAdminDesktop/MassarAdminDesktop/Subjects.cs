@@ -33,7 +33,7 @@ namespace MassarAdminDesktop
             this.idm = idm;
             this.nomm = nomm;
             chart ch = new chart(chart1, HomePreview.id);
-            ch.addChartBy(nom: nomgr);
+            ch.addChartBy(nom: nomgr,id_matiere: idm);
 
             Login.read = DBConnect.Gets("select max(calcule.n), min(calcule.n) , avg(calcule.n) from (select avg(note) as n from examiner where id_matiere=" + this.idm+" group by id_etudiant) as calcule");
             if (Login.read.Read())
@@ -103,7 +103,7 @@ namespace MassarAdminDesktop
         {
             ch = new chart(chart1, HomePreview.id);
             Bunifu.Framework.UI.BunifuTileButton the_cc = ((Bunifu.Framework.UI.BunifuTileButton)sender);
-            ch.addChartBy(nom: semestre[cl_buttons.IndexOf(the_cc)] + " " + the_cc.LabelText, semestre: semestre[cl_buttons.IndexOf(the_cc)], titre: the_cc.LabelText);
+            ch.addChartBy(nom: semestre[cl_buttons.IndexOf(the_cc)] + " " + the_cc.LabelText, semestre: semestre[cl_buttons.IndexOf(the_cc)], titre: the_cc.LabelText, id_matiere: idm);
             render_details();
         }
 
@@ -123,7 +123,7 @@ namespace MassarAdminDesktop
         private void bunifuCircleProgressbar1_Click(object sender, EventArgs e)
         {
             chart ch = new chart(chart1, HomePreview.id);
-            ch.addChartBy(nom: HomePreview.nomgr);
+            ch.addChartBy(nom: HomePreview.nomgr, id_matiere: idm);
         }
 
         private void Button1_Click(object sender, EventArgs e)
