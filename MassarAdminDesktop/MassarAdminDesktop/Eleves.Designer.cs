@@ -38,7 +38,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Eleves));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton11 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.rdn = new System.Windows.Forms.DataGridView();
             this.GroupeName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.chart_e = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -57,6 +56,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.bunifuFlatButton10 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.search = new Bunifu.Framework.UI.BunifuTextbox();
+            this.bunifuFlatButton11 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -73,7 +73,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.rdn);
-            this.panel1.Controls.Add(this.GroupeName);
             this.panel1.Controls.Add(this.chart_e);
             this.panel1.Controls.Add(this.dgv_eleves);
             this.panel1.Controls.Add(this.bunifuFlatButton7);
@@ -85,45 +84,11 @@
             this.panel1.Controls.Add(this.bunifuFlatButton10);
             this.panel1.Controls.Add(this.search);
             this.panel1.Controls.Add(this.bunifuFlatButton11);
+            this.panel1.Controls.Add(this.GroupeName);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(947, 547);
             this.panel1.TabIndex = 0;
-            // 
-            // bunifuFlatButton11
-            // 
-            this.bunifuFlatButton11.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton11.BorderRadius = 0;
-            this.bunifuFlatButton11.ButtonText = "  Relevé de notes";
-            this.bunifuFlatButton11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton11.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton11.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton11.Iconimage = global::MassarAdminDesktop.Properties.Resources.cuadro;
-            this.bunifuFlatButton11.Iconimage_right = null;
-            this.bunifuFlatButton11.Iconimage_right_Selected = null;
-            this.bunifuFlatButton11.Iconimage_Selected = null;
-            this.bunifuFlatButton11.IconMarginLeft = 0;
-            this.bunifuFlatButton11.IconMarginRight = 0;
-            this.bunifuFlatButton11.IconRightVisible = true;
-            this.bunifuFlatButton11.IconRightZoom = 0D;
-            this.bunifuFlatButton11.IconVisible = true;
-            this.bunifuFlatButton11.IconZoom = 50D;
-            this.bunifuFlatButton11.IsTab = false;
-            this.bunifuFlatButton11.Location = new System.Drawing.Point(503, 509);
-            this.bunifuFlatButton11.Name = "bunifuFlatButton11";
-            this.bunifuFlatButton11.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton11.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton11.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton11.selected = false;
-            this.bunifuFlatButton11.Size = new System.Drawing.Size(374, 35);
-            this.bunifuFlatButton11.TabIndex = 17;
-            this.bunifuFlatButton11.Text = "  Relevé de notes";
-            this.bunifuFlatButton11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton11.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton11.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton11.Click += new System.EventHandler(this.bunifuFlatButton11_Click);
             // 
             // rdn
             // 
@@ -476,6 +441,41 @@
             this.search.TabIndex = 14;
             this.search.text = "";
             this.search.OnTextChange += new System.EventHandler(this.search_OnTextChange);
+            // 
+            // bunifuFlatButton11
+            // 
+            this.bunifuFlatButton11.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton11.BorderRadius = 0;
+            this.bunifuFlatButton11.ButtonText = "  Relevé de notes";
+            this.bunifuFlatButton11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton11.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton11.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton11.Iconimage = global::MassarAdminDesktop.Properties.Resources.cuadro;
+            this.bunifuFlatButton11.Iconimage_right = null;
+            this.bunifuFlatButton11.Iconimage_right_Selected = null;
+            this.bunifuFlatButton11.Iconimage_Selected = null;
+            this.bunifuFlatButton11.IconMarginLeft = 0;
+            this.bunifuFlatButton11.IconMarginRight = 0;
+            this.bunifuFlatButton11.IconRightVisible = true;
+            this.bunifuFlatButton11.IconRightZoom = 0D;
+            this.bunifuFlatButton11.IconVisible = true;
+            this.bunifuFlatButton11.IconZoom = 50D;
+            this.bunifuFlatButton11.IsTab = false;
+            this.bunifuFlatButton11.Location = new System.Drawing.Point(503, 509);
+            this.bunifuFlatButton11.Name = "bunifuFlatButton11";
+            this.bunifuFlatButton11.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton11.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton11.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton11.selected = false;
+            this.bunifuFlatButton11.Size = new System.Drawing.Size(374, 35);
+            this.bunifuFlatButton11.TabIndex = 17;
+            this.bunifuFlatButton11.Text = "  Relevé de notes";
+            this.bunifuFlatButton11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton11.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton11.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton11.Click += new System.EventHandler(this.bunifuFlatButton11_Click);
             // 
             // bunifuFlatButton1
             // 

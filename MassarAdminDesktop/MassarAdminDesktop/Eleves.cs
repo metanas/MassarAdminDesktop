@@ -141,9 +141,9 @@ namespace MassarAdminDesktop
                     string s = "1";
                     if (radioButton2.Checked)
                         s = "2";
-                    string id_E = dgv_eleves.SelectedRows[0].Cells[3].ToString();
-                    string nomm = dgv_eleves.SelectedRows[0].Cells[0].ToString();
-                    string prenomm = dgv_eleves.SelectedRows[0].Cells[1].ToString();
+                    string id_E = dgv_eleves.SelectedRows[0].Cells[3].Value.ToString();
+                    string nomm = dgv_eleves.SelectedRows[0].Cells[0].Value.ToString();
+                    string prenomm = dgv_eleves.SelectedRows[0].Cells[1].Value.ToString();
                     if (DBConnect.Get("select semestre from examiner where id_etudiant=" + id_E + " and semestre=" + s) == "")
                     {
                         MessageBox.Show("semestre introuvable");

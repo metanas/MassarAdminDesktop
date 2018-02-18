@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Subjects));
             this.panel1 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -96,16 +96,16 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(515, 20);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(529, 370);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -160,7 +160,7 @@
             this.bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuTileButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
             this.bunifuTileButton1.Image = global::MassarAdminDesktop.Properties.Resources.professeur;
             this.bunifuTileButton1.ImagePosition = 21;
@@ -300,7 +300,6 @@
             this.S2box.TabIndex = 8;
             this.S2box.TabStop = false;
             this.S2box.Text = "Semestre 2";
-            this.S2box.Visible = false;
             // 
             // Button10
             // 
@@ -308,7 +307,7 @@
             this.Button10.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button10.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button10.ForeColor = System.Drawing.Color.White;
             this.Button10.Image = global::MassarAdminDesktop.Properties.Resources.exam;
             this.Button10.ImagePosition = 21;
@@ -328,7 +327,7 @@
             this.Button9.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button9.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button9.ForeColor = System.Drawing.Color.White;
             this.Button9.Image = global::MassarAdminDesktop.Properties.Resources.exam;
             this.Button9.ImagePosition = 21;
@@ -348,7 +347,7 @@
             this.Button8.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button8.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button8.ForeColor = System.Drawing.Color.White;
             this.Button8.Image = global::MassarAdminDesktop.Properties.Resources.exam;
             this.Button8.ImagePosition = 21;
@@ -368,7 +367,7 @@
             this.Button7.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button7.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button7.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button7.ForeColor = System.Drawing.Color.White;
             this.Button7.Image = global::MassarAdminDesktop.Properties.Resources.exam;
             this.Button7.ImagePosition = 21;
@@ -425,7 +424,7 @@
             this.Button5.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button5.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button5.ForeColor = System.Drawing.Color.White;
             this.Button5.Image = global::MassarAdminDesktop.Properties.Resources.exam;
             this.Button5.ImagePosition = 21;
@@ -445,7 +444,7 @@
             this.Button4.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button4.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.Button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.Button4.ForeColor = System.Drawing.Color.White;
             this.Button4.Image = global::MassarAdminDesktop.Properties.Resources.exam;
             this.Button4.ImagePosition = 21;

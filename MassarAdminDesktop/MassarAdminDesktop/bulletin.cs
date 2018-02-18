@@ -70,18 +70,19 @@ namespace MassarAdminDesktop
 
             }
 
-            r = DBConnect.Gets("select semestre ,avg(note) from examiner where id_etudiant=" + id + " group by semestre order by semestre ");
+            r = DBConnect.Gets("select semestre ,avg(note) from examiner , annee where id_etudiant=" + id + " and id_annee=annee.id and annee.annee_scolaire='"+annee+"' group by semestre order by semestre ");
             int y = 0;
-            List<float> ff = new List<float>();
+            List<Double> ff = new List<Double>();
+            string s = "";
             while (r.Read())
             {
-
-                ff.Add(float.Parse(r[1].ToString()));
+                s = r[0].ToString();
+                ff.Add(Math.Round(Double.Parse(r[1].ToString()),2));
                 y++;
             }
             if (y == 2)
             {
-                PdfPCell cell = new PdfPCell(new Phrase(ff.Average().ToString(), myfont));
+                PdfPCell cell = new PdfPCell(new Phrase(Math.Round(ff.Average(),2).ToString(), myfont));
                 cell.HorizontalAlignment = 1;
                 cell.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
                 resultat.AddCell(cell);
@@ -96,16 +97,22 @@ namespace MassarAdminDesktop
             }
             else if (y == 1)
             {
-
+                string no = "";
+                string no2 = "";
+                if (s == "2")
+                    no = ff[0].ToString();
+                else no2= ff[0].ToString();
                 PdfPCell cell = new PdfPCell(new Phrase("", myfont));
                 cell.HorizontalAlignment = 1;
                 cell.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
                 resultat.AddCell(cell);
-                PdfPCell cell1 = new PdfPCell(new Phrase("", myfont));
+
+                PdfPCell cell1 = new PdfPCell(new Phrase(no, myfont));
                 cell1.HorizontalAlignment = 1;
                 cell1.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
                 resultat.AddCell(cell1);
-                PdfPCell cell2 = new PdfPCell(new Phrase(ff[0].ToString(), myfont));
+
+                PdfPCell cell2 = new PdfPCell(new Phrase(no2, myfont));
                 cell2.HorizontalAlignment = 1;
                 cell2.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
                 resultat.AddCell(cell2);
@@ -279,7 +286,7 @@ namespace MassarAdminDesktop
 
 
 
-            MySqlDataReader r = DBConnect.Gets("select etudiant.nom, matiere.nom ,examiner.unite, examiner.note,AVG(note)  FROM etudiant,matiere , examiner WHERE semestre=" + semestre + " and etudiant.id=examiner.id_etudiant and examiner.id_etudiant="+id+" and matiere.id=examiner.id_matiere GROUP by unite,examiner.id_matiere ORDER by examiner.id_matiere");
+            MySqlDataReader r = DBConnect.Gets("select etudiant.nom, matiere.nom ,examiner.unite, examiner.note,AVG(note)  FROM etudiant,matiere , examiner , annee WHERE semestre=" + semestre + " and etudiant.id=examiner.id_etudiant and examiner.id_etudiant="+id+" and matiere.id=examiner.id_matiere and id_annee=annee.id and annee.annee_scolaire='"+annee+"' GROUP by unite,examiner.id_matiere ORDER by examiner.id_matiere");
             string[] cols = { "ملاحظات الاساتذة", "نقط المراقبة المستمرة", "المكونات", "المواد" };
             foreach (string c in cols)
             {
@@ -292,7 +299,7 @@ namespace MassarAdminDesktop
             table.WidthPercentage = pourcentage;
             string now = "", last = "", MATIERE = "";
             int x = 0;
-            List<float> n = new List<float>();
+            List<Double> n = new List<Double>();
             List<string> u = new List<string>();
             while (r.Read())
             {
@@ -302,7 +309,7 @@ namespace MassarAdminDesktop
                 if (now == last)
                 {
                     MATIERE = r[1].ToString();
-                    n.Add(float.Parse(r[4].ToString()));
+                    n.Add(Math.Round(Double.Parse(r[4].ToString()),2));
                     u.Add(r[2].ToString());
                 }
                 else
@@ -311,7 +318,7 @@ namespace MassarAdminDesktop
                     n.Clear();
                     u.Clear();
                     MATIERE = r[1].ToString();
-                    n.Add(float.Parse(r[4].ToString()));
+                    n.Add(Math.Round(Double.Parse(r[4].ToString()), 2));
                     u.Add(r[2].ToString());
                 }
                 last = now;
@@ -324,7 +331,7 @@ namespace MassarAdminDesktop
             r.Close();
 
         }
-        void doo(string m, List<float> n, List<string> u)
+        void doo(string m, List<Double> n, List<string> u)
         {
             for (int j = 0; j < n.Count; j++)
             {
@@ -355,7 +362,7 @@ namespace MassarAdminDesktop
                 }
             }
 
-            PdfPCell cell5 = new PdfPCell(new Phrase(n.Average().ToString(), myfont));
+            PdfPCell cell5 = new PdfPCell(new Phrase(Math.Round(n.Average(),2).ToString(), myfont));
             cell5.HorizontalAlignment = 1;
             cell5.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
             table.AddCell(cell5);
