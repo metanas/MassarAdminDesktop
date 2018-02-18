@@ -18,7 +18,6 @@ namespace MassarAdminDesktop
     class chart
     {
         string id_class;
-        List<Color> col = new List<Color> { Color.FromArgb(150, 239, 147, 1), Color.FromArgb(150, 0, 115, 182), Color.FromArgb(150, 0, 166, 90), Color.FromArgb(150, 221, 76, 57), Color.FromArgb(150, 0, 131, 201), Color.FromArgb(150, 239, 147, 1) };
 
         public Chart c;
         ToolTip tp;
@@ -62,11 +61,12 @@ namespace MassarAdminDesktop
             s.IsVisibleInLegend = false;
 
             Login.read = DBConnect.Gets("SELECT avg(note), nom from examiner, matiere where id_matiere=id and id_etudiant = " + id_et + " and id_groupe = " + id_class + " GROUP BY id_matiere");
+            Random r = new Random();
             while (Login.read.Read())
             {
                 s.Points.AddXY(Login.read["nom"].ToString(), Double.Parse(Login.read[0].ToString()));
                 s.Points[i].ToolTip = Math.Round(Double.Parse(Login.read[0].ToString()), 2, MidpointRounding.AwayFromZero).ToString();
-                s.Points[i].Color = this.col[i++];
+                s.Points[i++].Color = Color.FromArgb(r.Next(150, 256), r.Next(0, 256), r.Next(0, 256), r.Next(0, 256));
 
 
             }
@@ -191,7 +191,6 @@ namespace MassarAdminDesktop
             }
             s.Name = nom;
             this.c.Series.Add(s);
-            //this.c.Series.Add(s);
             Login.read.Close();
 
         }
@@ -208,11 +207,12 @@ namespace MassarAdminDesktop
             s.IsValueShownAsLabel = true;
             s.Name = matiere.intitule;
             Login.read = DBConnect.Gets("Select unite , avg(note) from examiner where id_matiere=" + matiere.id + " and  id_etudiant=" + eleve.id + " group by unite");
+            Random r = new Random();
             while (Login.read.Read())
             {
                 s.Points.AddXY(Login.read[0].ToString(), Math.Round(float.Parse(Login.read[1].ToString()), 2));
                 s.Points[i].MarkerSize = 9;
-                s.Points[i].Color = this.col[i++];
+                s.Points[i++].Color = Color.FromArgb(r.Next(150, 256), r.Next(0, 256), r.Next(0, 256), r.Next(0, 256));
 
 
             }
@@ -227,5 +227,6 @@ namespace MassarAdminDesktop
 
 
         }
+       
     }
 }
