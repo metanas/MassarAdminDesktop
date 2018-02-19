@@ -39,7 +39,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Eleves));
             this.panel1 = new System.Windows.Forms.Panel();
             this.rdn = new System.Windows.Forms.DataGridView();
-            this.GroupeName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.chart_e = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgv_eleves = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +56,7 @@
             this.bunifuFlatButton10 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.search = new Bunifu.Framework.UI.BunifuTextbox();
             this.bunifuFlatButton11 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.GroupeName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -107,7 +107,7 @@
             this.rdn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.rdn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rdn.EnableHeadersVisualStyles = false;
-            this.rdn.Location = new System.Drawing.Point(300, 119);
+            this.rdn.Location = new System.Drawing.Point(300, 126);
             this.rdn.Name = "rdn";
             this.rdn.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -126,17 +126,6 @@
             this.rdn.Size = new System.Drawing.Size(577, 291);
             this.rdn.TabIndex = 16;
             this.rdn.Visible = false;
-            // 
-            // GroupeName
-            // 
-            this.GroupeName.AutoSize = true;
-            this.GroupeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupeName.ForeColor = System.Drawing.Color.SeaGreen;
-            this.GroupeName.Location = new System.Drawing.Point(443, 23);
-            this.GroupeName.Name = "GroupeName";
-            this.GroupeName.Size = new System.Drawing.Size(107, 29);
-            this.GroupeName.TabIndex = 13;
-            this.GroupeName.Text = "1APG_2";
             // 
             // chart_e
             // 
@@ -476,6 +465,17 @@
             this.bunifuFlatButton11.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton11.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton11.Click += new System.EventHandler(this.bunifuFlatButton11_Click);
+            // 
+            // GroupeName
+            // 
+            this.GroupeName.AutoSize = true;
+            this.GroupeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupeName.ForeColor = System.Drawing.Color.SeaGreen;
+            this.GroupeName.Location = new System.Drawing.Point(443, 23);
+            this.GroupeName.Name = "GroupeName";
+            this.GroupeName.Size = new System.Drawing.Size(107, 29);
+            this.GroupeName.TabIndex = 13;
+            this.GroupeName.Text = "1APG_2";
             // 
             // bunifuFlatButton1
             // 
