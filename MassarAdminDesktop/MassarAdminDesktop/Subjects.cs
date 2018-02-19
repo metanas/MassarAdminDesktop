@@ -80,35 +80,35 @@ namespace MassarAdminDesktop
             double moy=0;
             int nonv=0;
             double taux;
-
+            double f = 0;
+            double max = 0;double min = 10;
             foreach (var p in this.ch.c.Series[0].Points)
             {
                 moy += p.YValues[0];
-                if(p.YValues[0]<5) nonv++;
+                if (p.YValues[0] > max) max = p.YValues[0];
+                if (p.YValues[0] < min) min = p.YValues[0]; 
+                if (p.YValues[0]<5) nonv++;
             }
             moy /= this.ch.c.Series[0].Points.Count();
+            foreach (var p in this.ch.c.Series[0].Points)
+            {
+                f += (p.YValues[0] - moy) * (p.YValues[0] - moy);
+            }
             taux = Math.Round(100 * ((double)(this.ch.c.Series[0].Points.Count() - nonv) / (double)this.ch.c.Series[0].Points.Count()), 2, MidpointRounding.AwayFromZero);
-
+            f /= this.ch.c.Series[0].Points.Count();
             moy = Math.Round(moy, 2);
             taux = Math.Round(taux, 2);
 
 
 
             moy_i.Text = Math.Round(moy, 2, MidpointRounding.AwayFromZero).ToString();
-            moy_i.Visible = true;
             nonv_i.Text = nonv.ToString();
-            nonv_i.Visible = true;
             taux_i.Text = taux.ToString() + " %";
-            taux_i.Visible = true;
-            ecart_i.Text = "à calculer";
-            ecart_i.Visible = true;
-            exam_i.Text = this.ch.c.Series[0].Name;
-            //a changer de place
-            label5.Visible = true;
-            label6.Visible = true;
-            label7.Visible = true;
-            label8.Visible = true;
-
+            maxNot.Text = Math.Round(max,2).ToString();
+            minNot.Text = Math.Round(min,2).ToString();
+            ecart_i.Text = Math.Round(Math.Sqrt(f),2).ToString();
+            exam_i.Text = (this.ch.c.Series[0].Name.Contains("1 ")) ? (this.ch.c.Series[0].Name.Substring(1, this.ch.c.Series[0].Name.Length-1).ToUpper() + " Semestre 1"): (this.ch.c.Series[0].Name.Substring(1, this.ch.c.Series[0].Name.Length-1).ToUpper() + " Semestre 2");
+            panel2.Visible = true;
         }
 
         private void clickcc(object sender,EventArgs e)
@@ -134,6 +134,7 @@ namespace MassarAdminDesktop
 
         private void bunifuCircleProgressbar1_Click(object sender, EventArgs e)
         {
+            panel2.Visible = false;
             chart ch = new chart(chart1, HomePreview.id);
             ch.addChartBy(nom: HomePreview.nomgr, id_matiere: idm);
         }

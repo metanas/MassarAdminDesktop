@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Subjects));
             this.panel1 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -72,6 +72,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.minNot = new System.Windows.Forms.Label();
+            this.maxNot = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.Infobox.SuspendLayout();
@@ -96,19 +100,20 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(515, 20);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(529, 370);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+            this.toolTip1.SetToolTip(this.chart1, "Double Click pour Zoomer");
             this.chart1.DoubleClick += new System.EventHandler(this.chart1_DoubleClick);
             // 
             // Infobox
@@ -160,12 +165,12 @@
             this.bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuTileButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
             this.bunifuTileButton1.Image = global::MassarAdminDesktop.Properties.Resources.professeur;
-            this.bunifuTileButton1.ImagePosition = 21;
+            this.bunifuTileButton1.ImagePosition = 15;
             this.bunifuTileButton1.ImageZoom = 50;
-            this.bunifuTileButton1.LabelPosition = 43;
+            this.bunifuTileButton1.LabelPosition = 31;
             this.bunifuTileButton1.LabelText = "Enseignant";
             this.bunifuTileButton1.Location = new System.Drawing.Point(17, 18);
             this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
@@ -178,11 +183,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(196, 128);
+            this.label1.Location = new System.Drawing.Point(195, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 22);
             this.label1.TabIndex = 22;
             this.label1.Text = "Moyenne Generale";
+            this.label1.Click += new System.EventHandler(this.bunifuCircleProgressbar1_Click);
             // 
             // bunifuCircleProgressbar1
             // 
@@ -205,6 +211,7 @@
             this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(91, 91);
             this.bunifuCircleProgressbar1.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.bunifuCircleProgressbar1, "voir moyenne de  la classe\r\n");
             this.bunifuCircleProgressbar1.Value = 0;
             this.bunifuCircleProgressbar1.Click += new System.EventHandler(this.bunifuCircleProgressbar1_Click);
             // 
@@ -214,11 +221,12 @@
             this.moyenne.BackColor = System.Drawing.Color.Transparent;
             this.moyenne.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moyenne.ForeColor = System.Drawing.Color.Black;
-            this.moyenne.Location = new System.Drawing.Point(242, 152);
+            this.moyenne.Location = new System.Drawing.Point(246, 152);
             this.moyenne.Name = "moyenne";
             this.moyenne.Size = new System.Drawing.Size(55, 24);
             this.moyenne.TabIndex = 20;
             this.moyenne.Text = "10,38";
+            this.moyenne.Click += new System.EventHandler(this.bunifuCircleProgressbar1_Click);
             // 
             // min
             // 
@@ -314,7 +322,7 @@
             this.Button10.ImageZoom = 50;
             this.Button10.LabelPosition = 43;
             this.Button10.LabelText = "cc5";
-            this.Button10.Location = new System.Drawing.Point(405, 39);
+            this.Button10.Location = new System.Drawing.Point(406, 32);
             this.Button10.Margin = new System.Windows.Forms.Padding(6);
             this.Button10.Name = "Button10";
             this.Button10.Size = new System.Drawing.Size(63, 96);
@@ -334,7 +342,7 @@
             this.Button9.ImageZoom = 50;
             this.Button9.LabelPosition = 43;
             this.Button9.LabelText = "cc4";
-            this.Button9.Location = new System.Drawing.Point(306, 39);
+            this.Button9.Location = new System.Drawing.Point(307, 32);
             this.Button9.Margin = new System.Windows.Forms.Padding(6);
             this.Button9.Name = "Button9";
             this.Button9.Size = new System.Drawing.Size(63, 96);
@@ -354,7 +362,7 @@
             this.Button8.ImageZoom = 50;
             this.Button8.LabelPosition = 43;
             this.Button8.LabelText = "cc3";
-            this.Button8.Location = new System.Drawing.Point(207, 39);
+            this.Button8.Location = new System.Drawing.Point(208, 32);
             this.Button8.Margin = new System.Windows.Forms.Padding(6);
             this.Button8.Name = "Button8";
             this.Button8.Size = new System.Drawing.Size(63, 96);
@@ -374,7 +382,7 @@
             this.Button7.ImageZoom = 50;
             this.Button7.LabelPosition = 43;
             this.Button7.LabelText = "cc2";
-            this.Button7.Location = new System.Drawing.Point(108, 39);
+            this.Button7.Location = new System.Drawing.Point(109, 32);
             this.Button7.Margin = new System.Windows.Forms.Padding(6);
             this.Button7.Name = "Button7";
             this.Button7.Size = new System.Drawing.Size(63, 96);
@@ -394,7 +402,7 @@
             this.Button6.ImageZoom = 50;
             this.Button6.LabelPosition = 43;
             this.Button6.LabelText = "cc1";
-            this.Button6.Location = new System.Drawing.Point(9, 39);
+            this.Button6.Location = new System.Drawing.Point(10, 32);
             this.Button6.Margin = new System.Windows.Forms.Padding(6);
             this.Button6.Name = "Button6";
             this.Button6.Size = new System.Drawing.Size(63, 96);
@@ -431,7 +439,7 @@
             this.Button5.ImageZoom = 50;
             this.Button5.LabelPosition = 43;
             this.Button5.LabelText = "cc5";
-            this.Button5.Location = new System.Drawing.Point(405, 37);
+            this.Button5.Location = new System.Drawing.Point(405, 24);
             this.Button5.Margin = new System.Windows.Forms.Padding(6);
             this.Button5.Name = "Button5";
             this.Button5.Size = new System.Drawing.Size(63, 96);
@@ -451,7 +459,7 @@
             this.Button4.ImageZoom = 50;
             this.Button4.LabelPosition = 43;
             this.Button4.LabelText = "cc4";
-            this.Button4.Location = new System.Drawing.Point(306, 37);
+            this.Button4.Location = new System.Drawing.Point(306, 24);
             this.Button4.Margin = new System.Windows.Forms.Padding(6);
             this.Button4.Name = "Button4";
             this.Button4.Size = new System.Drawing.Size(63, 96);
@@ -471,7 +479,7 @@
             this.Button3.ImageZoom = 50;
             this.Button3.LabelPosition = 43;
             this.Button3.LabelText = "cc3";
-            this.Button3.Location = new System.Drawing.Point(207, 37);
+            this.Button3.Location = new System.Drawing.Point(207, 24);
             this.Button3.Margin = new System.Windows.Forms.Padding(6);
             this.Button3.Name = "Button3";
             this.Button3.Size = new System.Drawing.Size(63, 96);
@@ -491,7 +499,7 @@
             this.Button2.ImageZoom = 50;
             this.Button2.LabelPosition = 43;
             this.Button2.LabelText = "cc2";
-            this.Button2.Location = new System.Drawing.Point(108, 37);
+            this.Button2.Location = new System.Drawing.Point(108, 24);
             this.Button2.Margin = new System.Windows.Forms.Padding(6);
             this.Button2.Name = "Button2";
             this.Button2.Size = new System.Drawing.Size(63, 96);
@@ -511,7 +519,7 @@
             this.Button1.ImageZoom = 50;
             this.Button1.LabelPosition = 43;
             this.Button1.LabelText = "cc1";
-            this.Button1.Location = new System.Drawing.Point(9, 37);
+            this.Button1.Location = new System.Drawing.Point(9, 26);
             this.Button1.Margin = new System.Windows.Forms.Padding(6);
             this.Button1.Name = "Button1";
             this.Button1.Size = new System.Drawing.Size(63, 96);
@@ -522,6 +530,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.minNot);
+            this.panel2.Controls.Add(this.maxNot);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label77);
             this.panel2.Controls.Add(this.exam_i);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.nonv_i);
@@ -536,6 +548,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(529, 219);
             this.panel2.TabIndex = 11;
+            this.panel2.Visible = false;
             // 
             // exam_i
             // 
@@ -543,18 +556,18 @@
             this.exam_i.BackColor = System.Drawing.Color.White;
             this.exam_i.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exam_i.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
-            this.exam_i.Location = new System.Drawing.Point(144, 9);
+            this.exam_i.Location = new System.Drawing.Point(173, 16);
             this.exam_i.Name = "exam_i";
-            this.exam_i.Size = new System.Drawing.Size(71, 24);
+            this.exam_i.Size = new System.Drawing.Size(0, 24);
             this.exam_i.TabIndex = 9;
-            this.exam_i.Text = "exam_i";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(20, 20);
+            this.label9.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(25, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 13);
+            this.label9.Size = new System.Drawing.Size(129, 16);
             this.label9.TabIndex = 8;
             this.label9.Text = "Détails de l\'examen :";
             // 
@@ -563,89 +576,122 @@
             this.nonv_i.AutoSize = true;
             this.nonv_i.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nonv_i.ForeColor = System.Drawing.Color.Red;
-            this.nonv_i.Location = new System.Drawing.Point(297, 168);
+            this.nonv_i.Location = new System.Drawing.Point(231, 168);
             this.nonv_i.Name = "nonv_i";
             this.nonv_i.Size = new System.Drawing.Size(24, 26);
             this.nonv_i.TabIndex = 7;
             this.nonv_i.Text = "4";
-            this.nonv_i.Visible = false;
             // 
             // ecart_i
             // 
             this.ecart_i.AutoSize = true;
             this.ecart_i.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ecart_i.Location = new System.Drawing.Point(297, 86);
+            this.ecart_i.Location = new System.Drawing.Point(224, 86);
             this.ecart_i.Name = "ecart_i";
             this.ecart_i.Size = new System.Drawing.Size(42, 26);
             this.ecart_i.TabIndex = 6;
             this.ecart_i.Text = "1,5";
-            this.ecart_i.Visible = false;
             // 
             // taux_i
             // 
             this.taux_i.AutoSize = true;
             this.taux_i.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taux_i.Location = new System.Drawing.Point(51, 168);
+            this.taux_i.Location = new System.Drawing.Point(46, 168);
             this.taux_i.Name = "taux_i";
             this.taux_i.Size = new System.Drawing.Size(74, 26);
             this.taux_i.TabIndex = 5;
             this.taux_i.Text = "100 %";
-            this.taux_i.Visible = false;
             // 
             // moy_i
             // 
             this.moy_i.AutoSize = true;
             this.moy_i.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moy_i.Location = new System.Drawing.Point(51, 86);
+            this.moy_i.Location = new System.Drawing.Point(50, 86);
             this.moy_i.Name = "moy_i";
             this.moy_i.Size = new System.Drawing.Size(36, 26);
             this.moy_i.TabIndex = 4;
             this.moy_i.Text = "10";
-            this.moy_i.Visible = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(260, 51);
+            this.label8.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(203, 51);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 17);
+            this.label8.Size = new System.Drawing.Size(73, 16);
             this.label8.TabIndex = 3;
             this.label8.Text = "Ecart type :";
-            this.label8.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(260, 133);
+            this.label7.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(203, 133);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 17);
+            this.label7.Size = new System.Drawing.Size(121, 16);
             this.label7.TabIndex = 2;
             this.label7.Text = "Elèves non validés :";
-            this.label7.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 133);
+            this.label6.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(29, 133);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 17);
+            this.label6.Size = new System.Drawing.Size(108, 16);
             this.label6.TabIndex = 1;
             this.label6.Text = "Taux de réussite :";
-            this.label6.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 51);
+            this.label5.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(29, 51);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 17);
+            this.label5.Size = new System.Drawing.Size(68, 16);
             this.label5.TabIndex = 0;
             this.label5.Text = "Moyenne :";
-            this.label5.Visible = false;
+            // 
+            // minNot
+            // 
+            this.minNot.AutoSize = true;
+            this.minNot.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minNot.ForeColor = System.Drawing.Color.Red;
+            this.minNot.Location = new System.Drawing.Point(401, 168);
+            this.minNot.Name = "minNot";
+            this.minNot.Size = new System.Drawing.Size(24, 26);
+            this.minNot.TabIndex = 13;
+            this.minNot.Text = "4";
+            // 
+            // maxNot
+            // 
+            this.maxNot.AutoSize = true;
+            this.maxNot.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxNot.Location = new System.Drawing.Point(404, 86);
+            this.maxNot.Name = "maxNot";
+            this.maxNot.Size = new System.Drawing.Size(42, 26);
+            this.maxNot.TabIndex = 12;
+            this.maxNot.Text = "1,5";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(379, 51);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(95, 16);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Note Maximal:";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.Location = new System.Drawing.Point(379, 133);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(95, 16);
+            this.label77.TabIndex = 10;
+            this.label77.Text = "Note Minimal :";
             // 
             // Subjects
             // 
@@ -716,5 +762,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label exam_i;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label minNot;
+        private System.Windows.Forms.Label maxNot;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label77;
     }
 }
