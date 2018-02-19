@@ -107,7 +107,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(467, 47);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Les classes Disponible";
+            this.label1.Text = "Les classes disponibles";
             // 
             // Column3
             // 
