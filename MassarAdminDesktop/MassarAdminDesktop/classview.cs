@@ -19,6 +19,7 @@ namespace MassarAdminDesktop
 
         private void classview_Load(object sender, EventArgs e)
         {
+            Action.Visible = Login.admin.isSuper;
             bunifuCustomDataGrid1.Rows.Clear();
             Login.read = DBConnect.Gets("select groupe.nom , groupe.id ,count(etudiant_groupe.id_etudiant) from etudiant_groupe , groupe,  annee where groupe.id=etudiant_groupe.id_groupe and  annee.annee_scolaire='" + HomePreview.idann + "' and  annee.id=groupe.id_annee group by etudiant_groupe.id_groupe ; ");
             while (Login.read.Read()) {
@@ -44,6 +45,7 @@ namespace MassarAdminDesktop
                             DBConnect.Post("Delete From groupe_matiere_enseignant where id_groupe=" + idGroupe);
                         });
                         classview_Load(sender, e);
+                        HomePreview.HomeForm.Text = "hello";
                     }
                 }
             }

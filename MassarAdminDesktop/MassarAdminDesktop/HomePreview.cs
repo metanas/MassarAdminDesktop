@@ -71,7 +71,8 @@ namespace MassarAdminDesktop
         }
 
         void loadYears()
-        { 
+        {
+                listYear.Clear();
                 Login.read = DBConnect.Gets("select annee_scolaire from annee order by annee_scolaire desc ; ");
                 while (Login.read.Read())
                     listYear.Add(Login.read["annee_scolaire"].ToString());
@@ -173,7 +174,7 @@ namespace MassarAdminDesktop
             forward.Image = Resources.ForwardB;
             forward.Size = new Size(40, 29);
             forward.BackColor = Color.Transparent;
-            forward.Enabled = false;
+            forward.Visible = false;
             forward.Location = new Point(XP - forward.Width , 135);
             forward.Click += new EventHandler(right_click);
             panel4.Controls.Add(forward);
@@ -182,7 +183,7 @@ namespace MassarAdminDesktop
             backward.Location = new Point(0, 135);
             backward.Size = new Size(40, 29);
             backward.BackColor = Color.Transparent;
-            backward.Enabled = false;
+            backward.Visible = false;
             backward.Image = Resources.Backward;
             backward.Click += new EventHandler(left_click);
             panel4.Controls.Add(backward);
@@ -191,18 +192,21 @@ namespace MassarAdminDesktop
         private void left_click(object sender, EventArgs e)
         {
             label2.Text = listYear[++yearSelected].Replace('/', '-');
-            if (yearSelected + 1 >= listYear.Count) backward.Enabled = false;
-            forward.Enabled = true;
+            idann = listYear[yearSelected];
+            if (yearSelected + 1 >= listYear.Count) backward.Visible = false;
+            forward.Visible = true;
             loadClasse();
-
+            HomeButton_Click(null, null);
         }
 
         private void right_click(object sender, EventArgs e)
         {
             label2.Text = listYear[--yearSelected].Replace('/', '-');
-            if (yearSelected == 0) forward.Enabled = false;
-            backward.Enabled = true;
+            idann = listYear[yearSelected];
+            if (yearSelected == 0) forward.Visible = false;
+            backward.Visible = true;
             loadClasse();
+            HomeButton_Click(null, null);
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e )
@@ -281,7 +285,7 @@ namespace MassarAdminDesktop
                 panel5.Visible = true;
                 if (listYear.Count >= 2)
                 {
-                    backward.Enabled = true;
+                    backward.Visible = true;
                 }
                 else if (listYear.Count == 0)
                     return;
