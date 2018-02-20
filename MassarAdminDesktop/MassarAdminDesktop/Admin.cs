@@ -62,7 +62,7 @@ namespace MassarAdminDesktop
                 return "  ";
             if (sqlingection(nom) || sqlingection(pass) || sqlingection(isSuper.ToString()))
                 return "les informations ne doit pas contenir ces lettres  ( `  '  " + '"' + " ) ";
-            if (nom.Length < 8 || pass.Length < 8)
+            if (pass.Length < 8)
                 return "minimum 8 lettres ";
             if (DBConnect.Post("insert into admin (nom,password,isSuper) values ('" + nom + "','" + cript(pass) + "','" + isSuper.ToString() + "')"))
                 return "nouveau admin est bien cree";

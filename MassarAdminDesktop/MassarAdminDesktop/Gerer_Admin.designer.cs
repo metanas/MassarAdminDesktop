@@ -66,6 +66,7 @@
             this.ajouter.TabIndex = 15;
             this.ajouter.Text = "Ajouter";
             this.ajouter.UseVisualStyleBackColor = true;
+            this.ajouter.Click += new System.EventHandler(this.ajouter_Click);
             // 
             // Super
             // 
