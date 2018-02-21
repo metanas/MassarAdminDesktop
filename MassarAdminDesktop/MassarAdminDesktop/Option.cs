@@ -32,29 +32,46 @@ namespace MassarAdminDesktop
             }
             stringConnection = "SERVER=" + lw[0] + ";" + "DATABASE=" +
                 lw[1] + ";" + "UID=" + lw[2] + ";" + "PASSWORD=" + lw[3] + "; Character Set=utf8";
-            server.Text = lw[0];
-            database.Text = lw[1];
-            username.Text = lw[2];
-            password.Text = lw[3];
+            server.Text = (lw[0] == " ") ? "" : lw[0];
+            database.Text = (lw[1] == " ") ? "" :lw[1];
+            username.Text = (lw[2] == " ") ? "" : lw[2];
+            password.Text = (lw[0] == " ") ? "" : lw[3];
         }
        
-        private void test_Click(object sender, EventArgs e)
+        private async void test_Click(object sender, EventArgs e)
         {
+
             string connectionString = "SERVER=" + server.Text + ";" + "DATABASE=" +
                        database.Text + ";" + "UID=" + username.Text + ";" + "PASSWORD=" + password.Text + "; Character Set=utf8";
-            try {
-                DBConnect.connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString);                    
-                DBConnect.connection.Open();
-               
+            bunifuCircleProgressbar1.Visible = true;
+            test.Text = "";
+            label1.Text = "";
+            bool work = false;
+            await Task.Run(() =>
+            {
+                try
+                {
+                    DBConnect.connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString);
+                    DBConnect.connection.Open();
+                    work = true;
+                }
+                catch
+                {
+                    work = false;
+                }
+            });
+            if (work)
+            {
                 label1.Text = "connexion réussie";
-
                 label1.ForeColor = Color.LightGreen;
             }
-            catch
+            else
             {
                 label1.Text = "connection échoué";
                 label1.ForeColor = Color.DarkRed;
             }
+            bunifuCircleProgressbar1.Visible = false;
+            test.Text = "Tester";
         }
 
         private void button2_Click(object sender, EventArgs e)

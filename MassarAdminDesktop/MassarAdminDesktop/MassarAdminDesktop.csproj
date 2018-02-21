@@ -138,6 +138,12 @@
     <Compile Include="Groupe.Designer.cs">
       <DependentUpon>Groupe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Historique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historique.Designer.cs">
+      <DependentUpon>Historique.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomePreview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Groupe.resx">
       <DependentUpon>Groupe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historique.resx">
+      <DependentUpon>Historique.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePreview.resx">
       <DependentUpon>HomePreview.cs</DependentUpon>
@@ -360,6 +369,9 @@
   <ItemGroup>
     <None Include="Resources\cuadro.png" />
     <None Include="Resources\hide.png" />
+    <None Include="Resources\historique.png" />
+    <None Include="Resources\background.jpeg" />
+    <None Include="Resources\background.jpg" />
     <Content Include="Resources\img.png" />
     <None Include="Resources\Loupe.png" />
   </ItemGroup>
