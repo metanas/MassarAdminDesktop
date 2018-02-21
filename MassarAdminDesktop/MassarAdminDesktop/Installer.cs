@@ -113,6 +113,8 @@ namespace MassarAdminDesktop
             progressBar1.Value += 5;
             DBConnect.Post("INSERT INTO `niveau` (`id`, `nom`) VALUES (1, '1APG'),(2, '2APG'),(3, '3APG'),(4, '4APG'),(5, '5APG'),(6, '6APG'); ");
             progressBar1.Value += 5;
+            DBConnect.Post(string.Format("GRANT ALL PRIVILEGES ON massar.* TO '{0}'@'%' identified by '{1}' WITH GRANT OPTION;", textBox7.Text, textBox6.Text));
+            DBConnect.Post("FLUSH PRIVILEGES");
             DBConnect.Post("COMMIT;");
             dirCreate();
         }

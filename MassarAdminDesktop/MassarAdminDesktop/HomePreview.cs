@@ -171,23 +171,26 @@ namespace MassarAdminDesktop
 
         public void LeftRight()
         {
-            forward = new BunifuImageButton();
-            forward.Image = Resources.ForwardB;
-            forward.Size = new Size(40, 29);
-            forward.BackColor = Color.Transparent;
-            forward.Visible = false;
-            forward.Location = new Point(XP - forward.Width , 135);
-            forward.Click += new EventHandler(right_click);
-            panel4.Controls.Add(forward);
+            if (forward == null && backward == null)
+            {
+                forward = new BunifuImageButton();
+                forward.Image = Resources.ForwardB;
+                forward.Size = new Size(40, 29);
+                forward.BackColor = Color.Transparent;
+                forward.Visible = false;
+                forward.Location = new Point(XP - forward.Width, 135);
+                forward.Click += new EventHandler(right_click);
+                panel4.Controls.Add(forward);
 
-            backward = new BunifuImageButton();
-            backward.Location = new Point(0, 135);
-            backward.Size = new Size(40, 29);
-            backward.BackColor = Color.Transparent;
-            backward.Visible = false;
-            backward.Image = Resources.Backward;
-            backward.Click += new EventHandler(left_click);
-            panel4.Controls.Add(backward);
+                backward = new BunifuImageButton();
+                backward.Location = new Point(0, 135);
+                backward.Size = new Size(40, 29);
+                backward.BackColor = Color.Transparent;
+                backward.Visible = false;
+                backward.Image = Resources.Backward;
+                backward.Click += new EventHandler(left_click);
+                panel4.Controls.Add(backward);
+            }
         }
 
         private void left_click(object sender, EventArgs e)
@@ -257,6 +260,7 @@ namespace MassarAdminDesktop
             ClassButton.Clear();
             PreviewFrom.Clear();
             Login login = new Login();
+            yearSelected = 0;
             SuperUser.Visible = false;
             label5.Visible = false;
             resizeLocationForm(login);
@@ -267,6 +271,8 @@ namespace MassarAdminDesktop
             panel5.Visible = false;
             panel4.Controls.Remove(forward);
             panel4.Controls.Remove(backward);
+            forward = null;
+            backward = null; 
             BackButton.Visible = false;
             HomeButton.Visible = false;
         }

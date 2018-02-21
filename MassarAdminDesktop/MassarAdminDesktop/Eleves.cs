@@ -137,6 +137,10 @@ namespace MassarAdminDesktop
         {
             if (e.RowIndex != -1)
             {
+                if(e.ColumnIndex == 0 || e.ColumnIndex == 1)
+                {
+                    rdnView();
+                }
                 if (e.ColumnIndex == 2) {
                     string s = "1";
                     if (radioButton2.Checked)
@@ -324,13 +328,12 @@ namespace MassarAdminDesktop
         private void bunifuFlatButton11_Click(object sender, EventArgs e)
         {
             rdnView();
-
         }
 
         private void dgv_eleves_SelectionChanged(object sender, EventArgs e)
         {
-            try { rdnView(); }
-            catch { }
+              
+            
         }
     }
 }
