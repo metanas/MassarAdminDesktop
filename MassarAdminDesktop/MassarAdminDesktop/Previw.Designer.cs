@@ -83,9 +83,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1029, 525);
+            this.panel1.Size = new System.Drawing.Size(1074, 513);
             this.panel1.TabIndex = 0;
             // 
             // Importer_b
@@ -106,7 +106,7 @@
             this.groupBox1.Controls.Add(this.materialLabel1);
             this.groupBox1.Location = new System.Drawing.Point(872, 199);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(154, 269);
+            this.groupBox1.Size = new System.Drawing.Size(202, 269);
             this.groupBox1.TabIndex = 66;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contraintes";
@@ -518,7 +518,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1038, 537);
+            this.ClientSize = new System.Drawing.Size(1089, 537);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(130, 30);
@@ -526,7 +526,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Previw";
             this.Load += new System.EventHandler(this.Previw_Load);
-            this.Resize += new System.EventHandler(this.Previw_Resize);
+            this.Resize += new System.EventHandler(this.Groupe_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

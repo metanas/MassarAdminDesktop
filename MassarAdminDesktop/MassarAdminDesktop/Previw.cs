@@ -34,7 +34,7 @@ namespace MassarAdminDesktop
             }
         }
 
-        private void Previw_Resize(object sender, EventArgs e)
+        private void Groupe_Resize(object sender, EventArgs e)
         {
             panel1.Location = new Point((this.Width - panel1.Width) / 2, (this.Height - panel1.Height) / 2);
         }
@@ -85,7 +85,11 @@ namespace MassarAdminDesktop
                     DBConnect.Post("insert ignore into matiere values (null,'"+ matiere + "')");
                 string idMatiere = DBConnect.Get("select id from matiere where nom='"+matiere+"'");
                 this.id_annee = DBConnect.Get("select id from annee where annee_scolaire='" + label19.Text + "'");
-                this.id_groupe = DBConnect.Get(string.Format("select id from groupe where nom = '{0}' and id_annee = {1}", label14.Text, this.id_annee));
+                if(id_annee == "") {
+                    MessageBox.Show("l'annee n'existe pas");
+                    return;
+                }
+                this.id_groupe = DBConnect.Get(string.Format("select id from groupe where nom = '{0}' and id_annee = '{1}'", label14.Text, this.id_annee));
                 if (this.id_groupe == "") {
                     MessageBox.Show("groupe introuvable");
                     return;
@@ -99,8 +103,7 @@ namespace MassarAdminDesktop
                     
                     foreach (int col in this.notescols)
                     {
-                        query += string.Format(" ({0},{1},{2},{3},'{4}','{5}','{6}',{7}) ,",this.id_annee,this.id_groupe,dataGridView1.Rows[row].Cells[0].Value.ToString(),idMatiere,titre,semestre, dataGridView1.Columns[col].HeaderText,dataGridView1.Rows[row].Cells[col].Value.ToString().Replace(',','.'));
-
+                        query += string.Format(" ({0},{1},{2},{3},'{4}','{5}','{6}','{7}', {8}, '{9}') ,",this.id_annee,this.id_groupe,dataGridView1.Rows[row].Cells[0].Value.ToString(),idMatiere,titre,semestre, dataGridView1.Columns[col].HeaderText,dataGridView1.Rows[row].Cells[col].Value.ToString().Replace(',','.'), "now()", Login.admin.nom);
 
                     }
                 }

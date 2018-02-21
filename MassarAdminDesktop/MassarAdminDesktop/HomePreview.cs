@@ -56,6 +56,7 @@ namespace MassarAdminDesktop
             label3.Font = new Font(latoReg.Families[0], 12, FontStyle.Bold);
             label4.Font = new Font(latoReg.Families[0], 12, FontStyle.Bold);
             label5.Font = new Font(latoReg.Families[0], 12, FontStyle.Bold);
+            label6.Font = new Font(latoReg.Families[0], 12, FontStyle.Bold);
             Login login = new Login();
             resizeLocationForm(login);
         }
@@ -261,6 +262,8 @@ namespace MassarAdminDesktop
             resizeLocationForm(login);
             label1.Visible = false;
             label2.Visible = false;
+            label6.Visible = false;
+            histo.Visible = false;
             panel5.Visible = false;
             panel4.Controls.Remove(forward);
             panel4.Controls.Remove(backward);
@@ -296,6 +299,8 @@ namespace MassarAdminDesktop
                 resizeLocationForm(analyse);
                 SuperUser.Visible = Login.admin.isSuper;
                 label5.Visible = Login.admin.isSuper;
+                histo.Visible = Login.admin.isSuper;
+                label6.Visible = Login.admin.isSuper;
 
             }
             else if (this.Text == "loadClasse"){
@@ -349,6 +354,14 @@ namespace MassarAdminDesktop
                 master.Close();
             }
         }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            Historique historique = new Historique();
+            HomePreview.resizeLocationForm(historique);
+        }
+
+      
 
         private void Home_ResizeBegin(object sender, EventArgs e)
         {
