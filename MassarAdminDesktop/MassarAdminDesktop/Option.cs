@@ -45,13 +45,14 @@ namespace MassarAdminDesktop
             try {
                 DBConnect.connection = new MySql.Data.MySqlClient.MySqlConnection(connectionString);                    
                 DBConnect.connection.Open();
-                 
-                label1.Text = "connection reussie";
+                });
+                label1.Text = "connexion réussie";
+
                 label1.ForeColor = Color.LightGreen;
             }
             catch
             {
-                label1.Text = "connection failed";
+                label1.Text = "connection échoué";
                 label1.ForeColor = Color.DarkRed;
             }
         }

@@ -97,7 +97,7 @@
             this.Importer_b.Primary = true;
             this.Importer_b.Size = new System.Drawing.Size(184, 35);
             this.Importer_b.TabIndex = 67;
-            this.Importer_b.Text = "Impoter";
+            this.Importer_b.Text = "Importer";
             this.Importer_b.UseVisualStyleBackColor = true;
             this.Importer_b.Click += new System.EventHandler(this.Importer_b_Click);
             // 
@@ -109,7 +109,7 @@
             this.groupBox1.Size = new System.Drawing.Size(154, 269);
             this.groupBox1.TabIndex = 66;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "list Error";
+            this.groupBox1.Text = "Contraintes";
             this.groupBox1.Visible = false;
             // 
             // materialLabel1

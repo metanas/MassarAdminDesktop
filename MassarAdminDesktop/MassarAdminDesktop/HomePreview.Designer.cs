@@ -36,6 +36,7 @@
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuperUser = new Bunifu.Framework.UI.BunifuImageButton();
             this.HomeButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.BackButton = new Bunifu.Framework.UI.BunifuImageButton();
@@ -49,7 +50,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
@@ -165,12 +165,26 @@
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(644, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Gestion des utilisateurs";
+            this.label5.Visible = false;
+            this.label5.Click += new System.EventHandler(this.SuperUser_Click);
+            // 
             // SuperUser
             // 
             this.SuperUser.BackColor = System.Drawing.Color.Transparent;
             this.SuperUser.Image = global::MassarAdminDesktop.Properties.Resources.superUser1;
             this.SuperUser.ImageActive = null;
-            this.SuperUser.Location = new System.Drawing.Point(691, 7);
+            this.SuperUser.Location = new System.Drawing.Point(605, 7);
             this.SuperUser.Name = "SuperUser";
             this.SuperUser.Size = new System.Drawing.Size(33, 30);
             this.SuperUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -295,6 +309,7 @@
             // search
             // 
             this.search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(160)))), ((int)(((byte)(155)))));
+            this.search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search.BackgroundImage")));
             this.search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.search.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -345,23 +360,9 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Annee:";
+            this.label1.Text = "Année:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(730, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Geree utilisateur";
-            this.label5.Visible = false;
-            this.label5.Click += new System.EventHandler(this.SuperUser_Click);
             // 
             // HomePreview
             // 
