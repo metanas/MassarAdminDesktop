@@ -37,7 +37,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,16 +75,17 @@
             this.Column3,
             this.Column1,
             this.Column2,
-            this.Column4});
+            this.Action});
+            this.bunifuCustomDataGrid1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(219, 169);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(0, 131);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(342, 257);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(688, 327);
             this.bunifuCustomDataGrid1.TabIndex = 11;
             this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BunifuCustomDataGrid1_CellClick);
             // 
@@ -105,9 +106,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(169, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(467, 47);
+            this.label1.Size = new System.Drawing.Size(482, 47);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Les classes Disponible";
+            this.label1.Text = "Les classes disponibles";
             // 
             // Column3
             // 
@@ -118,21 +119,23 @@
             // 
             // Column1
             // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column1.HeaderText = "Nom du Classe";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column2.HeaderText = "Nbr Etudiants";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
-            // Column4
+            // Action
             // 
-            this.Column4.HeaderText = "Action";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.ReadOnly = true;
             // 
             // classview
             // 
@@ -163,6 +166,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewButtonColumn Column4;
+        private System.Windows.Forms.DataGridViewButtonColumn Action;
     }
 }

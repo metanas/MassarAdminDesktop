@@ -120,16 +120,18 @@
             this.Column4,
             this.Column6,
             this.Column7});
+            this.bunifuCustomDataGrid1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
+            this.bunifuCustomDataGrid1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(3, 161);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(0, 164);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.RowHeadersVisible = false;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(608, 295);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(614, 295);
             this.bunifuCustomDataGrid1.TabIndex = 3;
             this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
             // 

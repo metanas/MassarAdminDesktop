@@ -315,7 +315,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(180, 102);
+            this.label19.Location = new System.Drawing.Point(165, 102);
             this.label19.Name = "label19";
             this.label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label19.Size = new System.Drawing.Size(29, 13);

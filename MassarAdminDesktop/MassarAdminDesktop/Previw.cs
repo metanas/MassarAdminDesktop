@@ -52,7 +52,6 @@ namespace MassarAdminDesktop
             {
                 if (dataGridView1.Rows[i].Cells[0].Value!=null && dataGridView1.Rows[i].Cells[0].Value.ToString().Trim().Length > 0)
                     this.notesrows.Add(i);
-
             }
         }
         private void Importer_b_Click(object sender, EventArgs e)
@@ -119,7 +118,12 @@ namespace MassarAdminDesktop
             {
                 DBConnect.Post("START TRANSACTION;");
                 this.id_annee = DBConnect.Get("select id from annee where annee_scolaire='" + label31.Text + "'");
-
+                if (id_annee == "")
+                {
+                    DBConnect.Post("insert into annee (annee_scolaire) values ('" + label31.Text + "');");
+                    this.id_annee = DBConnect.Get("select id from annee where annee_scolaire='" + label31.Text + "'");
+                    HomePreview.HomeForm.Text = "hello";
+                }
                 DBConnect.Post(string.Format("insert ignore into groupe values(null,'{0}',{1},{2})", label33.Text, label33.Text.Substring(0, 1), this.id_annee));
                 
                 this.id_groupe = DBConnect.Get(string.Format("select id from groupe where nom = '{0}' and id_annee = {1}", label33.Text, this.id_annee));
@@ -155,10 +159,14 @@ namespace MassarAdminDesktop
                 DBConnect.Post("COMMIT;");
                 HomePreview.HomeForm.Text = "loadClasse";
             }
-        }
-
-        private void Previw_Load(object sender, EventArgs e)
+        }    
+        void showLoding()
         {
+        }
+        private async void Previw_Load(object sender, EventArgs e)
+        {
+
+           
             if (path != null)
             {
                 Excel excel = new Excel(path, "r");
@@ -172,7 +180,7 @@ namespace MassarAdminDesktop
                 {
                     panel2.Visible = true;
                     panel3.Visible = false;
-                    label = new List<Label>(){ label10, label11, label12, label13, label14, label15, label16, label17, label18, label19 };
+                    label = new List<Label>() { label10, label11, label12, label13, label14, label15, label16, label17, label18, label19 };
                     s = new List<string>() { "أكاديمية :", "الإقليمية", "مؤسسة", "المستوى  :", "القسم  :", "الاستاذ", "الدورة  :", "نقط :", "المادة", "السنة الدراسية :" };
                     for (int i = 0; i < excel.find("ID")[0]; i++)
                     {
@@ -222,13 +230,13 @@ namespace MassarAdminDesktop
                             dataGridView1.ColumnCount = we - y;
                             for (int j = y; j < we; j++)
                             {
-                                dataGridView1.Columns[f++].HeaderText = excel.getContent(i, j) + " " + excel.getContent(i + 1, j);  
+                                dataGridView1.Columns[f++].HeaderText = excel.getContent(i, j) + " " + excel.getContent(i + 1, j);
                             }
 
                         }
                         else
                         {
-                            if (excel.getContent(i+1, y) == "")
+                            if (excel.getContent(i + 1, y) == "")
                             {
                                 break;
                             }
@@ -244,14 +252,14 @@ namespace MassarAdminDesktop
                                     }
                                 }
                                 catch { }
-                                dataGridView1.Rows[i - x - 1].Cells[j - y].Value = excel.getContent(i+1, j);
+                                dataGridView1.Rows[i - x - 1].Cells[j - y].Value = excel.getContent(i + 1, j);
                             }
                         }
                     }
                 }
                 else if (q == "info")
                 {
-                    panel2.Visible = false ;
+                    panel2.Visible = false;
                     panel3.Visible = true;
                     label = new List<Label>() { label28, label29, label30, label31, label32, label33 };
                     s = new List<string>() { "أكاديمية :", "المذيرية الإقليمية :", "مؤسسة  :", "السنة الدراسية", "المستوى :", "القسم" };
@@ -297,7 +305,7 @@ namespace MassarAdminDesktop
                             dataGridView1.ColumnCount = excel.sheet.GetRow(i).LastCellNum - 1;
                             for (int j = y; j < excel.sheet.GetRow(i).LastCellNum; j++)
                             {
-                                    dataGridView1.Columns[f++].HeaderText = excel.getContent(i, j) + " " + excel.getContent(i + 1, j);
+                                dataGridView1.Columns[f++].HeaderText = excel.getContent(i, j) + " " + excel.getContent(i + 1, j);
                             }
 
                         }
@@ -329,7 +337,7 @@ namespace MassarAdminDesktop
                 }
                 if (groupBox1.Visible) { Importer_b.Visible = false; }
             }
-          
+           
         }
     }
 }
