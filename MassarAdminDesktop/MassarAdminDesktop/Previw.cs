@@ -100,7 +100,7 @@ namespace MassarAdminDesktop
                     
                     foreach (int col in this.notescols)
                     {
-                        query += string.Format(" ({0},{1},{2},{3},'{4}','{5}','{6}',{7}) ,",this.id_annee,this.id_groupe,dataGridView1.Rows[row].Cells[0].Value.ToString(),idMatiere,titre,semestre, dataGridView1.Columns[col].HeaderText,dataGridView1.Rows[row].Cells[col].Value.ToString());
+                        query += string.Format(" ({0},{1},{2},{3},'{4}','{5}','{6}',{7}) ,",this.id_annee,this.id_groupe,dataGridView1.Rows[row].Cells[0].Value.ToString(),idMatiere,titre,semestre, dataGridView1.Columns[col].HeaderText,dataGridView1.Rows[row].Cells[col].Value.ToString().Replace(',','.'));
 
 
                     }

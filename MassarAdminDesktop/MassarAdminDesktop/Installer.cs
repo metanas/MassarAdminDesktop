@@ -25,31 +25,31 @@ namespace MassarAdminDesktop
             {
                 if (textBox1.Text == "")
                 {
-                    MessageBox.Show("entre le nom de l'ecole");
+                    MessageBox.Show("Entrez le nom de l'école");
                     textBox1.Focus();
                     return;
                 }
                 if (textBox2.Text == "")
                 {
-                    MessageBox.Show("entre l'administrateur");
+                    MessageBox.Show("Entrez le nom de l'administrateur");
                     textBox2.Focus();
                     return;
                 }
                 if (textBox3.Text == "")
                 {
-                    MessageBox.Show("entre le mot de passe");
+                    MessageBox.Show("Entrez le mot de passe");
                     textBox3.Focus();
                     return;
                 }
                 if (textBox4.Text == "")
                 {
-                    MessageBox.Show("entre le Confirmation de mot de passe");
+                    MessageBox.Show("Entrez la confirmation de mot de passe");
                     textBox4.Focus();
                     return;
                 }
                 if (textBox4.Text != textBox3.Text)
                 {
-                    MessageBox.Show("le mot de passe et differant");
+                    MessageBox.Show("Les mots de passe sont différents");
                     textBox3.Focus();
                     return;
                 }
