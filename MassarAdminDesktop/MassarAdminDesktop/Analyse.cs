@@ -32,7 +32,7 @@ namespace MassarAdminDesktop
             {
                 string[] s = sr.ReadToEnd().Split('\n');
                 label4.Text += " " + s[1];
-                if (s.Length > 2)
+                if (s.Length > 2 && s[2] != "")
                 {
                     pictureBox1.Image = Image.FromFile(s[s.Length - 1]);
                 }

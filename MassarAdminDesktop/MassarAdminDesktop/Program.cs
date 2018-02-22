@@ -16,12 +16,13 @@ namespace MassarAdminDesktop
         static void Main()
         {
             bool tw = false;
-            try
+            if (File.Exists(@"C:\Massar\Installer.txt"))
             {
                 using (StreamReader sr = File.OpenText(@"C:\\Massar\Installer.txt"))
                 {
                     tw = true;
-                    if (sr.ReadLine() == "Installed")
+                    string t = sr.ReadLine();
+                    if (t == "Installed")
                     {
                         sr.Close();
                         Application.EnableVisualStyles();
@@ -36,16 +37,12 @@ namespace MassarAdminDesktop
                     }
                 }
             }
-            catch(FileNotFoundException ex)
+            if (!tw)
             {
-                if (!tw)
-                {
-                    Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new Installer());
-                }
-            }
-           
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Installer());
+            }            
         }
     }
 }
