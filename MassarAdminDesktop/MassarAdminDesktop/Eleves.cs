@@ -123,7 +123,7 @@ namespace MassarAdminDesktop
                 "sum(if (semestre = 2 and titre = 'cc4', note, null)) as s2cc4, " +
                 "sum(if (semestre = 2 and titre = 'cc5', note, null)) as s2cc5 " +
                 "from(SELECT nom, semestre, titre, avg(note) as note FROM examiner " +
-                "LEFT OUTER JOIN matiere on examiner.id_matiere = matiere.id where id_etudiant = " + id_E + "and id_annee = " + id_annee +
+                "LEFT OUTER JOIN matiere on examiner.id_matiere = matiere.id where id_etudiant = " + id_E + " and id_annee = " + id_annee +
                 " group by nom, titre) as t2 GROUP by t2.nom, t2.semestre";
             Login.read = DBConnect.Gets(sql);
             while (Login.read.Read())
