@@ -109,7 +109,8 @@ namespace MassarAdminDesktop
             }
 
             string id_E = dgv_eleves.SelectedRows[0].Cells[3].Value.ToString();
-            Console.WriteLine(id_E);
+
+            string id_annee = DBConnect.Get("SELECT id_annee from groupe where id = " + this.id);
 
             string sql = "select nom as matiere, sum(if(semestre = 1 and titre = 'cc1', note, null)) as s1cc1, " +
                 "sum(if (semestre = 1 and titre = 'cc2', note, null)) as s1cc2, " +
@@ -122,8 +123,8 @@ namespace MassarAdminDesktop
                 "sum(if (semestre = 2 and titre = 'cc4', note, null)) as s2cc4, " +
                 "sum(if (semestre = 2 and titre = 'cc5', note, null)) as s2cc5 " +
                 "from(SELECT nom, semestre, titre, avg(note) as note FROM examiner " +
-                "LEFT OUTER JOIN matiere on examiner.id_matiere = matiere.id where id_etudiant = " + id_E + " group by nom, titre)" +
-                " as t2 GROUP by t2.nom, t2.semestre";
+                "LEFT OUTER JOIN matiere on examiner.id_matiere = matiere.id where id_etudiant = " + id_E + "and id_annee = " + id_annee +
+                " group by nom, titre) as t2 GROUP by t2.nom, t2.semestre";
             Login.read = DBConnect.Gets(sql);
             while (Login.read.Read())
             {
