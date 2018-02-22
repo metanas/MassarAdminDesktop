@@ -45,7 +45,7 @@ namespace MassarAdminDesktop
                             DBConnect.Post("Delete From groupe_matiere_enseignant where id_groupe=" + idGroupe);
                         });
                         classview_Load(sender, e);
-                        HomePreview.HomeForm.Text = "hello";
+                        HomePreview.HomeForm.Text = "loadClasse";
                     }
                 }
             }

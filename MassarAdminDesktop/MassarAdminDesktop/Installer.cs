@@ -134,6 +134,7 @@ namespace MassarAdminDesktop
                 {
                     sw.WriteLine(textBox1.Text);
                 }
+                sw.Close();
             }
             using (StreamWriter sw = File.CreateText(@"C:\\Massar\.ConfigurationDB.txt"))
             {
@@ -144,6 +145,7 @@ namespace MassarAdminDesktop
                     sw.WriteLine(textBox7.Text);
                     sw.WriteLine(textBox6.Text);
                 }
+                sw.Close();
             }
             string fileName = "img.png";
             string sourcePath = @"C:\\Program Files (x86)\Cesim\Massar Admin\Config";

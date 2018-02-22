@@ -23,6 +23,7 @@ namespace MassarAdminDesktop
                     tw = true;
                     if (sr.ReadLine() == "Installed")
                     {
+                        sr.Close();
                         Application.EnableVisualStyles();
                         Application.SetCompatibleTextRenderingDefault(false);
                         Application.Run(new HomePreview());
@@ -35,7 +36,7 @@ namespace MassarAdminDesktop
                     }
                 }
             }
-            catch
+            catch(FileNotFoundException ex)
             {
                 if (!tw)
                 {

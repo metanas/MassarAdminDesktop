@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Subjects));
             this.panel1 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -61,6 +61,10 @@
             this.Button2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.Button1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.minNot = new System.Windows.Forms.Label();
+            this.maxNot = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
             this.exam_i = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.nonv_i = new System.Windows.Forms.Label();
@@ -72,10 +76,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.minNot = new System.Windows.Forms.Label();
-            this.maxNot = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.Infobox.SuspendLayout();
@@ -100,16 +100,16 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(515, 20);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(529, 370);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -550,6 +550,47 @@
             this.panel2.TabIndex = 11;
             this.panel2.Visible = false;
             // 
+            // minNot
+            // 
+            this.minNot.AutoSize = true;
+            this.minNot.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minNot.ForeColor = System.Drawing.Color.Red;
+            this.minNot.Location = new System.Drawing.Point(411, 168);
+            this.minNot.Name = "minNot";
+            this.minNot.Size = new System.Drawing.Size(24, 26);
+            this.minNot.TabIndex = 13;
+            this.minNot.Text = "4";
+            // 
+            // maxNot
+            // 
+            this.maxNot.AutoSize = true;
+            this.maxNot.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxNot.Location = new System.Drawing.Point(404, 86);
+            this.maxNot.Name = "maxNot";
+            this.maxNot.Size = new System.Drawing.Size(42, 26);
+            this.maxNot.TabIndex = 12;
+            this.maxNot.Text = "1,5";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(379, 51);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(95, 16);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Note Maximal:";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.Location = new System.Drawing.Point(379, 133);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(95, 16);
+            this.label77.TabIndex = 10;
+            this.label77.Text = "Note Minimal :";
+            // 
             // exam_i
             // 
             this.exam_i.AutoSize = true;
@@ -651,47 +692,6 @@
             this.label5.Size = new System.Drawing.Size(68, 16);
             this.label5.TabIndex = 0;
             this.label5.Text = "Moyenne :";
-            // 
-            // minNot
-            // 
-            this.minNot.AutoSize = true;
-            this.minNot.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minNot.ForeColor = System.Drawing.Color.Red;
-            this.minNot.Location = new System.Drawing.Point(401, 168);
-            this.minNot.Name = "minNot";
-            this.minNot.Size = new System.Drawing.Size(24, 26);
-            this.minNot.TabIndex = 13;
-            this.minNot.Text = "4";
-            // 
-            // maxNot
-            // 
-            this.maxNot.AutoSize = true;
-            this.maxNot.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxNot.Location = new System.Drawing.Point(404, 86);
-            this.maxNot.Name = "maxNot";
-            this.maxNot.Size = new System.Drawing.Size(42, 26);
-            this.maxNot.TabIndex = 12;
-            this.maxNot.Text = "1,5";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(379, 51);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 16);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Note Maximal:";
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.Location = new System.Drawing.Point(379, 133);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(95, 16);
-            this.label77.TabIndex = 10;
-            this.label77.Text = "Note Minimal :";
             // 
             // Subjects
             // 

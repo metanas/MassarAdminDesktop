@@ -64,12 +64,12 @@
             this.bunifuTileButton3.color = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.bunifuTileButton3.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.bunifuTileButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuTileButton3.Font = new System.Drawing.Font("Lato Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuTileButton3.ForeColor = System.Drawing.Color.White;
             this.bunifuTileButton3.Image = global::MassarAdminDesktop.Properties.Resources.benefit_chart;
             this.bunifuTileButton3.ImagePosition = 21;
             this.bunifuTileButton3.ImageZoom = 50;
-            this.bunifuTileButton3.LabelPosition = 43;
+            this.bunifuTileButton3.LabelPosition = 42;
             this.bunifuTileButton3.LabelText = "Evolution";
             this.bunifuTileButton3.Location = new System.Drawing.Point(579, 322);
             this.bunifuTileButton3.Margin = new System.Windows.Forms.Padding(6);
@@ -82,12 +82,13 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 30.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Lato Black", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(104, 217);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(341, 47);
+            this.label4.Size = new System.Drawing.Size(311, 48);
             this.label4.TabIndex = 22;
             this.label4.Text = "Groupe Scolaire";
+            this.label4.TextChanged += new System.EventHandler(this.label4_TextChanged);
             // 
             // label3
             // 
@@ -95,7 +96,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(449, 443);
+            this.label3.Location = new System.Drawing.Point(448, 443);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 20);
             this.label3.TabIndex = 21;
@@ -107,12 +108,12 @@
             this.bunifuTileButton2.color = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.bunifuTileButton2.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.bunifuTileButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuTileButton2.Font = new System.Drawing.Font("Lato Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuTileButton2.ForeColor = System.Drawing.Color.White;
             this.bunifuTileButton2.Image = global::MassarAdminDesktop.Properties.Resources._class;
             this.bunifuTileButton2.ImagePosition = 21;
             this.bunifuTileButton2.ImageZoom = 50;
-            this.bunifuTileButton2.LabelPosition = 43;
+            this.bunifuTileButton2.LabelPosition = 42;
             this.bunifuTileButton2.LabelText = "Classes";
             this.bunifuTileButton2.Location = new System.Drawing.Point(394, 322);
             this.bunifuTileButton2.Margin = new System.Windows.Forms.Padding(6);
@@ -128,7 +129,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(270, 443);
+            this.label2.Location = new System.Drawing.Point(267, 443);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 20);
             this.label2.TabIndex = 19;
@@ -140,12 +141,12 @@
             this.bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuTileButton1.Font = new System.Drawing.Font("Lato Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
             this.bunifuTileButton1.Image = global::MassarAdminDesktop.Properties.Resources.professeur;
             this.bunifuTileButton1.ImagePosition = 21;
             this.bunifuTileButton1.ImageZoom = 50;
-            this.bunifuTileButton1.LabelPosition = 43;
+            this.bunifuTileButton1.LabelPosition = 42;
             this.bunifuTileButton1.LabelText = "Enseignants";
             this.bunifuTileButton1.Location = new System.Drawing.Point(215, 322);
             this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
@@ -161,7 +162,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(87, 443);
+            this.label1.Location = new System.Drawing.Point(84, 443);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 20);
             this.label1.TabIndex = 17;
@@ -176,6 +177,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
             // 
             // Betudiant
             // 
@@ -183,12 +185,12 @@
             this.Betudiant.color = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.Betudiant.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.Betudiant.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Betudiant.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
+            this.Betudiant.Font = new System.Drawing.Font("Lato Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Betudiant.ForeColor = System.Drawing.Color.White;
             this.Betudiant.Image = global::MassarAdminDesktop.Properties.Resources.etudiant;
             this.Betudiant.ImagePosition = 21;
             this.Betudiant.ImageZoom = 50;
-            this.Betudiant.LabelPosition = 43;
+            this.Betudiant.LabelPosition = 42;
             this.Betudiant.LabelText = "Etudiants";
             this.Betudiant.Location = new System.Drawing.Point(32, 322);
             this.Betudiant.Margin = new System.Windows.Forms.Padding(6);
