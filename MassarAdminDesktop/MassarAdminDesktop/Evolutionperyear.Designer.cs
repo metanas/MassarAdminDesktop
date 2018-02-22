@@ -47,7 +47,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(586, 434);
+            this.panel1.Size = new System.Drawing.Size(864, 513);
             this.panel1.TabIndex = 11;
             // 
             // chart1
@@ -56,7 +56,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(8, 124);
+            this.chart1.Location = new System.Drawing.Point(128, 158);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -65,12 +65,13 @@
             this.chart1.Size = new System.Drawing.Size(570, 300);
             this.chart1.TabIndex = 13;
             this.chart1.Text = "chart1";
+            this.chart1.DoubleClick += new System.EventHandler(this.chart1_DoubleClick_1);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(182)))));
             this.pictureBox1.Image = global::MassarAdminDesktop.Properties.Resources.benefit_chart;
-            this.pictureBox1.Location = new System.Drawing.Point(22, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(142, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(99, 77);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -81,7 +82,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lato Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(127, 23);
+            this.label1.Location = new System.Drawing.Point(247, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(454, 33);
             this.label1.TabIndex = 11;
@@ -92,7 +93,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(602, 458);
+            this.ClientSize = new System.Drawing.Size(888, 537);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Evolutionperyear";

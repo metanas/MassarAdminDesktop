@@ -73,11 +73,12 @@ namespace MassarAdminDesktop
 
         void loadYears()
         {
-                listYear.Clear();
-                Login.read = DBConnect.Gets("select annee_scolaire from annee order by annee_scolaire desc ; ");
-                while (Login.read.Read())
-                    listYear.Add(Login.read["annee_scolaire"].ToString());
-                Login.read.Close();           
+            listYear.Clear();
+            yearSelected = 0;
+            Login.read = DBConnect.Gets("select annee_scolaire from annee order by annee_scolaire desc ; ");
+            while (Login.read.Read())
+                listYear.Add(Login.read["annee_scolaire"].ToString());
+            Login.read.Close();           
         }
 
         public void loadClasse()
@@ -93,7 +94,7 @@ namespace MassarAdminDesktop
             ClassButton.Clear();
             id_classes.Clear();
           
-            Login.read = DBConnect.Gets("select groupe.nom , groupe.id from groupe , annee where annee.annee_scolaire='" + listYear[yearSelected] + "' and  annee.id=groupe.id_annee ; ");
+            Login.read = DBConnect.Gets("select groupe.nom , groupe.id from groupe , annee where annee.annee_scolaire='" + listYear[yearSelected] + "' and  annee.id=groupe.id_annee order by groupe.nom; ");
            
             while (Login.read.Read())
             {
@@ -110,7 +111,7 @@ namespace MassarAdminDesktop
                 ClassButton[i].IsTab = true;
                 if (i == 0)
                 {
-                    ClassButton[i].Location = new Point(panel3.Location.X, search.Location.Y + search.Height);
+                    ClassButton[i].Location = new Point(panel3.Location.X, 0);
                 }
                 else { ClassButton[i].Location = new Point(panel3.Location.X, ClassButton[i - 1].Location.Y + ClassButton[i - 1].Height); }
                 id_classes.Add(Login.read["id"].ToString());
@@ -260,14 +261,10 @@ namespace MassarAdminDesktop
             ClassButton.Clear();
             PreviewFrom.Clear();
             Login login = new Login();
-            yearSelected = 0;
-            SuperUser.Visible = false;
-            label5.Visible = false;
+            panel7.Visible = false;         
             resizeLocationForm(login);
             label1.Visible = false;
-            label2.Visible = false;
-            label6.Visible = false;
-            histo.Visible = false;
+            label2.Visible = false;            
             panel5.Visible = false;
             panel4.Controls.Remove(forward);
             panel4.Controls.Remove(backward);
@@ -303,11 +300,7 @@ namespace MassarAdminDesktop
                 loadClasse();
                 Analyse analyse = new Analyse();
                 resizeLocationForm(analyse);
-                SuperUser.Visible = Login.admin.isSuper;
-                label5.Visible = Login.admin.isSuper;
-                histo.Visible = Login.admin.isSuper;
-                label6.Visible = Login.admin.isSuper;
-
+                panel7.Visible = Login.admin.isSuper;               
             }
             else if (this.Text == "loadClasse"){
                 loadClasse();
@@ -384,18 +377,20 @@ namespace MassarAdminDesktop
         private void search_OnTextChange(object sender, EventArgs e)
         {
             int c = 0;
+            int loc = 0;
             for (int i = 0; i < ClassButton.Count; i++)
             {
                 if (ClassButton[i].Text.ToUpper().Contains(search.text.ToUpper()))
                 {
                     if (c == 0)
                     {
-                        ClassButton[i].Location = new Point(panel3.Location.X, search.Location.Y + search.Height);
+                        ClassButton[i].Location = new Point(panel3.Location.X, loc);
                         c++;
                     }
                     else
                     {
-                        ClassButton[i].Location = new Point(panel3.Location.X, ClassButton[i - 1].Height + ClassButton[i - 1].Location.Y);
+                        loc += ClassButton[i - 1].Height;
+                        ClassButton[i].Location = new Point(panel3.Location.X, loc);
                     }
                     panel3.Controls.Add(ClassButton[i]);
 

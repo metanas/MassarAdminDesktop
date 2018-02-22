@@ -345,9 +345,8 @@
             this.moy_g.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.moy_g.Location = new System.Drawing.Point(851, 29);
             this.moy_g.Name = "moy_g";
-            this.moy_g.Size = new System.Drawing.Size(58, 29);
+            this.moy_g.Size = new System.Drawing.Size(0, 29);
             this.moy_g.TabIndex = 8;
-            this.moy_g.Text = "7.25";
             // 
             // groupBox1
             // 

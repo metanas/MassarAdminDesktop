@@ -21,10 +21,7 @@ namespace MassarAdminDesktop
         string id_annee;
         public Previw()
         {
-            InitializeComponent();
-
-            
-
+            InitializeComponent();            
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Excel Files (.xlsx)|*.xlsx|Excel Files 2007 (.xlx)|*.xlx";
             if (open.ShowDialog() == DialogResult.OK)
